@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>방구석여행</title>
+    <link rel="icon" href="pic/logo.png"/>
+    <link rel="apple-touch-icon" href="pic/logo.png"/>
     <!-- jQuery -->
     <script 
         src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -33,6 +35,9 @@
         }
         tr{
             height: 40px;
+        }
+        .test{
+            position: relative;
         }
         .nav-area{ 
             display: flex;
@@ -74,26 +79,20 @@
             border-radius: 40px;
             
         }
-        #remote{
-            width: 100%;
-            height: 100px;
-            background: #ddeeeb;
-        }
-        #remoteheader{
-            background: #7bbcb0;
-        }
-
         .sidenav-header {
             font-size: 18px;
             font-weight: bold;
             margin-bottom: 10px;
+            background-color: #7bbcb0;
+            color: white;
+            border-radius: 15px;
         }
 
         .sidenav-item {
-            background-color: white;
+            background-color: #ddeeeb;
             border-radius: 15px;
-            margin-bottom: 15px;
-            padding: 10px;
+            margin-bottom: 0px;
+            padding: 0px;
         }
 
         .sidenav-item img {
@@ -114,14 +113,17 @@
             background-color: #7bbcb0;
             border: none;
             color: white;
-            padding: 10px;
+            padding: 0px;
             border-radius: 15px;
             width: 100%;
             cursor: pointer;
+            height: 50px;
+            font-size: 13px;
         }
 
         .sidenav-footer button:hover {
             background-color: #5da396;
+            
         }
 
         .nav-area.fixed {
@@ -132,10 +134,12 @@
             width: auto; /* width는 JavaScript에서 설정 */
             z-index: 100;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 고정 시 그림자 추가 */
+            border-top: 0px solid rgb(0, 0, 0);
+            border-bottom: 0px solid rgb(0, 0, 0);
         }
         /* 기본 상태: 상단에서 40%에 위치 */
         .sidenav {
-            width: 200px;
+            width: 150px;
             background-color: #ddeeeb;
             padding: 10px;
             position: absolute;
@@ -155,7 +159,7 @@
             right: 20px;
             z-index: 100;
         }
-
+        
     </style>
 </head>
 <body>
@@ -183,9 +187,11 @@
                 <td style="width: 20%;" ><img src="pic/heart.png" width="20px" height="20px"> <b>907</b></td>
                 <td style="width: 20%; text-align: center; vertical-align: top;"><h6>전북 남원시</h6></td>
                 <td style="width: 20%;">
-                    <button style="cursor:context-menu;">#1인여행</button>
-                    <button style="cursor:context-menu;">#힐링</button>
-                    <button style="cursor:context-menu;">#여행</button>
+                    <div>
+                        <button style="cursor:context-menu;">#1인여행</button>
+                        <button style="cursor:context-menu;">#힐링</button>
+                        <button style="cursor:context-menu;">#여행</button>
+                    </div>
                 </td>
                 <td class="side"></td>
             </tr>
@@ -262,8 +268,11 @@
                             <p><strong>구 서도역</strong></p>
                             <p>전북 남원시</p>
                         </div>
+                        <div>
+                            <img src="pic/arrow.png" style="align-self: center; margin-bottom: 0px; cursor: pointer;">
+                        </div>
                         <div class="sidenav-footer">
-                            <button>여행지 기준 호텔 검색</button>
+                            <button><div style="vertical-align: middle;">여행지 기준<br>호텔 검색</div></button>
                         </div>
                         <script>
                             $(document).ready(function() {
