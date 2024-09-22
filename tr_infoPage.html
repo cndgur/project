@@ -131,7 +131,7 @@
             top: 0;
             left: 50%; /* 화면 중앙에 배치 */
             transform: translateX(-50%); /* 가운데 정렬 */
-            width: auto; /* width는 JavaScript에서 설정 */
+            width: 100%; /* width는 JavaScript에서 설정 */
             z-index: 100;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 고정 시 그림자 추가 */
             border-top: 0px solid rgb(0, 0, 0);
@@ -159,7 +159,50 @@
             right: 20px;
             z-index: 100;
         }
-        
+
+        #review{
+            width: 90%;
+            height: 70%;
+            margin-top: 20px;
+            margin-left: 50px;
+            margin-right: 50px;
+            
+        }
+        #reviewbt{
+            height: 30px;
+            font-size: 15px;
+            float: right;
+            margin-top: 10px;
+            margin-right: 50px;
+        }
+        .recommendtr {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            background-color: #ddeeeb;
+            padding: 10px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .recommendtr-item {
+            margin: 15px;
+            background-color: #ddeeeb;
+            border-radius: 15px;
+            margin-bottom: 0px;
+            padding: 0px;
+            
+        }
+
+        .recommendtr img {
+            width: auto;
+            height: 80px;
+            border-radius: 10px;
+        }
+
+        .recommendtr p {
+            margin: 5px 0;
+        }
     </style>
 </head>
 <body>
@@ -348,8 +391,9 @@
                     <div>
                         <h2>여행지 리뷰</h2>
                         <hr>
-                        <div style="width: 100%; height: 100px; background: #ddeeeb;">
-                            <textarea name="" id="" placeholder="리뷰를 작성해주세요." style="width: 90%; height: 50%;"></textarea>
+                        <div style="width: 100%; height: 250px; background: #ddeeeb;">
+                            <textarea id="review" placeholder="리뷰를 작성해주세요."></textarea><br>
+                            <button id="reviewbt">등록</button>
                         </div>
                     </div>
                 </td>
@@ -363,6 +407,23 @@
                     <div>
                         <h2>추천여행</h2>
                         <hr>
+                    </div>
+                    <div class="recommendtr">
+                        <div class="recommendtr-item">
+                            <img src="pic/picture.png" alt="구 서도역">
+                            <p><strong>구 서도역</strong></p>
+                            <p>전북 남원시</p>
+                        </div>
+                        <div class="recommendtr-item">
+                            <img src="pic/picture.png" alt="구 서도역">
+                            <p><strong>구 서도역</strong></p>
+                            <p>전북 남원시</p>
+                        </div>
+                        <div class="recommendtr-item">
+                            <img src="pic/picture.png" alt="구 서도역">
+                            <p><strong>구 서도역</strong></p>
+                            <p>전북 남원시</p>
+                        </div>
                     </div>
                 </td>
                 <td></td>
