@@ -159,7 +159,16 @@
             right: 20px;
             z-index: 100;
         }
-
+        .bpcontent{
+            padding: 0;
+            height: 500px;
+        }
+        .spcontent{
+            display: flex;
+        }
+        .spcontent img{
+            width: auto;
+        }
         #review{
             width: 90%;
             height: 70%;
@@ -227,7 +236,7 @@
             </tr>
             <tr>
                 <td class="side"></td>
-                <td style="width: 20%;" ><img src="pic/heart.png" width="20px" height="20px"> <b>907</b></td>
+                <td style="width: 20%;" ><img src="pic/bheart.png" width="20px" height="20px" style="cursor: pointer"> <b>907</b></td>
                 <td style="width: 20%; text-align: center; vertical-align: top;"><h6>전북 남원시</h6></td>
                 <td style="width: 20%;">
                     <div>
@@ -245,7 +254,7 @@
                         <div class="menu"><a href="#picture">사진보기</a></div>
                         <div class="menu"><a href="#info">상제정보</a></div>
                         <div class="menu"><a href="#talk">여행지리뷰</a></div>
-                        <div class="menu"><a href="#recommend">추천여행</a></div>
+                        <div class="menu"><a href="#recommend">근처다른여행지</a></div>
                         <script>
                             $(document).ready(function(){
                                 // nav-area 요소를 선택
@@ -288,9 +297,18 @@
                 <td></td>
                 <td class="side"></td>
             </tr>
-            <tr id="picture" style="height: 1000px;">
+            <tr id="picture">
                 <td class="side" id="pic"></td>
-                <td colspan="3" class="content"><img src="pic/picture.png" width="100%" height="1000px"></td>
+                <td colspan="3">
+                    <div class="bpcontent">
+                        <img src="pic/picture.png" width="100%" height="100%">
+                    </div>
+                    <div class="spcontent" style="margin-bottom: 100px;">
+                        <img src="pic/picture.png">
+                        <img src="pic/picture.png">
+                        <img src="pic/picture.png">
+                    </div>
+                </td>
                 <td></td>
                 <td></td>
                 <td class="side">
@@ -352,7 +370,7 @@
                     </div>
                 </td>
             </tr>
-            <tr id="info" style="height: 1000px;">
+            <tr id="info">
                 <td class="side"></td>
                 <td colspan="3" class="content">
                     <div>
@@ -363,7 +381,7 @@
                     <br><br>
                     <!-- * 카카오맵 - 지도퍼가기 -->
                     <!-- 1. 지도 노드 -->
-                    <div id="daumRoughmapContainer1726734009560" class="root_daum_roughmap root_daum_roughmap_landing" style="width: 100%;"></div>
+                    <div id="daumRoughmapContainer1726734009560" class="root_daum_roughmap root_daum_roughmap_landing" style="width: 100%; margin-bottom: 100px;"></div>
 
                     <!--
                         2. 설치 스크립트
@@ -385,15 +403,18 @@
                 <td></td>
                 <td class="side"></td>
             </tr>
-            <tr id="talk" style="height: 1000px;">
+            <tr id="talk">
                 <td class="side"></td>
                 <td colspan="3" class="content">
                     <div>
                         <h2>여행지 리뷰</h2>
                         <hr>
-                        <div style="width: 100%; height: 250px; background: #ddeeeb;">
+                        <div style="width: 100%; height: 250px; background: #ddeeeb; margin-bottom: 100px;">
                             <textarea id="review" placeholder="리뷰를 작성해주세요."></textarea><br>
                             <button id="reviewbt">등록</button>
+                        </div>
+                        <div>
+                            <!-- 리뷰나올영역-->
                         </div>
                     </div>
                 </td>
@@ -401,14 +422,14 @@
                 <td></td>
                 <td class="side"></td>
             </tr>
-            <tr id="recommend" style="height: 1000px;">
+            <tr id="recommend">
                 <td class="side"></td>
                 <td colspan="3" class="content">
                     <div>
-                        <h2>추천여행</h2>
+                        <h2>근처 다른 여행지</h2>
                         <hr>
                     </div>
-                    <div class="recommendtr">
+                    <div class="recommendtr" style="margin-bottom: 100px;">
                         <div class="recommendtr-item">
                             <img src="pic/picture.png" alt="구 서도역">
                             <p><strong>구 서도역</strong></p>
@@ -423,6 +444,24 @@
                             <img src="pic/picture.png" alt="구 서도역">
                             <p><strong>구 서도역</strong></p>
                             <p>전북 남원시</p>
+                        </div>
+                        <div class="recommendtr-item">
+                            <img src="pic/picture.png" alt="구 서도역">
+                            <p><strong>구 서도역</strong></p>
+                            <p>전북 남원시</p>
+                        </div>
+                        <div class="recommendtr-item">
+                            <img src="pic/picture.png" alt="구 서도역">
+                            <p><strong>구 서도역</strong></p>
+                            <p>전북 남원시</p>
+                        </div>
+                        <div class="recommendtr-item">
+                            <img src="pic/picture.png" alt="구 서도역">
+                            <p><strong>구 서도역</strong></p>
+                            <p>전북 남원시</p>
+                        </div>
+                        <div style="margin-left:40px; display: flex; justify-content: center; align-items: center;">
+                            <img src="pic/sidearrow.png" style="align-self: center; margin-bottom: 0px; cursor: pointer;">
                         </div>
                     </div>
                 </td>
