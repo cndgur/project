@@ -267,15 +267,15 @@
   <script>
     const mySwiper2 = new Swiper(".mySwiper2", {
         slidesPerView: 'auto', // 한 번에 표시할 슬라이드 수
-        spaceBetween: 15, // 슬라이드 간의 간격
+        spaceBetween: 20, // 슬라이드 간의 간격
         breakpoints : {
             700: {
-            slidesPerView: 6,
-            spaceBetween: 15,
+            slidesPerView: 4,
+            spaceBetween: 20,
             },
             1024: {
-                slidesPerView: 9,
-                spaceBetween: 10,
+                slidesPerView: 6,
+                spaceBetween: 20,
             }
         }, 
         slideToclickedSlide : true,
@@ -283,10 +283,13 @@
             nextEl: ".swiper-button-next", 
             prevEl: ".swiper-button-prev"
         },
+        loop: true,
         freemode : true,
         watchOverflow : true,
-        loop : true,
-        centeredSlides : true
+        centeredSlides : false,
+        initialSlide: 0,
+        slideOffsetAfter: 10,
+        slideOffsetBefore: 10
     });
     
     $('.btn_like').click(function () {
