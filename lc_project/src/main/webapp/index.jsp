@@ -186,10 +186,10 @@
           <div class="swiper-slide">
               <img src="./pic/tjdnf.jfif" onclick="enrollPage()">
               <script>
-		            	function enrollPage(){
-		            		location.href="<%=contextPath%>/travel.info"
-		            	}
-		            </script>
+            	function enrollPage(){
+            		location.href="<%=contextPath%>/travel.info"
+            	}
+		      </script>
               <button class="btn_like" onclick="">like</button>
               <p>캐리비안베이</p>
           </div>
