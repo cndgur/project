@@ -10,23 +10,45 @@
             
             background-color: #F7F7F9;
         }
+
+        a{
+            text-decoration: none;
+            color: black;
+        }
         .rentcar-wrap{
-            width: 1200px;
+            width: 100%;
+            min-width: 1200px;
+            height: auto;
             display: flex;
+            justify-content: center;
+            column-gap: 100px;
             margin: 40px auto;
 
         }
 
+        .rentcar-wrap > .rent-sidebar{
+            width: 420px;
+            height: 250px;
+            background-color: #fff;
+            border-radius: 12px;
+            position: sticky;
+            top: 80px;
+        }
+
         #rentcar-area{
+            width: 800px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            column-gap: 20px;
+        }
+
+        #car-container{
             width: 720px;
             height: 330px;
             background-color: #D4D7DC;
             margin: 20px;
             border-radius: 10px;
-            display: flex;
-            justify-content: center;
-            text-align: center;
-            flex-direction: column;
         }
 
         #car-area{
@@ -152,17 +174,54 @@
             color: white;
         }
 
-        .rent-sidebar{
-            width: 375px;
-            background-color: #fff;
-            border-radius: 12px;
-        }
-
         #side-bar{
             text-align: center;
         }
 
+        #rent-location{
+            width: 100%;
+            height: 70px;
+            border-bottom: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #rent-date{
+            width: 100%;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid black;
+            text-decoration: none;
+        }
+
+        #rent-date > a{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #rent-date > a button{
+            border: none;
+            background-color: #ffffff;
+            font-size: medium;
+        }
+
+        #rent-btn{
+            width: 100%;
+            height: 70px;
+            background-color: #9bb2ce;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0 0 10px 10px;
+        }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    
 </head>
 <body>
     <header align="center">
@@ -170,41 +229,190 @@
     </header>
     <div class="rentcar-wrap">
         <div id="rentcar-area">
-            <div id="car-area">
-                <div id="car-logo">
-                    <img src="./pic/kialogo.png" alt="">
-                    <p>기아자동차</p>
-                    <h3>모닝</h3>
+            <div id="car-container">
+                <div id="car-area">
+                    <div id="car-logo">
+                        <img src="./pic/kialogo.png" alt="">
+                        <p>기아자동차</p>
+                        <h3>모닝</h3>
+                    </div>
+                    <div id="car-img">
+                        <img src="./pic/kiamorning.png" alt="">
+                    </div>
                 </div>
-                <div id="car-img">
-                    <img src="./pic/kiamorning.png" alt="">
+                <div id="price-area">
+                    <div id="car-name">
+                        <div id="car-tag">제휴사차량</div>
+                        <p>[제휴사 차량] 모닝 가솔린</p>
+                        <span>21~24년식 5인승</span>
+                    </div>
+                    <div id="car-price">
+                        <div id="price-text">
+                            <div id="sale-tag">회원할인</div>
+                            <span id="price-regular">403,500원</span>
+                            <span id="price-sale">100,870원</span>
+                        </div>
+                        <a href="">
+                            <div id="b-button">
+                                예약
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div id="price-area">
-                <div id="car-name">
-                    <div id="car-tag">제휴사차량</div>
-                    <p>[제휴사 차량] 모닝 가솔린</p>
-                    <span>21~24년식 5인승</span>
-                </div>
-                <div id="car-price">
-                    <div id="price-text">
-                        <div id="sale-tag">회원할인</div>
-                        <span id="price-regular">403,500원</span>
-                        <span id="price-sale">100,870원</span>
+            <div id="car-container">
+                <div id="car-area">
+                    <div id="car-logo">
+                        <img src="./pic/kialogo.png" alt="">
+                        <p>기아자동차</p>
+                        <h3>모닝</h3>
                     </div>
-                    <a href="">
-                        <div id="b-button">
-                            예약
+                    <div id="car-img">
+                        <img src="./pic/kiamorning.png" alt="">
+                    </div>
+                </div>
+                <div id="price-area">
+                    <div id="car-name">
+                        <div id="car-tag">제휴사차량</div>
+                        <p>[제휴사 차량] 모닝 가솔린</p>
+                        <span>21~24년식 5인승</span>
+                    </div>
+                    <div id="car-price">
+                        <div id="price-text">
+                            <div id="sale-tag">회원할인</div>
+                            <span id="price-regular">403,500원</span>
+                            <span id="price-sale">100,870원</span>
                         </div>
-                    </a>
+                        <a href="">
+                            <div id="b-button">
+                                예약
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="car-container">
+                <div id="car-area">
+                    <div id="car-logo">
+                        <img src="./pic/kialogo.png" alt="">
+                        <p>기아자동차</p>
+                        <h3>모닝</h3>
+                    </div>
+                    <div id="car-img">
+                        <img src="./pic/kiamorning.png" alt="">
+                    </div>
+                </div>
+                <div id="price-area">
+                    <div id="car-name">
+                        <div id="car-tag">제휴사차량</div>
+                        <p>[제휴사 차량] 모닝 가솔린</p>
+                        <span>21~24년식 5인승</span>
+                    </div>
+                    <div id="car-price">
+                        <div id="price-text">
+                            <div id="sale-tag">회원할인</div>
+                            <span id="price-regular">403,500원</span>
+                            <span id="price-sale">100,870원</span>
+                        </div>
+                        <a href="">
+                            <div id="b-button">
+                                예약
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="car-container">
+                <div id="car-area">
+                    <div id="car-logo">
+                        <img src="./pic/kialogo.png" alt="">
+                        <p>기아자동차</p>
+                        <h3>모닝</h3>
+                    </div>
+                    <div id="car-img">
+                        <img src="./pic/kiamorning.png" alt="">
+                    </div>
+                </div>
+                <div id="price-area">
+                    <div id="car-name">
+                        <div id="car-tag">제휴사차량</div>
+                        <p>[제휴사 차량] 모닝 가솔린</p>
+                        <span>21~24년식 5인승</span>
+                    </div>
+                    <div id="car-price">
+                        <div id="price-text">
+                            <div id="sale-tag">회원할인</div>
+                            <span id="price-regular">403,500원</span>
+                            <span id="price-sale">100,870원</span>
+                        </div>
+                        <a href="">
+                            <div id="b-button">
+                                예약
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="car-container">
+                <div id="car-area">
+                    <div id="car-logo">
+                        <img src="./pic/kialogo.png" alt="">
+                        <p>기아자동차</p>
+                        <h3>모닝</h3>
+                    </div>
+                    <div id="car-img">
+                        <img src="./pic/kiamorning.png" alt="">
+                    </div>
+                </div>
+                <div id="price-area">
+                    <div id="car-name">
+                        <div id="car-tag">제휴사차량</div>
+                        <p>[제휴사 차량] 모닝 가솔린</p>
+                        <span>21~24년식 5인승</span>
+                    </div>
+                    <div id="car-price">
+                        <div id="price-text">
+                            <div id="sale-tag">회원할인</div>
+                            <span id="price-regular">403,500원</span>
+                            <span id="price-sale">100,870원</span>
+                        </div>
+                        <a href="">
+                            <div id="b-button">
+                                예약
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="rent-sidebar">
             <div id="side-bar">
                 <h2>선택한 여정</h2>
+                <a href="">
+                    <div id="rent-location">
+                        <h2>지점선택</h2>
+                    </div>
+                </a>
+                <div id="rent-date" name="rent-date">
+                    <a href="">
+                        <p>10/01 ~ 10/03</p>
+                        <button>수정</button>
+                    </a>
+                </div>
+                <a href="">
+                    <div id="rent-btn">
+                        재검색
+                    </div>
+                </a>
             </div>
         </div>
     </div>
+    <script>
+        flatpickr("#rent-date", {
+            mode: "range", // range 모드로 설정
+            dateFormat: "Y-m-d", // 날짜 형식
+            minDate: "today" // 최소 선택 날짜를 오늘로 설정
+        });
+    </script>
 </body>
 </html>
