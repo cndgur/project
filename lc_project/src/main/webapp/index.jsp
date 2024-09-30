@@ -26,6 +26,14 @@
     integrity="sha256-Fb0zP4jE3JHqu+IBB9YktLcSjI1Zc6J2b6gTjB0LpoM=" 
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./css/main.css">
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="header"></div>
@@ -176,7 +184,12 @@
     <div class="swiper mySwiper2">
       <div class="swiper-wrapper">
           <div class="swiper-slide">
-              <img src="./pic/tjdnf.jfif" alt="">
+              <img src="./pic/tjdnf.jfif" onclick="enrollPage()">
+              <script>
+		            	function enrollPage(){
+		            		location.href="<%=contextPath%>/travel.info"
+		            	}
+		            </script>
               <button class="btn_like" onclick="">like</button>
               <p>캐리비안베이</p>
           </div>

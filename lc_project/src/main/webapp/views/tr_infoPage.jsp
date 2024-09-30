@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>방구석여행</title>
-    <link rel="icon" href="pic/logo.png"/>
-    <link rel="apple-touch-icon" href="pic/logo.png"/>
+    <link rel="icon" href="../pic/logo.png"/>
+    <link rel="apple-touch-icon" href="../pic/logo.png"/>
     <!-- jQuery -->
     <script 
         src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -25,6 +25,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
     <style>
         body{
+        	font-family: "Noto Sans KR", sans-serif;
 		    margin: 0px;
 		    padding: 0px;
 		}
@@ -32,18 +33,13 @@
             width: 20%;
         }
         .content{
-            font-family: "Noto Sans KR", sans-serif;
+            
             width: 60%;
         }
         #wrapper{
             width: 100%;
         }
-        header{
-            width: 100%;
-        }
-        tr{
-            height: 40px;
-        }
+        
         .test{
             position: relative;
         }
@@ -77,7 +73,10 @@
             border-top: 2px solid rgb(0, 0, 0);
             border-bottom: 2px solid rgb(0, 0, 0);
         }
-        button{
+        #category{
+        	float: right;
+        }
+        #category button{
             width: 60px;
             height: 17px;
             font-size: 9px;
@@ -152,7 +151,7 @@
             padding: 10px;
             position: absolute;
             top: 40%;
-            right: 20px;
+            right: 50px;
             border-radius: 15px;
             text-align: center;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -164,7 +163,7 @@
             position: fixed;
             top: 50%; /* 화면 중앙에 고정 */
             transform: translateY(-50%);
-            right: 20px;
+            right: 50px;
             z-index: 100;
         }
         .bpcontent{
@@ -224,12 +223,10 @@
     </style>
 </head>
 <body>
-    <header style="background: #ddeeeb;" >
-        <h1>header</h1>
-    </header>
+    <%@include file="./common/header.jsp" %>
     <div id="wrapper">
         <table>
-            <tr>
+            <tr style="height:50px">
                 <td class="side"></td>
                 <td></td>
                 <td></td>
@@ -238,17 +235,17 @@
             </tr>
             <tr>
                 <td class="side"></td>
-                <td colspan="3" style="text-align: center; vertical-align: bottom;"><h1><b>구 서도역</b></h1></td>
+                <td colspan="3" style="text-align: center; vertical-align: bottom;"><b style="font-size: 40px;">구 서도역</b></td>
                 <td></td>
                 <td></td>
                 <td class="side"></td>
             </tr>
             <tr>
                 <td class="side"></td>
-                <td style="width: 20%;" ><img src="pic/heart.png" width="20px" height="20px" style=""> <b>907</b></td>
-                <td style="width: 20%; text-align: center; vertical-align: top;"><h6>전북 남원시</h6></td>
-                <td style="width: 20%;">
-                    <div>
+                <td class="side" ><img src="<%=contextPath %>/pic/heart.png" width="20px" height="20px"><b>907</b></td>
+                <td style="width: 20%; text-align: center; vertical-align: top;"><b style="font-size: 20px;">전북 남원시</b></td>
+                <td class="side">
+                    <div id="category">
                         <button style="cursor:context-menu;">#1인여행</button>
                         <button style="cursor:context-menu;">#힐링</button>
                         <button style="cursor:context-menu;">#여행</button>
@@ -310,12 +307,12 @@
                 <td class="side" id="pic"></td>
                 <td colspan="3">
                     <div class="bpcontent">
-                        <img src="pic/picture.png" width="100%" height="100%">
+                        <img src="<%=contextPath %>/pic/picture.png" width="100%" height="100%">
                     </div>
                     <div class="spcontent" style="margin-bottom: 100px; width: 100%;">
-                        <img src="pic/picture.png">
-                        <img src="pic/picture.png">
-                        <img src="pic/picture.png">
+                        <img src="<%=contextPath %>/pic/picture.png">
+                        <img src="<%=contextPath %>/pic/picture.png">
+                        <img src="<%=contextPath %>/pic/picture.png">
                     </div>
                 </td>
                 <td></td>
@@ -324,22 +321,22 @@
                     <div class="sidenav">
                         <div class="sidenav-header">찜한 여행지</div>
                         <div class="sidenav-item">
-                            <img src="pic/picture.png" alt="구 서도역">
+                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
                             <p><strong>구 서도역</strong></p>
                             <p>전북 남원시</p>
                         </div>
                         <div class="sidenav-item">
-                            <img src="pic/picture.png" alt="구 서도역">
+                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
                             <p><strong>구 서도역</strong></p>
                             <p>전북 남원시</p>
                         </div>
                         <div class="sidenav-item">
-                            <img src="pic/picture.png" alt="구 서도역">
+                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
                             <p><strong>구 서도역</strong></p>
                             <p>전북 남원시</p>
                         </div>
                         <div>
-                            <img src="pic/arrow.png" style="align-self: center; margin-bottom: 0px; cursor: pointer;">
+                            <img src="<%=contextPath %>/pic/arrow.png" style="align-self: center; margin-bottom: 0px; cursor: pointer;">
                         </div>
                         <div class="sidenav-footer">
                             <button><div style="vertical-align: middle;">여행지 기준<br>호텔 검색</div></button>
@@ -440,37 +437,42 @@
                     </div>
                     <div class="recommendtr" style="margin-bottom: 100px;">
                         <div class="recommendtr-item">
-                            <img src="pic/picture.png" alt="구 서도역">
+                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
                             <p><strong>구 서도역</strong></p>
                             <p>전북 남원시</p>
                         </div>
                         <div class="recommendtr-item">
-                            <img src="pic/picture.png" alt="구 서도역">
+                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
                             <p><strong>구 서도역</strong></p>
                             <p>전북 남원시</p>
                         </div>
                         <div class="recommendtr-item">
-                            <img src="pic/picture.png" alt="구 서도역">
+                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
                             <p><strong>구 서도역</strong></p>
                             <p>전북 남원시</p>
                         </div>
                         <div class="recommendtr-item">
-                            <img src="pic/picture.png" alt="구 서도역">
+                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
                             <p><strong>구 서도역</strong></p>
                             <p>전북 남원시</p>
                         </div>
                         <div class="recommendtr-item">
-                            <img src="pic/picture.png" alt="구 서도역">
+                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
                             <p><strong>구 서도역</strong></p>
                             <p>전북 남원시</p>
                         </div>
                         <div class="recommendtr-item">
-                            <img src="pic/picture.png" alt="구 서도역">
+                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
+                            <p><strong>구 서도역</strong></p>
+                            <p>전북 남원시</p>
+                        </div>
+                        <div class="recommendtr-item">
+                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
                             <p><strong>구 서도역</strong></p>
                             <p>전북 남원시</p>
                         </div>
                         <div style="margin-left:40px; display: flex; justify-content: center; align-items: center;">
-                            <img src="pic/sidearrow.png" style="align-self: center; margin-bottom: 0px; cursor: pointer;">
+                            <img src="<%=contextPath %>/pic/sidearrow.png" style="align-self: center; margin-bottom: 0px; cursor: pointer;">
                         </div>
                     </div>
                 </td>
@@ -480,8 +482,6 @@
             </tr>
         </table>
     </div>
-    <footer>
-        <h1>footer</h1>
-    </footer>
+    <%@include file="./common/footer.jsp" %>
 </body>
 </html>
