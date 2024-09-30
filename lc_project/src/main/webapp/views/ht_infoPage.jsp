@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>방구석여행</title>
-    <link rel="icon" href="pic/logo.png"/>
-    <link rel="apple-touch-icon" href="pic/logo.png"/>
+    <link rel="icon" href="../pic/logo.png"/>
+    <link rel="apple-touch-icon" href="../pic/logo.png"/>
     <!-- jQuery -->
     <script 
         src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -18,9 +18,6 @@
         integrity="sha256-Fb0zP4jE3JHqu+IBB9YktLcSjI1Zc6J2b6gTjB0LpoM="
         crossorigin="anonymous"></script>
         
-    <!-- 부트스트램 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,7 +25,8 @@
 
     <script src="https://cdn.portone.io/v2/browser-sdk.js"></script>
     <style>
-        body{
+    	
+        #system-ui{
 		    margin: 0px;
 		    padding: 0px;
 		}
@@ -40,20 +38,10 @@
             width: 60%;
         }
         #wrapper{
+        	margin-top: 40px;
             width: 100%;
         }
-        header{
-            width: 100%;
-        }
-        button{
-            width: 60px;
-            height: 17px;
-            font-size: 9px;
-            border: 0px;
-            background: #7bbcb0;
-            color: white;
-            border-radius: 40px;
-        }
+        
         #serv > button{
             width: 80px;
             height: 23px;
@@ -71,13 +59,17 @@
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
             margin-right: 20px;
         }
+        .picture td{
+        	padding: 0px;
+        }
         .large-image {
             width: 100%;
-            height: 381px;
+            height: 405px;
         }
         .small-image {
-            width: 100%;
-            height: 190px;
+        	margin: 1px;
+            width: 98%;
+            height: 197px;
         }
         .reservepic{
             border-radius: 15px;
@@ -100,7 +92,15 @@
             height: 30px;
             font-size: 15px;
             float: right;
+            border: 0px;
+            background: #7bbcb0;
+            color: white;
+            border-radius: 40px;
         }
+		#reviewArrow{
+			width: 50px; 
+			height: 70px;
+		}
         .recommendtr {
             width: 100%;
             height: 200px;
@@ -129,12 +129,15 @@
         .recommendtr p {
             margin: 5px 0;
         }
+        .roomti{
+        	text-align: left; 
+        	vertical-align:bottom; 
+        	width: 100%;
+        }
     </style>
 </head>
-<body>
-    <header style="background: #ddeeeb;" >
-        <h1>header</h1>
-    </header>
+<body id=system-ui>
+    <%@include file="./common/header.jsp" %>
     <div id="wrapper">
         <table>
             <tr>
@@ -144,26 +147,26 @@
                 <td></td>
                 <td class="side"></td>
             </tr>
-            <tr id="picture">
+            <tr class="picture">
                 <td class="side"></td>
                 <td rowspan="2">
-                    <img src="pic/ht_main_pic.png" class="large-image">
+                    <img src="../pic/ht_main_pic.png" class="large-image">
                 </td>
                 <td>
-                    <img src="pic/ht_sub_pic1.png" class="small-image">
+                    <img src="../pic/ht_sub_pic1.png" class="small-image">
                 </td>
                 <td>
-                    <img src="pic/ht_sub_pic2.png" class="small-image">
+                    <img src="../pic/ht_sub_pic2.png" class="small-image" style="border-start-end-radius: 10px;">
                 </td>
                 <td class="side"></td>
             </tr>
-            <tr>
+            <tr class="picture">
                 <td class="side"></td>
                 <td>
-                    <img src="pic/ht_sub_pic3.png" class="small-image">
+                    <img src="../pic/ht_sub_pic3.png" class="small-image">
                 </td>
                 <td>
-                    <img src="pic/ht_sub_pic1.png" class="small-image">
+                    <img src="../pic/ht_sub_pic1.png" class="small-image" style="border-end-end-radius: 10px;">
                 </td>
                 <td class="side"></td>
             </tr>
@@ -171,19 +174,19 @@
                 <td class="side"></td>
                 <td colspan="3" class="content">
                     <div style="margin-top: 100px;">
-                        <h6>호텔 • 5성급</h6>
-                        <h2><b>힐튼 경주</b></h2>
+                        <b style="font-size: 15px; margin-bottem: 0px">호텔 • 5성급</b><br>
+                        <b style="font-size: 30px">힐튼 경주</b>
                         <hr>
                     </div>
                     <div style="margin-bottom: 20px;">
-                        <img src="pic/star.png"><b>  9.3</b><span style="color: #959c9b;">  294명 평가</span>
+                        <img src="../pic/star.png"><b>  9.3</b><span style="color: #959c9b;">  294명 평가</span>
                     </div>
                     <div style="display: flex;">
                         <div class="reviewcon">
                             <table>
                                 <tr>
                                     <div style="padding-top: 10px;">
-                                        <img src="pic/star.png"><b>  8.5</b>
+                                        <img src="../pic/star.png"><b>  8.5</b>
                                     </div>
                                 </tr>
                                 <tr>
@@ -206,7 +209,7 @@
                             <table>
                                 <tr>
                                     <div style="padding-top: 10px;">
-                                        <img src="pic/star.png"><b>  9.0</b>
+                                        <img src="../pic/star.png"><b>  9.0</b>
                                     </div>
                                 </tr>
                                 <tr>
@@ -229,7 +232,7 @@
                             <table>
                                 <tr>
                                     <div style="padding-top: 10px;">
-                                        <img src="pic/star.png"><b>  10</b>
+                                        <img src="../pic/star.png"><b>  10</b>
                                     </div>
                                 </tr>
                                 <tr>
@@ -249,7 +252,7 @@
                             </table>
                         </div>
                         <div style="margin-left:20px; display: flex; justify-content: center; align-items: center; cursor: pointer">
-                            <img src="pic/ht_larrow.png" width="50px" height="70px" >
+                            <img src="../pic/ht_larrow.png" id="reviewArrow">
                         </div>
                     </div>
                     <br><br>
@@ -296,15 +299,15 @@
                 <td class="side"></td>
                 <td colspan="3" class="content">
                     <div>
-                        <h2 style="font-family: Noto Sans KR;">객실 선택</h2>
+                        <h2>객실 선택</h2>
                         <hr>
                         <div style="width: 100%; height: 250px; background: #ddeeeb; margin-bottom: 50px; border-radius: 15px;">
                             <table>
                                 <tr>
                                     <td rowspan="2">
-                                        <img src="pic/picture.png" class="reservepic">
+                                        <img src="../pic/picture.png" class="reservepic">
                                     </td>
-                                    <td style="text-align: left; vertical-align:bottom; width: 100%;"><b><h3>[숙박 페스타] 디럭스 트윈 (세미싱글 2개)</h3></b></td>
+                                    <td class="roomti"><b><h3>[숙박 페스타] 디럭스 트윈 (세미싱글 2개)</h3></b></td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -328,9 +331,9 @@
                             <table>
                                 <tr>
                                     <td rowspan="2">
-                                        <img src="pic/picture.png" class="reservepic">
+                                        <img src="../pic/picture.png" class="reservepic">
                                     </td>
-                                    <td style="text-align: left; vertical-align:bottom; width: 100%;"><b><h3>[숙박 페스타] 디럭스 패밀리 (킹베드+세미싱글)</h3></b></td>
+                                    <td class="roomti"><b><h3>[숙박 페스타] 디럭스 패밀리 (킹베드+세미싱글)</h3></b></td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -368,7 +371,7 @@
                             <table>
                                 <tr>
                                     <td rowspan="2">
-                                        <img src="pic/picture.png" class="reservepic">
+                                        <img src="../pic/picture.png" class="reservepic">
                                     </td>
                                     <td style="text-align: left; vertical-align:bottom; width: 100%;"><b><h3>[숙박 페스타] 온돌</h3></b></td>
                                 </tr>
@@ -394,7 +397,7 @@
                             <table>
                                 <tr>
                                     <td rowspan="2">
-                                        <img src="pic/picture.png" class="reservepic">
+                                        <img src="../pic/picture.png" class="reservepic">
                                     </td>
                                     <td style="text-align: left; vertical-align:bottom; width: 100%;"><b><h3>[숙박 페스타] [2인 조식] 디럭스 더블 (킹베드)</h3></b></td>
                                 </tr>
@@ -547,8 +550,6 @@
             </tr>
         </table>
     </div>
-    <footer style="background: #959c9b;">
-        <h1>footer</h1>
-    </footer>
+     <%@include file="../views/common/footer.jsp"%>
 </body>
 </html>

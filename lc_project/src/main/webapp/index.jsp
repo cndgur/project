@@ -1,554 +1,280 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+    String contextPath = request.getContextPath(); // 컨텍스트 경로 얻기
+%>
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>방구석여행</title>
-    <link rel="icon" href="pic/logo.png"/>
-    <link rel="apple-touch-icon" href="pic/logo.png"/>
-    <!-- jQuery -->
-    <script 
-        src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-        crossorigin="anonymous"></script>
-    <script
-        src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"
-        integrity="sha256-Fb0zP4jE3JHqu+IBB9YktLcSjI1Zc6J2b6gTjB0LpoM="
-        crossorigin="anonymous"></script>
-        
-    <!-- 부트스트램 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>방구석 여행</title>
+  <link rel="icon" href="./pic/logo.png"/>
+  <link rel="apple-touch-icon" href="./pic/logo.png"/>
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
-
-    <script src="https://cdn.portone.io/v2/browser-sdk.js"></script>
-    <style>
-        body{
-		    margin: 0px;
-		    padding: 0px;
-		}
-        .side{
-            width: 20%;
-        }
-        .content{
-            font-family: "Noto Sans KR", sans-serif;
-            width: 60%;
-        }
-        #wrapper{
-            width: 100%;
-        }
-        header{
-            width: 100%;
-        }
-        button{
-            width: 60px;
-            height: 17px;
-            font-size: 9px;
-            border: 0px;
-            background: #7bbcb0;
-            color: white;
-            border-radius: 40px;
-        }
-        #serv > button{
-            width: 80px;
-            height: 23px;
-            font-size: 12px;
-            border: 1px solid #7bbcb0;
-            background: #FFFFFF;
-            color: #000000;
-            border-radius: 40px;
-            margin: 5px;
-        }
-        .reviewcon{
-            width: 30%;
-            height: 220px;
-            color: rgb(0, 0, 0);
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-            margin-right: 20px;
-        }
-        .large-image {
-            width: 100%;
-            height: 381px;
-        }
-        .small-image {
-            width: 100%;
-            height: 190px;
-        }
-        .reservepic{
-            border-radius: 15px;
-            width:200px;
-            height:200px;
-            display: flex; 
-            justify-content: center; 
-            align-items: center;
-            margin: 20px;
-        }
-        .container{
-            width: 97%; 
-            height: 150px; 
-            background: white; 
-            border-radius: 15px;
-            margin-right: 20px;
-        }
-        #reviewbt{
-            width: 100px;
-            height: 30px;
-            font-size: 15px;
-            float: right;
-        }
-        .recommendtr {
-            width: 100%;
-            height: 200px;
-            display: flex;
-            background-color: #ddeeeb;
-            padding: 10px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        .recommendtr-item {
-            margin: 15px;
-            background-color: #ddeeeb;
-            border-radius: 15px;
-            margin-bottom: 0px;
-            padding: 0px;
-            
-        }
-
-        .recommendtr img {
-            width: auto;
-            height: 80px;
-            border-radius: 10px;
-        }
-
-        .recommendtr p {
-            margin: 5px 0;
-        }
-    </style>
+  <!-- JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  
+  <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+    
+    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js" 
+    integrity="sha256-Fb0zP4jE3JHqu+IBB9YktLcSjI1Zc6J2b6gTjB0LpoM=" 
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-    <header style="background: #ddeeeb;" >
-        <h1>header</h1>
-    </header>
-    <div id="wrapper">
-        <table>
-            <tr>
-                <td class="side"></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td class="side"></td>
-            </tr>
-            <tr id="picture">
-                <td class="side"></td>
-                <td rowspan="2">
-                    <img src="pic/ht_main_pic.png" class="large-image">
-                </td>
-                <td>
-                    <img src="pic/ht_sub_pic1.png" class="small-image">
-                </td>
-                <td>
-                    <img src="pic/ht_sub_pic2.png" class="small-image">
-                </td>
-                <td class="side"></td>
-            </tr>
-            <tr>
-                <td class="side"></td>
-                <td>
-                    <img src="pic/ht_sub_pic3.png" class="small-image">
-                </td>
-                <td>
-                    <img src="pic/ht_sub_pic1.png" class="small-image">
-                </td>
-                <td class="side"></td>
-            </tr>
-            <tr id="info">
-                <td class="side"></td>
-                <td colspan="3" class="content">
-                    <div style="margin-top: 100px;">
-                        <h6>호텔 • 5성급</h6>
-                        <h2><b>힐튼 경주</b></h2>
-                        <hr>
-                    </div>
-                    <div style="margin-bottom: 20px;">
-                        <img src="pic/star.png"><b>  9.3</b><span style="color: #959c9b;">  294명 평가</span>
-                    </div>
-                    <div style="display: flex;">
-                        <div class="reviewcon">
-                            <table>
-                                <tr>
-                                    <div style="padding-top: 10px;">
-                                        <img src="pic/star.png"><b>  8.5</b>
-                                    </div>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 10px;">
-                                        경주 보문단지내 위치한 힐튼 호텔 경주 시내 관광을 하기보단 보문단지내 휴식을 하며 쉬기 좋음
-                                        언제나 늘 항상 친절하며 룸 컨디션이 좋음 
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td style="float: right; padding-right: 10px;">예다니</td>
-                                </tr>
-                                <tr >
-                                    <td style="float: right; padding-right: 10px;">24.07.06</td>
-                                    
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="reviewcon">
-                            <table>
-                                <tr>
-                                    <div style="padding-top: 10px;">
-                                        <img src="pic/star.png"><b>  9.0</b>
-                                    </div>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 10px;">
-                                        경주 보문단지내 위치한 힐튼 호텔 경주 시내 관광을 하기보단 보문단지내 휴식을 하며 쉬기 좋음
-                                        언제나 늘 항상 친절하며 룸 컨디션이 좋음 
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td style="float: right; padding-right: 10px;">예다니</td>
-                                </tr>
-                                <tr >
-                                    <td style="float: right; padding-right: 10px;">24.07.06</td>
-                                    
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="reviewcon">
-                            <table>
-                                <tr>
-                                    <div style="padding-top: 10px;">
-                                        <img src="pic/star.png"><b>  10</b>
-                                    </div>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 10px;">
-                                        경주 보문단지내 위치한 힐튼 호텔 경주 시내 관광을 하기보단 보문단지내 휴식을 하며 쉬기 좋음
-                                        언제나 늘 항상 친절하며 룸 컨디션이 좋음 
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td style="float: right; padding-right: 10px;">예다니</td>
-                                </tr>
-                                <tr >
-                                    <td style="float: right; padding-right: 10px;">24.07.06</td>
-                                    
-                                </tr>
-                            </table>
-                        </div>
-                        <div style="margin-left:20px; display: flex; justify-content: center; align-items: center; cursor: pointer">
-                            <img src="pic/ht_larrow.png" width="50px" height="70px" >
-                        </div>
-                    </div>
-                    <br><br>
-                    <!-- * 카카오맵 - 지도퍼가기 -->
-                    <!-- 1. 지도 노드 -->
-                    <div id="daumRoughmapContainer1727164187996" class="root_daum_roughmap root_daum_roughmap_landing" style="width: 100%;"></div>
-
-                    <!--
-                        2. 설치 스크립트
-                        * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
-                    -->
-                    <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
-
-                    <!-- 3. 실행 스크립트 -->
-                    <script charset="UTF-8">
-                        new daum.roughmap.Lander({
-                            "timestamp" : "1727164187996",
-                            "key" : "2kq5w",
-                            "mapWidth" : "100%",
-                            "mapHeight" : "360"
-                        }).render();
-                    </script>
-                </td>
-                <td></td>
-                <td></td>
-                <td class="side"></td>
-            </tr>
-            <tr id="info">
-                <td class="side"></td>
-                <td colspan="3" class="content">
-                    <div style="margin-top: 100px; margin-bottom: 100px;">
-                        <h2>서비스 및 부대시설</h2>
-                        <hr>
-                        <div id="serv">
-                            <button><b>피트니스</b></button><button><b>수영장</b></button><button><b>무선인터넷</b></button><button><b>레스토랑</b></button><button><b>금연</b></button>
-                        </div>
-                    </div>
-                </td>
-                <td></td>
-                <td></td>
-                <td class="side"></td>
-            </tr>
-            <tr id="talk">
-                <td class="side"></td>
-                <td colspan="3" class="content">
-                    <div>
-                        <h2 style="font-family: Noto Sans KR;">객실 선택</h2>
-                        <hr>
-                        <div style="width: 100%; height: 250px; background: #ddeeeb; margin-bottom: 50px; border-radius: 15px;">
-                            <table>
-                                <tr>
-                                    <td rowspan="2">
-                                        <img src="pic/picture.png" class="reservepic">
-                                    </td>
-                                    <td style="text-align: left; vertical-align:bottom; width: 100%;"><b><h3>[숙박 페스타] 디럭스 트윈 (세미싱글 2개)</h3></b></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="container">
-                                            입실 15:00
-                                            퇴실 11:00<br>
-                                            148,500원<br>
-                                            객실정보
-                                            기준2인 · 최대2인<br>
-                                            추가정보
-                                            성인 4명 투숙 불가<br>
-                                            <button id="reviewbt">예약하기</button>
-                                        </div>
-                                    </td>
-                                    
-                                </tr>
-                            </table>
-                            
-                        </div>
-                        <div style="width: 100%; height: 250px; background: #ddeeeb; margin-bottom: 50px; border-radius: 15px;">
-                            <table>
-                                <tr>
-                                    <td rowspan="2">
-                                        <img src="pic/picture.png" class="reservepic">
-                                    </td>
-                                    <td style="text-align: left; vertical-align:bottom; width: 100%;"><b><h3>[숙박 페스타] 디럭스 패밀리 (킹베드+세미싱글)</h3></b></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="container">
-                                            입실 15:00
-                                            퇴실 11:00<br>
-                                            148,500원<br>
-                                            객실정보
-                                            기준2인 · 최대2인<br>
-                                            추가정보
-                                            성인 4명 투숙 불가<br>
-                                            <button id="reviewbt" onclick="requestPay()">예약하기</button>
-                                        </div>
-                                    </td>  
-                                </tr>
-                            </table>
-                            <script>
-                                function requestPay() {
-                                  PortOne.requestPayment({
-                                    storeId: "store-e4038486-8d83-41a5-acf1-844a009e0d94",
-                                    paymentId: "test12",
-                                    orderName: "테스트 결제",
-                                    totalAmount: 100,
-                                    currency: "KRW",
-                                    channelKey: "channel-key-01764171-b249-4c16-9d18-e9174fa8e611",
-                                    payMethod: "EASY_PAY",
-                                    easyPay: {
-                                      easyPayProvider: "KAKAOPAY",
-                                    },
-                                  });
-                                }
-                                </script>
-                        </div>
-                        <div style="width: 100%; height: 250px; background: #ddeeeb; margin-bottom: 50px; border-radius: 15px;">
-                            <table>
-                                <tr>
-                                    <td rowspan="2">
-                                        <img src="pic/picture.png" class="reservepic">
-                                    </td>
-                                    <td style="text-align: left; vertical-align:bottom; width: 100%;"><b><h3>[숙박 페스타] 온돌</h3></b></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="container">
-                                            입실 15:00
-                                            퇴실 11:00<br>
-                                            148,500원<br>
-                                            객실정보
-                                            기준2인 · 최대2인<br>
-                                            추가정보
-                                            성인 4명 투숙 불가<br>
-                                            <button id="reviewbt">예약하기</button>
-                                        </div>
-                                    </td>
-                                    
-                                </tr>
-                            </table>
-                            
-                        </div>
-                        <div style="width: 100%; height: 250px; background: #ddeeeb; margin-bottom: 50px; border-radius: 15px;">
-                            <table>
-                                <tr>
-                                    <td rowspan="2">
-                                        <img src="pic/picture.png" class="reservepic">
-                                    </td>
-                                    <td style="text-align: left; vertical-align:bottom; width: 100%;"><b><h3>[숙박 페스타] [2인 조식] 디럭스 더블 (킹베드)</h3></b></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="container">
-                                            입실 15:00
-                                            퇴실 11:00<br>
-                                            148,500원<br>
-                                            객실정보
-                                            기준2인 · 최대2인<br>
-                                            추가정보
-                                            성인 4명 투숙 불가<br>
-                                            <button id="reviewbt">예약하기</button>
-                                        </div>
-                                    </td>
-                                    
-                                </tr>
-                            </table>
-                            
-                        </div>
-                        <div style="width: 100%; height: 250px; background: #ddeeeb; margin-bottom: 50px; border-radius: 15px;">
-                            <table>
-                                <tr>
-                                    <td rowspan="2">
-                                        <img src="pic/picture.png" class="reservepic">
-                                    </td>
-                                    <td style="text-align: left; vertical-align:bottom; width: 100%;"><b><h3>[숙박 페스타] 디럭스 트윈 (세미싱글 2개)</h3></b></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="container">
-                                            입실 15:00
-                                            퇴실 11:00<br>
-                                            148,500원<br>
-                                            객실정보
-                                            기준2인 · 최대2인<br>
-                                            추가정보
-                                            성인 4명 투숙 불가<br>
-                                            <button id="reviewbt">예약하기</button>
-                                        </div>
-                                    </td>
-                                    
-                                </tr>
-                            </table>
-                            
-                        </div>
-                        <div>
-                            <!-- 리뷰나올영역-->
-                        </div>
-                    </div>
-                </td>
-                <td></td>
-                <td></td>
-                <td class="side"></td>
-            </tr>
-            <tr id="recommendht">
-                <td class="side"></td>
-                <td colspan="3" class="content">
-                    <div>
-                        <h2>근처 다른 호텔</h2>
-                        <hr>
-                    </div>
-                    <div class="recommendtr" style="margin-bottom: 100px;">
-                        <div class="recommendtr-item">
-                            <img src="pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div style="margin-left:40px; display: flex; justify-content: center; align-items: center;">
-                            <img src="pic/sidearrow.png" style="align-self: center; margin-bottom: 0px; cursor: pointer;">
-                        </div>
-                    </div>
-                </td>
-                <td></td>
-                <td></td>
-                <td class="side"></td>
-            </tr>
-            <tr id="recommendtr">
-                <td class="side"></td>
-                <td colspan="3" class="content">
-                    <div>
-                        <h2>근처 다른 여행지</h2>
-                        <hr>
-                    </div>
-                    <div class="recommendtr" style="margin-bottom: 100px;">
-                        <div class="recommendtr-item">
-                            <img src="pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div style="margin-left:40px; display: flex; justify-content: center; align-items: center;">
-                            <img src="pic/sidearrow.png" style="align-self: center; margin-bottom: 0px; cursor: pointer;">
-                        </div>
-                    </div>
-                </td>
-                <td></td>
-                <td></td>
-                <td class="side"></td>
-            </tr>
-        </table>
+    <div class="header"></div>
+        <div class="header_pic">
+            <img src="./pic/caption.jpg" alt="" class="main_img">
+        </div>
+        <div class="header_bar"></div>
+            <div class="header_func">
+                <a href="" class="to_main">
+                    <div class="header_name">방구석여행</div>
+                    <img src="./pic/logo.png" alt="" class="header_main_logo">
+                </a>
+                <a href="" class="to_login">
+                    <div><input type="button" class="header_btn" value="Sign in"></div>
+                </a>
+            </div>
+       <div class="textarea_container">
+            <div class="search_text">
+                <input type="button" value="찾아보기" class="search_button1">
+                <input type="button" value="지역" class="search_button2">
+                <input type="button" value="호텔" class="search_button3">
+                <input type="button" value="여행지" class="search_button4">
+            </div>
+        
+            <div class="textarea">
+                <input type="text" class="input_1" placeholder="출발지" onfocus="this.placeholder = ''" onblur="this.placeholder = '출발지';"></input>
+                <input type="text" class="input_2" placeholder="가고싶은 곳" onfocus="this.placeholder = ''" onblur="this.placeholder = '가고싶은 곳';"></input>
+                <input type="text" class="input_3" placeholder="출발 날짜 입력" onfocus="this.placeholder = ''" onblur="this.placeholder = '출발 날짜 입력';"></input>
+                <input type="text" class="input_4" placeholder="도착 날짜 입력" onfocus="this.placeholder = ''" onblur="this.placeholder = '도착 날짜 입력';"></input>
+                <a href=""><img src="./pic/검색-removebg-preview.png" alt="" class="research_btn"></a>
+            </div>
+        </div>
     </div>
-    <footer style="background: #959c9b;">
-        <h1>footer</h1>
-    </footer>
+   <table id="mainPage_tagSelect_table" align="center">
+    <tr>
+        <td id="mainPage_tagSelect_table_title" colspan="8">나만의 맞춤 여행!</td>
+    </tr>
+    <tr>
+        <td colspan="8">태그로 쉽게 찾아보세요!</td>
+    </tr>
+    <tr>
+        <td colspan="8">관심 있는 여행 스타일을 선택하면 당신에게 딱 맞는 여행지를 추천해드립니다. 지금 떠날 준비 되셨나요?</td>
+    </tr>
+    <tr>
+        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="가족여행">#가족여행</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="친구들과">#친구들과</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="1인여행">#1인여행</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="커플여행">#커플여행</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="반려동물">#반려동물</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="동호회/친목모임">#동호회/친목모임</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="워크숍">#워크숍</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="아이들과">#아이들과</button></td>
+    </tr>
+    <tr>
+        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="놀이동산">#놀이동산</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="빠지">#빠지</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="패러글라이딩">#패러글라이딩</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="번지점프">#번지점프</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="워터파크">#워터파크</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="스키장">#스키장</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="루지">#루지</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="클라이밍">#클라이밍</button></td>
+    </tr>
+    <tr>
+        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="맛집">#맛집</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="전통시장">#전통시장</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="카페">#카페</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="힐링">#힐링</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="글램핑">#글램핑</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="자연">#자연</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="역사">#역사</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="문화">#문화</button></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><button id="mainPage_tagSubmit">검색하기</button></td>
+    </tr>
+    <script>
+        //누른 버튼의 클래스를 가져와서 클래스가 unselect이면 select로 변경
+        function mainPage_tagSelect(button){
+          button.className = button.className === 'unselected_tag' ? 'selected_tag' : 'unselected_tag';
+        }
+    </script>
+	</table>
+	<br><br><br>
+	
+	<div id="wrap-main-content1">
+		  <div id="main-content1">
+		    <div id="title">
+		      <h1>"떠나볼래? 지역 따라 골라보는 여행 스팟"</h1>
+		      <p>이제는 골라 떠나는 재미! <br> 인기 만점 지역별 여행지에서 특별한 순간을 만들어보세요!</p>
+		    </div>
+		    <div class="swiper mySwiper2">
+		      <div class="swiper-wrapper">
+		          <div class="swiper-slide">
+		            <img src="./pic/tjdnf.jfif" alt="">
+		            <p>서울<br>숙소2000개</p>
+		          </div>        
+		          <div class="swiper-slide">
+		            <img src="./pic/qntks.jfif" alt="">
+		            <p>부산<br>숙소2000개</p>
+		          </div>
+		          <div class="swiper-slide">
+		            <img src="./pic/wpwn.jfif" alt="">
+		            <p>제주<br>숙소2000개</p>
+		          </div>
+		          <div class="swiper-slide">
+		            <img src="./pic/rudwn.jfif" alt="">
+		            <p>경주<br>숙소2000개</p>
+		          </div>
+		          <div class="swiper-slide">
+		            <img src="./pic/thrch.jfif" alt="">
+		            <p>속초<br>숙소2000개</p>
+		          </div>
+		          <div class="swiper-slide">
+		            <img src="./pic/wpwn.jfif" alt="">
+		            <p>제주<br>숙소2000개</p>
+		          </div>
+		          <div class="swiper-slide">
+		            <img src="./pic/rudwn.jfif" alt="">
+		            <p>경주<br>숙소2000개</p>
+		          </div>
+		          <div class="swiper-slide">
+		            <img src="./pic/thrch.jfif" alt="">
+		            <p>속초<br>숙소2000개</p>
+		          </div>
+		      </div>
+		      <div class="swiper-button-next"></div>
+		      <div class="swiper-button-prev"></div>
+		    </div>
+		  </div>
+	</div>
+  
+  <br>
+
+<div id="main-content2">
+    <div id="title">
+      <h1>"인기 폭발 여행지, 예약은 서둘러야 제맛!"</h1>
+      <p>요즘 핫한 여행지, 나만 빼고 다 갔다? <br>
+        더 늦기 전에 떠나세요! 인기 폭발 중인 여행지에서 잊지 못할 순간을 만들어보세요!</p>
+    </div>
+    <div class="swiper mySwiper2">
+      <div class="swiper-wrapper">
+          <div class="swiper-slide">
+              <img src="./pic/tjdnf.jfif" alt="">
+              <button class="btn_like" onclick="">like</button>
+              <p>캐리비안베이</p>
+          </div>
+          <div class="swiper-slide">
+              <img src="./pic/qntks.jfif" alt="">
+              <button class="btn_like" onclick="">like</button>
+              <p>에버랜드</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="./pic/wpwn.jfif" alt="">
+            <button class="btn_like" onclick="">like</button>
+            <p>송도해상케이블카</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="./pic/rudwn.jfif" alt="">
+            <button class="btn_like" onclick="">like</button>
+            <p>남이섬</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="./pic/thrch.jfif" alt="">
+            <button class="btn_like" onclick="">like</button>
+            <p>롯데월드</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="./pic/thrch.jfif" alt="">
+            <button class="btn_like" onclick="">like</button>
+            <p>알파카목장</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="./pic/tjdnf.jfif" alt="">
+            <button class="btn_like" onclick="">like</button>
+            <p>캐리비안베이</p>
+          </div>
+          <div class="swiper-slide">
+              <img src="./pic/qntks.jfif" alt="">
+              <button class="btn_like" onclick="">like</button>
+              <p>에버랜드</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="./pic/wpwn.jfif" alt="">
+            <button class="btn_like" onclick="">like</button>
+            <p>송도해상케이블카</p>
+          </div>          <div class="swiper-slide">
+            <img src="./pic/qntks.jfif" alt="">
+            <button class="btn_like" onclick="">like</button>
+            <p>에버랜드</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="./pic/wpwn.jfif" alt="">
+            <button class="btn_like" onclick="">like</button>
+            <p>송도해상케이블카</p>
+          </div>          <div class="swiper-slide">
+            <img src="./pic/qntks.jfif" alt="">
+            <button class="btn_like" onclick="">like</button>
+            <p>에버랜드</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="./pic/wpwn.jfif" alt="">
+            <button class="btn_like" onclick="">like</button>
+            <p>송도해상케이블카</p>
+          </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+  <script>
+	    const mySwiper2 = new Swiper(".mySwiper2", {
+	        slidesPerView: 'auto', // 한 번에 표시할 슬라이드 수
+	        spaceBetween: 20, // 슬라이드 간의 간격
+	        breakpoints : {
+	            700: {
+	            slidesPerView: 4,
+	            spaceBetween: 20,
+	            },
+	            1024: {
+	                slidesPerView: 6,
+	                spaceBetween: 20,
+	            }
+	        }, 
+	        slideToclickedSlide : true,
+	        navigation: {
+	            nextEl: ".swiper-button-next", 
+	            prevEl: ".swiper-button-prev"
+	        },
+	        loop: true,
+	        freemode : true,
+	        watchOverflow : true,
+	        centeredSlides : false,
+	        initialSlide: 0,
+	        slideOffsetAfter: 10,
+	        slideOffsetBefore: 10
+	    });
+    
+	    $('.btn_like').click(function () {
+	      $(this).toggleClass("on")
+	    });
+	</script>
+	 <%@include file="views/common/footer.jsp"%>
 </body>
 </html>
