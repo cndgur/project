@@ -18,9 +18,20 @@
     <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js" 
     integrity="sha256-Fb0zP4jE3JHqu+IBB9YktLcSjI1Zc6J2b6gTjB0LpoM=" 
     crossorigin="anonymous"></script>
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  
+  <!-- css -->
   <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
+  <!-- 검색부분 -->
     <div class="header"></div>
         <div class="header_pic">
             <img src="./pic/caption.jpg" alt="" class="main_img">
@@ -29,7 +40,7 @@
             <div class="header_func">
                 <a href="" class="to_main">
                     <div class="header_name">방구석여행</div>
-                    <img src="./pic/logo].png" alt="" class="header_main_logo">
+                    <img src="./pic/logo.png" alt="" class="header_main_logo">
                 </a>
                 <a href="" class="to_login">
                     <div><input type="button" class="header_btn" value="Sign in"></div>
@@ -52,6 +63,7 @@
             </div>
         </div>
     </div>
+  <!-- 태그로 검색부분 -->
   <table id="mainPage_tagSelect_table" align="center">
     <tr>
         <td id="mainPage_tagSelect_table_title" colspan="8">나만의 맞춤 여행!</td>
@@ -110,121 +122,134 @@
     </script>
 </table>
 
-  <div id="main-content1">
-    <h1>대한민국 여행지</h1>
-    <div class="swiper mySwiper2">
-      <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="./pic/tjdnf.jfif" alt="">
-            <p>서울<br>숙소2000개</p>
-          </div>        
-          <div class="swiper-slide">
-            <img src="./pic/qntks.jfif" alt="">
-            <p>부산<br>숙소2000개</p>
-          </div>
-          <div class="swiper-slide">
-            <img src="./pic/wpwn.jfif" alt="">
-            <p>제주<br>숙소2000개</p>
-          </div>
-          <div class="swiper-slide">
-            <img src="./pic/rudwn.jfif" alt="">
-            <p>경주<br>숙소2000개</p>
-          </div>
-          <div class="swiper-slide">
-            <img src="./pic/thrch.jfif" alt="">
-            <p>속초<br>숙소2000개</p>
-          </div>
-          <div class="swiper-slide">
-            <img src="./pic/wpwn.jfif" alt="">
-            <p>제주<br>숙소2000개</p>
-          </div>
-          <div class="swiper-slide">
-            <img src="./pic/rudwn.jfif" alt="">
-            <p>경주<br>숙소2000개</p>
-          </div>
-          <div class="swiper-slide">
-            <img src="./pic/thrch.jfif" alt="">
-            <p>속초<br>숙소2000개</p>
-          </div>
-      </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-    </div>
+<!-- 지역별, 인기순부분 -->
+<div id="main-content1">
+  <div id="title">
+    <h1>"떠나볼래? 지역 따라 골라보는 여행 스팟"</h1>
+    <p>이제는 골라 떠나는 재미! <br> 인기 만점 지역별 여행지에서 특별한 순간을 만들어보세요!</p>
   </div>
-  <br>
+  <div class="swiper mySwiper2">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="./pic/tjdnf.jfif" alt="">
+          <p>서울<br>숙소2000개</p>
+        </div>        
+        <div class="swiper-slide">
+          <img src="./pic/qntks.jfif" alt="">
+          <p>부산<br>숙소2000개</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="./pic/wpwn.jfif" alt="">
+          <p>제주<br>숙소2000개</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="./pic/rudwn.jfif" alt="">
+          <p>경주<br>숙소2000개</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="./pic/thrch.jfif" alt="">
+          <p>속초<br>숙소2000개</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="./pic/wpwn.jfif" alt="">
+          <p>제주<br>숙소2000개</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="./pic/rudwn.jfif" alt="">
+          <p>경주<br>숙소2000개</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="./pic/thrch.jfif" alt="">
+          <p>속초<br>숙소2000개</p>
+        </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>
+<br>
 
-  <div id="main-content2">
-    <h1>요즘 HOT! 인기 놀거리</h1>
-    <div class="swiper mySwiper2">
-      <div class="swiper-wrapper">
-          <div class="swiper-slide">
-              <img src="./pic/tjdnf.jfif" alt="">
-              <button class="btn_like" onclick="">like</button>
-              <p>캐리비안베이</p>
-          </div>
-          <div class="swiper-slide">
-              <img src="./pic/qntks.jfif" alt="">
-              <button class="btn_like" onclick="">like</button>
-              <p>에버랜드</p>
-          </div>
-          <div class="swiper-slide">
-            <img src="./pic/wpwn.jfif" alt="">
-            <button class="btn_like" onclick="">like</button>
-            <p>송도해상케이블카</p>
-          </div>
-          <div class="swiper-slide">
-            <img src="./pic/rudwn.jfif" alt="">
-            <button class="btn_like" onclick="">like</button>
-            <p>남이섬</p>
-          </div>
-          <div class="swiper-slide">
-            <img src="./pic/thrch.jfif" alt="">
-            <button class="btn_like" onclick="">like</button>
-            <p>롯데월드</p>
-          </div>
-          <div class="swiper-slide">
-            <img src="./pic/thrch.jfif" alt="">
-            <button class="btn_like" onclick="">like</button>
-            <p>알파카목장</p>
-          </div>
-          <div class="swiper-slide">
+<div id="main-content2">
+  <div id="title">
+    <h1>"인기 폭발 여행지, 예약은 서둘러야 제맛!"</h1>
+    <p>요즘 핫한 여행지, 나만 빼고 다 갔다? <br>
+      더 늦기 전에 떠나세요! 인기 폭발 중인 여행지에서 잊지 못할 순간을 만들어보세요!</p>
+  </div>
+  <div class="swiper mySwiper2">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
             <img src="./pic/tjdnf.jfif" alt="">
             <button class="btn_like" onclick="">like</button>
             <p>캐리비안베이</p>
-          </div>
-          <div class="swiper-slide">
-              <img src="./pic/qntks.jfif" alt="">
-              <button class="btn_like" onclick="">like</button>
-              <p>에버랜드</p>
-          </div>
-          <div class="swiper-slide">
-            <img src="./pic/wpwn.jfif" alt="">
-            <button class="btn_like" onclick="">like</button>
-            <p>송도해상케이블카</p>
-          </div>          <div class="swiper-slide">
+        </div>
+        <div class="swiper-slide">
             <img src="./pic/qntks.jfif" alt="">
             <button class="btn_like" onclick="">like</button>
             <p>에버랜드</p>
-          </div>
-          <div class="swiper-slide">
-            <img src="./pic/wpwn.jfif" alt="">
-            <button class="btn_like" onclick="">like</button>
-            <p>송도해상케이블카</p>
-          </div>          <div class="swiper-slide">
+        </div>
+        <div class="swiper-slide">
+          <img src="./pic/wpwn.jfif" alt="">
+          <button class="btn_like" onclick="">like</button>
+          <p>송도해상케이블카</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="./pic/rudwn.jfif" alt="">
+          <button class="btn_like" onclick="">like</button>
+          <p>남이섬</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="./pic/thrch.jfif" alt="">
+          <button class="btn_like" onclick="">like</button>
+          <p>롯데월드</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="./pic/thrch.jfif" alt="">
+          <button class="btn_like" onclick="">like</button>
+          <p>알파카목장</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="./pic/tjdnf.jfif" alt="">
+          <button class="btn_like" onclick="">like</button>
+          <p>캐리비안베이</p>
+        </div>
+        <div class="swiper-slide">
             <img src="./pic/qntks.jfif" alt="">
             <button class="btn_like" onclick="">like</button>
             <p>에버랜드</p>
-          </div>
-          <div class="swiper-slide">
-            <img src="./pic/wpwn.jfif" alt="">
-            <button class="btn_like" onclick="">like</button>
-            <p>송도해상케이블카</p>
-          </div>
-      </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
+        </div>
+        <div class="swiper-slide">
+          <img src="./pic/wpwn.jfif" alt="">
+          <button class="btn_like" onclick="">like</button>
+          <p>송도해상케이블카</p>
+        </div>          <div class="swiper-slide">
+          <img src="./pic/qntks.jfif" alt="">
+          <button class="btn_like" onclick="">like</button>
+          <p>[경주]루지월드</p>
+          <p>"환상의 세계, 롯데월드에서 현실이 되다! 짜릿한 어트랙션과 다채로운 공연, 사계절 내내 즐길 수 있는 꿈같은 테마파크로 지금 떠나보세요!"</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="./pic/wpwn.jfif" alt="">
+          <button class="btn_like" onclick="">like</button>
+          <p>[서울]롯데월드</p>
+          <p>"환상의 세계, 롯데월드에서 현실이 되다! 짜릿한 어트랙션과 다채로운 공연, 사계절 내내 즐길 수 있는 꿈같은 테마파크로 지금 떠나보세요!"</p>
+        </div>          <div class="swiper-slide">
+          <img src="./pic/qntks.jfif" alt="">
+          <button class="btn_like" onclick="">like</button>
+          <p>[서울]롯데월드</p>
+          <p>"환상의 세계, 롯데월드에서 현실이 되다! 짜릿한 어트랙션과 다채로운 공연, 사계절 내내 즐길 수 있는 꿈같은 테마파크로 지금 떠나보세요!"</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="./pic/wpwn.jfif" alt="">
+          <button class="btn_like" onclick="">like</button>
+          <p>[서울]롯데월드</p>
+          <p>"환상의 세계, 롯데월드에서 현실이 되다! 짜릿한 어트랙션과 다채로운 공연, 사계절 내내 즐길 수 있는 꿈같은 테마파크로 지금 떠나보세요!"</p>
+        </div>
     </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
   </div>
+</div>
+<!-- 푸터 -->
   <div class="ftt">
     <div id="footer_wrapper">
         <div class="footer" id="footer_wrapper1">
@@ -295,6 +320,7 @@
         </div>
     </div>
   </div>
+
   <script>
     const mySwiper2 = new Swiper(".mySwiper2", {
         slidesPerView: 'auto', // 한 번에 표시할 슬라이드 수
