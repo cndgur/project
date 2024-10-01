@@ -14,6 +14,7 @@
   <link rel="apple-touch-icon" href="./pic/logo.png"/>
   <!-- CSS -->
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./css/main.css" />
 
   <!-- JS -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -46,6 +47,9 @@
                 <a href="" class="to_main">
                     <div class="header_name">방구석여행</div>
                     <img src="./pic/logo.png" alt="" class="header_main_logo">
+                </a>
+                <a onclick="location.href='login.me'" class="to_login">
+                    <div><input type="button" class="header_btn" value="로그인"></div>
                 </a>
                 <c:choose>
                 	<c:when test="${empty loginUser }">
@@ -125,13 +129,14 @@
         <td></td>
         <td></td>
         <td></td>
-        <td><button id="mainPage_tagSubmit">검색하기</button></td>
+        <td><button id="mainPage_tagSubmit" type="submit">검색하기</button></td>
     </tr>
     <script>
         //누른 버튼의 클래스를 가져와서 클래스가 unselect이면 select로 변경
         function mainPage_tagSelect(button){
           button.className = button.className === 'unselected_tag' ? 'selected_tag' : 'unselected_tag';
         }
+        //selected된 버튼의 value값을 
     </script>
 	</table>
 	<br><br><br>
