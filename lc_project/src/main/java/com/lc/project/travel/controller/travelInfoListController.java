@@ -1,22 +1,26 @@
-package com.lc.project.controller;
+package com.lc.project.travel.controller;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import com.lc.project.model.vo.Travel;
+import com.lc.project.travel.service.TravelService;
 
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 /**
- * Servlet implementation class travelInfoController
+ * Servlet implementation class travelInfoListController
  */
-public class travelInfoController extends HttpServlet {
+public class travelInfoListController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public travelInfoController() {
+    public travelInfoListController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -25,7 +29,10 @@ public class travelInfoController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("views/tr_infoPage.jsp").forward(request, response);
+		ArrayList<Travel> list = new TravelService().selectList();
+				
+		request.setAttribute("list", list);
+		response.sendRedirect(request.getContextPath());
 	}
 
 	/**

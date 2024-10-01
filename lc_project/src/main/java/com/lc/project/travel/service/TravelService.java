@@ -1,4 +1,4 @@
-package com.lc.project.service;
+package com.lc.project.travel.service;
 
 import java.sql.Connection;
 import java.util.ArrayList;
@@ -14,5 +14,11 @@ public class TravelService {
 		ArrayList<Travel> list = tDao.selectList(conn);
 		JDBCTemplate.close(conn);
 		return list;
+	}
+	public Travel selectTravel(String trName) {
+		Connection conn = JDBCTemplate.getConnection();
+		Travel t = tDao.selectTravel(conn,trName);
+		JDBCTemplate.close(conn);
+		return t;
 	}
 }
