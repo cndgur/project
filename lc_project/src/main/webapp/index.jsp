@@ -38,7 +38,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="header"></div>
+    <div class="header">
         <div class="header_pic">
             <img src="./pic/caption.jpg" alt="" class="main_img">
         </div>
@@ -64,6 +64,7 @@
 	                </c:otherwise>
 	            </c:choose>
             </div>
+       </div>
        <div class="textarea_container">
             <div class="search_text">
                 <input type="button" value="찾아보기" class="search_button1">
