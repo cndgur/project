@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
     String contextPath = request.getContextPath(); // 컨텍스트 경로 얻기
 %>
@@ -46,9 +47,24 @@
                     <div class="header_name">방구석여행</div>
                     <img src="./pic/logo.png" alt="" class="header_main_logo">
                 </a>
-                <a href="" class="to_login">
-                    <div><input type="button" class="header_btn" value="Sign in"></div>
+<<<<<<< HEAD
+                <a onclick="location.href='login.me'" class="to_login">
+                    <div><input type="button" class="header_btn" value="로그인"></div>
                 </a>
+=======
+                <c:choose>
+                	<c:when test="${empty loginUser }">
+                	<!-- 로그인 전 -->
+	                	<a onclick="location.href='login.me'" class="to_login">
+	                    	<div><input type="button" class="header_btn" value="로그인"></div>
+	                	</a>
+	                </c:when>
+	                <c:otherwise>
+	                <!-- 로그인 후 -->
+	                	<img id="hamBtn" src="../../pic/hamburgerBtn.png" alt="hamburgerBtn" width="30px" height="22px">
+	                </c:otherwise>
+	            </c:choose>
+>>>>>>> 561f13499fb2aa388f4812a6bcc3200be13b6e87
             </div>
        <div class="textarea_container">
             <div class="search_text">
@@ -115,13 +131,14 @@
         <td></td>
         <td></td>
         <td></td>
-        <td><button id="mainPage_tagSubmit">검색하기</button></td>
+        <td><button id="mainPage_tagSubmit" type="submit">검색하기</button></td>
     </tr>
     <script>
         //누른 버튼의 클래스를 가져와서 클래스가 unselect이면 select로 변경
         function mainPage_tagSelect(button){
           button.className = button.className === 'unselected_tag' ? 'selected_tag' : 'unselected_tag';
         }
+        //selected된 버튼의 value값을 
     </script>
 	</table>
 	<br><br><br>
@@ -183,71 +200,75 @@
     </div>
     <div class="swiper mySwiper2">
       <div class="swiper-wrapper">
+	    <c:forEach var="tra" items="${list}">
+	    	<div class="swiper-slide">
+	              <img src="./pic/tjdnf.jfif" onclick="trinfoPage()" style="cursor: pointer;">
+	              <script>
+	            	function trinfoPage(){
+	            		location.href="<%=contextPath%>/travel.info"
+	            	}
+			      </script>
+	              <button class="btn_like" onclick="">like</button>
+	              <p>캐리비안베이</p>
+	          </div>
+	    </c:forEach> 
           <div class="swiper-slide">
-              <img src="./pic/tjdnf.jfif" onclick="enrollPage()">
-              <script>
-		            	function enrollPage(){
-		            		location.href="<%=contextPath%>/travel.info"
-		            	}
-		            </script>
-              <button class="btn_like" onclick="">like</button>
-              <p>캐리비안베이</p>
-          </div>
-          <div class="swiper-slide">
-              <img src="./pic/qntks.jfif" alt="">
+          
+              <img src="./pic/qntks.jfif">
               <button class="btn_like" onclick="">like</button>
               <p>에버랜드</p>
           </div>
           <div class="swiper-slide">
-            <img src="./pic/wpwn.jfif" alt="">
+            <img src="./pic/wpwn.jfif">
             <button class="btn_like" onclick="">like</button>
             <p>송도해상케이블카</p>
           </div>
           <div class="swiper-slide">
-            <img src="./pic/rudwn.jfif" alt="">
+            <img src="./pic/rudwn.jfif">
             <button class="btn_like" onclick="">like</button>
             <p>남이섬</p>
           </div>
           <div class="swiper-slide">
-            <img src="./pic/thrch.jfif" alt="">
+            <img src="./pic/thrch.jfif">
             <button class="btn_like" onclick="">like</button>
             <p>롯데월드</p>
           </div>
           <div class="swiper-slide">
-            <img src="./pic/thrch.jfif" alt="">
+            <img src="./pic/thrch.jfif">
             <button class="btn_like" onclick="">like</button>
             <p>알파카목장</p>
           </div>
           <div class="swiper-slide">
-            <img src="./pic/tjdnf.jfif" alt="">
+            <img src="./pic/tjdnf.jfif">
             <button class="btn_like" onclick="">like</button>
             <p>캐리비안베이</p>
           </div>
           <div class="swiper-slide">
-              <img src="./pic/qntks.jfif" alt="">
+              <img src="./pic/qntks.jfif">
               <button class="btn_like" onclick="">like</button>
               <p>에버랜드</p>
           </div>
           <div class="swiper-slide">
-            <img src="./pic/wpwn.jfif" alt="">
+            <img src="./pic/wpwn.jfif">
             <button class="btn_like" onclick="">like</button>
             <p>송도해상케이블카</p>
           </div>          <div class="swiper-slide">
-            <img src="./pic/qntks.jfif" alt="">
+            <img src="./pic/qntks.jfif">
             <button class="btn_like" onclick="">like</button>
             <p>에버랜드</p>
           </div>
           <div class="swiper-slide">
-            <img src="./pic/wpwn.jfif" alt="">
+            <img src="./pic/wpwn.jfif">
             <button class="btn_like" onclick="">like</button>
             <p>송도해상케이블카</p>
-          </div>          <div class="swiper-slide">
-            <img src="./pic/qntks.jfif" alt="">
+          </div>          
+          <div class="swiper-slide">
+            <img src="./pic/qntks.jfif">
             <button class="btn_like" onclick="">like</button>
             <p>에버랜드</p>
           </div>
           <div class="swiper-slide">
-            <img src="./pic/wpwn.jfif" alt="">
+            <img src="./pic/wpwn.jfif">
             <button class="btn_like" onclick="">like</button>
             <p>송도해상케이블카</p>
           </div>
