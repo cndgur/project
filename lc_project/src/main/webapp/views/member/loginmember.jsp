@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>방구석 여행</title>
 <script src="./login.js" defer></script>
-    <link rel="icon" href="./img/logo].png"/>
+    <link rel="icon" href="./pic/logo.png"/>
     <link rel="apple-touch-icon" href="pic/logo.png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -125,6 +125,7 @@
 	    text-decoration: none;
 	    color: #00bfa5;
 	    margin: 0 5px;
+		cursor: pointer;
 	}
 	
 	.login-container .links a:hover {
@@ -145,14 +146,17 @@
 	    font-family: "Jua", sans-serif;
 	    font-size: medium;
 	}
+	.to_main{
+		cursor: pointer;
+	}
      </style>
 </head>
 <body>
 	<div class="header">
         <div class="logo">
-            <a href="" class="to_main">
+            <a onclick="location.href='index.jsp'" class="to_main">
                 <div class="header_name">방구석여행</div>
-                <img src="./img/logo-removebg-preview (2).png" alt="" class="header_main_logo">
+                <img src="./pic/logo.png" alt="" class="header_main_logo">
             </a>
         </div>
         <h1>이메일로 로그인하기</h1>
@@ -160,7 +164,7 @@
     
     <div class="login-container">
         <div class="logo_form">
-            <img src="./logo-removebg-preview (2).png" alt="logo">
+            <img src="./pic/logo.png" alt="logo">
             <p class="name">방구석여행</p>
         </div>
         <form>
@@ -171,7 +175,7 @@
         <div class="links">
             <a href="#">아이디찾기</a> |
             <a href="#">비밀번호 찾기</a> |
-            <a href="#">회원가입</a>
+            <a onclick="location.href='enroll.me'">회원가입</a>
         </div>
     </div>
 </body>

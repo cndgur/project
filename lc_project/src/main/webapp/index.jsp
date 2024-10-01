@@ -46,7 +46,7 @@
                     <div class="header_name">방구석여행</div>
                     <img src="./pic/logo.png" alt="" class="header_main_logo">
                 </a>
-                <a href="" class="to_login">
+                <a onclick="location.href='login.me'" class="to_login">
                     <div><input type="button" class="header_btn" value="Sign in"></div>
                 </a>
             </div>

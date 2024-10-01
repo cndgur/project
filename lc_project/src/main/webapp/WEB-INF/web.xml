@@ -29,4 +29,24 @@
     <servlet-name>login.me</servlet-name>
     <url-pattern>/login.me</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>enroll.me</display-name>
+    <servlet-name>enroll.me</servlet-name>
+    <servlet-class>com.lc.project.controller.MemberEnrollController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>enroll.me</servlet-name>
+    <url-pattern>/enroll.me</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>insert.me</display-name>
+    <servlet-name>insert.me</servlet-name>
+    <servlet-class>com.lc.project.controller.MemberInsertController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>insert.me</servlet-name>
+    <url-pattern>/insert.me</url-pattern>
+  </servlet-mapping>
 </web-app>
