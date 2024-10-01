@@ -48,7 +48,7 @@
                     <img src="./pic/logo.png" alt="" class="header_main_logo">
                 </a>
                 <a onclick="location.href='login.me'" class="to_login">
-                    <div><input type="button" class="header_btn" value="Sign in"></div>
+                    <div><input type="button" class="header_btn" value="로그인"></div>
                 </a>
             </div>
        <div class="textarea_container">
