@@ -49,4 +49,14 @@
     <servlet-name>insert.me</servlet-name>
     <url-pattern>/insert.me</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>travellist.info</display-name>
+    <servlet-name>travellist.info</servlet-name>
+    <servlet-class>com.lc.project.controller.travelInfoListController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>travellist.info</servlet-name>
+    <url-pattern>/travellist.info</url-pattern>
+  </servlet-mapping>
 </web-app>

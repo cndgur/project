@@ -182,17 +182,27 @@
       <p>요즘 핫한 여행지, 나만 빼고 다 갔다? <br>
         더 늦기 전에 떠나세요! 인기 폭발 중인 여행지에서 잊지 못할 순간을 만들어보세요!</p>
     </div>
+    <!-- 
+    <script>
+	    // DOMContentLoaded 이벤트
+	    document.addEventListener('DOMContentLoaded', function() {
+			location.href='<%=contextPath%>/travellist.info'
+	    });
+    </script>
+     -->
     <div class="swiper mySwiper2">
       <div class="swiper-wrapper">
+      <!--  
 	    <c:forEach var="tra" items="${list}">
 	    	<div class="swiper-slide">
-	              <img src=${tra.trPic} onclick="location.href='<%=contextPath%>/travel.info?travel=${tra.trName}'" style="cursor: pointer;">
+	              <img src="./pic/qntks.jfif" onclick="location.href='<%=contextPath%>/travel.info?travel=${tra.trName}'" style="cursor: pointer;">
 	              <button class="btn_like" onclick="">like</button>
 	              <p>${tra.trName}</p>
 	          </div>
-	    </c:forEach> 
+	    </c:forEach>
+	    --> 
           <div class="swiper-slide">
-          
+        
               <img src="./pic/qntks.jfif">
               <button class="btn_like" onclick="">like</button>
               <p>에버랜드</p>
@@ -251,11 +261,13 @@
             <button class="btn_like" onclick="">like</button>
             <p>송도해상케이블카</p>
           </div>
+          
       </div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
     </div>
   </div>
+  
   <script>
 	    const mySwiper2 = new Swiper(".mySwiper2", {
 	        slidesPerView: 'auto', // 한 번에 표시할 슬라이드 수

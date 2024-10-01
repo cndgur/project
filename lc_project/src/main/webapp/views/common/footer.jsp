@@ -31,7 +31,7 @@
             <table align="center">
                 <tr id="footer_left">
                     <th id="footer_logo_picture" rowspan="2" width="150px"><img src="<%=contextPath%>/pic/logo.png" alt="logo" width="100px" height="80px"></th>
-                    <td id="footer_logo_letter" rowspan="2" width="150px">방구석 여행</td>
+                    <td id="footer_logo_letter" rowspan="2" width="150px" style="font-weight: 0px">방구석 여행</td>
                     <th>COMPANY</th>
                     <th>HELP CENTER</th>
                     <th>CONTACT INFO</th>
