@@ -17,7 +17,11 @@
         src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"
         integrity="sha256-Fb0zP4jE3JHqu+IBB9YktLcSjI1Zc6J2b6gTjB0LpoM="
         crossorigin="anonymous"></script>
-        
+         <!--
+        2. 설치 스크립트
+        * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+    -->
+    <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>   
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -388,12 +392,6 @@
                     <!-- * 카카오맵 - 지도퍼가기 -->
                     <!-- 1. 지도 노드 -->
                     <div id="daumRoughmapContainer1726734009560" class="root_daum_roughmap root_daum_roughmap_landing" style="width: 100%; margin-bottom: 100px;"></div>
-
-                    <!--
-                        2. 설치 스크립트
-                        * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
-                    -->
-                    <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
 
                     <!-- 3. 실행 스크립트 -->
                     <script charset="UTF-8">

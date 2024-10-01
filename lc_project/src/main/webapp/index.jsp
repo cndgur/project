@@ -186,14 +186,9 @@
       <div class="swiper-wrapper">
 	    <c:forEach var="tra" items="${list}">
 	    	<div class="swiper-slide">
-	              <img src="./pic/tjdnf.jfif" onclick="trinfoPage()" style="cursor: pointer;">
-	              <script>
-	            	function trinfoPage(){
-	            		location.href="<%=contextPath%>/travel.info"
-	            	}
-			      </script>
+	              <img src=${tra.trPic} onclick="location.href='<%=contextPath%>/travel.info?travel=${tra.trName}'" style="cursor: pointer;">
 	              <button class="btn_like" onclick="">like</button>
-	              <p>캐리비안베이</p>
+	              <p>${tra.trName}</p>
 	          </div>
 	    </c:forEach> 
           <div class="swiper-slide">
