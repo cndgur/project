@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
     String contextPath = request.getContextPath(); // 컨텍스트 경로 얻기
 %>
@@ -183,71 +184,75 @@
     </div>
     <div class="swiper mySwiper2">
       <div class="swiper-wrapper">
+	    <c:forEach var="tra" items="${list}">
+	    	<div class="swiper-slide">
+	              <img src="./pic/tjdnf.jfif" onclick="trinfoPage()" style="cursor: pointer;">
+	              <script>
+	            	function trinfoPage(){
+	            		location.href="<%=contextPath%>/travel.info"
+	            	}
+			      </script>
+	              <button class="btn_like" onclick="">like</button>
+	              <p>캐리비안베이</p>
+	          </div>
+	    </c:forEach> 
           <div class="swiper-slide">
-              <img src="./pic/tjdnf.jfif" onclick="enrollPage()">
-              <script>
-		            	function enrollPage(){
-		            		location.href="<%=contextPath%>/travel.info"
-		            	}
-		            </script>
-              <button class="btn_like" onclick="">like</button>
-              <p>캐리비안베이</p>
-          </div>
-          <div class="swiper-slide">
-              <img src="./pic/qntks.jfif" alt="">
+          
+              <img src="./pic/qntks.jfif">
               <button class="btn_like" onclick="">like</button>
               <p>에버랜드</p>
           </div>
           <div class="swiper-slide">
-            <img src="./pic/wpwn.jfif" alt="">
+            <img src="./pic/wpwn.jfif">
             <button class="btn_like" onclick="">like</button>
             <p>송도해상케이블카</p>
           </div>
           <div class="swiper-slide">
-            <img src="./pic/rudwn.jfif" alt="">
+            <img src="./pic/rudwn.jfif">
             <button class="btn_like" onclick="">like</button>
             <p>남이섬</p>
           </div>
           <div class="swiper-slide">
-            <img src="./pic/thrch.jfif" alt="">
+            <img src="./pic/thrch.jfif">
             <button class="btn_like" onclick="">like</button>
             <p>롯데월드</p>
           </div>
           <div class="swiper-slide">
-            <img src="./pic/thrch.jfif" alt="">
+            <img src="./pic/thrch.jfif">
             <button class="btn_like" onclick="">like</button>
             <p>알파카목장</p>
           </div>
           <div class="swiper-slide">
-            <img src="./pic/tjdnf.jfif" alt="">
+            <img src="./pic/tjdnf.jfif">
             <button class="btn_like" onclick="">like</button>
             <p>캐리비안베이</p>
           </div>
           <div class="swiper-slide">
-              <img src="./pic/qntks.jfif" alt="">
+              <img src="./pic/qntks.jfif">
               <button class="btn_like" onclick="">like</button>
               <p>에버랜드</p>
           </div>
           <div class="swiper-slide">
-            <img src="./pic/wpwn.jfif" alt="">
+            <img src="./pic/wpwn.jfif">
             <button class="btn_like" onclick="">like</button>
             <p>송도해상케이블카</p>
           </div>          <div class="swiper-slide">
-            <img src="./pic/qntks.jfif" alt="">
+            <img src="./pic/qntks.jfif">
             <button class="btn_like" onclick="">like</button>
             <p>에버랜드</p>
           </div>
           <div class="swiper-slide">
-            <img src="./pic/wpwn.jfif" alt="">
+            <img src="./pic/wpwn.jfif">
             <button class="btn_like" onclick="">like</button>
             <p>송도해상케이블카</p>
-          </div>          <div class="swiper-slide">
-            <img src="./pic/qntks.jfif" alt="">
+          </div>          
+          <div class="swiper-slide">
+            <img src="./pic/qntks.jfif">
             <button class="btn_like" onclick="">like</button>
             <p>에버랜드</p>
           </div>
           <div class="swiper-slide">
-            <img src="./pic/wpwn.jfif" alt="">
+            <img src="./pic/wpwn.jfif">
             <button class="btn_like" onclick="">like</button>
             <p>송도해상케이블카</p>
           </div>
