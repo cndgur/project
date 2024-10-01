@@ -91,12 +91,12 @@
                         <div class="reviewcon" >
                             <table>
                                 <tr>
-                                    <td style="width: 30%;"><img src="pic/ht_main_pic.png" style="width: 300px; height: 200px; margin: 8px; border-radius: 15px;"></td>
+                                    <td style="width: 30%;"><img src="../../pic/ht_main_pic.png" style="width: 300px; height: 200px; margin: 8px; border-radius: 15px;"></td>
                                     <td style="width: 50%;">
                                         <div style="margin-left: 20px;">
                                             호텔<br>
                                         <h4>힐튼경주</h4><br>
-                                        <img src="pic/star.png">9.5
+                                        <img src="../../pic/star.png">9.5
                                         </div>
                                     </td>
                                     <td style="width: 20%; padding-top: 90px;">
@@ -109,12 +109,12 @@
                             </table>
                             <table>
                                 <tr>
-                                    <td style="width: 30%;"><img src="pic/ht_main_pic.png" style="width: 300px; height: 200px; margin: 8px; border-radius: 15px;"></td>
+                                    <td style="width: 30%;"><img src="../../pic/ht_main_pic.png" style="width: 300px; height: 200px; margin: 8px; border-radius: 15px;"></td>
                                     <td style="width: 50%;">
                                         <div style="margin-left: 20px;">
                                             호텔<br>
                                         <h4>힐튼경주</h4><br>
-                                        <img src="pic/star.png">9.5
+                                        <img src="../../pic/star.png">9.5
                                         </div>
                                     </td>
                                     <td style="width: 20%; padding-top: 90px;">
@@ -127,12 +127,12 @@
                             </table>
                             <table>
                                 <tr>
-                                    <td style="width: 30%;"><img src="pic/ht_main_pic.png" style="width: 300px; height: 200px; margin: 8px; border-radius: 15px;"></td>
+                                    <td style="width: 30%;"><img src="../../pic/ht_main_pic.png" style="width: 300px; height: 200px; margin: 8px; border-radius: 15px;"></td>
                                     <td style="width: 50%;">
                                         <div style="margin-left: 20px;">
                                             호텔<br>
                                         <h4>힐튼경주</h4><br>
-                                        <img src="pic/star.png">9.5
+                                        <img src="../../pic/star.png">9.5
                                         </div>
                                     </td>
                                     <td style="width: 20%; padding-top: 90px;">
@@ -145,12 +145,12 @@
                             </table>
                             <table>
                                 <tr>
-                                    <td style="width: 30%;"><img src="pic/ht_main_pic.png" style="width: 300px; height: 200px; margin: 8px; border-radius: 15px;"></td>
+                                    <td style="width: 30%;"><img src="../../pic/ht_main_pic.png" style="width: 300px; height: 200px; margin: 8px; border-radius: 15px;"></td>
                                     <td style="width: 50%;">
                                         <div style="margin-left: 20px;">
                                             호텔<br>
                                         <h4>힐튼경주</h4><br>
-                                        <img src="pic/star.png">9.5
+                                        <img src="../../pic/star.png">9.5
                                         </div>
                                     </td>
                                     <td style="width: 20%; padding-top: 90px;">
@@ -163,12 +163,12 @@
                             </table>
                             <table>
                                 <tr>
-                                    <td style="width: 30%;"><img src="pic/ht_main_pic.png" style="width: 300px; height: 200px; margin: 8px; border-radius: 15px;"></td>
+                                    <td style="width: 30%;"><img src="../../pic/ht_main_pic.png" style="width: 300px; height: 200px; margin: 8px; border-radius: 15px;"></td>
                                     <td style="width: 50%;">
                                         <div style="margin-left: 20px;">
                                             호텔<br>
                                         <h4>힐튼경주</h4><br>
-                                        <img src="pic/star.png">9.5
+                                        <img src="../../pic/star.png">9.5
                                         </div>
                                     </td>
                                     <td style="width: 20%; padding-top: 90px;">
