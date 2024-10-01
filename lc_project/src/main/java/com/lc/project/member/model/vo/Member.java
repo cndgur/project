@@ -4,8 +4,8 @@ public class Member {
 
 	private String email;
 	private String pwd;
-	private String phone;
 	private String name;
+	private String phone;
 	
 	public Member() {
 		super();
@@ -15,8 +15,8 @@ public class Member {
 		super();
 		this.email = email;
 		this.pwd = pwd;
-		this.phone = phone;
 		this.name = name;
+		this.phone = phone;
 	}
 
 	public String getEmail() {
@@ -35,14 +35,6 @@ public class Member {
 		this.pwd = pwd;
 	}
 
-	public String getPhone() {
-		return phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
 	public String getName() {
 		return name;
 	}
@@ -51,10 +43,20 @@ public class Member {
 		this.name = name;
 	}
 
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
 	@Override
 	public String toString() {
-		return "Member [email=" + email + ", pwd=" + pwd + ", phone=" + phone + ", name=" + name + "]";
+		return "Member [email=" + email + ", pwd=" + pwd + ", name=" + name + ", phone=" + phone + "]";
 	}
+
+	
 	
 	
 	

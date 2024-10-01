@@ -47,9 +47,18 @@
                     <div class="header_name">방구석여행</div>
                     <img src="./pic/logo.png" alt="" class="header_main_logo">
                 </a>
-                <a onclick="location.href='login.me'" class="to_login">
-                    <div><input type="button" class="header_btn" value="Sign in"></div>
-                </a>
+                <c:choose>
+                	<c:when test="${empty loginUser }">
+                	<!-- 로그인 전 -->
+	                	<a onclick="location.href='login.me'" class="to_login">
+	                    	<div><input type="button" class="header_btn" value="로그인"></div>
+	                	</a>
+	                </c:when>
+	                <c:otherwise>
+	                <!-- 로그인 후 -->
+	                	<img id="hamBtn" src="../../pic/hamburgerBtn.png" alt="hamburgerBtn" width="30px" height="22px">
+	                </c:otherwise>
+	            </c:choose>
             </div>
        <div class="textarea_container">
             <div class="search_text">

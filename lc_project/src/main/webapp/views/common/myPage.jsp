@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>마이페이지</title>
-    <link rel="icon" href="../pic/logo.png"/>
-    <link rel="apple-touch-icon" href="../pic/logo.png"/>
+    <link rel="icon" href="../../pic/logo.png"/>
+    <link rel="apple-touch-icon" href="../../pic/logo.png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
@@ -15,19 +15,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/lc/css/myPage.css">
+    <link rel="stylesheet" href="../../css/myPage.css">
 </head>
 <body>
     <div id="header_wrapper">
         <div id="header_wrapper1">
-            <div id="header_logo"><a href=""><img src="/lc/pic/logo.png" alt="" width="80" height="64"></a></div>
+            <div id="header_logo"><a href=""><img src="../../pic/logo.png" alt="" width="80" height="64"></a></div>
             <div id="header_letter"><a href="">방구석 여행</a></div>
         </div>
         <div id="header_wrapper2">
             <div id="header_toBusiness"><button>사업자 등록하기</button></div>
             <div id="myPage_Circle">
-                <img id="hamBtn" src="/lc/pic/hamburgerBtn.png" alt="hamburgerBtn" width="30px" height="22px">
-                <img id="avatar" src="/lc/pic/avatar.png" alt="avatar" width="35px" height="35px">
+                <img id="hamBtn" src="../../pic/hamburgerBtn.png" alt="hamburgerBtn" width="30px" height="22px">
+                <img id="avatar" src="../../pic/avatar.png" alt="avatar" width="35px" height="35px">
             </div>
         </div>
     </div>
@@ -36,7 +36,7 @@
         <div class="myPage"></div>
             <div id="profile">
                 <div id="img-area">
-                    <img src="../pic/profile.png">
+                    <img src="../../pic/profile.png">
                 </div>
                 <button>프로필 사진 변경</button>
                 <div id="text-area">
