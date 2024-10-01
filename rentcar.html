@@ -197,16 +197,14 @@
             text-decoration: none;
         }
 
-        #rent-date > a{
-            width: 100%;
-            display: flex;
-            justify-content: space-around;
-        }
-
-        #rent-date > a button{
+        #rent-date > input[type="text"]{
             border: none;
             background-color: #ffffff;
-            font-size: medium;
+            font-size: larger;
+        }
+
+        #rent-date > input:focus {
+            outline: none;
         }
 
         #rent-btn{
@@ -219,9 +217,10 @@
             border-radius: 0 0 10px 10px;
         }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 </head>
 <body>
     <header align="center">
@@ -393,11 +392,8 @@
                         <h2>지점선택</h2>
                     </div>
                 </a>
-                <div id="rent-date" name="rent-date">
-                    <a href="">
-                        <p>10/01 ~ 10/03</p>
-                        <button>수정</button>
-                    </a>
+                <div id="rent-date">
+                    <input type="text" id="demo">
                 </div>
                 <a href="">
                     <div id="rent-btn">
@@ -408,10 +404,24 @@
         </div>
     </div>
     <script>
-        flatpickr("#rent-date", {
-            mode: "range", // range 모드로 설정
-            dateFormat: "Y-m-d", // 날짜 형식
-            minDate: "today" // 최소 선택 날짜를 오늘로 설정
+        $('#demo').daterangepicker({
+            "locale": {
+                "format": "YYYY-MM-DD",
+                "separator": " ~ ",
+                "applyLabel": "확인",
+                "cancelLabel": "취소",
+                "fromLabel": "From",
+                "toLabel": "To",
+                "customRangeLabel": "Custom",
+                "weekLabel": "W",
+                "daysOfWeek": ["일", "월", "화", "수", "목", "금", "토"],
+                "monthNames": ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+            },
+            "startDate": new Date(),
+            "endDate": new Date(),
+            "drops": "auto"
+        }, function (start, end, label) {
+            console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
         });
     </script>
 </body>
