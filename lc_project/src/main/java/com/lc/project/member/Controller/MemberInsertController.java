@@ -33,7 +33,7 @@ public class MemberInsertController extends HttpServlet {
 		Member m = new Member(
 								request.getParameter("email"),
 								request.getParameter("pwd"),
-								request.getParameter("phone"),
+								request.getParameter("tel"),
 								request.getParameter("name")
 							);
 		int result = new MemberServiceImpl().insertMember(m);

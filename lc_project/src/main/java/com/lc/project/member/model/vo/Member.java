@@ -5,18 +5,18 @@ public class Member {
 	private String email;
 	private String pwd;
 	private String name;
-	private String phone;
+	private String tel;
 	
 	public Member() {
 		super();
 	}
 
-	public Member(String email, String pwd, String phone, String name) {
+	public Member(String email, String pwd, String name, String tel) {
 		super();
 		this.email = email;
 		this.pwd = pwd;
 		this.name = name;
-		this.phone = phone;
+		this.tel = tel;
 	}
 
 	public String getEmail() {
@@ -43,21 +43,17 @@ public class Member {
 		this.name = name;
 	}
 
-	public String getPhone() {
-		return phone;
+	public String getTel() {
+		return tel;
 	}
 
-	public void setPhone(String phone) {
-		this.phone = phone;
+	public void setTel(String tel) {
+		this.tel = tel;
 	}
 
 	@Override
 	public String toString() {
-		return "Member [email=" + email + ", pwd=" + pwd + ", name=" + name + ", phone=" + phone + "]";
+		return "Member [email=" + email + ", pwd=" + pwd + ", name=" + name + ", tel=" + tel + "]";
 	}
-
-	
-	
-	
 	
 }
