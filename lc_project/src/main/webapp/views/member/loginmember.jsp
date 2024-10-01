@@ -170,7 +170,7 @@
             <img src="./pic/logo.png" alt="logo">
             <p class="name">방구석여행</p>
         </div>
-        <form>
+        <form action="index.jsp" method="post">
             <input type="email" placeholder="이메일" required id="username">
             <input type="password" placeholder="비밀번호" required id="password">
             <button type="submit" id="btn">로그인</button>

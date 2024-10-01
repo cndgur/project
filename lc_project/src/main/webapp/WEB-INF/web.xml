@@ -23,7 +23,7 @@
     <description></description>
     <display-name>login.me</display-name>
     <servlet-name>login.me</servlet-name>
-    <servlet-class>com.lc.project.controller.MemberLoginController</servlet-class>
+    <servlet-class>com.lc.project.member.Controller.MemberLoginController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>login.me</servlet-name>
@@ -33,7 +33,7 @@
     <description></description>
     <display-name>enroll.me</display-name>
     <servlet-name>enroll.me</servlet-name>
-    <servlet-class>com.lc.project.controller.MemberEnrollController</servlet-class>
+    <servlet-class>com.lc.project.member.Controller.MemberEnrollController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>enroll.me</servlet-name>
@@ -43,7 +43,7 @@
     <description></description>
     <display-name>insert.me</display-name>
     <servlet-name>insert.me</servlet-name>
-    <servlet-class>com.lc.project.controller.MemberInsertController</servlet-class>
+    <servlet-class>com.lc.project.member.Controller.MemberInsertController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>insert.me</servlet-name>

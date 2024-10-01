@@ -1,4 +1,4 @@
-package com.lc.project.controller;
+package com.lc.project.member.Controller;
 
 import java.io.IOException;
 

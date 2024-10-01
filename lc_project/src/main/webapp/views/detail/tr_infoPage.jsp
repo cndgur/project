@@ -9,9 +9,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>방구석여행</title>
+<<<<<<< HEAD:lc_project/src/main/webapp/views/tr_infoPage.jsp
     <link rel="icon" href="../pic/logo.png"/>
     <link rel="apple-touch-icon" href="../pic/logo.png"/>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+=======
+    <link rel="icon" href="../../pic/logo.png"/>
+    <link rel="apple-touch-icon" href="/pic/logo.png"/>
+>>>>>>> cf57645f17629d8540085b6bf97439bdebe0881f:lc_project/src/main/webapp/views/detail/tr_infoPage.jsp
     <!-- jQuery -->
     <script 
         src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -29,6 +34,7 @@
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
+<<<<<<< HEAD:lc_project/src/main/webapp/views/tr_infoPage.jsp
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
 	  
@@ -233,9 +239,17 @@
             margin: 5px 0;
         }
     </style>
+=======
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    
+    <!-- css -->
+    <link rel="stylesheet" href="../../css/tr_infoPage.css">
+    
+>>>>>>> cf57645f17629d8540085b6bf97439bdebe0881f:lc_project/src/main/webapp/views/detail/tr_infoPage.jsp
 </head>
 <body>
-    <%@include file="./common/header.jsp" %>
+    <%@include file="../common/header.jsp" %>
     <div id="wrapper">
         <table>
             <tr style="height:50px">
@@ -488,6 +502,6 @@
             </tr>
         </table>
     </div>
-    <%@include file="./common/footer.jsp" %>
+    <%@include file="../common/footer.jsp" %>
 </body>
 </html>
