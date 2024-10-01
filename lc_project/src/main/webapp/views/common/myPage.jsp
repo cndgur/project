@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>마이페이지</title>
-    <link rel="icon" href="../pic/logo.png"/>
-    <link rel="apple-touch-icon" href="../pic/logo.png"/>
+    <link rel="icon" href="../../pic/logo.png"/>
+    <link rel="apple-touch-icon" href="../../pic/logo.png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
@@ -36,7 +36,11 @@
         <div class="myPage"></div>
             <div id="profile">
                 <div id="img-area">
+<<<<<<< HEAD
                     <img src="../..pic/profile.png">
+=======
+                    <img src="../../pic/profile.png">
+>>>>>>> 561f13499fb2aa388f4812a6bcc3200be13b6e87
                 </div>
                 <button>프로필 사진 변경</button>
                 <div id="text-area">

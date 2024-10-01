@@ -1,11 +1,14 @@
 package com.lc.project.controller;
 
+import java.io.IOException;
+
+import com.lc.project.member.Service.MemberServiceImpl;
+import com.lc.project.member.model.vo.Member;
+
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 /**
  * Servlet implementation class MemberInsertController
@@ -25,8 +28,20 @@ public class MemberInsertController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.setCharacterEncoding("UFT-8");
+		
+		Member m = new Member(
+								request.getParameter("email"),
+								request.getParameter("pwd"),
+								request.getParameter("phone"),
+								request.getParameter("name")
+							);
+		int result = new MemberServiceImpl().insertMember(m);
+		
+		if(result > 0) {
+			response.sendRedirect(request.getContextPath());
+		}
+				
 	}
 
 	/**
