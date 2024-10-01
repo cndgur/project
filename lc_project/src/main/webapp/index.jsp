@@ -14,6 +14,7 @@
   <link rel="apple-touch-icon" href="./pic/logo.png"/>
   <!-- CSS -->
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./css/main.css" />
 
   <!-- JS -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -47,11 +48,9 @@
                     <div class="header_name">방구석여행</div>
                     <img src="./pic/logo.png" alt="" class="header_main_logo">
                 </a>
-<<<<<<< HEAD
                 <a onclick="location.href='login.me'" class="to_login">
                     <div><input type="button" class="header_btn" value="로그인"></div>
                 </a>
-=======
                 <c:choose>
                 	<c:when test="${empty loginUser }">
                 	<!-- 로그인 전 -->
@@ -64,7 +63,6 @@
 	                	<img id="hamBtn" src="../../pic/hamburgerBtn.png" alt="hamburgerBtn" width="30px" height="22px">
 	                </c:otherwise>
 	            </c:choose>
->>>>>>> 561f13499fb2aa388f4812a6bcc3200be13b6e87
             </div>
        <div class="textarea_container">
             <div class="search_text">
