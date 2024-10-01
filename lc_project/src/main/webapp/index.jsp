@@ -115,13 +115,14 @@
         <td></td>
         <td></td>
         <td></td>
-        <td><button id="mainPage_tagSubmit">검색하기</button></td>
+        <td><button id="mainPage_tagSubmit" type="submit">검색하기</button></td>
     </tr>
     <script>
         //누른 버튼의 클래스를 가져와서 클래스가 unselect이면 select로 변경
         function mainPage_tagSelect(button){
           button.className = button.className === 'unselected_tag' ? 'selected_tag' : 'unselected_tag';
         }
+        //selected된 버튼의 value값을 
     </script>
 	</table>
 	<br><br><br>

@@ -7,9 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-<<<<<<< HEAD:footer/footer.html
     <link rel="stylesheet" href="./footer.css">
-=======
     <link rel="stylesheet" href="<%=contextPath %>/css/footer.css">
     <!-- jQuery -->
     <script 
@@ -27,7 +25,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
 
     <script src="https://cdn.portone.io/v2/browser-sdk.js"></script>
->>>>>>> 7f7adcb3dc553e0a77ca9c19ead696724febbb6d:lc_project/src/main/webapp/views/common/footer.jsp
 </head>
 <body>
     <div id="footer_wrapper">
