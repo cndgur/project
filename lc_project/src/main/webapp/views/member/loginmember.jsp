@@ -78,8 +78,10 @@
 	}
 	
 	.login-container img {
-	    width: 100px;
-	    height: 80px;
+	    width: 90px;
+	    height: 72px;
+		position: relative;
+		left: -15px;
 	}
 	
 	.login-container h2 {
@@ -136,7 +138,8 @@
 	    margin-top: -39px;
 	    padding-top: 5px;
 	    height: 100px;
-	    left: -52px;
+	    left: -42px;
+		top: 7px;
 	}
 	.name{
 	    position: relative;
@@ -144,7 +147,7 @@
 	    top: -53px;
 	    left: 89px;
 	    font-family: "Jua", sans-serif;
-	    font-size: medium;
+	    font-size: x-large;
 	}
 	.to_main{
 		cursor: pointer;

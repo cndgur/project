@@ -24,7 +24,7 @@
             <div id="header_logo"><a href="<%=contextPath %>"><img src="<%=contextPath %>/pic/logo.png" alt="" width="80" height="64"></a></div>
             <div id="header_letter"><a href="<%=contextPath %>">방구석여행</a></div>
         </div>
-        <div id="header_signIn"><button>Sign In</button></div>
+        <div id="header_signIn"><button>로그인</button></div>
     </div>
 </body>
 </html>
