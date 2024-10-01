@@ -1,4 +1,4 @@
-package com.lc.project.model.dao;
+package com.lc.project.travel.model.dao;
 
 import static com.lc.project.common.template.JDBCTemplate.*;
 
@@ -11,8 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Properties;
 
-
-import com.lc.project.model.vo.Travel;
+import com.lc.project.travel.model.vo.Travel;
 
 public class TravelDao {
 	private Properties prop = new Properties();

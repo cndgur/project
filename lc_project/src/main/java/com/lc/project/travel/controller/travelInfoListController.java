@@ -3,7 +3,7 @@ package com.lc.project.travel.controller;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import com.lc.project.model.vo.Travel;
+import com.lc.project.travel.model.vo.Travel;
 import com.lc.project.travel.service.TravelService;
 
 import jakarta.servlet.ServletException;

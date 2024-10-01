@@ -1,4 +1,4 @@
-package com.lc.project.model.vo;
+package com.lc.project.travel.model.vo;
 
 public class Travel {
 	private String trName;

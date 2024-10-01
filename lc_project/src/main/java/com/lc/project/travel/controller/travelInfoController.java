@@ -2,7 +2,7 @@ package com.lc.project.travel.controller;
 
 import java.io.IOException;
 
-import com.lc.project.model.vo.Travel;
+import com.lc.project.travel.model.vo.Travel;
 import com.lc.project.travel.service.TravelService;
 
 import jakarta.servlet.ServletException;
@@ -33,7 +33,7 @@ public class travelInfoController extends HttpServlet {
 		TravelService tService = new TravelService();
 		Travel t = tService.selectTravel(trName);
 		request.setAttribute("t", t);
-		request.getRequestDispatcher("views/tr_infoPage.jsp").forward(request, response);
+		request.getRequestDispatcher("views/detail/tr_infoPage.jsp").forward(request, response);
 	}
 
 	/**

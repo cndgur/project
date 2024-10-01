@@ -4,8 +4,8 @@ import java.sql.Connection;
 import java.util.ArrayList;
 
 import com.lc.project.common.template.JDBCTemplate;
-import com.lc.project.model.dao.TravelDao;
-import com.lc.project.model.vo.Travel;
+import com.lc.project.travel.model.dao.TravelDao;
+import com.lc.project.travel.model.vo.Travel;
 
 public class TravelService {
 	private TravelDao tDao = new TravelDao();

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="com.lc.project.model.vo.Travel"%>
+    pageEncoding="UTF-8" import="com.lc.project.travel.model.vo.Travel"%>
 <%
 	Travel t = (Travel)request.getAttribute("t");
 %>
