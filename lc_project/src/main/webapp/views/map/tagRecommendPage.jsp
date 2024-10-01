@@ -82,25 +82,25 @@
             <div id="tour">
                 <a href="">
                     <div id="content">
-                        <img src="../pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
+                        <img src="../../pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
                         <div id="text">별마로 천문대</div>
                     </div>
                 </a>
                 <a href="">
                     <div id="content">
-                        <img src="../pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
+                        <img src="../../pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
                         <div id="text">별마로 천문대</div>
                     </div>
                 </a>
                 <a href="">
                     <div id="content">
-                        <img src="../pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
+                        <img src="../../pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
                         <div id="text">별마로 천문대</div>
                     </div>
                 </a>
                 <a href="">
                     <div id="content">
-                        <img src="../pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
+                        <img src="../../pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
                         <div id="text">별마로 천문대</div>
                     </div>
                 </a>
@@ -110,35 +110,35 @@
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <img src="../pic/heart.png" alt="">
+                            <img src="../../pic/heart.png" alt="">
                             <p>경북 단양</p>
                         </div>
                         <div class="swiper-slide">
-                            <img src="../pic/ansclwo.webp" alt="">
+                            <img src="../../pic/ansclwo.webp" alt="">
                             <p>문치재?</p>
                         </div>
                         <div class="swiper-slide">
-                            <img src="../pic/heart.png" alt="">
+                            <img src="../../pic/heart.png" alt="">
                             <p>경북 단양</p>
                         </div>
                         <div class="swiper-slide">
-                            <img src="../pic/ansclwo.webp" alt="">
+                            <img src="../../pic/ansclwo.webp" alt="">
                             <p>문치재?</p>
                         </div>
                         <div class="swiper-slide">
-                            <img src="../pic/heart.png" alt="">
+                            <img src="../../pic/heart.png" alt="">
                             <p>경북 단양</p>
                         </div>
                         <div class="swiper-slide">
-                            <img src="../pic/ansclwo.webp" alt="">
+                            <img src="../../pic/ansclwo.webp" alt="">
                             <p>문치재?</p>
                         </div>
                         <div class="swiper-slide">
-                            <img src="../pic/heart.png" alt="">
+                            <img src="../../pic/heart.png" alt="">
                             <p>경북 단양</p>
                         </div>
                         <div class="swiper-slide">
-                            <img src="../pic/ansclwo.webp" alt="">
+                            <img src="../../pic/ansclwo.webp" alt="">
                             <p>문치재?</p>
                         </div>
                     </div>
