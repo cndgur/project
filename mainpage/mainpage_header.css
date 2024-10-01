@@ -1,0 +1,212 @@
+body{
+    font-family: "Noto Sans KR", system-ui;
+    margin: 0px;
+    padding: 0px;
+}
+
+.main_img{
+    position: relative;
+    width: 100%;
+    height: 600px;
+    margin: 0;
+}
+.header{
+    position: relative;
+}
+.header_bar{
+    background: transparent;
+    position: absolute;
+    left:0px;
+    top: 0px;
+    width: 100%;
+    height: 80px;
+    background-color : #000000; opacity : 26%;
+}
+.header_pic{
+    position :relative;
+}
+.header_name{
+    position: absolute;
+    left: 120px;
+    top: 25px;
+    font-weight: 500;
+    font-size: x-large;
+    color: white;
+    font-family: "Jua", sans-serif;
+}
+.header_btn{
+    position: absolute;
+    border-radius: 30px;
+    width: 120px;
+    height: 40px;
+    border: none;
+    background-color: #7BBCB0;
+    color: white;
+    font-family: "Noto Sans KR", system-ui;
+    right: 50px;
+    top: 19px;
+    cursor: pointer;
+}
+.header_main_logo{
+    position: absolute;
+    width: 80px;
+    height: 64px;
+    top: 8px;
+    left: 25px;
+}
+.textarea_container{
+    margin: auto;
+    position: relative;
+    top: -114px;
+}
+.textarea {
+    display: flex;
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: 0px 0px 20px 0px #000000;
+    width: 1100px;
+    height: 75px;
+    margin: auto;
+}
+.input_1{
+    width: 250px;
+    height: 75px;
+    border-radius: 50px 0px 0px 50px;
+    border: none;
+    outline: none;
+    background-color: rgb(255, 255, 255);
+    font-size: 25px;
+    font-family: "Noto Sans KR", system-ui;
+    box-sizing: border-box;
+    text-align: left;
+    padding: 24px;
+}
+.input_1::placeholder {
+    color: #000000;
+    font-size: 25px;
+    font-family: "Noto Sans KR", system-ui;
+}
+.input_2{
+    width: 250px;
+    height: 75px;
+    border: none;
+    outline: none;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    justify-content: center;
+    font-size: 25px;
+    font-family: "Noto Sans KR", system-ui;
+    box-sizing: border-box;
+    text-align: left;
+    padding: 24px;
+}
+.input_2::placeholder {
+    color: #000000;
+    font-size: 25px;
+    font-family: "Noto Sans KR", system-ui;
+}
+.input_3{
+    width: 250px;
+    height: 75px;
+    border: none;
+    outline: none;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    justify-content: center;
+    font-size: 25px;
+    font-family: "Noto Sans KR", system-ui;
+    box-sizing: border-box;
+    text-align: left;
+    padding: 24px;
+}
+.input_3::placeholder {
+    color: #000000;
+    font-size: 25px;
+    font-family: "Noto Sans KR", system-ui;
+}
+.input_4{
+    width: 250px;
+    height: 75px;
+    border-radius: 0px 50px 50px 0px;
+    border: none;
+    outline: none;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    justify-content: center;
+    font-size: 25px;
+    font-family: "Noto Sans KR", system-ui;
+    box-sizing: border-box;
+    text-align: left;
+    padding: 24px;
+}
+.input_4::placeholder {
+    color: #000000;
+    font-size: 25px;
+    font-family: "Noto Sans KR", system-ui;
+}
+textarea::placeholder{
+    font-size: larger;
+    color: #000000;
+    font-weight: bold;
+    padding-left: 30px ;
+    padding-top: 15px;
+}
+textarea{
+    width: 100%;
+    height: 6.25em;
+    border: none;
+    resize: none;
+}
+.research_btn{
+    position: relative;
+    width: 95px;
+    left: 13px;
+}
+.search_text{
+    width: 1100px;
+    padding-bottom: 20px;
+    margin: auto;
+}
+.search_button1{
+    box-sizing: border-box;
+    background-color: transparent;
+    border: none;
+    font-family: "Noto Sans KR", system-ui;
+    font-size: 35px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+.search_button2{
+    box-sizing: border-box;
+    background-color: transparent;
+    border: none;
+    font-family: "Noto Sans KR", system-ui;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+
+}
+.search_button3{
+    box-sizing: border-box;
+    background-color: transparent;
+    border: none;
+    font-family: "Noto Sans KR", system-ui;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+.search_button4{
+    box-sizing: border-box;
+    background-color: transparent;
+    border: none;
+    font-family: "Noto Sans KR", system-ui;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+
