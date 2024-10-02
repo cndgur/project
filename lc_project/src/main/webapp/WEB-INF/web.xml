@@ -59,4 +59,14 @@
     <servlet-name>travellist.info</servlet-name>
     <url-pattern>/travellist.info</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>recommend.tr</display-name>
+    <servlet-name>recommend.tr</servlet-name>
+    <servlet-class>com.lc.project.map.controller.TagRecommendController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>recommend.tr</servlet-name>
+    <url-pattern>/recommend.tr</url-pattern>
+  </servlet-mapping>
 </web-app>

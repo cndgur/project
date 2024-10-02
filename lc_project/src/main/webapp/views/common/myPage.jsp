@@ -36,11 +36,11 @@
         <div class="myPage"></div>
             <div id="profile">
                 <div id="img-area">
-<<<<<<< HEAD
+
                     <img src="../..pic/profile.png">
-=======
+
                     <img src="../../pic/profile.png">
->>>>>>> 561f13499fb2aa388f4812a6bcc3200be13b6e87
+
                 </div>
                 <button>프로필 사진 변경</button>
                 <div id="text-area">

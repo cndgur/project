@@ -1,25 +1,22 @@
-package com.lc.project.member.Controller;
-
-import java.io.IOException;
-
-import com.lc.project.member.Service.MemberServiceImpl;
-import com.lc.project.member.model.vo.Member;
+package com.lc.project.map.controller;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
- * Servlet implementation class MemberInsertController
+ * Servlet implementation class TagRecommendController
  */
-public class MemberInsertController extends HttpServlet {
+public class TagRecommendController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MemberInsertController() {
+    public TagRecommendController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,20 +25,8 @@ public class MemberInsertController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UFT-8");
-		
-		Member m = new Member(
-								request.getParameter("email"),
-								request.getParameter("pwd"),
-								request.getParameter("tel"),
-								request.getParameter("name")
-							);
-		int result = new MemberServiceImpl().insertMember(m);
-		
-		if(result > 0) {
-			response.sendRedirect(request.getContextPath());
-		}
-				
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
