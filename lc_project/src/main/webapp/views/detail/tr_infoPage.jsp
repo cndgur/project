@@ -328,7 +328,7 @@
                 <td class="side" id="pic"></td>
                 <td colspan="3">
                     <div class="bpcontent">
-                        <img src="<%=contextPath %>/pic/picture.png" width="100%" height="100%">
+                        <img src="<%=contextPath %><%=t.getPicInfo() %>" width="100%" height="100%">
                     </div>
                     <!-- 
                     <div class="spcontent" style="margin-bottom: 100px; width: 100%;">

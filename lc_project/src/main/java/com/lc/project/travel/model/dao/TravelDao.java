@@ -57,7 +57,7 @@ public class TravelDao {
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		Travel t = new Travel();
-		String sql = "SELECT ac_name, ac_address, tr_info, MAP_INFO, act_id, cnt FROM TB_TOUR WHERE AC_NAME = ?";
+		String sql = "SELECT ac_name, ac_address, tr_info, MAP_INFO, act_id, cnt, LOCATION FROM TB_TOUR JOIN TB_TOUR_PICTURE USING(AC_NAME) WHERE AC_NAME = ?";
 		System.out.println(sql);
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -70,6 +70,7 @@ public class TravelDao {
 				t.setMapInfo(rset.getString("MAP_INFO"));
 				t.setTrId(rset.getString("act_id"));
 				t.setCount(rset.getInt("cnt"));
+				t.setPicInfo(rset.getString("LOCATION"));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
