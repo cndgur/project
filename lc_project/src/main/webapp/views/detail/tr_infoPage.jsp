@@ -9,8 +9,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>방구석여행</title>
-    <link rel="icon" href="../pic/logo.png"/>
-    <link rel="apple-touch-icon" href="../pic/logo.png"/>
+    <link rel="icon" href="/lc/pic/logo.png"/>
+    <link rel="apple-touch-icon" href="/lc/pic/logo.png"/>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="icon" href="../../pic/logo.png"/>
     <link rel="apple-touch-icon" href="/pic/logo.png"/>
@@ -31,7 +31,6 @@
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<<<<<<< HEAD:lc_project/src/main/webapp/views/tr_infoPage.jsp
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
 	  
@@ -73,7 +72,7 @@
             height: 50px;
         }
         .menu a{
-            color: rgb(168, 168, 168);
+            color: black;
             font-size: 20px;
             font-weight: bold;
             text-align: center;
@@ -86,7 +85,7 @@
         .menu a:hover{
             color:black;
             border-top: 2px solid rgb(0, 0, 0);
-            border-bottom: 2px solid rgb(0, 0, 0);
+            
         }
         #category{
         	float: right;
@@ -184,6 +183,7 @@
         .bpcontent{
             padding: 0;
             height: 500px;
+            margin-bottom: 100px;
         }
         .spcontent{
             display: flex;
@@ -236,14 +236,12 @@
             margin: 5px 0;
         }
     </style>
-=======
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
     
     <!-- css -->
     <link rel="stylesheet" href="../../css/tr_infoPage.css">
     
->>>>>>> cf57645f17629d8540085b6bf97439bdebe0881f:lc_project/src/main/webapp/views/detail/tr_infoPage.jsp
 </head>
 <body>
     <%@include file="../common/header.jsp" %>
@@ -258,7 +256,7 @@
             </tr>
             <tr>
                 <td class="side"></td>
-                <td colspan="3" style="text-align: center; vertical-align: bottom;"><b style="font-size: 40px;">구 서도역</b></td>
+                <td colspan="3" style="text-align: center; vertical-align: bottom;"><b style="font-size: 40px;"><%=t.getTrName()%></b></td>
                 <td></td>
                 <td></td>
                 <td class="side"></td>
@@ -266,7 +264,7 @@
             <tr>
                 <td class="side"></td>
                 <td class="side" ><img src="<%=contextPath %>/pic/heart.png" width="20px" height="20px"><b>907</b></td>
-                <td style="width: 20%; text-align: center; vertical-align: top;"><b style="font-size: 20px;">전북 남원시</b></td>
+                <td style="width: 20%; text-align: center; vertical-align: top;"><b style="font-size: 20px;"><%=t.getTrAddress()%></td>
                 <td class="side">
                     <div id="category">
                         <button style="cursor:context-menu;">#1인여행</button>
@@ -332,11 +330,13 @@
                     <div class="bpcontent">
                         <img src="<%=contextPath %>/pic/picture.png" width="100%" height="100%">
                     </div>
+                    <!-- 
                     <div class="spcontent" style="margin-bottom: 100px; width: 100%;">
                         <img src="<%=contextPath %>/pic/picture.png">
                         <img src="<%=contextPath %>/pic/picture.png">
                         <img src="<%=contextPath %>/pic/picture.png">
                     </div>
+                     -->
                 </td>
                 <td></td>
                 <td></td>
@@ -403,10 +403,11 @@
                 <td class="side"></td>
                 <td colspan="3" class="content">
                     <div>
-                        <h2>상세정보 <%=t.getTrName() %></h2>
+                        <h2>상세정보</h2>
                         <hr>
                     </div>
-                    구 서도역은 1932년 조성된 우리나라에서 가장 오래된 목조건물 폐역으로, 전라선 기차역으로 산성역(하행)과 오수역(상행) 사이에 있다. 1934년 10월 1일 역무원 배치 간이역으로 영업을 시작하여 1937년 10월 1일 보통역으로 승격되었다. 2002년 10월 27일 전라선 개량공사를 하면서 현재의 위치를 신축하여 이전하였다. 2004년 7월 15일 여객 취급이 중지되었고, 2008년 7월 1일부터 역무원 무배치 간이역으로 격하되어 역무실이 폐쇄되었다. 최근 드라마 ‘미스터 선샤인’의 촬영지로 알려져 있으며, 최명희 작가 대하소설 「혼불」의 주 무대이기도 하다. 전라선 역사와 시설물로 옛 모습 그대로 보존 및 관리되고 있다. 보존된 시설물을 통해 그 시절의 역사를 느낄 수 있는 것과 동시에 자연과 기찻길이 어우러져 다양하고 감성적인 포토존을 즐길 수 있다.
+                    <%=t.getTrInfo() %>
+                    
                     <br><br>
                     <!-- * 카카오맵 - 지도퍼가기 -->
                     <!-- 1. 지도 노드 -->
