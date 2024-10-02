@@ -29,10 +29,7 @@
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<<<<<<< HEAD
-=======
 
->>>>>>> 1aec9cd5e99da08af7f687e9810fdd23d9fa7558
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
 	  
