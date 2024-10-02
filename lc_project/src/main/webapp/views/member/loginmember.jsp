@@ -179,7 +179,7 @@
         <div class="links">
             <a href="#">아이디찾기</a> |
             <a href="#">비밀번호 찾기</a> |
-            <a onclick="location.href='enroll.me'">회원가입</a>
+            <a onclick="location.href='selcetenroll.me'">회원가입</a>
         </div>
     </div>
      <script>

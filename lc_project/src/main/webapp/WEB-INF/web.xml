@@ -69,4 +69,14 @@
     <servlet-name>recommend.tr</servlet-name>
     <url-pattern>/recommend.tr</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>selcetenroll.me</display-name>
+    <servlet-name>selcetenroll.me</servlet-name>
+    <servlet-class>com.lc.project.member.Controller.MemberSelectEnrollController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>selcetenroll.me</servlet-name>
+    <url-pattern>/selcetenroll.me</url-pattern>
+  </servlet-mapping>
 </web-app>
