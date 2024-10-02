@@ -57,7 +57,7 @@ public class TravelDao {
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		Travel t = new Travel();
-		String sql = "SELECT ac_name, ac_address, tr_info, MAP_INFO, act_id, cnt, LOCATION FROM TB_TOUR JOIN TB_TOUR_PICTURE USING(AC_NAME) WHERE AC_NAME = ?";
+		String sql = "SELECT AC_NAME, AC_ADDRESS, TR_INFO, MAP_INFO, ACT_ID, CNT, LOCATION FROM TB_TOUR JOIN TB_TOUR_PICTURE USING(AC_NAME) WHERE AC_NAME = ?";
 		System.out.println(sql);
 		try {
 			pstmt = conn.prepareStatement(sql);
