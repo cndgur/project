@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -11,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/list.css">
 </head>
 <body>
     <header>
@@ -29,22 +31,22 @@
         <h1>서울 추천 여행지</h1>
         <div class="gallery">
             <div>
-                <img src="images/n.jpg" alt="N서울타워">
+                <img src="../pic/n.jpg" alt="N서울타워">
                 <h3>N서울타워</h3>
                 <p>서울특별시 용산구</p>
             </div>
             <div>
-                <img src="images/C.jpg" alt="이랜드크루즈">
+                <img src="../pic/C.jpg" alt="이랜드크루즈">
                 <h3>이랜드크루즈</h3>
                 <p>서울특별시 영등포구</p>
             </div>
             <div>
-                <img src="images/s.jpg" alt="코엑스 아쿠아리움">
+                <img src="../pic/s.jpg" alt="코엑스 아쿠아리움">
                 <h3>코엑스 아쿠아리움</h3>
                 <p>서울특별시 강남구</p>
             </div>
             <div>
-                <img src="images/f.jpg" alt="낙산공원">
+                <img src="../pic/f.jpg" alt="낙산공원">
                 <h3>낙산공원</h3>
                 <p>서울특별시 종로구</p>
             </div>
@@ -56,22 +58,22 @@
         <h1>서울 추천 맛집</h1>
         <div class="food">
             <div>
-                <img src="images/a1.jpg" alt="오레노라멘 본점">
+                <img src="../pic/a1.jpg" alt="오레노라멘 본점">
                 <h3>오레노라멘 본점</h3>
                 <p>서울특별시 마포구</p>
             </div>
             <div>
-                <img src="images/a2.jpg" alt="리틀넥 청담">
+                <img src="../pic/a2.jpg" alt="리틀넥 청담">
                 <h3>리틀넥 청담</h3>
                 <p>서울특별시 강남구</p>
             </div>
             <div>
-                <img src="images/a3.jpg" alt="다올 숯불구이 명동점">
+                <img src="../pic/a3.jpg" alt="다올 숯불구이 명동점">
                 <h3>다올 숮불구이 명동점</h3>
                 <p>서울특별시 중구</p>
             </div>
             <div>
-                <img src="images/a4.jpg" alt="코리코카페">
+                <img src="../pic/a4.jpg" alt="코리코카페">
                 <h3>코리코카페</h3>
                 <p>서울특별시 종로구</p>
             </div>
@@ -182,4 +184,3 @@
     </footer>
 </body>
 </html>
-
