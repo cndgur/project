@@ -31,7 +31,7 @@
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<<<<<<< HEAD:lc_project/src/main/webapp/views/tr_infoPage.jsp
+
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
 	  
@@ -236,14 +236,14 @@
             margin: 5px 0;
         }
     </style>
-=======
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
     
     <!-- css -->
     <link rel="stylesheet" href="../../css/tr_infoPage.css">
     
->>>>>>> cf57645f17629d8540085b6bf97439bdebe0881f:lc_project/src/main/webapp/views/detail/tr_infoPage.jsp
+
 </head>
 <body>
     <%@include file="../common/header.jsp" %>
