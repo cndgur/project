@@ -30,8 +30,7 @@ public class travelInfoController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String trName = request.getParameter("travel");
 		System.out.println(trName);
-		TravelService tService = new TravelService();
-		Travel t = tService.selectTravel(trName);
+		Travel t = new TravelService().selectTravel(trName);
 		request.setAttribute("t", t);
 		request.getRequestDispatcher("views/detail/tr_infoPage.jsp").forward(request, response);
 	}

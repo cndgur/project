@@ -237,7 +237,7 @@
               <p>에버랜드</p>
           </div>
           <div class="swiper-slide">
-            <img src="./pic/wpwn.jfif" onclick="location.href='travel.info?travel=오션뷰투어'">
+            <img src="./pic/wpwn.jfif" onclick="location.href='travel.info?travel=곤지암리조트'">
             <button class="btn_like" onclick="">like</button>
             <p>송도해상케이블카</p>
           </div>
