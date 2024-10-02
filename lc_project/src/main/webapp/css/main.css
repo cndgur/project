@@ -289,7 +289,8 @@ textarea{
 	background: #F7FFFD;
 	width: 100%;
 	height:520px;
-	padding: 30px;
+	padding-top: 30px;
+	padding-bottom: 30px;
 }
 
 #main-content1 #title,

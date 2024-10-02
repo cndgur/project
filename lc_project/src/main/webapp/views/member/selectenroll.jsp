@@ -50,6 +50,7 @@ body{
     height: 64px;
     top: 12px;
     left: 16px;
+    cursor: pointer;
 }
 
 .header_name{
@@ -60,6 +61,7 @@ body{
     font-size: x-large;
     color: rgb(0, 0, 0);
     font-family: "Jua", sans-serif;
+    cursor: pointer;
 }
 .normal_mem{
     box-sizing: border-box;
@@ -116,7 +118,7 @@ body{
 <body>
 	<div class="header">
         <div class="logo">
-            <a href="" class="to_main">
+            <a onclick="location.href='index.jsp'" class="to_main">
                 <div class="header_name">방구석여행</div>
                 <img src="./pic/logo.png" alt="" class="header_main_logo">
             </a>
@@ -124,9 +126,9 @@ body{
         <h1>회원가입</h1>
     </div>
     <div class="body">
-        <form action="">
+        <a onclick="location.href='views/member/enrollmember.jsp'">
             <button type="submit" id="btn1" class="normal_mem">일반회원등록하러가기</button>
-        </form>
+        </a>
     </div>
     <div class="body2">
         <form action="">
