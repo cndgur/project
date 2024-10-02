@@ -152,6 +152,10 @@
 
             console.log(tagList)
           }
+          //일단 한줄별로 클래스를 나눠야함.
+          //그 다음에 한줄에 하나를 queryselectAll을 해서 값을 가져오는데
+          //가져온 값이 2개 이상이면 alert로 한줄에 하나만 고를수 있습니다. 경고하고
+          //선택한 값을 unselected로 변경
       </script>
 	  </table>
   </form>
@@ -237,7 +241,7 @@
               <p>에버랜드</p>
           </div>
           <div class="swiper-slide">
-            <img src="./pic/wpwn.jfif" onclick="location.href='travel.info?travel=곤지암리조트'">
+            <img src="./pic/wpwn.jfif" onclick="location.href='travel.info?travel=구 서도역'">
             <button class="btn_like" onclick="">like</button>
             <p>송도해상케이블카</p>
           </div>

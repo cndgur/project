@@ -13,10 +13,10 @@
   <typeAliases>
 
   <typeAlias type="com.lc.project.model.vo.Travel" alias="Travel" />
-=======
+
   
   	<typeAlias type="com.kh.lc_project.member.model.vo.Member" alias="Member" />
->>>>>>> cf57645f17629d8540085b6bf97439bdebe0881f
+
   <!--  
   	
   	<typeAlias type="com.kh.mybatis.board.model.vo.Board" alias="Board" />
