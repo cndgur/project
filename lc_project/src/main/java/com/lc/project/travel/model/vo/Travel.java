@@ -4,19 +4,13 @@ public class Travel {
 	private String trName;
 	private String trAddress;
 	private String trInfo;
+	private String mapInfo;
 	private String trId;
 	private int count;
 	public Travel() {
 		super();
 	}
-	public Travel(String trName, String trAddress, String trInfo, String trId, int count) {
-		super();
-		this.trName = trName;
-		this.trAddress = trAddress;
-		this.trInfo = trInfo;
-		this.trId = trId;
-		this.count = count;
-	}
+	
 	public String getTrName() {
 		return trName;
 	}
@@ -47,10 +41,30 @@ public class Travel {
 	public void setCount(int count) {
 		this.count = count;
 	}
+
+	public Travel(String trName, String trAddress, String trInfo, String mapInfo, String trId, int count) {
+		super();
+		this.trName = trName;
+		this.trAddress = trAddress;
+		this.trInfo = trInfo;
+		this.mapInfo = mapInfo;
+		this.trId = trId;
+		this.count = count;
+	}
+
 	@Override
 	public String toString() {
-		return "Travel [trName=" + trName + ", trAddress=" + trAddress + ", trInfo=" + trInfo + ", trId=" + trId
-				+ ", count=" + count + "]";
+		return "Travel [trName=" + trName + ", trAddress=" + trAddress + ", trInfo=" + trInfo + ", mapInfo=" + mapInfo
+				+ ", trId=" + trId + ", count=" + count + "]";
 	}
+
+	public String getMapInfo() {
+		return mapInfo;
+	}
+
+	public void setMapInfo(String mapInfo) {
+		this.mapInfo = mapInfo;
+	}
+
 	
 }

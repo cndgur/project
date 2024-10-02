@@ -12,8 +12,6 @@
     <link rel="icon" href="/lc/pic/logo.png"/>
     <link rel="apple-touch-icon" href="/lc/pic/logo.png"/>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <link rel="icon" href="../../pic/logo.png"/>
-    <link rel="apple-touch-icon" href="/pic/logo.png"/>
     <!-- jQuery -->
     <script 
         src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -265,7 +263,7 @@
             </tr>
             <tr>
                 <td class="side"></td>
-                <td class="side" ><img src="<%=contextPath %>/pic/heart.png" width="20px" height="20px"><b>907</b></td>
+                <td class="side" ><img src="<%=contextPath %>/pic/heart.png" width="20px" height="20px" style="margin-right: 5px;"><b><%=t.getCount()%></b></td>
                 <td style="width: 20%; text-align: center; vertical-align: top;"><b style="font-size: 20px;"><%=t.getTrAddress()%></td>
                 <td class="side">
                     <div id="category">
@@ -411,11 +409,10 @@
                     <%=t.getTrInfo() %>
                     
                     <br><br>
-                    <!-- * 카카오맵 - 지도퍼가기 -->
-                    <!-- 1. 지도 노드 -->
+                    <%=t.getMapInfo() %>
+                    <!--  
                     <div id="daumRoughmapContainer1726734009560" class="root_daum_roughmap root_daum_roughmap_landing" style="width: 100%; margin-bottom: 100px;"></div>
 
-                    <!-- 3. 실행 스크립트 -->
                     <script charset="UTF-8">
                         new daum.roughmap.Lander({
                             "timestamp" : "1726734009560",
@@ -424,6 +421,7 @@
                             "mapHeight" : "360"
                         }).render();
                     </script>
+                    -->
                 </td>
                 <td></td>
                 <td></td>
