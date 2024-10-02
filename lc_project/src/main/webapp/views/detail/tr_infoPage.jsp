@@ -9,14 +9,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>방구석여행</title>
-<<<<<<< HEAD:lc_project/src/main/webapp/views/tr_infoPage.jsp
     <link rel="icon" href="../pic/logo.png"/>
     <link rel="apple-touch-icon" href="../pic/logo.png"/>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-=======
     <link rel="icon" href="../../pic/logo.png"/>
     <link rel="apple-touch-icon" href="/pic/logo.png"/>
->>>>>>> cf57645f17629d8540085b6bf97439bdebe0881f:lc_project/src/main/webapp/views/detail/tr_infoPage.jsp
     <!-- jQuery -->
     <script 
         src="https://code.jquery.com/jquery-3.7.1.min.js"
