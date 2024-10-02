@@ -20,9 +20,12 @@ public class JDBCTemplate {
 		Connection conn = null;
 		Properties prop = new Properties();
 		String filePath = JDBCTemplate.class.getResource("/db/driver/driver.properties").getPath();
+		
 		try {
 			prop.load(new FileInputStream(filePath));
 			Class.forName(prop.getProperty("driver"));
+			System.out.println(prop.getProperty("username"));
+			System.out.println(prop.getProperty("password"));
 			conn = DriverManager.getConnection(prop.getProperty("url"),prop.getProperty("username"),prop.getProperty("password"));
 			conn.setAutoCommit(false);//수동커밋 설정
 		} catch (IOException e) {

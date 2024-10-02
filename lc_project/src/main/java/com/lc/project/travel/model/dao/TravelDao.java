@@ -17,6 +17,7 @@ public class TravelDao {
 	private Properties prop = new Properties();
 	public TravelDao() {
 		String filePath = TravelDao.class.getResource("/db/sql/JDBCmappers.xml").getPath();
+		System.out.println(filePath);
 		try {
 			prop.loadFromXML(new FileInputStream(filePath));
 		} catch (IOException e) {
@@ -28,6 +29,7 @@ public class TravelDao {
 		ArrayList<Travel> list = new ArrayList<>();
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
+		
 		String sql = prop.getProperty("travelTopList");
 		System.out.println(sql);
 		try {
@@ -54,7 +56,8 @@ public class TravelDao {
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		Travel t = new Travel();
-		String sql = prop.getProperty("selecttravel");
+		String sql = "SELECT ac_name, ac_address, tr_info, act_id, Field FROM TB_TOUR WHERE AC_NAME = ?";
+		System.out.println(sql);
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, trName);

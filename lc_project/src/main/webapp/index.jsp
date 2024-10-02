@@ -95,34 +95,34 @@
         <td colspan="8">관심 있는 여행 스타일을 선택하면 당신에게 딱 맞는 여행지를 추천해드립니다. 지금 떠날 준비 되셨나요?</td>
       </tr>
       <tr>
-        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="가족여행">#가족여행</button></td>
-        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="친구들과">#친구들과</button></td>
-        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="1인여행">#1인여행</button></td>
-        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="커플여행">#커플여행</button></td>
-        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="반려동물">#반려동물</button></td>
-        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="동호회/친목모임">#동호회/친목모임</button></td>
-        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="워크숍">#워크숍</button></td>
-        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="아이들과">#아이들과</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" type="button" onclick="mainPage_tagSelect(this)" value="가족여행">#가족여행</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" type="button"  onclick="mainPage_tagSelect(this)" value="친구들과">#친구들과</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" type="button"  onclick="mainPage_tagSelect(this)" value="1인여행">#1인여행</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" type="button"  onclick="mainPage_tagSelect(this)" value="커플여행">#커플여행</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" type="button"  onclick="mainPage_tagSelect(this)" value="반려동물">#반려동물</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" type="button"  onclick="mainPage_tagSelect(this)" value="동호회/친목모임">#동호회/친목모임</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" type="button"  onclick="mainPage_tagSelect(this)" value="워크숍">#워크숍</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" type="button"  onclick="mainPage_tagSelect(this)" value="아이들과">#아이들과</button></td>
       </tr>
       <tr>
-        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="놀이동산">#놀이동산</button></td>
-        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="빠지">#빠지</button></td>
-        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="패러글라이딩">#패러글라이딩</button></td>
-        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="번지점프">#번지점프</button></td>
-        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="워터파크">#워터파크</button></td>
-        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="스키장">#스키장</button></td>
-        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="루지">#루지</button></td>
-        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="클라이밍">#클라이밍</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" type="button"  onclick="mainPage_tagSelect(this)" value="놀이동산">#놀이동산</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" type="button"  onclick="mainPage_tagSelect(this)" value="빠지">#빠지</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" type="button"  onclick="mainPage_tagSelect(this)" value="패러글라이딩">#패러글라이딩</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" type="button"  onclick="mainPage_tagSelect(this)" value="번지점프">#번지점프</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" type="button"  onclick="mainPage_tagSelect(this)" value="워터파크">#워터파크</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" type="button"  onclick="mainPage_tagSelect(this)" value="스키장">#스키장</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" type="button"  onclick="mainPage_tagSelect(this)" value="루지">#루지</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" type="button"  onclick="mainPage_tagSelect(this)" value="클라이밍">#클라이밍</button></td>
       </tr>
       <tr>
-        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="맛집">#맛집</button></td>
-        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="전통시장">#전통시장</button></td>
-        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="카페">#카페</button></td>
-        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="힐링">#힐링</button></td>
-        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="글램핑">#글램핑</button></td>
-        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="자연">#자연</button></td>
-        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="역사">#역사</button></td>
-        <td class="mainPage_tag"><button class="unselected_tag" onclick="mainPage_tagSelect(this)" value="문화">#문화</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" type="button"  onclick="mainPage_tagSelect(this)" value="맛집">#맛집</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" type="button"  onclick="mainPage_tagSelect(this)" value="전통시장">#전통시장</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" type="button"  onclick="mainPage_tagSelect(this)" value="카페">#카페</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" type="button"  onclick="mainPage_tagSelect(this)" value="힐링">#힐링</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" type="button"  onclick="mainPage_tagSelect(this)" value="글램핑">#글램핑</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" type="button"  onclick="mainPage_tagSelect(this)" value="자연">#자연</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" type="button"  onclick="mainPage_tagSelect(this)" value="역사">#역사</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag" type="button"  onclick="mainPage_tagSelect(this)" value="문화">#문화</button></td>
       </tr>
       <tr>
         <td></td>
@@ -132,7 +132,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td><button id="mainPage_tagSubmit" type="submit" onclick="">검색하기</button></td>
+        <td><button id="mainPage_tagSubmit" type="button" onclick="return tagSelected();">검색하기</button></td>
       </tr>
 
       <script>
@@ -142,9 +142,15 @@
           }
           //검색하기 버튼을 누르면 선택되어있는 태그(class가 selected_tag)의 value값을 가져오기
           function tagSelected(){
-            const tag = null;
-            
-            for()
+            const tagList = [];
+
+            const selectTagList = document.querySelectorAll(".selected_tag");
+            console.log(selectTagList)
+            for(let tagEl of selectTagList){
+              tagList.push(tagEl.innerText);
+            }
+
+            console.log(tagList)
           }
       </script>
 	  </table>
@@ -231,7 +237,7 @@
               <p>에버랜드</p>
           </div>
           <div class="swiper-slide">
-            <img src="./pic/wpwn.jfif" onclick="location.href='travel.info?travel=오션뷰투어'">
+            <img src="./pic/wpwn.jfif" onclick="location.href='travel.info?travel=곤지암리조트'">
             <button class="btn_like" onclick="">like</button>
             <p>송도해상케이블카</p>
           </div>
