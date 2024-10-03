@@ -30,12 +30,10 @@ public class MemberInsertController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UFT-8");
 		
-		Member m = new Member(
-								request.getParameter("email"),
-								request.getParameter("pwd"),
-								request.getParameter("tel"),
-								request.getParameter("name")
-							);
+		Member m = new Member();
+		m.setUserId(request.getParameter("userId"));
+		m.setUserPwd(request.getParameter("userPwd"));
+		
 		int result = new MemberServiceImpl().insertMember(m);
 		
 		if(result > 0) {

@@ -92,7 +92,7 @@
 	    left: 2px;
 	}
 	
-	body input[type="email"],
+	body input[type="text"],
 	 input[type="password"] {
 	    width: 90%;
 	    padding: 15px;
@@ -172,7 +172,7 @@
             <p class="name">방구석여행</p>
         </div>
         <form action="index.jsp" method="post">
-            <input type="email" placeholder="이메일" required id="username">
+            <input type="text" placeholder="아이디" required id="username">
             <input type="password" placeholder="비밀번호" required id="password">
             <button type="submit" id="btn">로그인</button>
         </form>
@@ -182,13 +182,6 @@
             <a onclick="location.href='selcetenroll.me'">회원가입</a>
         </div>
     </div>
-     <script>
-        const btn = document.querySelector("#btn");
-        //이벤트를 걸고자하는 요소객체.addEventListener("이벤트명", 이벤트핸들러)
 
-        btn.addEventListener("click", function(){
-            alert("로그인실패")
-        })
-     </script>
 </body>
 </html>

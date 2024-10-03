@@ -11,7 +11,7 @@
   	<result column="USER_NAME" property="userName"/>
   	<result column="USER_ID" property="userId"/>
   	<result column="USER_PWD" property="userPwd"/>
-  	<result column="PHONE" property="phone"/>
+  	<result column="TEL" property="tel"/>
 	<result column="ADDRESS" property="address"/>
   	<result column="BIRTHDAY" property="birthday"/>
   	<result column="GENDER" property="gender"/>
@@ -29,7 +29,7 @@
     SELECT USER_NAME,
 		   USER_ID,
 		   USER_PWD,
-		   PHONE,
+		   TEL,
 		   ADDRESS,
 		   BIRTHDAY,
 		   GENDER,
@@ -52,7 +52,7 @@
   		USER_NAME,
 	    USER_ID,
 	    USER_PWD,
-	    PHONE,
+	    TEL,
 	    ADDRESS,
 	    BIRTHDAY,
 	    GENDER,
@@ -69,7 +69,7 @@
   		#{email},
   		#{birthday},
   		#{gender},
-  		#{phone},
+  		#{tel},
   		#{address}
   	)
   </insert>

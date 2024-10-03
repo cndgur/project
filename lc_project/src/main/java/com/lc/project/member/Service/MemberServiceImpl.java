@@ -11,6 +11,17 @@ public class MemberServiceImpl implements MemberService {
 	private MemberDao mDao = new MemberDao();
 
 	@Override
+	public Member loginMember(Member m) {
+		SqlSession sqlSession = Template.getSqlSession();
+		Member loginUser = mDao.loginMember(sqlSession, m);
+		
+		sqlSession.close();
+		
+		return loginUser;
+
+	}
+	
+	@Override
 	public int insertMember(Member m) {
 		SqlSession sqlSession = Template.getSqlSession();
 		int result = mDao.insertMember(sqlSession, m);
@@ -23,17 +34,5 @@ public class MemberServiceImpl implements MemberService {
 		sqlSession.close();
 		return result;
 	}
-
-	@Override
-	public Member loginMember(Member m) {
-		SqlSession sqlSession = Template.getSqlSession();
-		Member loginUser = mDao.loginMember(sqlSession, m);
-		
-		sqlSession.close();
-		
-		return loginUser;
-
-	}
-	
 	
 }

@@ -6,10 +6,10 @@ import com.lc.project.member.model.vo.Member;
 
 public class MemberDao {
 
-	public int insertMember(SqlSession sqlSession, Member m) {
-		return sqlSession.insert("memberMapper.insertMember", m);
-	}
 	public Member loginMember(SqlSession sqlSession, Member m) {
 		return sqlSession.selectOne("memberMapper.loginMember", m);
+	}
+	public int insertMember(SqlSession sqlSession, Member m) {
+		return sqlSession.insert("memberMapper.insertMember", m);
 	}
 }
