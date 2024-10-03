@@ -17,191 +17,17 @@
         src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"
         integrity="sha256-Fb0zP4jE3JHqu+IBB9YktLcSjI1Zc6J2b6gTjB0LpoM="
         crossorigin="anonymous"></script>
+    
+    <!-- css -->
+    <link rel="stylesheet" href="../../css/ht_listPage.css">
         
-
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
-    <style>
-        body{
-		    margin: 0px;
-		    padding: 0px;
-		}
-        .side{
-            width: 20%;
-        }
-        .content{
-            
-            width: 60%;
-        }
-        #wrapper{
-            width: 100%;
-            font-family: "Noto Sans KR", sans-serif;
-        }
-        header{
-            width: 100%;
-        }
-        button{
-            width: 60px;
-            height: 17px;
-            font-size: 9px;
-            border: 0px;
-            background: #7bbcb0;
-            color: white;
-            border-radius: 40px;
-        }
-        /* 기본 상태: 상단에서 40%에 위치 */
-        .sidenav {
-            width: 150px;
-            background-color: #ddeeeb;
-            padding: 10px;
-            position: absolute;
-            top: 30%;
-            left: 150px;
-            border-radius: 15px;
-            
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            transition: top 0.5s ease-in-out; /* top 값이 변할 때 부드럽게 변화 */
-        }
-
-        /* 스크롤 후 중앙에 고정될 때 적용될 스타일 */
-        .sidenav.fixed {
-            position: fixed;
-            top: 30%; /* 화면 중앙에 고정 */
-            left: 150px;
-            transform: translateY(-50%);
-            z-index: 100;
-        }
-        .sidenav-header {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            background-color: #7bbcb0;
-            color: white;
-            border-radius: 15px;
-            text-align: center;
-        }
-
-        .sidenav-item {
-            background-color: #ddeeeb;
-            border-radius: 15px;
-            margin-bottom: 0px;
-            padding: 0px;
-        }
-
-        .sidenav-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        .sidenav-item input {
-            margin-bottom: 20px ;
-        }
-
-        .sidenav-footer {
-            margin-top: 20px;
-        }
-
-        .sidenav-footer button {
-            background-color: #7bbcb0;
-            border: none;
-            color: white;
-            padding: 0px;
-            border-radius: 15px;
-            width: 100%;
-            cursor: pointer;
-            height: 50px;
-            font-size: 13px;
-        }
-
-        .sidenav-footer button:hover {
-            background-color: #5da396;
-            
-        }
-        #serv > button{
-            width: 80px;
-            height: 17px;
-            font-size: 10px;
-            border: 1px solid #7bbcb0;
-            background: #FFFFFF;
-            color: #000000;
-            border-radius: 40px;
-            margin: 5px;
-        }
-        .reviewcon table{
-            width: 100%;
-            height: 220px;
-            color: rgb(0, 0, 0);
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
-            margin-top: 50px;
-            margin-bottom: 50px;
-        }
-        .large-image {
-            width: 100%;
-            height: 381px;
-        }
-        .small-image {
-            width: 100%;
-            height: 190px;
-        }
-        .reservepic{
-            border-radius: 15px;
-            width:200px;
-            height:200px;
-            display: flex; 
-            justify-content: center; 
-            align-items: center;
-            margin: 20px;
-        }
-        .container{
-            width: 97%; 
-            height: 150px; 
-            background: white; 
-            border-radius: 15px;
-            margin-right: 20px;
-        }
-        #reviewbt{
-            width: 100px;
-            height: 30px;
-            font-size: 15px;
-            float: right;
-        }
-        .recommendtr {
-            width: 100%;
-            height: 200px;
-            display: flex;
-            background-color: #ddeeeb;
-            padding: 10px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        .recommendtr-item {
-            margin: 15px;
-            background-color: #ddeeeb;
-            border-radius: 15px;
-            margin-bottom: 0px;
-            padding: 0px;
-            
-        }
-
-        .recommendtr img {
-            width: auto;
-            height: 80px;
-            border-radius: 10px;
-        }
-
-        .recommendtr p {
-            margin: 5px 0;
-        }
-    </style>
+    
 </head>
 <body>
-    <header style="background: #ddeeeb;" >
-        <h1>header</h1>
-    </header>
+    <%@include file="../common/header.jsp"%>
     <div id="wrapper">
         <table style="margin-top: 70px;">
             <tr>
@@ -265,12 +91,12 @@
                         <div class="reviewcon" >
                             <table>
                                 <tr>
-                                    <td style="width: 30%;"><img src="pic/ht_main_pic.png" style="width: 300px; height: 200px; margin: 8px; border-radius: 15px;"></td>
+                                    <td style="width: 30%;"><img src="../../pic/ht_main_pic.png" style="width: 300px; height: 200px; margin: 8px; border-radius: 15px;"></td>
                                     <td style="width: 50%;">
                                         <div style="margin-left: 20px;">
                                             호텔<br>
                                         <h4>힐튼경주</h4><br>
-                                        <img src="pic/star.png">9.5
+                                        <img src="../../pic/star.png">9.5
                                         </div>
                                     </td>
                                     <td style="width: 20%; padding-top: 90px;">
@@ -283,12 +109,12 @@
                             </table>
                             <table>
                                 <tr>
-                                    <td style="width: 30%;"><img src="pic/ht_main_pic.png" style="width: 300px; height: 200px; margin: 8px; border-radius: 15px;"></td>
+                                    <td style="width: 30%;"><img src="../../pic/ht_main_pic.png" style="width: 300px; height: 200px; margin: 8px; border-radius: 15px;"></td>
                                     <td style="width: 50%;">
                                         <div style="margin-left: 20px;">
                                             호텔<br>
                                         <h4>힐튼경주</h4><br>
-                                        <img src="pic/star.png">9.5
+                                        <img src="../../pic/star.png">9.5
                                         </div>
                                     </td>
                                     <td style="width: 20%; padding-top: 90px;">
@@ -301,12 +127,12 @@
                             </table>
                             <table>
                                 <tr>
-                                    <td style="width: 30%;"><img src="pic/ht_main_pic.png" style="width: 300px; height: 200px; margin: 8px; border-radius: 15px;"></td>
+                                    <td style="width: 30%;"><img src="../../pic/ht_main_pic.png" style="width: 300px; height: 200px; margin: 8px; border-radius: 15px;"></td>
                                     <td style="width: 50%;">
                                         <div style="margin-left: 20px;">
                                             호텔<br>
                                         <h4>힐튼경주</h4><br>
-                                        <img src="pic/star.png">9.5
+                                        <img src="../../pic/star.png">9.5
                                         </div>
                                     </td>
                                     <td style="width: 20%; padding-top: 90px;">
@@ -319,12 +145,12 @@
                             </table>
                             <table>
                                 <tr>
-                                    <td style="width: 30%;"><img src="pic/ht_main_pic.png" style="width: 300px; height: 200px; margin: 8px; border-radius: 15px;"></td>
+                                    <td style="width: 30%;"><img src="../../pic/ht_main_pic.png" style="width: 300px; height: 200px; margin: 8px; border-radius: 15px;"></td>
                                     <td style="width: 50%;">
                                         <div style="margin-left: 20px;">
                                             호텔<br>
                                         <h4>힐튼경주</h4><br>
-                                        <img src="pic/star.png">9.5
+                                        <img src="../../pic/star.png">9.5
                                         </div>
                                     </td>
                                     <td style="width: 20%; padding-top: 90px;">
@@ -337,12 +163,12 @@
                             </table>
                             <table>
                                 <tr>
-                                    <td style="width: 30%;"><img src="pic/ht_main_pic.png" style="width: 300px; height: 200px; margin: 8px; border-radius: 15px;"></td>
+                                    <td style="width: 30%;"><img src="../../pic/ht_main_pic.png" style="width: 300px; height: 200px; margin: 8px; border-radius: 15px;"></td>
                                     <td style="width: 50%;">
                                         <div style="margin-left: 20px;">
                                             호텔<br>
                                         <h4>힐튼경주</h4><br>
-                                        <img src="pic/star.png">9.5
+                                        <img src="../../pic/star.png">9.5
                                         </div>
                                     </td>
                                     <td style="width: 20%; padding-top: 90px;">
@@ -360,8 +186,6 @@
             </tr>
         </table>
     </div>
-    <footer style="background: #959c9b;">
-        <h1>footer</h1>
-    </footer>
+    <%@include file="../common/footer.jsp"%>
 </body>
 </html>
