@@ -131,9 +131,9 @@ body{
         </a>
     </div>
     <div class="body2">
-        <form action="">
+         <a onclick="location.href='views/member/enrollbusiness.jsp'">
             <button type="submit" id="btn2" class="bs_mem">사업자회원등록하러가기</button>
-        </form>
+        </a>
     </div>
 </body>
 </html>
