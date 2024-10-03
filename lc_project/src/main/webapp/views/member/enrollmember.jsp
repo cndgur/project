@@ -1,10 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+    String contextPath = request.getContextPath(); // 컨텍스트 경로 얻기
+%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>회원가입</title>
+	<link rel="icon" href="./pic/logo.png"/>
 	<script src="https://code.jquery.com/jquery-3.7.1.js" 
     integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
     crossorigin="anonymous"></script>
@@ -14,14 +18,14 @@
     <style>
     
     .header{
-    position: relative;
-    top: 0;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 0.5px;
-    border-bottom: 1px solid #ccc ;
-    justify-content: center;
+	    position: relative;
+	    top: 0;
+	    width: 100%;
+	    display: flex;
+	    align-items: center;
+	    padding: 0.5px;
+	    border-bottom: 1px solid #ccc ;
+	    justify-content: center;
 	}
 	body{
 	    display: flex;
@@ -143,14 +147,17 @@
 	    background-color: #00bfa5;
 	    color: white;
 	}
+	.to_main{
+		cursor: pointer;
+	}
     </style>
 </head>
 <body>
 	<div class="header">
 	        <div class="logo">
-	            <a href="" class="to_main">
+	            <a onclick="location.href= '<%=contextPath%>'" class="to_main">
 	                <div class="header_name">방구석여행</div>
-	                <img src="./img/logo-removebg-preview (2).png" alt="" class="header_main_logo">
+	                <img src="../../pic/logo.png" alt="" class="header_main_logo">
 	            </a>
 	        </div>
 	        <h1>회원가입</h1>

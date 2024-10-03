@@ -24,120 +24,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
 
     <script src="https://cdn.portone.io/v2/browser-sdk.js"></script>
-    <style>
-    	
-        #system-ui{
-		    margin: 0px;
-		    padding: 0px;
-		}
-        .side{
-            width: 20%;
-        }
-        .content{
-            font-family: "Noto Sans KR", sans-serif;
-            width: 60%;
-        }
-        #wrapper{
-        	margin-top: 40px;
-            width: 100%;
-        }
-        
-        #serv > button{
-            width: 80px;
-            height: 23px;
-            font-size: 12px;
-            border: 1px solid #7bbcb0;
-            background: #FFFFFF;
-            color: #000000;
-            border-radius: 40px;
-            margin: 5px;
-        }
-        .reviewcon{
-            width: 30%;
-            height: 220px;
-            color: rgb(0, 0, 0);
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-            margin-right: 20px;
-        }
-        .picture td{
-        	padding: 0px;
-        }
-        .large-image {
-            width: 100%;
-            height: 405px;
-        }
-        .small-image {
-        	margin: 1px;
-            width: 98%;
-            height: 197px;
-        }
-        .reservepic{
-            border-radius: 15px;
-            width:200px;
-            height:200px;
-            display: flex; 
-            justify-content: center; 
-            align-items: center;
-            margin: 20px;
-        }
-        .container{
-            width: 97%; 
-            height: 150px; 
-            background: white; 
-            border-radius: 15px;
-            margin-right: 20px;
-        }
-        #reviewbt{
-            width: 100px;
-            height: 30px;
-            font-size: 15px;
-            float: right;
-            border: 0px;
-            background: #7bbcb0;
-            color: white;
-            border-radius: 40px;
-        }
-		#reviewArrow{
-			width: 50px; 
-			height: 70px;
-		}
-        .recommendtr {
-            width: 100%;
-            height: 200px;
-            display: flex;
-            background-color: #ddeeeb;
-            padding: 10px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        .recommendtr-item {
-            margin: 15px;
-            background-color: #ddeeeb;
-            border-radius: 15px;
-            margin-bottom: 0px;
-            padding: 0px;
-            
-        }
-
-        .recommendtr img {
-            width: auto;
-            height: 80px;
-            border-radius: 10px;
-        }
-
-        .recommendtr p {
-            margin: 5px 0;
-        }
-        .roomti{
-        	text-align: left; 
-        	vertical-align:bottom; 
-        	width: 100%;
-        }
-    </style>
+    
+    
 </head>
 <body id=system-ui>
-    <%@include file="./common/header.jsp" %>
+    <%@include file="../common/header.jsp" %>
     <div id="wrapper">
         <table>
             <tr>
@@ -150,23 +41,23 @@
             <tr class="picture">
                 <td class="side"></td>
                 <td rowspan="2">
-                    <img src="../pic/ht_main_pic.png" class="large-image">
+                    <img src="<%=contextPath %>/pic/ht_main_pic.png" class="large-image">
                 </td>
                 <td>
-                    <img src="../pic/ht_sub_pic1.png" class="small-image">
+                    <img src="<%=contextPath %>/pic/ht_sub_pic1.png" class="small-image">
                 </td>
                 <td>
-                    <img src="../pic/ht_sub_pic2.png" class="small-image" style="border-start-end-radius: 10px;">
+                    <img src="<%=contextPath %>/pic/ht_sub_pic2.png" class="small-image" style="border-start-end-radius: 10px;">
                 </td>
                 <td class="side"></td>
             </tr>
             <tr class="picture">
                 <td class="side"></td>
                 <td>
-                    <img src="../pic/ht_sub_pic3.png" class="small-image">
+                    <img src="<%=contextPath %>/pic/ht_sub_pic3.png" class="small-image">
                 </td>
                 <td>
-                    <img src="../pic/ht_sub_pic1.png" class="small-image" style="border-end-end-radius: 10px;">
+                    <img src="<%=contextPath %>/pic/ht_sub_pic1.png" class="small-image" style="border-end-end-radius: 10px;">
                 </td>
                 <td class="side"></td>
             </tr>
@@ -179,14 +70,14 @@
                         <hr>
                     </div>
                     <div style="margin-bottom: 20px;">
-                        <img src="../pic/star.png"><b>  9.3</b><span style="color: #959c9b;">  294명 평가</span>
+                        <img src="<%=contextPath %>/pic/star.png"><b>  9.3</b><span style="color: #959c9b;">  294명 평가</span>
                     </div>
                     <div style="display: flex;">
                         <div class="reviewcon">
                             <table>
                                 <tr>
                                     <div style="padding-top: 10px;">
-                                        <img src="../pic/star.png"><b>  8.5</b>
+                                        <img src="<%=contextPath %>/pic/star.png"><b>  8.5</b>
                                     </div>
                                 </tr>
                                 <tr>
@@ -209,7 +100,7 @@
                             <table>
                                 <tr>
                                     <div style="padding-top: 10px;">
-                                        <img src="../pic/star.png"><b>  9.0</b>
+                                        <img src="<%=contextPath %>/pic/star.png"><b>  9.0</b>
                                     </div>
                                 </tr>
                                 <tr>
@@ -232,7 +123,7 @@
                             <table>
                                 <tr>
                                     <div style="padding-top: 10px;">
-                                        <img src="../pic/star.png"><b>  10</b>
+                                        <img src="<%=contextPath %>/pic/star.png"><b>  10</b>
                                     </div>
                                 </tr>
                                 <tr>
@@ -252,7 +143,7 @@
                             </table>
                         </div>
                         <div style="margin-left:20px; display: flex; justify-content: center; align-items: center; cursor: pointer">
-                            <img src="../pic/ht_larrow.png" id="reviewArrow">
+                            <img src="<%=contextPath %>/pic/ht_larrow.png" id="reviewArrow">
                         </div>
                     </div>
                     <br><br>
@@ -305,7 +196,7 @@
                             <table>
                                 <tr>
                                     <td rowspan="2">
-                                        <img src="../pic/picture.png" class="reservepic">
+                                        <img src="<%=contextPath %>/pic/picture.png" class="reservepic">
                                     </td>
                                     <td class="roomti"><b><h3>[숙박 페스타] 디럭스 트윈 (세미싱글 2개)</h3></b></td>
                                 </tr>
@@ -331,7 +222,7 @@
                             <table>
                                 <tr>
                                     <td rowspan="2">
-                                        <img src="../pic/picture.png" class="reservepic">
+                                        <img src="<%=contextPath %>/pic/picture.png" class="reservepic">
                                     </td>
                                     <td class="roomti"><b><h3>[숙박 페스타] 디럭스 패밀리 (킹베드+세미싱글)</h3></b></td>
                                 </tr>
@@ -371,7 +262,7 @@
                             <table>
                                 <tr>
                                     <td rowspan="2">
-                                        <img src="../pic/picture.png" class="reservepic">
+                                        <img src="<%=contextPath %>/pic/picture.png" class="reservepic">
                                     </td>
                                     <td style="text-align: left; vertical-align:bottom; width: 100%;"><b><h3>[숙박 페스타] 온돌</h3></b></td>
                                 </tr>
@@ -397,7 +288,7 @@
                             <table>
                                 <tr>
                                     <td rowspan="2">
-                                        <img src="../pic/picture.png" class="reservepic">
+                                        <img src="<%=contextPath %>/pic/picture.png" class="reservepic">
                                     </td>
                                     <td style="text-align: left; vertical-align:bottom; width: 100%;"><b><h3>[숙박 페스타] [2인 조식] 디럭스 더블 (킹베드)</h3></b></td>
                                 </tr>
@@ -423,7 +314,7 @@
                             <table>
                                 <tr>
                                     <td rowspan="2">
-                                        <img src="pic/picture.png" class="reservepic">
+                                        <img src="<%=contextPath %>/pic/picture.png" class="reservepic">
                                     </td>
                                     <td style="text-align: left; vertical-align:bottom; width: 100%;"><b><h3>[숙박 페스타] 디럭스 트윈 (세미싱글 2개)</h3></b></td>
                                 </tr>
@@ -463,37 +354,37 @@
                     </div>
                     <div class="recommendtr" style="margin-bottom: 100px;">
                         <div class="recommendtr-item">
-                            <img src="pic/picture.png" alt="구 서도역">
+                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
                             <p><strong>구 서도역</strong></p>
                             <p>전북 남원시</p>
                         </div>
                         <div class="recommendtr-item">
-                            <img src="pic/picture.png" alt="구 서도역">
+                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
                             <p><strong>구 서도역</strong></p>
                             <p>전북 남원시</p>
                         </div>
                         <div class="recommendtr-item">
-                            <img src="pic/picture.png" alt="구 서도역">
+                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
                             <p><strong>구 서도역</strong></p>
                             <p>전북 남원시</p>
                         </div>
                         <div class="recommendtr-item">
-                            <img src="pic/picture.png" alt="구 서도역">
+                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
                             <p><strong>구 서도역</strong></p>
                             <p>전북 남원시</p>
                         </div>
                         <div class="recommendtr-item">
-                            <img src="pic/picture.png" alt="구 서도역">
+                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
                             <p><strong>구 서도역</strong></p>
                             <p>전북 남원시</p>
                         </div>
                         <div class="recommendtr-item">
-                            <img src="pic/picture.png" alt="구 서도역">
+                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
                             <p><strong>구 서도역</strong></p>
                             <p>전북 남원시</p>
                         </div>
                         <div style="margin-left:40px; display: flex; justify-content: center; align-items: center;">
-                            <img src="pic/sidearrow.png" style="align-self: center; margin-bottom: 0px; cursor: pointer;">
+                            <img src="<%=contextPath %>/pic/sidearrow.png" style="align-self: center; margin-bottom: 0px; cursor: pointer;">
                         </div>
                     </div>
                 </td>
@@ -510,37 +401,37 @@
                     </div>
                     <div class="recommendtr" style="margin-bottom: 100px;">
                         <div class="recommendtr-item">
-                            <img src="pic/picture.png" alt="구 서도역">
+                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
                             <p><strong>구 서도역</strong></p>
                             <p>전북 남원시</p>
                         </div>
                         <div class="recommendtr-item">
-                            <img src="pic/picture.png" alt="구 서도역">
+                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
                             <p><strong>구 서도역</strong></p>
                             <p>전북 남원시</p>
                         </div>
                         <div class="recommendtr-item">
-                            <img src="pic/picture.png" alt="구 서도역">
+                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
                             <p><strong>구 서도역</strong></p>
                             <p>전북 남원시</p>
                         </div>
                         <div class="recommendtr-item">
-                            <img src="pic/picture.png" alt="구 서도역">
+                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
                             <p><strong>구 서도역</strong></p>
                             <p>전북 남원시</p>
                         </div>
                         <div class="recommendtr-item">
-                            <img src="pic/picture.png" alt="구 서도역">
+                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
                             <p><strong>구 서도역</strong></p>
                             <p>전북 남원시</p>
                         </div>
                         <div class="recommendtr-item">
-                            <img src="pic/picture.png" alt="구 서도역">
+                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
                             <p><strong>구 서도역</strong></p>
                             <p>전북 남원시</p>
                         </div>
                         <div style="margin-left:40px; display: flex; justify-content: center; align-items: center;">
-                            <img src="pic/sidearrow.png" style="align-self: center; margin-bottom: 0px; cursor: pointer;">
+                            <img src="<%=contextPath %>/pic/sidearrow.png" style="align-self: center; margin-bottom: 0px; cursor: pointer;">
                         </div>
                     </div>
                 </td>
@@ -550,6 +441,6 @@
             </tr>
         </table>
     </div>
-     <%@include file="../views/common/footer.jsp"%>
+     <%@include file="../common/footer.jsp"%>
 </body>
 </html>
