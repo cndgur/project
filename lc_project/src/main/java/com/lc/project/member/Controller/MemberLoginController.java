@@ -30,6 +30,8 @@ public class MemberLoginController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		request.getRequestDispatcher("views/member/loginmember.jsp").forward(request, response);
+<<<<<<< HEAD:lc_project/src/main/java/com/lc/project/controller/MemberLoginController.java
+=======
 		
 		Member m = new Member();
 		m.setUserId(request.getParameter("userId"));
@@ -45,6 +47,7 @@ public class MemberLoginController extends HttpServlet {
 		}
 		
 		
+>>>>>>> 8cb2ee71314d230c926477ebe3eef6afe38a6a9f:lc_project/src/main/java/com/lc/project/member/Controller/MemberLoginController.java
 	}
 
 	/**
