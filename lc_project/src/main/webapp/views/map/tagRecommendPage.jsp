@@ -40,18 +40,7 @@
 </head>
 <body>
 	<!-- header -->
-<<<<<<< HEAD
-	<div id="header_wrapper">
-        <div id="header_wrapper1">
-            <div id="header_logo"><a href=""><img src="../../pic/logo.png" alt="" width="80" height="64"></a></div>
-            <div id="header_letter"><a href="">방구석 여행</a></div>
-        </div>
-        <div id="header_signIn"><button>로그인</button></div>
-    </div>
-    
-=======
 	<%@include file="../common/header.jsp" %>
->>>>>>> 221775c907ea1a0de1aadf38c85865f59735a01d
     <!-- main -->
     <div id="wrapper">
         <div class="area" style="font-weight: bold;">

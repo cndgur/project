@@ -9,6 +9,8 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import com.lc.project.common.vo.PageInfo;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSession;
 
 public class Template {
 	public static SqlSession getSqlSession() {

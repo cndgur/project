@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--  namespace: 해당 mapper파일의 고유한 별칭  -->
-<mapper namespace="Mappers">
+<mapper namespace="travelMapper">
 	<resultMap id="TravelResultSet" type="Travel">
 		<result column="ac_name" property="trName" />
 		<result column="ac_address" property="trAddress" />
@@ -19,5 +19,18 @@
 			  			FROM TB_TOUR
 			  	   	   ORDER BY Field DESC))
 		WHERE ROWNUM <= 10
+	</select>
+	<select id="locationList" resultMap="TravelResultSet">
+		SELECT ac_name,
+				ac_address,
+				tr_info,
+				act_id,
+				Field
+		FROM (SELECT *,ROWNUM
+			    FROM (SELECT *
+			  			FROM TB_TOUR
+			  	   	   ORDER BY Field DESC))
+		WHERE ROWNUM <= 10
+		AND AC_ADDRESS LIKE '%' || #{location} || '%'
 	</select>
 </mapper>

@@ -170,35 +170,35 @@
 		    <div class="swiper mySwiper2">
 		      <div class="swiper-wrapper">
 		          <div class="swiper-slide">
-		            <img src="./pic/main-seoul.webp" alt="seoul" onclick="">
+		            <img src="./pic/main-seoul.webp" alt="seoul" onclick="location.href='location.tr?location=서울'">
 		            <p>서울</p>
 		          </div>        
 		          <div class="swiper-slide">
-		            <img src="./pic/main-gangwon.jpg" alt="">
+		            <img src="./pic/main-gangwon.jpg" alt="gangwon" onclick="location.href='location.tr?location=강원'">
 		            <p>강원</p>
 		          </div>
 		          <div class="swiper-slide">
-		            <img src="./pic/main-chungcheong.jpg" alt="">
+		            <img src="./pic/main-chungcheong.jpg" alt="chungcheong" onclick="location.href='location.tr?location=충청'">
 		            <p>충청</p>
 		          </div>
 		          <div class="swiper-slide">
-		            <img src="./pic/main-jeollabuk.jpg" alt="">
+		            <img src="./pic/main-jeollabuk.jpg" alt="jeollabuk" onclick="location.href='location.tr?location=전북'">
 		            <p>전북</p>
 		          </div>
 		          <div class="swiper-slide">
-		            <img src="./pic/main-jeollanam.jpg" alt="">
+		            <img src="./pic/main-jeollanam.jpg" alt="jeollanam" onclick="location.href='location.tr?location=전남'">
 		            <p>전남</p>
 		          </div>
 		          <div class="swiper-slide">
-		            <img src="./pic/main-gyeongsangbuk.jpg" alt="">
+		            <img src="./pic/main-gyeongsangbuk.jpg" alt="gyeongsangbuk" onclick="location.href='location.tr?location=경북'">
 		            <p>경북</p>
 		          </div>
 		          <div class="swiper-slide">
-		            <img src="./pic/main-gyeongsangnam.jpg" alt="">
+		            <img src="./pic/main-gyeongsangnam.jpg" alt="gyeongsangnam" onclick="location.href='location.tr?location=경남'">
 		            <p>경남</p>
 		          </div>
 		          <div class="swiper-slide">
-		            <img src="./pic/main-jeju.png" alt="">
+		            <img src="./pic/main-jeju.png" alt="jeju" onclick="location.href='location.tr?location=제주'">
 		            <p>제주</p>
 		          </div>
 		      </div>
@@ -304,6 +304,7 @@
 		function travelInfo(){
 			location.href="<%=contextPath%>/travel.info?travel=1"
 		}
+    
     const mySwiper2 = new Swiper(".mySwiper2", {
         slidesPerView: 'auto', // 한 번에 표시할 슬라이드 수
         spaceBetween: 20, // 슬라이드 간의 간격

@@ -21,6 +21,16 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+    <display-name>location.tr</display-name>
+    <servlet-name>location.tr</servlet-name>
+    <servlet-class>com.lc.project.travel.controller.locationListController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>location.tr</servlet-name>
+    <url-pattern>/location.tr</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
     <display-name>login.me</display-name>
     <servlet-name>login.me</servlet-name>
     <servlet-class>com.lc.project.member.Controller.MemberLoginController</servlet-class>
