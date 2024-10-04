@@ -170,7 +170,7 @@
 		    <div class="swiper mySwiper2">
 		      <div class="swiper-wrapper">
 		          <div class="swiper-slide">
-		            <img src="./pic/main-seoul.webp" alt="seoul">
+		            <img src="./pic/main-seoul.webp" alt="seoul" onclick="">
 		            <p>서울</p>
 		          </div>        
 		          <div class="swiper-slide">
@@ -304,36 +304,36 @@
 		function travelInfo(){
 			location.href="<%=contextPath%>/travel.info?travel=1"
 		}
-	    const mySwiper2 = new Swiper(".mySwiper2", {
-	        slidesPerView: 'auto', // 한 번에 표시할 슬라이드 수
-	        spaceBetween: 20, // 슬라이드 간의 간격
-	        breakpoints : {
-	            700: {
-	            slidesPerView: 4,
-	            spaceBetween: 20,
-	            },
-	            1024: {
-	                slidesPerView: 6,
-	                spaceBetween: 20,
-	            }
-	        }, 
-	        slideToclickedSlide : true,
-	        navigation: {
-	            nextEl: ".swiper-button-next", 
-	            prevEl: ".swiper-button-prev"
-	        },
-	        loop: true,
-	        freemode : true,
-	        watchOverflow : true,
-	        centeredSlides : false,
-	        initialSlide: 0,
-	        slideOffsetAfter: 10,
-	        slideOffsetBefore: 10
-	    });
-    
-	    $('.btn_like').click(function () {
-	      $(this).toggleClass("on")
-	    });
+    const mySwiper2 = new Swiper(".mySwiper2", {
+        slidesPerView: 'auto', // 한 번에 표시할 슬라이드 수
+        spaceBetween: 20, // 슬라이드 간의 간격
+        breakpoints : {
+            700: {
+            slidesPerView: 4,
+            spaceBetween: 20,
+            },
+            1024: {
+                slidesPerView: 6,
+                spaceBetween: 20,
+            }
+        }, 
+        slideToclickedSlide : true,
+        navigation: {
+            nextEl: ".swiper-button-next", 
+            prevEl: ".swiper-button-prev"
+        },
+        loop: true,
+        freemode : true,
+        watchOverflow : true,
+        centeredSlides : false,
+        initialSlide: 0,
+        slideOffsetAfter: 10,
+        slideOffsetBefore: 10
+    });
+  
+    $('.btn_like').click(function () {
+      $(this).toggleClass("on")
+    });
 	</script>
 	 <%@include file="views/common/footer.jsp"%>
 </body>
