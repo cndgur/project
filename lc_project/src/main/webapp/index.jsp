@@ -236,7 +236,7 @@
 	    </c:forEach>
 	    -->  
           <div class="swiper-slide">
-              <img src="./pic/qntks.jfif" onclick="travelInfo()">
+              <img src="./pic/qntks.jfif" onclick="location.href='travel.info?travel=태하중도생태공원'">
               <button class="btn_like" onclick="">like</button>
               <p>에버랜드</p>
           </div>
@@ -301,9 +301,6 @@
   </div>
   
   <script>
-		function travelInfo(){
-			location.href="<%=contextPath%>/travel.info?travel=1"
-		}
 	    const mySwiper2 = new Swiper(".mySwiper2", {
 	        slidesPerView: 'auto', // 한 번에 표시할 슬라이드 수
 	        spaceBetween: 20, // 슬라이드 간의 간격

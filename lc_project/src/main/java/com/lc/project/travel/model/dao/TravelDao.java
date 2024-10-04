@@ -17,7 +17,6 @@ public class TravelDao {
 	private Properties prop = new Properties();
 	public TravelDao() {
 		String filePath = TravelDao.class.getResource("/db/sql/JDBCmappers.xml").getPath();
-		System.out.println(filePath);
 		try {
 			prop.loadFromXML(new FileInputStream(filePath));
 		} catch (IOException e) {
@@ -64,12 +63,12 @@ public class TravelDao {
 			pstmt.setString(1, trName);
 			rset = pstmt.executeQuery();
 			if(rset.next()) {
-				t.setTrName(rset.getString("ac_name"));
-				t.setTrAddress(rset.getString("ac_address"));
-				t.setTrInfo(rset.getString("tr_info"));
+				t.setTrName(rset.getString("AC_NAME"));
+				t.setTrAddress(rset.getString("AC_ADDRESS"));
+				t.setTrInfo(rset.getString("TR_INFO"));
 				t.setMapInfo(rset.getString("MAP_INFO"));
-				t.setTrId(rset.getString("act_id"));
-				t.setCount(rset.getInt("cnt"));
+				t.setTrId(rset.getString("ACT_ID"));
+				t.setCount(rset.getInt("CNT"));
 				t.setPicInfo(rset.getString("LOCATION"));
 			}
 		} catch (SQLException e) {
