@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="com.lc.project.travel.model.vo.Travel"%>
+    pageEncoding="UTF-8" import="com.lc.project.travel.model.vo.Travel, java.util.ArrayList" %>
 <%
 	Travel t = (Travel)request.getAttribute("t");
+	ArrayList<Travel> tlist = (ArrayList<Travel>)request.getAttribute("tlist");
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -52,10 +53,18 @@
         #wrapper{
             width: 100%;
         }
-        
-        .test{
-            position: relative;
+        #wishlistbt{
+			float: right;
+        	width: 90px;
+        	background-color: #7bbcb0;
+            border: none;
+            color: white; 
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 16px;
+            height: 40px;	
         }
+		
         .nav-area{ 
             display: flex;
             justify-content: center;
@@ -200,35 +209,42 @@
             
         }
         #reviewbt{
+        	width: 50px;
+        	background-color: #7bbcb0;
+            border: none;
+            color: white;
+            padding: 0px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 13px;
             height: 30px;
-            font-size: 15px;
             float: right;
             margin-top: 10px;
             margin-right: 50px;
         }
         .recommendtr {
             width: 100%;
-            height: 200px;
+            height: 250px;
             display: flex;
             background-color: #ddeeeb;
-            padding: 10px;
             border-radius: 15px;
             text-align: center;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
         .recommendtr-item {
+        	width: 170px;
             margin: 15px;
-            background-color: #ddeeeb;
             border-radius: 15px;
             margin-bottom: 0px;
             padding: 0px;
             
         }
 
-        .recommendtr img {
-            width: auto;
-            height: 80px;
+        .recommendtrimg {
+            width: 150px;
+            height: 150px;
             border-radius: 10px;
+            cursor: pointer;
         }
 
         .recommendtr p {
@@ -249,14 +265,19 @@
         <table>
             <tr style="height:50px">
                 <td class="side"></td>
-                <td></td>
+                <td colspan="3" style="text-align: center; vertical-align: bottom;"><button id="wishlistbt" style="float: right;"><b>찜하기</b></button></td>
                 <td></td>
                 <td></td>
                 <td class="side"></td>
             </tr>
             <tr>
                 <td class="side"></td>
-                <td colspan="3" style="text-align: center; vertical-align: bottom;"><b style="font-size: 40px;"><%=t.getTrName()%></b></td>
+                <td colspan="3" style="text-align: center; vertical-align: bottom;">
+                	<div>
+                		<b style="font-size: 40px; margin-left: 0px;"><%=t.getTrName()%></b>
+
+                	</div>
+                </td>
                 <td></td>
                 <td></td>
                 <td class="side"></td>
@@ -455,45 +476,51 @@
                         <hr>
                     </div>
                     <div class="recommendtr" style="margin-bottom: 100px;">
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div style="margin-left:40px; display: flex; justify-content: center; align-items: center;">
+                    <% for(Travel tra : tlist){ %>
+	                        <div class="recommendtr-item">
+	                            <img class="recommendtrimg" src="<%=contextPath %><%=tra.getPicInfo() %>" onclick="location.href='travel.info?travel=<%=tra.getTrName()%>'">
+	                            <p onclick="location.href='travel.info?travel=<%=tra.getTrName()%>'" style="cursor: pointer;"><strong><%=tra.getTrName() %></strong></p>
+	                            <p onclick="location.href='travel.info?travel=<%=tra.getTrName()%>'" style="cursor: pointer;"><%=tra.getTrAddress() %></p>
+	                        </div>
+	                <%} %>
+	                	<!-- 
+                        <div style="margin-left:40px; display: flex; justify-content: center; align-items: center; float: right; heigth: 120px; width: 120px;">
                             <img src="<%=contextPath %>/pic/sidearrow.png" style="align-self: center; margin-bottom: 0px; cursor: pointer;">
                         </div>
+                         -->
                     </div>
+                <script>
+				    const mySwiper2 = new Swiper(".mySwiper2", {
+				        slidesPerView: 'auto', // 한 번에 표시할 슬라이드 수
+				        spaceBetween: 20, // 슬라이드 간의 간격
+				        breakpoints : {
+				            700: {
+				            slidesPerView: 4,
+				            spaceBetween: 20,
+				            },
+				            1024: {
+				                slidesPerView: 6,
+				                spaceBetween: 20,
+				            }
+				        }, 
+				        slideToclickedSlide : true,
+				        navigation: {
+				            nextEl: ".swiper-button-next", 
+				            prevEl: ".swiper-button-prev"
+				        },
+				        loop: true,
+				        freemode : true,
+				        watchOverflow : true,
+				        centeredSlides : false,
+				        initialSlide: 0,
+				        slideOffsetAfter: 10,
+				        slideOffsetBefore: 10
+				    });
+			    
+				    $('.btn_like').click(function () {
+				      $(this).toggleClass("on")
+				    });
+				</script>
                 </td>
                 <td></td>
                 <td></td>

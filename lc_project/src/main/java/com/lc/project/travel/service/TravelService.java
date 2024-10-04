@@ -9,16 +9,16 @@ import com.lc.project.travel.model.vo.Travel;
 
 public class TravelService {
 	private TravelDao tDao = new TravelDao();
-	public ArrayList<Travel> selectList(){
-		Connection conn = JDBCTemplate.getConnection();
-		ArrayList<Travel> list = tDao.selectList(conn);
-		JDBCTemplate.close(conn);
-		return list;
-	}
 	public Travel selectTravel(String trName) {
 		Connection conn = JDBCTemplate.getConnection();
 		Travel t = tDao.selectTravel(conn,trName);
 		JDBCTemplate.close(conn);
 		return t;
+	}
+	public ArrayList<Travel> selectNearbyTravel(String trAddress, String trName){
+		Connection conn = JDBCTemplate.getConnection();
+		ArrayList<Travel> list = tDao.selectNearbyTravel(conn,trAddress,trName);
+		JDBCTemplate.close(conn);
+		return list;
 	}
 }

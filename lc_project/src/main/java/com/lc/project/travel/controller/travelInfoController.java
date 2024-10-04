@@ -1,6 +1,7 @@
 package com.lc.project.travel.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import com.lc.project.travel.model.vo.Travel;
 import com.lc.project.travel.service.TravelService;
@@ -31,7 +32,9 @@ public class travelInfoController extends HttpServlet {
 		String trName = request.getParameter("travel");
 		System.out.println(trName);
 		Travel t = new TravelService().selectTravel(trName);
+		ArrayList<Travel> tlist = new TravelService().selectNearbyTravel(t.getTrAddress(),trName);
 		request.setAttribute("t", t);
+		request.setAttribute("tlist", tlist);
 		request.getRequestDispatcher("views/detail/tr_infoPage.jsp").forward(request, response);
 	}
 

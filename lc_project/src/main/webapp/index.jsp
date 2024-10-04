@@ -225,16 +225,7 @@
      -->
     </script>
     <div class="swiper mySwiper2">
-      <div class="swiper-wrapper">
- 		<!--  
-	    <c:forEach var="tra" items="${list}">
-	    	<div class="swiper-slide">
-	              <img src="./pic/qntks.jfif" onclick="location.href='<%=contextPath%>/travel.info?travel=${tra.trName}'" style="cursor: pointer;">
-	              <button class="btn_like" onclick="">like</button>
-	              <p>${tra.trName}</p>
-	          </div>
-	    </c:forEach>
-	    -->  
+      <div class="swiper-wrapper">  
           <div class="swiper-slide">
               <img src="./pic/qntks.jfif" onclick="location.href='travel.info?travel=태하중도생태공원'">
               <button class="btn_like" onclick="">like</button>

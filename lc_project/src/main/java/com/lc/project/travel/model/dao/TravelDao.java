@@ -1,6 +1,6 @@
 package com.lc.project.travel.model.dao;
 
-import static com.lc.project.common.template.JDBCTemplate.*;
+import static com.lc.project.common.template.JDBCTemplate.close;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -24,34 +24,7 @@ public class TravelDao {
 		}
 	}
 
-	public ArrayList<Travel> selectList(Connection conn){
-		ArrayList<Travel> list = new ArrayList<>();
-		PreparedStatement pstmt = null;
-		ResultSet rset = null;
-		
-		String sql = prop.getProperty("travelTopList");
-		System.out.println(sql);
-		try {
-			pstmt = conn.prepareStatement(sql);
-			rset = pstmt.executeQuery();
-			while(rset.next()) {
-				Travel t = new Travel();
-				t.setTrName(rset.getString("ac_name"));
-				t.setTrAddress(rset.getString("ac_address"));
-				t.setTrInfo(rset.getString("tr_info"));
-				t.setMapInfo(rset.getString("map_info"));
-				t.setTrId(rset.getString("act_id"));
-				t.setCount(rset.getInt("Field"));
-				list.add(t);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}finally {
-			close(rset);
-			close(pstmt);
-		}
-		return list;
-	}
+	
 	public Travel selectTravel(Connection conn, String trName) {
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
@@ -79,5 +52,32 @@ public class TravelDao {
 			close(pstmt);
 		}
 		return t;
+	}
+	public ArrayList<Travel> selectNearbyTravel(Connection conn, String trAddress, String trName){
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		ArrayList<Travel> list = new ArrayList<>();
+		String sql = "SELECT AC_NAME, AC_ADDRESS, LOCATION FROM TB_TOUR LEFT JOIN TB_TOUR_PICTURE USING(AC_NAME) WHERE AC_ADDRESS = ? AND AC_NAME != ?";
+		System.out.println(sql);
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, trAddress);
+			pstmt.setString(2, trName);
+			rset = pstmt.executeQuery();
+			while(rset.next()) {
+				Travel t = new Travel();
+				t.setTrName(rset.getString("AC_NAME"));
+				t.setTrAddress(rset.getString("AC_ADDRESS"));
+				t.setPicInfo(rset.getString("LOCATION"));
+				list.add(t);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			close(rset);
+			close(pstmt);
+		}
+		return list;
 	}
 }
