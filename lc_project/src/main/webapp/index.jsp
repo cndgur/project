@@ -170,36 +170,36 @@
 		    <div class="swiper mySwiper2">
 		      <div class="swiper-wrapper">
 		          <div class="swiper-slide">
-		            <img src="./pic/tjdnf.jfif" alt="">
-		            <p>서울<br>숙소2000개</p>
+		            <img src="./pic/main-seoul.webp" alt="seoul">
+		            <p>서울</p>
 		          </div>        
 		          <div class="swiper-slide">
-		            <img src="./pic/qntks.jfif" alt="">
-		            <p>부산<br>숙소2000개</p>
+		            <img src="./pic/main-gangwon.jpg" alt="">
+		            <p>강원</p>
 		          </div>
 		          <div class="swiper-slide">
-		            <img src="./pic/wpwn.jfif" alt="">
-		            <p>제주<br>숙소2000개</p>
+		            <img src="./pic/main-chungcheong.jpg" alt="">
+		            <p>충청</p>
 		          </div>
 		          <div class="swiper-slide">
-		            <img src="./pic/rudwn.jfif" alt="">
-		            <p>경주<br>숙소2000개</p>
+		            <img src="./pic/main-jeollabuk.jpg" alt="">
+		            <p>전북</p>
 		          </div>
 		          <div class="swiper-slide">
-		            <img src="./pic/thrch.jfif" alt="">
-		            <p>속초<br>숙소2000개</p>
+		            <img src="./pic/main-jeollanam.jpg" alt="">
+		            <p>전남</p>
 		          </div>
 		          <div class="swiper-slide">
-		            <img src="./pic/wpwn.jfif" alt="">
-		            <p>제주<br>숙소2000개</p>
+		            <img src="./pic/main-gyeongsangbuk.jpg" alt="">
+		            <p>경북</p>
 		          </div>
 		          <div class="swiper-slide">
-		            <img src="./pic/rudwn.jfif" alt="">
-		            <p>경주<br>숙소2000개</p>
+		            <img src="./pic/main-gyeongsangnam.jpg" alt="">
+		            <p>경남</p>
 		          </div>
 		          <div class="swiper-slide">
-		            <img src="./pic/thrch.jfif" alt="">
-		            <p>속초<br>숙소2000개</p>
+		            <img src="./pic/main-jeju.png" alt="">
+		            <p>제주</p>
 		          </div>
 		      </div>
 		      <div class="swiper-button-next"></div>
