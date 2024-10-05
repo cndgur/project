@@ -82,6 +82,8 @@ public class TravelDao {
 	}
 
 	public ArrayList<Travel> selectList(SqlSession sqlSession, String location) {
+		ArrayList<Travel> list = (ArrayList)sqlSession.selectList("travelMapper.locationList",location);
+		System.out.println(list);
 		return (ArrayList)sqlSession.selectList("travelMapper.locationList",location);
 	}
 }
