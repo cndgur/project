@@ -30,8 +30,8 @@
 		 WHERE AC_NAME = #{trName}
 	</select>
 	<select id="locationList" resultMap="TravelResultSet">
-		SELECT  ac_name,
-				ac_address 
+		SELECT  AC_NAME,
+			    AC_ADDRESS
 		FROM (
 				SELECT *
 				  FROM TB_TOUR
@@ -48,6 +48,19 @@
 				SELECT *
 				  FROM TB_TOUR
 				 WHERE ACT_ID = '맛집'
+				 ORDER BY FIELD
+		)
+		WHERE AC_ADDRESS LIKE '%' || #{location} || '%'
+		  AND ROWNUM &lt;=4
+	</select>
+	<select id="otherList" resultMap="TravelResultSet">
+		SELECT  AC_NAME,
+			    AC_ADDRESS
+		FROM (
+				SELECT *
+				  FROM TB_TOUR
+				 WHERE ACT_ID != '맛집'
+		  	 	   AND AC_NAME != #{trName}
 				 ORDER BY FIELD
 		)
 		WHERE AC_ADDRESS LIKE '%' || #{location} || '%'

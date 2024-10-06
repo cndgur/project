@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Properties;
 
 import org.apache.ibatis.session.SqlSession;
@@ -89,5 +90,9 @@ public class TravelDao {
 
 	public Travel selectTravel(SqlSession sqlSession, String trName) {
 		return sqlSession.selectOne("travelMapper.selectTravel",trName);
+	}
+
+	public ArrayList<Travel> otherList(SqlSession sqlSession, HashMap<String, String> map) {
+		return (ArrayList)sqlSession.selectList("travelMapper.otherList",map);
 	}
 }

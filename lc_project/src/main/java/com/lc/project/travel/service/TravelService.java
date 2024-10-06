@@ -2,6 +2,7 @@ package com.lc.project.travel.service;
 
 import java.sql.Connection;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -35,7 +36,13 @@ public class TravelService {
 		SqlSession sqlSession = Template.getSqlSession();
 		ArrayList<Travel> list = tDao.foodSelectList(sqlSession, location);
 		sqlSession.close();
-		System.out.println(list);
+		return list;
+	}
+	
+	public ArrayList<Travel> otherList(HashMap<String, String> map) {
+		SqlSession sqlSession = Template.getSqlSession();
+		ArrayList<Travel> list = tDao.otherList(sqlSession, map);
+		sqlSession.close();
 		return list;
 	}
 }
