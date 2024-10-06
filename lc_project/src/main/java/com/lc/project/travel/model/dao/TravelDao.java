@@ -53,31 +53,31 @@ public class TravelDao {
 		}
 		return list;
 	}
-	public Travel selectTravel(Connection conn, String trName) {
-		PreparedStatement pstmt = null;
-		ResultSet rset = null;
-		Travel t = new Travel();
-		String sql = "SELECT AC_NAME, AC_ADDRESS, TR_INFO FROM TB_TOUR WHERE AC_NAME = '서울식물원'";
-		try {
-			pstmt = conn.prepareStatement(sql);
-			rset = pstmt.executeQuery();
-			if(rset.next()) {
-				t.setTrName(rset.getString("ac_name"));
-				t.setTrAddress(rset.getString("ac_address"));
-				t.setTrInfo(rset.getString("tr_info"));
-				t.setTrId(rset.getString("act_id"));
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}finally {
-			close(rset);
-			close(pstmt);
-		}
-		
-		System.out.println(t);
-		return t;
-	}
+//	public Travel selectTravel(SqlSession sqlSession, String trName) {
+//		PreparedStatement pstmt = null;
+//		ResultSet rset = null;
+//		Travel t = new Travel();
+//		String sql = "SELECT AC_NAME, AC_ADDRESS, TR_INFO FROM TB_TOUR WHERE AC_NAME = '서울식물원'";
+//		try {
+//			pstmt = conn.prepareStatement(sql);
+//			rset = pstmt.executeQuery();
+//			if(rset.next()) {
+//				t.setTrName(rset.getString("ac_name"));
+//				t.setTrAddress(rset.getString("ac_address"));
+//				t.setTrInfo(rset.getString("tr_info"));
+//				t.setTrId(rset.getString("act_id"));
+//			}
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}finally {
+//			close(rset);
+//			close(pstmt);
+//		}
+//		
+//		System.out.println(t);
+//		return t;
+//	}
 
 	public ArrayList<Travel> selectList(SqlSession sqlSession, String location) {
 		return (ArrayList)sqlSession.selectList("travelMapper.locationList",location);
@@ -86,4 +86,8 @@ public class TravelDao {
 	public ArrayList<Travel> foodSelectList(SqlSession sqlSession, String location) {
 		return (ArrayList)sqlSession.selectList("travelMapper.foodList",location);
 		}
+
+	public Travel selectTravel(SqlSession sqlSession, String trName) {
+		return sqlSession.selectOne("travelMapper.selectTravel",trName);
+	}
 }

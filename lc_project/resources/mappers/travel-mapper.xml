@@ -21,6 +21,14 @@
 			  	   	   ORDER BY Field DESC))
 		WHERE ROWNUM &lt;= 10
 	</select>
+	<select id="selectTravel" resultMap="TravelResultSet">
+		SELECT AC_NAME,
+			   AC_ADDRESS,
+			   TR_INFO,
+			   FIELD
+		  FROM TB_TOUR
+		 WHERE AC_NAME = #{trName}
+	</select>
 	<select id="locationList" resultMap="TravelResultSet">
 		SELECT  ac_name,
 				ac_address 

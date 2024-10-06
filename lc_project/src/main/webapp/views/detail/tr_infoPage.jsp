@@ -3,6 +3,7 @@
 <%
 	Travel t = (Travel)request.getAttribute("t");
 %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>

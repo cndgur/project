@@ -19,9 +19,9 @@ public class TravelService {
 		return list;
 	}
 	public Travel selectTravel(String trName) {
-		Connection conn = JDBCTemplate.getConnection();
-		Travel t = tDao.selectTravel(conn,trName);
-		JDBCTemplate.close(conn);
+		SqlSession sqlSession = Template.getSqlSession();
+		Travel t = tDao.selectTravel(sqlSession,trName);
+		sqlSession.close();
 		return t;
 	}
 	public ArrayList<Travel> locationList(String location) {
