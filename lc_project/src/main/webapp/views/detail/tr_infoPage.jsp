@@ -490,6 +490,16 @@
                             <p><strong>구 서도역</strong></p>
                             <p>전북 남원시</p>
                         </div>
+                         <div class="recommendtr-item">
+                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
+                            <p><strong>구 서도역</strong></p>
+                            <p>전북 남원시</p>
+                        </div>
+                        <div class="recommendtr-item">
+                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
+                            <p><strong>구 서도역</strong></p>
+                            <p>전북 남원시</p>
+                        </div>
                         <div style="margin-left:40px; display: flex; justify-content: center; align-items: center;">
                             <img src="<%=contextPath %>/pic/sidearrow.png" style="align-self: center; margin-bottom: 0px; cursor: pointer;">
                         </div>

@@ -265,7 +265,7 @@ section {
         <div class="food">
             <c:forEach var="item2" items="${list2}">
             	<div>
-                <img src="images/a1.jpg" alt="${item2.trName}" onclick="location.href='travel.info?travel=${item.trName}'">
+                <img src="images/a1.jpg" alt="${item2.trName}" onclick="location.href='travel.info?travel=${item2.trName}'">
                 <h3>${item2.trName}</h3>
                 <p>${item2.trAddress}</p>
             </div>
