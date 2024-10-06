@@ -14,21 +14,35 @@
 	</resultMap>
 	<select id="selectTravelList" resultMap="TravelResultSet">
 		SELECT ac_name,
-				ac_address,
-				tr_info,
-				act_id,
-				Field
+				ac_address
 		FROM (SELECT *,ROWNUM
 			    FROM (SELECT *
 			  			FROM TB_TOUR
 			  	   	   ORDER BY Field DESC))
-		WHERE ROWNUM <= 10
+		WHERE ROWNUM &lt;= 10
 	</select>
 	<select id="locationList" resultMap="TravelResultSet">
 		SELECT  ac_name,
-				ac_address,
-				tr_info,
-		FROM TB_TOUR
+				ac_address 
+		FROM (
+				SELECT *
+				  FROM TB_TOUR
+				 WHERE ACT_ID != '맛집'
+				 ORDER BY FIELD
+		)
 		WHERE AC_ADDRESS LIKE '%' || #{location} || '%'
+		  AND ROWNUM &lt;=4
+	</select>
+	<select id="foodList" resultMap="TravelResultSet">
+		SELECT  ac_name,
+				ac_address 
+		FROM (
+				SELECT *
+				  FROM TB_TOUR
+				 WHERE ACT_ID = '맛집'
+				 ORDER BY FIELD
+		)
+		WHERE AC_ADDRESS LIKE '%' || #{location} || '%'
+		  AND ROWNUM &lt;=4
 	</select>
 </mapper>

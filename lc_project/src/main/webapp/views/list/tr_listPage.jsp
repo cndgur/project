@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -245,55 +247,29 @@ section {
 
     <!-- 서울 추천 여행지 섹션 -->
     <section>
-        <h1>서울 추천 여행지</h1>
+        <h1>${location} 추천 여행지</h1>
         <div class="gallery">
-            <div>
-                <img src="images/n.jpg" alt="N서울타워">
-                <h3>N서울타워</h3>
-                <p>서울특별시 용산구</p>
-            </div>
-            <div>
-                <img src="images/C.jpg" alt="이랜드크루즈">
-                <h3>이랜드크루즈</h3>
-                <p>서울특별시 영등포구</p>
-            </div>
-            <div>
-                <img src="images/s.jpg" alt="코엑스 아쿠아리움">
-                <h3>코엑스 아쿠아리움</h3>
-                <p>서울특별시 강남구</p>
-            </div>
-            <div>
-                <img src="images/f.jpg" alt="낙산공원">
-                <h3>낙산공원</h3>
-                <p>서울특별시 종로구</p>
-            </div>
+            <c:forEach var="item" items="${list1}">
+                <div>
+                    <img src="images/n.jpg" alt="${item.trName}">
+                    <h3>${item.trName}</h3>
+                    <p>${item.trAddress}</p>
+                </div>
+        	</c:forEach>
         </div>
     </section>
 
     <!-- 서울 추천 맛집 섹션 -->
     <section class="sec">
-        <h1>서울 추천 맛집</h1>
+        <h1>${location} 추천 맛집</h1>
         <div class="food">
-            <div>
-                <img src="images/a1.jpg" alt="오레노라멘 본점">
-                <h3>오레노라멘 본점</h3>
-                <p>서울특별시 마포구</p>
+            <c:forEach var="item2" items="${list2}">
+            	<div>
+                <img src="images/a1.jpg" alt="${item2.trName}">
+                <h3>${item2.trName}</h3>
+                <p>${item2.trAddress}</p>
             </div>
-            <div>
-                <img src="images/a2.jpg" alt="리틀넥 청담">
-                <h3>리틀넥 청담</h3>
-                <p>서울특별시 강남구</p>
-            </div>
-            <div>
-                <img src="images/a3.jpg" alt="다올 숯불구이 명동점">
-                <h3>다올 숮불구이 명동점</h3>
-                <p>서울특별시 중구</p>
-            </div>
-            <div>
-                <img src="images/a4.jpg" alt="코리코카페">
-                <h3>코리코카페</h3>
-                <p>서울특별시 종로구</p>
-            </div>
+			</c:forEach>
         </div>
     </section>
 

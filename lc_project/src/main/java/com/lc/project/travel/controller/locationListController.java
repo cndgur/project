@@ -31,9 +31,12 @@ public class locationListController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String location = request.getParameter("location");
-		ArrayList<Travel> list = new TravelService().locationList(location);
+		ArrayList<Travel> list1 = new TravelService().locationList(location);
+		ArrayList<Travel> list2 = new TravelService().foodList(location);
 		
-		
+		request.setAttribute("list1", list1);
+		request.setAttribute("list2", list2);
+		request.setAttribute("location", location);
 		request.getRequestDispatcher("views/list/tr_listPage.jsp").forward(request, response);
 		
 		}

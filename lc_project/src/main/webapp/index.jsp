@@ -174,8 +174,8 @@
 		            <p>서울</p>
 		          </div>        
 		          <div class="swiper-slide">
-		            <img src="./pic/main-gangwon.jpg" alt="gangwon" onclick="location.href='location.tr?location=강원'">
-		            <p>강원</p>
+		            <img src="./pic/main-gangwon.jpg" alt="gangwon" onclick="location.href='location.tr?location=인천'">
+		            <p>인천</p>
 		          </div>
 		          <div class="swiper-slide">
 		            <img src="./pic/main-chungcheong.jpg" alt="chungcheong" onclick="location.href='location.tr?location=충청'">

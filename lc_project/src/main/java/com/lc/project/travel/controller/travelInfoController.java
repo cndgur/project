@@ -28,7 +28,7 @@ public class travelInfoController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String trName = "서울식물원";
+		String trName = request.getParameter("travel");
 		System.out.println(trName);
 		Travel t = new TravelService().selectTravel(trName);
 		request.setAttribute("t", t);

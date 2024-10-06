@@ -61,9 +61,7 @@ public class TravelDao {
 		try {
 			pstmt = conn.prepareStatement(sql);
 			rset = pstmt.executeQuery();
-			System.out.println(rset);
 			if(rset.next()) {
-				System.out.println(rset);
 				t.setTrName(rset.getString("ac_name"));
 				t.setTrAddress(rset.getString("ac_address"));
 				t.setTrInfo(rset.getString("tr_info"));
@@ -82,8 +80,10 @@ public class TravelDao {
 	}
 
 	public ArrayList<Travel> selectList(SqlSession sqlSession, String location) {
-		ArrayList<Travel> list = (ArrayList)sqlSession.selectList("travelMapper.locationList",location);
-		System.out.println(list);
 		return (ArrayList)sqlSession.selectList("travelMapper.locationList",location);
 	}
+
+	public ArrayList<Travel> foodSelectList(SqlSession sqlSession, String location) {
+		return (ArrayList)sqlSession.selectList("travelMapper.foodList",location);
+		}
 }
