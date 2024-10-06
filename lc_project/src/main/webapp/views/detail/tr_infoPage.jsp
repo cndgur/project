@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="com.lc.project.travel.model.vo.Travel, java.util.ArrayList" %>
+    pageEncoding="UTF-8" import="com.lc.project.travel.model.vo.Travel, java.util.ArrayList, com.lc.project.travel.model.vo.tReview" %>
 <%
 	Travel t = (Travel)request.getAttribute("t");
 	ArrayList<Travel> tlist = (ArrayList<Travel>)request.getAttribute("tlist");
+	ArrayList<tReview> rlist = (ArrayList<tReview>)request.getAttribute("rlist");
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -64,7 +65,21 @@
             font-size: 16px;
             height: 40px;	
         }
-		
+
+		#recommend .btn_like {
+			width: 20px; 
+			height: 20px;
+			background: url(https://umings.github.io/images/i_like_off.png) no-repeat center / 20px; 
+			cursor: pointer; 
+			border:0;
+			font-size:0; 
+			margin-bottom: 5px;
+		}
+		#recommend .btn_like.on {
+			background: url(https://umings.github.io/images/i_like_on.png) no-repeat center / 20px; 
+			animation: beating .5s 1 alternate;
+		}
+
         .nav-area{ 
             display: flex;
             justify-content: center;
@@ -209,7 +224,7 @@
             
         }
         #reviewbt{
-        	width: 50px;
+        	width: 90px;
         	background-color: #7bbcb0;
             border: none;
             color: white;
@@ -229,6 +244,7 @@
             background-color: #ddeeeb;
             border-radius: 15px;
             text-align: center;
+            justify-content: center;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
         .recommendtr-item {
@@ -284,13 +300,25 @@
             </tr>
             <tr>
                 <td class="side"></td>
-                <td class="side" ><img src="<%=contextPath %>/pic/heart.png" width="20px" height="20px" style="margin-right: 5px;"><b><%=t.getCount()%></b></td>
-                <td style="width: 20%; text-align: center; vertical-align: top;"><b style="font-size: 20px;"><%=t.getTrAddress()%></td>
+                <td class="side" >
+                	<div id="recommend">
+                		<button class="btn_like" onclick="">like></button>
+                		<div style="display: inline-block;"><%=t.getCount() %></div>
+                	</div>
+                	<script>
+                	    $('.btn_like').click(function () {
+	      				$(this).toggleClass("on")
+	    				});
+					</script>	
+                	 
+                </td>
+                <td style="width: 20%; text-align: center; vertical-align: top;"><b style="font-size: 20px;"><%=t.getTrAddress()%></b></td>
                 <td class="side">
                     <div id="category">
-                        <button style="cursor:context-menu;">#1인여행</button>
+                        <button style="cursor:context-menu;">#1힐</button>
                         <button style="cursor:context-menu;">#힐링</button>
                         <button style="cursor:context-menu;">#여행</button>
+                        <button style="cursor:context-menu;">#1힐</button>
                     </div>
                 </td>
                 <td class="side"></td>
@@ -364,6 +392,7 @@
                 <td class="side">
                     <div class="sidenav">
                         <div class="sidenav-header">찜한 여행지</div>
+                        <!-- 
                         <div class="sidenav-item">
                             <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
                             <p><strong>구 서도역</strong></p>
@@ -379,9 +408,11 @@
                             <p><strong>구 서도역</strong></p>
                             <p>전북 남원시</p>
                         </div>
+                        
                         <div>
                             <img src="<%=contextPath %>/pic/arrow.png" style="align-self: center; margin-bottom: 0px; cursor: pointer;">
                         </div>
+                         -->
                         <div class="sidenav-footer">
                             <button><div style="vertical-align: middle;">여행지 기준<br>호텔 검색</div></button>
                         </div>
@@ -455,12 +486,31 @@
                     <div>
                         <h2>여행지 리뷰</h2>
                         <hr>
-                        <div style="width: 100%; height: 250px; background: #ddeeeb; margin-bottom: 100px;">
+                        <form action="review.tra">
+                        	<div style="width: 100%; height: 250px; background: #ddeeeb; margin-bottom: 100px;">
                             <textarea id="review" placeholder="리뷰를 작성해주세요." style="resize: none;"></textarea><br>
-                            <button id="reviewbt">등록</button>
-                        </div>
+                            <button id="reviewbt" type="submit">등록</button>
+                        	</div>
+                        </form>
                         <div>
                             <!-- 리뷰나올영역-->
+                            <% for(tReview tr : rlist){ %>
+		                        <div style="text-align: right;">
+	                            	<table style="margin-top: 30px;">
+		                            	<tr>
+		                            		<td style="width: 80px; text-align: left;">
+		                            			<b><%=tr.getWriter() %></b>
+		                            		</td>
+		                            		<td style="text-align: left;">
+		                            			<%=tr.getContent() %>
+		                            		</td>
+		                            	</tr>
+		                            </table>
+		                            <%=tr.getReviewDate() %>
+	                            </div>
+	                            <hr>
+	                		<%} %>
+                            
                         </div>
                     </div>
                 </td>
@@ -471,7 +521,7 @@
             <tr id="recommend">
                 <td class="side"></td>
                 <td colspan="3" class="content">
-                    <div>
+                    <div style="margin-top: 50px;">
                         <h2>근처 다른 여행지</h2>
                         <hr>
                     </div>
@@ -489,38 +539,6 @@
                         </div>
                          -->
                     </div>
-                <script>
-				    const mySwiper2 = new Swiper(".mySwiper2", {
-				        slidesPerView: 'auto', // 한 번에 표시할 슬라이드 수
-				        spaceBetween: 20, // 슬라이드 간의 간격
-				        breakpoints : {
-				            700: {
-				            slidesPerView: 4,
-				            spaceBetween: 20,
-				            },
-				            1024: {
-				                slidesPerView: 6,
-				                spaceBetween: 20,
-				            }
-				        }, 
-				        slideToclickedSlide : true,
-				        navigation: {
-				            nextEl: ".swiper-button-next", 
-				            prevEl: ".swiper-button-prev"
-				        },
-				        loop: true,
-				        freemode : true,
-				        watchOverflow : true,
-				        centeredSlides : false,
-				        initialSlide: 0,
-				        slideOffsetAfter: 10,
-				        slideOffsetBefore: 10
-				    });
-			    
-				    $('.btn_like').click(function () {
-				      $(this).toggleClass("on")
-				    });
-				</script>
                 </td>
                 <td></td>
                 <td></td>

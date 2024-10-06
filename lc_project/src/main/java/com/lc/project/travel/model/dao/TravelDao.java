@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Properties;
 
 import com.lc.project.travel.model.vo.Travel;
+import com.lc.project.travel.model.vo.tReview;
 
 public class TravelDao {
 	private Properties prop = new Properties();
@@ -57,11 +58,18 @@ public class TravelDao {
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		ArrayList<Travel> list = new ArrayList<>();
-		String sql = "SELECT AC_NAME, AC_ADDRESS, LOCATION FROM TB_TOUR LEFT JOIN TB_TOUR_PICTURE USING(AC_NAME) WHERE AC_ADDRESS = ? AND AC_NAME != ?";
+		String sql = "SELECT AC_NAME, AC_ADDRESS, LOCATION "
+				+ "FROM (SELECT AC_NAME, AC_ADDRESS, LOCATION, ROWNUM "
+				+ "      FROM (SELECT AC_NAME, AC_ADDRESS, LOCATION"
+				+ "            FROM TB_TOUR\r\n"
+				+ "            LEFT JOIN TB_TOUR_PICTURE USING(AC_NAME) "
+				+ "            WHERE AC_ADDRESS LIKE ? AND AC_NAME != ?)"
+				+ "      ORDER BY DBMS_RANDOM.VALUE)"
+				+ "WHERE ROWNUM <= 4";
 		System.out.println(sql);
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, trAddress);
+			pstmt.setString(1, trAddress+'%');
 			pstmt.setString(2, trName);
 			rset = pstmt.executeQuery();
 			while(rset.next()) {
@@ -80,4 +88,31 @@ public class TravelDao {
 		}
 		return list;
 	}
+	public ArrayList<tReview> selectTReview(Connection conn, String trName){
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		ArrayList<tReview> list = new ArrayList<>();
+		String sql = "SELECT EMAIL2, CONTENT, REVIEW_DATE FROM TB_REVIEW WHERE AC_NAME = ?";
+		System.out.println(sql);
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, trName);
+			rset = pstmt.executeQuery();
+			while(rset.next()) {
+				tReview tr = new tReview();
+				tr.setWriter(rset.getString("EMAIL2"));
+				tr.setContent(rset.getString("CONTENT"));
+				tr.setReviewDate(rset.getDate("REVIEW_DATE"));
+				list.add(tr);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			close(rset);
+			close(pstmt);
+		}
+		return list;
+	}
+	
 }

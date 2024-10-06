@@ -1,27 +1,23 @@
 package com.lc.project.travel.controller;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
-import com.lc.project.travel.model.vo.Travel;
-import com.lc.project.travel.model.vo.tReview;
-import com.lc.project.travel.service.TravelService;
-
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
- * Servlet implementation class travelInfoController
+ * Servlet implementation class travelReviewController
  */
-public class travelInfoController extends HttpServlet {
+@WebServlet(name = "review.tra", urlPatterns = { "/review.tra" })
+public class travelReviewController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public travelInfoController() {
+    public travelReviewController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,16 +26,7 @@ public class travelInfoController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String trName = request.getParameter("travel");
-		TravelService tServ = new TravelService();
-		System.out.println(trName);
-		Travel t = tServ.selectTravel(trName);
-		ArrayList<Travel> tlist = tServ.selectNearbyTravel(t.getTrAddress(),trName);
-		ArrayList<tReview> rlist = tServ.selectTReview(trName);
-		request.setAttribute("t", t);
-		request.setAttribute("tlist", tlist);
-		request.setAttribute("rlist", rlist);
-		request.getRequestDispatcher("views/detail/tr_infoPage.jsp").forward(request, response);
+
 	}
 
 	/**

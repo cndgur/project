@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="com.lc.project.travel.model.vo.Travel, java.util.ArrayList, com.lc.project.travel.model.vo.tReview"%>
+<%	
+	Hotel h = (Hotel)request.getAttribute("h");
+	Travel t = (Travel)request.getAttribute("t");
+	ArrayList<Travel> tlist = (ArrayList<Travel>)request.getAttribute("tlist");
+	ArrayList<tReview> rlist = (ArrayList<tReview>)request.getAttribute("rlist");
+%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -18,13 +24,18 @@
         integrity="sha256-Fb0zP4jE3JHqu+IBB9YktLcSjI1Zc6J2b6gTjB0LpoM="
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/lc/css/ht_infoPage.css">
-
+	<!--
+        2. 설치 스크립트
+        * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+    -->
+    <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
 
     <script src="https://cdn.portone.io/v2/browser-sdk.js"></script>
-    
+    <link rel="icon" href="../../pic/logo.png"/>
+    <link rel="apple-touch-icon" href="../../pic/logo.png"/>
     
 </head>
 <body id=system-ui>
@@ -70,7 +81,7 @@
                         <hr>
                     </div>
                     <div style="margin-bottom: 20px;">
-                        <img src="<%=contextPath %>/pic/star.png"><b>  9.3</b><span style="color: #959c9b;">  294명 평가</span>
+                        <img src="<%=contextPath %>/pic/star.png"><b>  9.3</b>
                     </div>
                     <div style="display: flex;">
                         <div class="reviewcon">
@@ -151,11 +162,7 @@
                     <!-- 1. 지도 노드 -->
                     <div id="daumRoughmapContainer1727164187996" class="root_daum_roughmap root_daum_roughmap_landing" style="width: 100%;"></div>
 
-                    <!--
-                        2. 설치 스크립트
-                        * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
-                    -->
-                    <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+                    
 
                     <!-- 3. 실행 스크립트 -->
                     <script charset="UTF-8">
@@ -242,20 +249,31 @@
                                 </tr>
                             </table>
                             <script>
-                                function requestPay() {
-                                  PortOne.requestPayment({
-                                    storeId: "store-e4038486-8d83-41a5-acf1-844a009e0d94",
-                                    paymentId: "test12",
-                                    orderName: "테스트 결제",
-                                    totalAmount: 100,
-                                    currency: "KRW",
-                                    channelKey: "channel-key-01764171-b249-4c16-9d18-e9174fa8e611",
-                                    payMethod: "EASY_PAY",
-                                    easyPay: {
-                                      easyPayProvider: "KAKAOPAY",
-                                    },
-                                  });
-                                }
+                            	function requestPay() {
+                            	  PortOne.requestPayment({
+                            	    storeId: "store-e4038486-8d83-41a5-acf1-844a009e0d94",
+                            	    paymentId: "153afwo42hfgegawnerg",
+                            	    orderName: "테스트 결제",
+                            	    totalAmount: 100,
+                            	    currency: "KRW",
+                            	    channelKey: "channel-key-01764171-b249-4c16-9d18-e9174fa8e611",
+                            	    payMethod: "EASY_PAY",
+                            	    easyPay: {
+                            	      easyPayProvider: "KAKAOPAY",
+                            	    }
+                            	  }, function(response) {
+                            	    // 결제 성공 시 처리
+                            	    if (response.status === "AUTHENTICATED" && response.expired === false) {
+								      window.alert("결제 성공");
+								      console.log("결제 성공:", response);
+								      // 성공 처리 (예: 결제 완료 페이지로 이동)
+								      window.location.href = "/payment-success";
+								    } else {
+								      window.alert("결제 실패: " + (response.errorMessage || "알 수 없는 오류"));
+								      console.log("결제 실패:", response);
+								    }
+                            	  });
+                            	}
                                 </script>
                         </div>
                         <div style="width: 100%; height: 250px; background: #ddeeeb; margin-bottom: 50px; border-radius: 15px;">
@@ -336,9 +354,6 @@
                             </table>
                             
                         </div>
-                        <div>
-                            <!-- 리뷰나올영역-->
-                        </div>
                     </div>
                 </td>
                 <td></td>
@@ -353,39 +368,13 @@
                         <hr>
                     </div>
                     <div class="recommendtr" style="margin-bottom: 100px;">
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div style="margin-left:40px; display: flex; justify-content: center; align-items: center;">
-                            <img src="<%=contextPath %>/pic/sidearrow.png" style="align-self: center; margin-bottom: 0px; cursor: pointer;">
-                        </div>
+                        <% for(Travel tra : tlist){ %>
+	                        <div class="recommendtr-item">
+	                            <img class="recommendtrimg" src="<%=contextPath %><%=tra.getPicInfo() %>" onclick="location.href='travel.info?travel=<%=tra.getTrName()%>'">
+	                            <p onclick="location.href='travel.info?travel=<%=tra.getTrName()%>'" style="cursor: pointer;"><strong><%=tra.getTrName() %></strong></p>
+	                            <p onclick="location.href='travel.info?travel=<%=tra.getTrName()%>'" style="cursor: pointer;"><%=tra.getTrAddress() %></p>
+	                        </div>
+	                	<%} %>
                     </div>
                 </td>
                 <td></td>
@@ -400,39 +389,13 @@
                         <hr>
                     </div>
                     <div class="recommendtr" style="margin-bottom: 100px;">
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div style="margin-left:40px; display: flex; justify-content: center; align-items: center;">
-                            <img src="<%=contextPath %>/pic/sidearrow.png" style="align-self: center; margin-bottom: 0px; cursor: pointer;">
-                        </div>
+                        <% for(Travel tra : tlist){ %>
+	                        <div class="recommendtr-item">
+	                            <img class="recommendtrimg" src="<%=contextPath %><%=tra.getPicInfo() %>" onclick="location.href='travel.info?travel=<%=tra.getTrName()%>'">
+	                            <p onclick="location.href='travel.info?travel=<%=tra.getTrName()%>'" style="cursor: pointer;"><strong><%=tra.getTrName() %></strong></p>
+	                            <p onclick="location.href='travel.info?travel=<%=tra.getTrName()%>'" style="cursor: pointer;"><%=tra.getTrAddress() %></p>
+	                        </div>
+	                	<%} %>
                     </div>
                 </td>
                 <td></td>
