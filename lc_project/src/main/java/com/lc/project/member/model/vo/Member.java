@@ -3,58 +3,72 @@ package com.lc.project.member.model.vo;
 import java.sql.Date;
 
 public class Member {
-
-	private String userId;
-	private String userPwd;
+	private int userNo;
 	private String userName;
-	private String email;
-	private String tel;
-	private String birthday;
-	private String gender;
-	private Date enrollDate;
-	private Date modiftyDate;
-	private String status;
+    private String userId;
+    private String userPwd;
+    private String tel;
+    private String address;
+    private String birthday;
+    private String gender;
+    private Date enrollDate;
+    private Date modifyDate;
+    private String status;
 	
-	
-	public Member() {
+    
+    public Member() {
 		super();
 	}
+    
 
 
-	public Member(String userId, String userPwd, String userName, String email, String tel, String birthday,
-			String gender, Date enrollDate, Date modiftyDate, String status) {
+	public Member(int userNo, String userName, String userId, String userPwd, String tel, String address,
+			String birthday, String gender, Date enrollDate, Date modifyDate, String status) {
 		super();
+		this.userNo = userNo;
+		this.userName = userName;
 		this.userId = userId;
 		this.userPwd = userPwd;
-		this.userName = userName;
-		this.email = email;
 		this.tel = tel;
+		this.address = address;
 		this.birthday = birthday;
 		this.gender = gender;
 		this.enrollDate = enrollDate;
-		this.modiftyDate = modiftyDate;
+		this.modifyDate = modifyDate;
 		this.status = status;
 	}
 
 
-	public String getUserId() {
-		return userId;
-	}
 
 
-	public void setUserId(String userId) {
+
+
+
+	public Member(String userName, String userId, String userPwd, String tel, String address, String birthday,
+			String gender, String status) {
+		super();
+		this.userName = userName;
 		this.userId = userId;
-	}
-
-
-	public String getUserPwd() {
-		return userPwd;
-	}
-
-
-	public void setUserPwd(String userPwd) {
 		this.userPwd = userPwd;
+		this.tel = tel;
+		this.address = address;
+		this.birthday = birthday;
+		this.gender = gender;
+		this.status = status;
 	}
+
+
+
+	public int getUserNo() {
+		return userNo;
+	}
+
+
+
+	public void setUserNo(int userNo) {
+		this.userNo = userNo;
+	}
+
 
 
 	public String getUserName() {
@@ -62,19 +76,35 @@ public class Member {
 	}
 
 
+
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
 
 
-	public String getEmail() {
-		return email;
+
+	public String getUserId() {
+		return userId;
 	}
 
 
-	public void setEmail(String email) {
-		this.email = email;
+
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
+
+
+
+	public String getUserPwd() {
+		return userPwd;
+	}
+
+
+
+	public void setUserPwd(String userPwd) {
+		this.userPwd = userPwd;
+	}
+
 
 
 	public String getTel() {
@@ -82,9 +112,23 @@ public class Member {
 	}
 
 
+
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
+
+
+
+	public String getAddress() {
+		return address;
+	}
+
+
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
 
 
 	public String getBirthday() {
@@ -92,9 +136,11 @@ public class Member {
 	}
 
 
+
 	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
+
 
 
 	public String getGender() {
@@ -102,9 +148,11 @@ public class Member {
 	}
 
 
+
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
+
 
 
 	public Date getEnrollDate() {
@@ -112,19 +160,23 @@ public class Member {
 	}
 
 
+
 	public void setEnrollDate(Date enrollDate) {
 		this.enrollDate = enrollDate;
 	}
 
 
-	public Date getModiftyDate() {
-		return modiftyDate;
+
+	public Date getModifyDate() {
+		return modifyDate;
 	}
 
 
-	public void setModiftyDate(Date modiftyDate) {
-		this.modiftyDate = modiftyDate;
+
+	public void setModifyDate(Date modifyDate) {
+		this.modifyDate = modifyDate;
 	}
+
 
 
 	public String getStatus() {
@@ -132,18 +184,18 @@ public class Member {
 	}
 
 
+
 	public void setStatus(String status) {
 		this.status = status;
 	}
 
 
+
 	@Override
 	public String toString() {
-		return "Member [userId=" + userId + ", userPwd=" + userPwd + ", userName=" + userName + ", email=" + email
-				+ ", tel=" + tel + ", birthday=" + birthday + ", gender=" + gender + ", enrollDate=" + enrollDate
-				+ ", modiftyDate=" + modiftyDate + ", status=" + status + "]";
+		return "Member [userNo=" + userNo + ", userName=" + userName + ", userId=" + userId + ", userPwd=" + userPwd
+				+ ", tel=" + tel + ", address=" + address + ", birthday=" + birthday + ", gender=" + gender
+				+ ", enrollDate=" + enrollDate + ", modifyDate=" + modifyDate + ", status=" + status + "]";
 	}
 
-
-	
 }

@@ -41,16 +41,6 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>insert.me</display-name>
-    <servlet-name>insert.me</servlet-name>
-    <servlet-class>com.lc.project.member.Controller.MemberInsertController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>insert.me</servlet-name>
-    <url-pattern>/insert.me</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
     <display-name>travellist.info</display-name>
     <servlet-name>travellist.info</servlet-name>
     <servlet-class>com.lc.project.controller.travelInfoListController</servlet-class>
@@ -78,5 +68,15 @@
   <servlet-mapping>
     <servlet-name>selcetenroll.me</servlet-name>
     <url-pattern>/selcetenroll.me</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <description></description>
+    <display-name>insert.me</display-name>
+    <servlet-name>insert.me</servlet-name>
+    <servlet-class>com.lc.project.member.Controller.MemberinsertController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>insert.me</servlet-name>
+    <url-pattern>/insert.me</url-pattern>
   </servlet-mapping>
 </web-app>

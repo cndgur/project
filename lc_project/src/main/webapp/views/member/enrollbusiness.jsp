@@ -164,7 +164,7 @@ small{
     </div>
 
     <div class="body">
-        <form action="" onsubmit="return test()">
+        <form action="insert.me" method="post" onsubmit="return test()">
             <div class="name">
                 <p>* 이름</p>
                 <input type="text" placeholder="이름을 입력하세요." required> <br>
@@ -172,7 +172,7 @@ small{
             <div class="id">
                 <p class="id_title">* 아이디</p>
                 <input type="button" value="아이디 중복확인" class="checkid">
-                <input type="text" placeholder="아이디" required> <br>
+                <input type="text" name="userId" placeholder="아이디" required> <br>
             </div>
             <div class="pwd">
                 <p>* 비밀번호</p>

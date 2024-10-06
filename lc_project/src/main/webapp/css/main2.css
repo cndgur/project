@@ -46,7 +46,7 @@ body{
     width: 120px;
     height: 40px;
     border: none;
-    background-color: #7BBCB0;
+    background-color: #7b8ebc;
     color: white;
     font-family: "Noto Sans KR", system-ui;
     right: 50px;
@@ -67,7 +67,7 @@ body{
 }
 .textarea {
     display: flex;
-    background-color: #7BBCB0;
+    background-color: #7b8ebc;
     border-radius: 50px;
     box-shadow: 0px 0px 20px 0px #000000;
     width: 1100px;

@@ -14,8 +14,7 @@
   <link rel="apple-touch-icon" href="./pic/logo.png"/>
   <!-- CSS -->
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="./css/main.css" />
-  
+  <link rel="stylesheet" href="./css/main2.css" />
 
   <!-- JS -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -37,7 +36,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
-
 </head>
 <body>
     <div class="header">
@@ -81,7 +79,7 @@
              <div class="textarea">
                 <input type="text" class="input_1" placeholder="지역" onfocus="this.placeholder = ''" onblur="this.placeholder = '지역';"
                 ></input>
-                <input type="text" class="input_2" placeholder="가고싶은 곳" onfocus="this.placeholder = ''" onblur="this.placeholder = '가고싶은 곳';"
+                <input type="text" class="input_2" placeholder="가고싶은 호텔" onfocus="this.placeholder = ''" onblur="this.placeholder = '가고싶은 곳';"
                 ></input>
                 <a href=""><img src="./pic/검색-removebg-preview.png" alt="" class="research_btn"></a>
             </div>

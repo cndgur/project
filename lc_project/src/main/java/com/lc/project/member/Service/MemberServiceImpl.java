@@ -1,15 +1,14 @@
 package com.lc.project.member.Service;
 
 import org.apache.ibatis.session.SqlSession;
-
 import com.lc.project.common.template.Template;
 import com.lc.project.member.model.dao.MemberDao;
 import com.lc.project.member.model.vo.Member;
 
-public class MemberServiceImpl implements MemberService {
+public class MemberServiceImpl implements MemberService{
 
 	private MemberDao mDao = new MemberDao();
-
+	
 	@Override
 	public Member loginMember(Member m) {
 		SqlSession sqlSession = Template.getSqlSession();
@@ -18,9 +17,8 @@ public class MemberServiceImpl implements MemberService {
 		sqlSession.close();
 		
 		return loginUser;
-
 	}
-	
+
 	@Override
 	public int insertMember(Member m) {
 		SqlSession sqlSession = Template.getSqlSession();
@@ -28,11 +26,15 @@ public class MemberServiceImpl implements MemberService {
 		
 		if(result > 0) {
 			sqlSession.commit();
-		}else {
+		} else {
 			sqlSession.rollback();
 		}
+		
 		sqlSession.close();
+		
 		return result;
 	}
-	
+
+
+
 }
