@@ -163,7 +163,7 @@
                 <img src="./pic/logo.png" alt="" class="header_main_logo">
             </a>
         </div>
-        <h1>이메일로 로그인하기</h1>
+        <h1>로그인</h1>
     </div>
     
     <div class="login-container">
@@ -171,9 +171,9 @@
             <img src="./pic/logo.png" alt="logo">
             <p class="name">방구석여행</p>
         </div>
-        <form action="login.me" method="post">
-            <input type="text" placeholder="아이디" required id="username">
-            <input type="password" placeholder="비밀번호" required id="password">
+        <form action="login.mem" method="post">
+            <input type="text" placeholder="아이디" required id="userId" name="userId">
+            <input type="password" placeholder="비밀번호" required id="userPwd" name="userPwd">
             <button type="submit" id="btn">로그인</button>
         </form>
         <div class="links">

@@ -50,9 +50,6 @@
                     <div class="header_name">방구석여행</div>
                     <img src="./pic/logo.png" alt="" class="header_main_logo">
                 </a>
-                <a onclick="location.href='login.me'" class="to_login">
-                    <div><input type="button" class="header_btn" value="로그인"></div>
-                </a>
                 <c:choose>
                 	<c:when test="${empty loginUser }">
                 	<!-- 로그인 전 -->
@@ -62,7 +59,12 @@
 	                </c:when>
 	                <c:otherwise>
 	                <!-- 로그인 후 -->
-	                	<img id="hamBtn" src="../../pic/hamburgerBtn.png" alt="hamburgerBtn" width="30px" height="22px">
+                   <a href="views/common/myPage.jsp">
+                      <div id="myPage_Circle">
+                        <img id="hamBtn" src="./pic/hamburgerBtn.png" alt="hamburgerBtn" width="30px" height="22px">
+                        <img id="avatar" src="./pic/avatar.png" alt="avatar" width="35px" height="35px">
+                      </div>
+                  </a>
 	                </c:otherwise>
 	            </c:choose>
             </div>

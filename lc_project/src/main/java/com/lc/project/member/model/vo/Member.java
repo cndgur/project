@@ -8,6 +8,7 @@ public class Member {
     private String userId;
     private String userPwd;
     private String tel;
+    private String email;
     private String address;
     private String birthday;
     private String gender;
@@ -19,10 +20,9 @@ public class Member {
     public Member() {
 		super();
 	}
-    
 
 
-	public Member(int userNo, String userName, String userId, String userPwd, String tel, String address,
+	public Member(int userNo, String userName, String userId, String userPwd, String tel, String email, String address,
 			String birthday, String gender, Date enrollDate, Date modifyDate, String status) {
 		super();
 		this.userNo = userNo;
@@ -30,6 +30,7 @@ public class Member {
 		this.userId = userId;
 		this.userPwd = userPwd;
 		this.tel = tel;
+		this.email = email;
 		this.address = address;
 		this.birthday = birthday;
 		this.gender = gender;
@@ -39,24 +40,18 @@ public class Member {
 	}
 
 
-
-
-
-
-
-	public Member(String userName, String userId, String userPwd, String tel, String address, String birthday,
-			String gender, String status) {
+	public Member(String userName, String userId, String userPwd, String tel, String email, String address,
+			String birthday, String gender) {
 		super();
 		this.userName = userName;
 		this.userId = userId;
 		this.userPwd = userPwd;
 		this.tel = tel;
+		this.email = email;
 		this.address = address;
 		this.birthday = birthday;
 		this.gender = gender;
-		this.status = status;
 	}
-
 
 
 	public int getUserNo() {
@@ -64,11 +59,9 @@ public class Member {
 	}
 
 
-
 	public void setUserNo(int userNo) {
 		this.userNo = userNo;
 	}
-
 
 
 	public String getUserName() {
@@ -76,11 +69,9 @@ public class Member {
 	}
 
 
-
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-
 
 
 	public String getUserId() {
@@ -88,11 +79,9 @@ public class Member {
 	}
 
 
-
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-
 
 
 	public String getUserPwd() {
@@ -100,11 +89,9 @@ public class Member {
 	}
 
 
-
 	public void setUserPwd(String userPwd) {
 		this.userPwd = userPwd;
 	}
-
 
 
 	public String getTel() {
@@ -112,11 +99,19 @@ public class Member {
 	}
 
 
-
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
 
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 
 	public String getAddress() {
@@ -124,11 +119,9 @@ public class Member {
 	}
 
 
-
 	public void setAddress(String address) {
 		this.address = address;
 	}
-
 
 
 	public String getBirthday() {
@@ -136,11 +129,9 @@ public class Member {
 	}
 
 
-
 	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
-
 
 
 	public String getGender() {
@@ -148,11 +139,9 @@ public class Member {
 	}
 
 
-
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-
 
 
 	public Date getEnrollDate() {
@@ -160,11 +149,9 @@ public class Member {
 	}
 
 
-
 	public void setEnrollDate(Date enrollDate) {
 		this.enrollDate = enrollDate;
 	}
-
 
 
 	public Date getModifyDate() {
@@ -172,11 +159,9 @@ public class Member {
 	}
 
 
-
 	public void setModifyDate(Date modifyDate) {
 		this.modifyDate = modifyDate;
 	}
-
 
 
 	public String getStatus() {
@@ -184,18 +169,18 @@ public class Member {
 	}
 
 
-
 	public void setStatus(String status) {
 		this.status = status;
 	}
 
 
-
 	@Override
 	public String toString() {
 		return "Member [userNo=" + userNo + ", userName=" + userName + ", userId=" + userId + ", userPwd=" + userPwd
-				+ ", tel=" + tel + ", address=" + address + ", birthday=" + birthday + ", gender=" + gender
-				+ ", enrollDate=" + enrollDate + ", modifyDate=" + modifyDate + ", status=" + status + "]";
+				+ ", tel=" + tel + ", email=" + email + ", address=" + address + ", birthday=" + birthday + ", gender="
+				+ gender + ", enrollDate=" + enrollDate + ", modifyDate=" + modifyDate + ", status=" + status + "]";
 	}
+    
+
 
 }

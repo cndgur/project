@@ -63,11 +63,11 @@
 	    margin: 0 auto;
 	    /* text-align: center; */
 	    position: absolute;
-	    top: 600px;
+	    top: 639px;
 	    transform: translate(0, -40%);
-	    height: 1036px;
+	    height: 1073px;
 	}
-	.name, .id, .pwd, .checkpwd, .phone, .address, .birth, .gender{
+	.name, .id, .pwd, .checkpwd, .phone, .email, .address, .birthday, .gender{
 	    font-weight: bold;
 	}
 	
@@ -79,7 +79,7 @@
 	    border: 1px solid #ccc;
 	    border-radius: 5px;
 	}
-	.name,.id, .pwd, .checkpwd, .phone, .address, .birth, input:focus {outline: none;}
+	.name,.id, .pwd, .checkpwd, .phone, .email, .address, .birth, input:focus {outline: none;}
 	
 	
 	.pwd , .phone, .address{
@@ -186,9 +186,13 @@
 	            </div>
 	            <div class="phone">
 	                <p>전화번호</p>
-	                <input type="text" name="tel" placeholder="* '-' 제외하고 입력해주세요" required id="phone"> <br>
+	                <input type="text" name="tel" placeholder="* '-' 포함해서 입력해주세요" required id="phone"> <br>
 	                <small id="phoneMessage" style="color:red"></small>
-	            </div>  
+	            </div>
+	            <div class="email">
+	                <p>이메일</p>
+	                <input type="email" name="email" placeholder="이메일"> <br>
+	            </div>
 	            <div class="address">
 	                <p>주소</p>
 	                <input type="text" name="address" placeholder="주소"> <br>
@@ -218,8 +222,8 @@
 	            var phoneMessage = document.getElementById('phoneMessage');
 	
 	            // 전화번호가 11자리가 아닌 경우 경고 메시지 표시
-	            if (phone.length !== 11) {
-	                phoneMessage.textContent = '전화번호는 11자리여야 합니다.';
+	            if (phone.length !== 13) {
+	                phoneMessage.textContent = '전화번호는 13자리여야 합니다.';
 	            } else {
 	                phoneMessage.textContent = ''; // 조건 충족 시 메시지 삭제
 	            }

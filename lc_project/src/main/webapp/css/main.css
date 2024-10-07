@@ -53,6 +53,33 @@ body{
     top: 19px;
     cursor: pointer;
 }
+#myPage_Circle{
+	position: absolute;
+	right: 33px;
+    top: 14px;
+    cursor: pointer;
+    width : 120px;
+    height : 50px;
+    border-radius: 50px;
+    background-color: white;
+    /* border: 1px solid black; */
+}
+#hamBtn{
+    display: flex;
+    align-items: center;
+    float: left;
+    padding-top: 14px;
+    padding-left: 20px;
+}
+#avatar{
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    float: right;
+    padding-top: 7px;
+    padding-right: 15px;
+}
+
 .header_main_logo{
     position: absolute;
     width: 80px;

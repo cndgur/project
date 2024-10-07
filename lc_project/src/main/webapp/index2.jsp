@@ -60,7 +60,10 @@
 	                </c:when>
 	                <c:otherwise>
 	                <!-- 로그인 후 -->
-	                	<img id="hamBtn" src="../../pic/hamburgerBtn.png" alt="hamburgerBtn" width="30px" height="22px">
+	                	<div id="myPage_Circle">
+			                <img id="hamBtn" src="./pic/hamburgerBtn.png" alt="hamburgerBtn" width="30px" height="22px">
+			                <img id="avatar" src="./pic/avatar.png" alt="avatar" width="35px" height="35px">
+			            </div>
 	                </c:otherwise>
 	            </c:choose>
             </div>
