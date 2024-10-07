@@ -33,12 +33,14 @@ public class locationListController extends HttpServlet {
 		String location = request.getParameter("location");
 		ArrayList<Travel> list1 = new TravelService().locationList(location);
 		ArrayList<Travel> list2 = new TravelService().foodList(location);
+		ArrayList<Travel> list3 = new TravelService().festivalList(location);
 		
 		request.setAttribute("list1", list1);
 		request.setAttribute("list2", list2);
+		request.setAttribute("list3", list3);
 		request.setAttribute("location", location);
-		request.getRequestDispatcher("views/list/tr_listPage.jsp").forward(request, response);
 		
+		request.getRequestDispatcher("views/list/tr_listPage.jsp").forward(request, response);
 		}
 
 	/**

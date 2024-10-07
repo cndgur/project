@@ -170,12 +170,12 @@
 		    <div class="swiper mySwiper2">
 		      <div class="swiper-wrapper">
 		          <div class="swiper-slide">
-		            <img src="./pic/main-seoul.webp" alt="seoul" onclick="location.href='location.tr?location=서울'">
-		            <p>서울</p>
+		            <img src="./pic/main-seoul.webp" alt="seoul" onclick="location.href='location.tr?location=수도권'">
+		            <p>수도권</p>
 		          </div>        
 		          <div class="swiper-slide">
-		            <img src="./pic/main-gangwon.jpg" alt="gangwon" onclick="location.href='location.tr?location=인천'">
-		            <p>인천</p>
+		            <img src="./pic/main-gangwon.jpg" alt="gangwon" onclick="location.href='location.tr?location=강원'">
+		            <p>강원</p>
 		          </div>
 		          <div class="swiper-slide">
 		            <img src="./pic/main-chungcheong.jpg" alt="chungcheong" onclick="location.href='location.tr?location=충청'">

@@ -92,7 +92,12 @@ public class TravelDao {
 		return sqlSession.selectOne("travelMapper.selectTravel",trName);
 	}
 
+	public ArrayList<Travel> festivalList(SqlSession sqlSession, String location) {
+		return (ArrayList)sqlSession.selectList("travelMapper.festivalList",location);
+	}
+	
 	public ArrayList<Travel> otherList(SqlSession sqlSession, HashMap<String, String> map) {
 		return (ArrayList)sqlSession.selectList("travelMapper.otherList",map);
 	}
+
 }

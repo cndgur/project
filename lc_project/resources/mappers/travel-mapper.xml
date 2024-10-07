@@ -6,11 +6,15 @@
 <!--  namespace: 해당 mapper파일의 고유한 별칭  -->
 <mapper namespace="travelMapper">
 	<resultMap id="TravelResultSet" type="Travel">
-		<result column="ac_name" property="trName" />
-		<result column="ac_address" property="trAddress" />
-		<result column="tr_info" property="trInfo" />
-		<result column="act_id" property="trId" />
-		<result column="Field" property="count" />
+		<result column="AC_NAME" property="trName" />
+		<result column="AC_ADDRESS" property="trAddress" />
+		<result column="TR_INFO" property="trInfo" />
+		<result column="ACT_PERSONNEL" property="trPersonal" />
+		<result column="ACT_LOCATION" property="trLocation" />
+		<result column="ACT_THEME" property="trId" />
+		<result column="TR_MAP_LATITUDE" property="trMapLatitude" />
+		<result column="TR_MAP_LONGITUDE" property="trMapLongitude" />
+		<result column="FIELD" property="count" />
 	</resultMap>
 	<select id="selectTravelList" resultMap="TravelResultSet">
 		SELECT ac_name,
@@ -35,10 +39,10 @@
 		FROM (
 				SELECT *
 				  FROM TB_TOUR
-				 WHERE ACT_ID != '맛집'
-				 ORDER BY FIELD
+				 WHERE ACT_THEME NOT IN ('맛집','축제')
+				 ORDER BY FIELD DESC
 		)
-		WHERE AC_ADDRESS LIKE '%' || #{location} || '%'
+		WHERE ACT_LOCATION = #{location}
 		  AND ROWNUM &lt;=4
 	</select>
 	<select id="foodList" resultMap="TravelResultSet">
@@ -47,11 +51,23 @@
 		FROM (
 				SELECT *
 				  FROM TB_TOUR
-				 WHERE ACT_ID = '맛집'
-				 ORDER BY FIELD
+				 WHERE ACT_THEME = '맛집'
+				 ORDER BY FIELD DESC
 		)
-		WHERE AC_ADDRESS LIKE '%' || #{location} || '%'
+		WHERE ACT_LOCATION = #{location}
 		  AND ROWNUM &lt;=4
+	</select>
+	<select id="festivalList" resultMap="TravelResultSet">
+		SELECT  ac_name,
+				tr_info 
+		FROM (
+				SELECT *
+				  FROM TB_TOUR
+				 WHERE ACT_THEME = '축제'
+				 ORDER BY FIELD DESC
+		)
+		WHERE ACT_LOCATION = #{location}
+		  AND ROWNUM &lt;=3
 	</select>
 	<select id="otherList" resultMap="TravelResultSet">
 		SELECT  AC_NAME,
@@ -59,11 +75,11 @@
 		FROM (
 				SELECT *
 				  FROM TB_TOUR
-				 WHERE ACT_ID != '맛집'
+				 WHERE ACT_THEME NOT IN ('맛집','축제')
 		  	 	   AND AC_NAME != #{trName}
-				 ORDER BY FIELD
+				 ORDER BY FIELD DESC
 		)
-		WHERE AC_ADDRESS LIKE '%' || #{location} || '%'
+		WHERE ACT_LOCATION = #{location}
 		  AND ROWNUM &lt;=4
 	</select>
 </mapper>

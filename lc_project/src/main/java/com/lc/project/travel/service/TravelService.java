@@ -28,6 +28,9 @@ public class TravelService {
 	public ArrayList<Travel> locationList(String location) {
 		SqlSession sqlSession = Template.getSqlSession();
 		ArrayList<Travel> list = tDao.selectList(sqlSession, location);
+		System.out.println(list);
+		System.out.println(location);
+		System.out.println(location.getClass().getName());
 		sqlSession.close();
 		
 		return list;
@@ -35,6 +38,13 @@ public class TravelService {
 	public ArrayList<Travel> foodList(String location) {
 		SqlSession sqlSession = Template.getSqlSession();
 		ArrayList<Travel> list = tDao.foodSelectList(sqlSession, location);
+		sqlSession.close();
+		return list;
+	}
+	
+	public ArrayList<Travel> festivalList(String location) {
+		SqlSession sqlSession = Template.getSqlSession();
+		ArrayList<Travel> list = tDao.festivalList(sqlSession, location);
 		sqlSession.close();
 		return list;
 	}
