@@ -6,6 +6,11 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
+body{
+    font-family: "Noto Sans KR", system-ui;
+    margin: 0px;
+    padding: 0px;
+}
 #header_wrapper{
     height: 90px;
     background-color: rgba(221, 238, 235, 216);
