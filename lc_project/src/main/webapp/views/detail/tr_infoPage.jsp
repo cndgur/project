@@ -3,7 +3,7 @@
 <%
 	Travel t = (Travel)request.getAttribute("t");
 	ArrayList<Travel> tlist = (ArrayList<Travel>)request.getAttribute("tlist");
-	
+	ArrayList<Travel> wlist = (ArrayList<Travel>)request.getAttribute("wishlist");
 	ArrayList<tReview> rlist = (ArrayList<tReview>)request.getAttribute("rlist");
 %>
 <!DOCTYPE html>
@@ -282,7 +282,20 @@
         <table>
             <tr style="height:50px">
                 <td class="side"></td>
-                <td colspan="3" style="text-align: center; vertical-align: bottom;"><button id="wishlistbt" style="float: right;"><b>찜하기</b></button></td>
+                <td colspan="3" style="text-align: center; vertical-align: bottom;">
+                	<button id="wishlistbt" style="float: right;" onclick="insertwish"><b>찜하기</b></button>
+                	<script>
+                		function insertwish(){
+                			if(<%=t.getTrName()%> in <%=wlist%>){
+                				alert("이미 찜하였습니다.")
+                			}else if(length(<%=wlist%>) === 5){
+                				alert("찜하기는 최대 5개만 가능합니다.")
+                			}else{
+                				location.href="wish.list?tr=<%=t.getTrName()%>,user=<%=loginUser.getName()%>"
+                			}
+                		}
+                	</script>
+                </td>
                 <td></td>
                 <td></td>
                 <td class="side"></td>
@@ -301,17 +314,7 @@
             </tr>
             <tr>
                 <td class="side"></td>
-                <td class="side" >
-                	<div id="recommend">
-                		<button class="btn_like" onclick="">like></button>
-                		<div style="display: inline-block;"><%=t.getCount() %></div>
-                	</div>
-                	<script>
-                	    $('.btn_like').click(function () {
-	      				$(this).toggleClass("on")
-	    				});
-					</script>	
-                	 
+                <td class="side" >  	 
                 </td>
                 <td style="width: 20%; text-align: center; vertical-align: top;"><b style="font-size: 20px;"><%=t.getTrAddress()%></b></td>
                 <td class="side">
@@ -393,6 +396,13 @@
                 <td class="side">
                     <div class="sidenav">
                         <div class="sidenav-header">찜한 여행지</div>
+                        <%for(Travel tr : wlist){ %>
+	                        <div class="sidenav-item">
+	                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
+	                            <p><strong>구 서도역</strong></p>
+	                            <p>전북 남원시</p>
+	                        </div>
+	                     <%} %>
                         <!-- 
                         <div class="sidenav-item">
                             <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">

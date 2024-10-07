@@ -48,25 +48,11 @@
             </tr>
             <tr class="picture">
                 <td class="side"></td>
-                <td rowspan="2">
+                <td rowspan="3">
                     <img src="<%=contextPath %>/pic/ht_main_pic.png" class="large-image">
                 </td>
-                <td>
-                    <img src="<%=contextPath %>/pic/ht_sub_pic1.png" class="small-image">
-                </td>
-                <td>
-                    <img src="<%=contextPath %>/pic/ht_sub_pic2.png" class="small-image" style="border-start-end-radius: 10px;">
-                </td>
-                <td class="side"></td>
-            </tr>
-            <tr class="picture">
-                <td class="side"></td>
-                <td>
-                    <img src="<%=contextPath %>/pic/ht_sub_pic3.png" class="small-image">
-                </td>
-                <td>
-                    <img src="<%=contextPath %>/pic/ht_sub_pic1.png" class="small-image" style="border-end-end-radius: 10px;">
-                </td>
+                <td></td>
+                <td></td>
                 <td class="side"></td>
             </tr>
             <tr id="info">
