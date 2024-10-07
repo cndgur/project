@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <dirs>
+<<<<<<< HEAD
     <entry loc="C:\Users\oty03\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_23.0.0.v20240919-1706\jre" stamp="1727937498115"/>
     <entry loc="H:\dev_tool\jdk-17.0.0.1" stamp="1715191921000"/>
+=======
+<<<<<<< HEAD
+    <entry loc="C:\Users\이충혁\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.2.v20240802-1626\jre" stamp="1724245935686"/>
+    <entry loc="C:\dev_tool\jdk-17.0.0.1" stamp="1724244768887"/>
+    <entry loc="C:\Users\이충혁\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.2.v20240802-1626" stamp="1724245935686"/>
+=======
+>>>>>>> edbc04a47975ec8bcebbd3526adbecf30b8f9a36
     <entry loc="C:\Users\user1\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.1.v20240426-1149" stamp="1719551334834"/>
     <entry loc="C:\dev_tool\jdk-17" stamp="1719546031951"/>
     <entry loc="C:\Users\oty03\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_23.0.0.v20240919-1706" stamp="1727937498122"/>
     <entry loc="C:\Users\user1\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.1.v20240426-1149\jre" stamp="1719551334834"/>
+>>>>>>> 8cb2ee71314d230c926477ebe3eef6afe38a6a9f
 </dirs>
