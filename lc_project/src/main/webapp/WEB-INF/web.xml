@@ -79,4 +79,14 @@
     <servlet-name>selcetenroll.me</servlet-name>
     <url-pattern>/selcetenroll.me</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>hotel.list</display-name>
+    <servlet-name>hotel.list</servlet-name>
+    <servlet-class>com.lc.project.hotel.model.controller.hotelListController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>hotel.list</servlet-name>
+    <url-pattern>/hotel.list</url-pattern>
+  </servlet-mapping>
 </web-app>

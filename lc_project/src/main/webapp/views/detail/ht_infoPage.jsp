@@ -1,10 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="com.lc.project.travel.model.vo.Travel, java.util.ArrayList, com.lc.project.travel.model.vo.tReview"%>
+    pageEncoding="UTF-8" import="com.lc.project.hotel.model.vo.Hotel, java.util.ArrayList, com.lc.project.travel.model.vo.tReview"%>
 <%	
 	Hotel h = (Hotel)request.getAttribute("h");
-	Travel t = (Travel)request.getAttribute("t");
-	ArrayList<Travel> tlist = (ArrayList<Travel>)request.getAttribute("tlist");
-	ArrayList<tReview> rlist = (ArrayList<tReview>)request.getAttribute("rlist");
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -76,19 +73,19 @@
                 <td class="side"></td>
                 <td colspan="3" class="content">
                     <div style="margin-top: 100px;">
-                        <b style="font-size: 15px; margin-bottem: 0px">호텔 • 5성급</b><br>
+                        <b style="font-size: 15px; margin-bottom: 0px">호텔 • 5성급</b><br>
                         <b style="font-size: 30px">힐튼 경주</b>
                         <hr>
                     </div>
                     <div style="margin-bottom: 20px;">
-                        <img src="<%=contextPath %>/pic/star.png"><b>  9.3</b>
+                        <img src="/lc/pic/star.png"><b>  9.3</b>
                     </div>
                     <div style="display: flex;">
                         <div class="reviewcon">
                             <table>
                                 <tr>
                                     <div style="padding-top: 10px;">
-                                        <img src="<%=contextPath %>/pic/star.png"><b>  8.5</b>
+                                        <img src="/lc/pic/star.png"><b>  8.5</b>
                                     </div>
                                 </tr>
                                 <tr>
@@ -249,10 +246,19 @@
                                 </tr>
                             </table>
                             <script>
+	                            function generateUUID() { 
+	                                return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+	                                    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+	                                    return v.toString(16);
+	                                });
+	                            }
                             	function requestPay() {
+                            		const paymentId = generateUUID();
+                            		
+                            		console.log("결제 요청 시작");
                             	  PortOne.requestPayment({
                             	    storeId: "store-e4038486-8d83-41a5-acf1-844a009e0d94",
-                            	    paymentId: "153afwo42hfgegawnerg",
+                            	    paymentId: paymentId,
                             	    orderName: "테스트 결제",
                             	    totalAmount: 100,
                             	    currency: "KRW",
@@ -262,19 +268,22 @@
                             	      easyPayProvider: "KAKAOPAY",
                             	    }
                             	  }, function(response) {
-                            	    // 결제 성공 시 처리
-                            	    if (response.status === "AUTHENTICATED" && response.expired === false) {
-								      window.alert("결제 성공");
-								      console.log("결제 성공:", response);
-								      // 성공 처리 (예: 결제 완료 페이지로 이동)
-								      window.location.href = "/payment-success";
-								    } else {
-								      window.alert("결제 실패: " + (response.errorMessage || "알 수 없는 오류"));
-								      console.log("결제 실패:", response);
-								    }
+                            		  console.log("결제 응답:", response);  // 결제 응답 확인용 로그
+                                      alert(JSON.stringify(response));  // 결제 응답을 알림으로 표시
+
+                                      if (response.status === "AUTHENTICATED") {
+                                          // 결제 성공 시 처리
+                                          console.log("결제 성공:", response);
+                                          window.location.href = "/payment-success";  // 결제 성공 페이지로 이동
+                                      } else {
+                                          // 결제 실패 시 처리
+                                          console.log("결제 실패:", response);
+                                          alert("결제 실패: " + (response.errorMessage || "알 수 없는 오류"));
+                                      }
                             	  });
+                            	  console.log("결제 요청 whdfy");
                             	}
-                                </script>
+                            </script>
                         </div>
                         <div style="width: 100%; height: 250px; background: #ddeeeb; margin-bottom: 50px; border-radius: 15px;">
                             <table>
@@ -360,7 +369,7 @@
                 <td></td>
                 <td class="side"></td>
             </tr>
-            <tr id="recommendht">
+			            <tr id="recommendht">
                 <td class="side"></td>
                 <td colspan="3" class="content">
                     <div>

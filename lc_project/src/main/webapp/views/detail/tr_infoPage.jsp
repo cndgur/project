@@ -3,6 +3,7 @@
 <%
 	Travel t = (Travel)request.getAttribute("t");
 	ArrayList<Travel> tlist = (ArrayList<Travel>)request.getAttribute("tlist");
+	
 	ArrayList<tReview> rlist = (ArrayList<tReview>)request.getAttribute("rlist");
 %>
 <!DOCTYPE html>

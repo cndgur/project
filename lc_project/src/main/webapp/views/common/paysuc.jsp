@@ -22,7 +22,7 @@
 <body>
 
 	<%@include file="./header.jsp" %>
-	<div style="text-align: center; margin-top: 50px; margin-bottom: 100px;">
+	<div style="text-align: center; margin-top: 200px; margin-bottom: 50px; height: 500px;">
 		<h1>결제 완료</h1><br>
 		<button class="nxbutton" style="margin-right: 10px" onclick="location.href='<%=contextPath%>'">처음으로</button>
 		<button class="nxbutton" onclick="location.href='<%=contextPath%>/views/common.myPage.jsp'">마이페이지로</button>

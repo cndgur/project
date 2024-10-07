@@ -31,7 +31,6 @@ public class TravelDao {
 		ResultSet rset = null;
 		Travel t = new Travel();
 		String sql = "SELECT AC_NAME, AC_ADDRESS, TR_INFO, MAP_INFO, ACT_ID, CNT, LOCATION FROM TB_TOUR JOIN TB_TOUR_PICTURE USING(AC_NAME) WHERE AC_NAME = ?";
-		System.out.println(sql);
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, trName);
@@ -66,7 +65,6 @@ public class TravelDao {
 				+ "            WHERE AC_ADDRESS LIKE ? AND AC_NAME != ?)"
 				+ "      ORDER BY DBMS_RANDOM.VALUE)"
 				+ "WHERE ROWNUM <= 4";
-		System.out.println(sql);
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, trAddress+'%');
@@ -93,7 +91,6 @@ public class TravelDao {
 		ResultSet rset = null;
 		ArrayList<tReview> list = new ArrayList<>();
 		String sql = "SELECT EMAIL2, CONTENT, REVIEW_DATE FROM TB_REVIEW WHERE AC_NAME = ?";
-		System.out.println(sql);
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, trName);
