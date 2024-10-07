@@ -67,7 +67,7 @@ body{
     transform: translate(0, -40%);
     height: 1036px;
 }
-.name, .id, .pwd, .checkpwd, .phone, .address, .birth, .gender{
+.name, .id, .pwd, .checkpwd, .email, .phone, .address, .birth, .title{
     font-weight: bold;
 }
 
@@ -164,99 +164,96 @@ small{
     </div>
 
     <div class="body">
-        <form action="insert.me" method="post" onsubmit="return test()">
-            <div class="name">
-                <p>* 이름</p>
-                <input type="text" placeholder="이름을 입력하세요." required> <br>
-            </div>
-            <div class="id">
-                <p class="id_title">* 아이디</p>
-                <input type="button" value="아이디 중복확인" class="checkid">
-                <input type="text" name="userId" placeholder="아이디" required> <br>
-            </div>
-            <div class="pwd">
-                <p>* 비밀번호</p>
-                <input type="password" placeholder="비밀번호는 8자리 이상 입력해주세요" id="pwd" required> <br>
-                <small id="pwdMessage" style="color:red"></small>
-            </div>
-            <div class="checkpwd">
-                <p>* 비밀번호 확인</p>
-                <input type="password" placeholder="비밀번호 확인" required id="checkpwd"> <br>
-                <small id="checkMessage" style="color:red"></small> 
-            </div>
-            <div class="phone">
-                <p>전화번호</p>
-                <input type="text" placeholder="* '-' 제외하고 입력해주세요" required id="phone"> <br>
-                <small id="phoneMessage" style="color:red"></small>
-            </div>  
-            <div class="address">
-                <p>주소</p>
-                <input type="text" placeholder="주소"> <br>
-                <small>* 시/구/동</small> <br>
-            </div>
-            <div class="birth">
-                <p>생년월일</p>
-                <input type="text" placeholder="8자리 입력 ex)YYMMDD"> <br>
-            </div>
-            <div class="gender">
-                <p>성별</p>
-                <select name="" class="gender_select">
-                    <option value="male">남성</option>
-                    <option value="female">여성</option>
-                </select>
-            </div>
-            <div class="btn">
-                <button type="submit" id="btn">가입하기</button>
-            </div>
-        </form>
+       <form action="/lc_project/insert.bs" method="post">
+	            <div class="name">
+	                <p>* 이름</p>
+	                <input type="text" name="bsName" placeholder="이름을 입력하세요." required> <br>
+	            </div>
+	            <div class="id">
+	                <p class="id_title">* 아이디</p>
+	                <input type="button" value="아이디 중복확인" class="checkid">
+	                <input type="text" name="bsId" placeholder="아이디" required> <br>
+	            </div>
+	            <div class="pwd">
+	                <p>* 비밀번호</p>
+	                <input type="password" name="bsPwd" placeholder="비밀번호는 8자리 이상 입력해주세요" id="pwd" required> <br>
+	                <small id="pwdMessage" style="color:red"></small>
+	            </div>
+	            <div class="checkpwd">
+	                <p>* 비밀번호 확인</p>
+	                <input type="password" placeholder="비밀번호 확인" required id="checkpwd"> <br>
+	                <small id="checkMessage" style="color:red"></small> 
+	            </div>
+	            <div class="email">
+	                <p>이메일</p>
+	                <input type="email" name="bsEmail" placeholder="이메일"> <br>
+	            </div>
+	            <div class="phone">
+	                <p>전화번호</p>
+	                <input type="text" name="bsTel" placeholder="* '-' 포함해서 입력해주세요" required id="phone"> <br>
+	                <small id="phoneMessage" style="color:red"></small>
+	            </div>
+	            <div class="address">
+	                <p>숙박시설주소</p>
+	                <input type="text" name="bsAddress" placeholder="주소"> <br>
+	                <small>* 시/구/동</small> <br>
+	            </div>
+	            <div class="title">
+	                <p>숙박시설이름</p>
+	                <input type="text" name="bsTitle" placeholder="숙박시설이름을 입력하세요"> <br>
+	            </div>
+	            <div class="btn">
+    			<button type="submit" id="btn" onclick="return test();">가입하기</button>
+				</div>
+	        </form>
     </div>
 
     <script type="text/javascript">
-        function checkPhoneNumber() {
-            var phone = document.getElementById('phone').value;
-            var phoneMessage = document.getElementById('phoneMessage');
-
-            // 전화번호가 11자리가 아닌 경우 경고 메시지 표시
-            if (phone.length !== 11) {
-                phoneMessage.textContent = '전화번호는 11자리여야 합니다.';
-            } else {
-                phoneMessage.textContent = ''; // 조건 충족 시 메시지 삭제
-            }
-        }
-
-        // 실시간으로 비밀번호와 비밀번호 확인을 검사하는 함수
-        function checkPasswords() {
-            var p1 = document.getElementById('pwd').value;
-            var p2 = document.getElementById('checkpwd').value;
-            var pwdMessage = document.getElementById('pwdMessage');
-            var checkMessage = document.getElementById('checkMessage');
-
-            // 비밀번호 길이 검사
-            if (p1.length < 8) {
-                pwdMessage.textContent = '비밀번호는 최소 8자리 이상이어야 합니다.';
-            } else {
-                pwdMessage.textContent = ''; // 조건 충족 시 메시지 삭제
-            }
-
-            // 비밀번호 확인 검사
-            if (p1 !== p2 && p2.length > 0) {
-                checkMessage.textContent = '비밀번호가 일치하지 않습니다.';
-            } else {
-                checkMessage.textContent = ''; // 일치할 때 메시지 삭제
-            }
-        }
-
-        // 비밀번호 및 전화번호 입력 시마다 확인
-        document.getElementById('pwd').addEventListener('keyup', checkPasswords);
-        document.getElementById('checkpwd').addEventListener('keyup', checkPasswords);
-        document.getElementById('phone').addEventListener('keyup', checkPhoneNumber);
-
-        // 최종 폼 제출 시 확인
-        function test() {
-            checkPasswords();
-            checkPhoneNumber();
-            return true; // 모든 유효성 검사 후 폼 제출
-        }
-    </script>
+	        function checkPhoneNumber() {
+	            var phone = document.getElementById('phone').value;
+	            var phoneMessage = document.getElementById('phoneMessage');
+	
+	            // 전화번호가 11자리가 아닌 경우 경고 메시지 표시
+	            if (phone.length !== 13) {
+	                phoneMessage.textContent = '전화번호는 13자리여야 합니다.';
+	            } else {
+	                phoneMessage.textContent = ''; // 조건 충족 시 메시지 삭제
+	            }
+	        }
+	
+	        // 실시간으로 비밀번호와 비밀번호 확인을 검사하는 함수
+	        function checkPasswords() {
+	            var p1 = document.getElementById('pwd').value;
+	            var p2 = document.getElementById('checkpwd').value;
+	            var pwdMessage = document.getElementById('pwdMessage');
+	            var checkMessage = document.getElementById('checkMessage');
+	
+	            // 비밀번호 길이 검사
+	            if (p1.length < 8) {
+	                pwdMessage.textContent = '비밀번호는 최소 8자리 이상이어야 합니다.';
+	            } else {
+	                pwdMessage.textContent = ''; // 조건 충족 시 메시지 삭제
+	            }
+	
+	            // 비밀번호 확인 검사
+	            if (p1 !== p2 && p2.length > 0) {
+	                checkMessage.textContent = '비밀번호가 일치하지 않습니다.';
+	            } else {
+	                checkMessage.textContent = ''; // 일치할 때 메시지 삭제
+	            }
+	        }
+	
+	        // 비밀번호 및 전화번호 입력 시마다 확인
+	        document.getElementById('pwd').addEventListener('keyup', checkPasswords);
+	        document.getElementById('checkpwd').addEventListener('keyup', checkPasswords);
+	        document.getElementById('phone').addEventListener('keyup', checkPhoneNumber);
+	
+	        // 최종 폼 제출 시 확인
+	        function test() {
+	            checkPasswords();
+	            checkPhoneNumber();
+	            return true; // 모든 유효성 검사 후 폼 제출
+	        }
+	    </script>
 </body>
 </html>
