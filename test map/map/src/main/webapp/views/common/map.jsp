@@ -4,7 +4,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>방구석 여행</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
 <style>
     body {
         font-family: "Noto Sans KR", system-ui;
@@ -94,7 +102,7 @@
     <header>
         <div id="header_wrapper">
             <div id="header_wrapper1">
-                <div id="header_logo"><a href=""><img src="images/logo.png" alt="" width="80" height="64"></a></div>
+                <div id="header_logo"><a href=""><img src="./pic/logo.png" alt="" width="80" height="64"></a></div>
                 <div id="header_letter"><a href="">방구석 여행</a></div>
             </div>
             <div id="header_signIn"><button>로그인</button></div>
