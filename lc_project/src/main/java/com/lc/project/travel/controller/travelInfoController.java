@@ -42,6 +42,7 @@ public class travelInfoController extends HttpServlet {
 		ArrayList<Travel> otherList = tService.otherList(map);
 		
 		request.setAttribute("t", t);
+		request.setAttribute("location", location);
 		request.setAttribute("otherList", otherList);
 		request.getRequestDispatcher("views/detail/tr_infoPage.jsp").forward(request, response);
 	}

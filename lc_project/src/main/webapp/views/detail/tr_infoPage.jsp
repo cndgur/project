@@ -217,6 +217,7 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
         .recommendtr-item {
+        	width: 25%;
             margin: 15px;
             background-color: #ddeeeb;
             border-radius: 15px;
@@ -457,7 +458,7 @@
                     <div class="recommendtr" style="margin-bottom: 100px;">
                     	<c:forEach var="item" items="${otherList}">
                     		<div class="recommendtr-item">
-                            	<img src="${item.picInfo }" alt="${item.trName}">
+                            	<img src="${item.picInfo }" alt="${item.trName}" onclick="location.href='travel.info?travel=${item.trName}&&location=${location}'">
                             	<p><strong>${item.trName}</strong></p>
                             	<p>${item.trAddress}</p>
                         	</div>
