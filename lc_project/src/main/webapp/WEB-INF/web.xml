@@ -119,4 +119,24 @@
     <servlet-name>bslogin.bs</servlet-name>
     <url-pattern>/bslogin.bs</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>logout.bs</display-name>
+    <servlet-name>logout.bs</servlet-name>
+    <servlet-class>com.lc.project.business.Controller.BusinessLogoutController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>logout.bs</servlet-name>
+    <url-pattern>/logout.bs</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>logout.me</display-name>
+    <servlet-name>logout.me</servlet-name>
+    <servlet-class>com.lc.project.member.Controller.MemberLogoutController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>logout.me</servlet-name>
+    <url-pattern>/logout.me</url-pattern>
+  </servlet-mapping>
 </web-app>

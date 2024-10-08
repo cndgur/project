@@ -171,8 +171,8 @@
             <p class="name">방구석여행</p>
         </div>
         <form action="bslogin.bs" method="post">
-            <input type="text" placeholder="아이디" required id="userId" name="userId">
-            <input type="password" placeholder="비밀번호" required id="userPwd" name="userPwd">
+            <input type="text" placeholder="아이디" required id="userId" name="bsId">
+            <input type="password" placeholder="비밀번호" required id="userPwd" name="bsPwd">
             <button type="submit" id="btn">로그인</button>
         </form>
         <div class="links">
