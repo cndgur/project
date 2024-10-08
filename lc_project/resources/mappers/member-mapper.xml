@@ -21,6 +21,20 @@
   	<result column="MODIFY_DATE" property="modifyDate"/>
   	<result column="STATUS" property="status"/>
   </resultMap>
+   <resultMap type="Business" id="businessResultSet">
+  	<!--<result column="테이블 컬럼명" property="객체의 필드명"/>-->
+  	<result column="BS_NO" property="bsNo"/>
+  	<result column="BS_NAME" property="bsName"/>
+  	<result column="BS_ID" property="bsId"/>
+  	<result column="BS_PWD" property="bsPwd"/>
+  	<result column="BS_EMAIL" property="bsEmail"/>
+  	<result column="BS_TEL" property="bsTel"/>
+  	<result column="BS_ADDRESS" property="bsAddress"/>
+  	<result column="BS_TITLE" property="bsTitle"/>
+  	<result column="ENROLL_DATE" property="enrolldate"/>
+  	<result column="MODIFY_DATE" property="modifydate"/>
+  	<result column="STATUS" property="status"/>
+  </resultMap>
 
   <!-- 
   		*SELECT문 전송시
@@ -76,6 +90,31 @@
       #{gender}
    )
 </insert>
-
+ <insert id="insertBusiness" parameterType="Business">
+  INSERT 
+   INTO TB_BUSINESS
+   (
+      BS_NO, 
+      BS_NAME,
+      BS_ID,
+      BS_PWD,
+      BS_EMAIL,
+      BS_TEL,
+      BS_ADDRESS,
+      BS_TITLE
+   )
+   VALUES
+   (
+      SEQ_UNO_NEW.NEXTVAL,
+      #{bsName},
+      #{bsId},
+      #{bsPwd},
+      #{bsEmail},
+      #{bsTel},
+      #{bsAddress},
+      #{bsTitle}
+   )
+ 
+ </insert>
 
 </mapper>

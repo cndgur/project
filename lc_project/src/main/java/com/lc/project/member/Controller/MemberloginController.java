@@ -44,7 +44,7 @@ public class MemberloginController extends HttpServlet {
 		    System.out.println("로그인성공");
 		} else {
 		    request.setAttribute("errorMessage", "아이디 또는 비밀번호가 잘못되었습니다."); // 추가
-		    request.getRequestDispatcher("views/member/loginmember.jsp").forward(request, response);
+		    request.getRequestDispatcher("views/member/loginview.jsp").forward(request, response);
 		    System.out.println("로그인실패");
 		}
 	}

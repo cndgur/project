@@ -12,8 +12,12 @@ public class BusinessServiceImpl implements BusinessService {
 	
 	@Override
 	public Business loginBusiness(Business b) {
-		// TODO Auto-generated method stub
-		return null;
+		SqlSession sqlSession = Template.getSqlSession();
+		Business loginbs = bDao.loginBusiness(sqlSession, b);
+		
+		sqlSession.close();
+		
+		return loginbs;
 	}
 
 	@Override

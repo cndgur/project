@@ -1,4 +1,4 @@
-package com.lc.project.member.Controller;
+package com.lc.project.business.Controller;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -8,15 +8,15 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Servlet implementation class MemberEnrollController
+ * Servlet implementation class BusinessLoginController
  */
-public class MemberEnrollController extends HttpServlet {
+public class BusinessLoginViewController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MemberEnrollController() {
+    public BusinessLoginViewController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,8 +26,7 @@ public class MemberEnrollController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		request.getRequestDispatcher("views/member/enrollmember.jsp").forward(request, response);
-		
+		request.getRequestDispatcher("views/member/loginview2.jsp").forward(request, response);
 	}
 
 	/**

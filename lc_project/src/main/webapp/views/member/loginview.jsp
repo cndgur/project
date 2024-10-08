@@ -5,7 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <title>방구석 여행</title>
-<script src="./login.js" defer></script>
 <script type="text/javascript"></script>
     <link rel="icon" href="./pic/logo.png"/>
     <link rel="apple-touch-icon" href="pic/logo.png"/>
@@ -171,7 +170,7 @@
             <img src="./pic/logo.png" alt="logo">
             <p class="name">방구석여행</p>
         </div>
-        <form action="login.mem" method="post">
+        <form action="login.me" method="post">
             <input type="text" placeholder="아이디" required id="userId" name="userId">
             <input type="password" placeholder="비밀번호" required id="userPwd" name="userPwd">
             <button type="submit" id="btn">로그인</button>

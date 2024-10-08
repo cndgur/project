@@ -6,7 +6,11 @@ import com.lc.project.business.model.vo.Business;
 
 public class BusinessDao {
 
-	public int insertBusiness(SqlSession sqlSession, Business b) {
-		return sqlSession.insert("businessMapper.insertBusiness", b);
+	public int insertBusiness(SqlSession sqlSession, Business business) {
+		return sqlSession.insert("businessMapper.insertBusiness", business);
+	}
+	
+	public Business loginBusiness(SqlSession sqlSession, Business business) {
+		return sqlSession.selectOne("businessMapper.loginBusiness", business);
 	}
 }

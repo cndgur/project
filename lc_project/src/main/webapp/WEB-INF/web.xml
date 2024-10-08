@@ -93,10 +93,30 @@
     <description></description>
     <display-name>insert.bs</display-name>
     <servlet-name>insert.bs</servlet-name>
-    <servlet-class>com.lc.project.business.Controller.BusinessinsertController</servlet-class>
+    <servlet-class>com.lc.project.business.Controller.BusinessInsertController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>insert.bs</servlet-name>
     <url-pattern>/insert.bs</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>login.bs</display-name>
+    <servlet-name>login.bs</servlet-name>
+    <servlet-class>com.lc.project.business.Controller.BusinessLoginViewController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>login.bs</servlet-name>
+    <url-pattern>/login.bs</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>bslogin.bs</display-name>
+    <servlet-name>bslogin.bs</servlet-name>
+    <servlet-class>com.lc.project.business.Controller.BusinessLoginController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>bslogin.bs</servlet-name>
+    <url-pattern>/bslogin.bs</url-pattern>
   </servlet-mapping>
 </web-app>

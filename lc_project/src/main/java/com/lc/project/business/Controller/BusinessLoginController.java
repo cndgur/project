@@ -2,9 +2,9 @@ package com.lc.project.business.Controller;
 
 import java.io.IOException;
 
+import com.lc.project.business.Service.BusinessService;
 import com.lc.project.business.Service.BusinessServiceImpl;
 import com.lc.project.business.model.vo.Business;
-import com.lc.project.member.Service.MemberServiceImpl;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -12,15 +12,15 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class BusinessInsertController
+ * Servlet implementation class BusinessLoginController
  */
-public class BusinessInsertController extends HttpServlet {
+public class BusinessLoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BusinessInsertController() {
+    public BusinessLoginController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,24 +31,21 @@ public class BusinessInsertController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		
-		Business m = new Business(
-								request.getParameter("bsName"),
-								request.getParameter("bsId"),
-								request.getParameter("bsPwd"),
-								request.getParameter("bsEmail"),
-								request.getParameter("bsTel"),
-								request.getParameter("bsAddress"),
-								request.getParameter("bsTitle")
-							);
+		Business b = new Business();
+		b.setBsId(request.getParameter("bsId"));
+		b.setBsPwd(request.getParameter("bsPwd"));
 		
-		int result = new BusinessServiceImpl().insertBusiness(m);
+		BusinessService businessService = new BusinessServiceImpl(); 
+		Business loginbs = businessService.loginBusiness(b);
 		
-		if(result > 0) {
-			response.sendRedirect(request.getContextPath() + "/login.bs");
-			System.out.println("회원가입성공");
+		if (loginbs != null) {
+		    request.getSession().setAttribute("loginUser", loginbs);
+		    response.sendRedirect(request.getContextPath());
+		    System.out.println("로그인성공");
 		} else {
-			request.setAttribute("errorMsg", "회원가입 실패");
-			request.getRequestDispatcher("views/common/errorPage.jsp").forward(request, response);
+		    request.setAttribute("errorMessage", "아이디 또는 비밀번호가 잘못되었습니다."); // 추가
+		    response.sendRedirect(request.getContextPath());
+		    System.out.println("로그인실패");
 		}
 	}
 

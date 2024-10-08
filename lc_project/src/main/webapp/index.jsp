@@ -66,8 +66,8 @@
                			 <img id="avatar" src="./pic/avatar.png" alt="avatar" width="35px" height="35px">
                       </button>
                       <ul class="dropdown-menu">
-                        <li><a class="dropdown-item1" href="./views/common/myPage.jsp">마이페이지</a></li>
-                        <li><a class="dropdown-item2" href="#">로그아웃</a></li>
+                          <li><a class="dropdown-item" href="./views/common/myPage.jsp">마이페이지</a></li>
+						  <li><a class="dropdown-item" href="#">로그아웃</a></li>
                       </ul>
                   </div>
 	                </c:otherwise>
@@ -84,12 +84,33 @@
                 <input type="button" value="호텔" class="search_button3">
                 </a>
             </div>
-        
              <div class="textarea">
-                <input type="text" class="input_1" placeholder="지역" onfocus="this.placeholder = ''" onblur="this.placeholder = '지역';"
-                ></input>
-                <input type="text" class="input_2" placeholder="가고싶은 곳" onfocus="this.placeholder = ''" onblur="this.placeholder = '가고싶은 곳';"
-                ></input>
+				<input class="input_1" list="browsers" name="browser" id="browser" placeholder="지역">
+					<datalist id="browsers">
+					  <option value="서울">
+					  <option value="인천">
+					  <option value="경기">
+					  <option value="강원도">
+					  <option value="충청도">
+					  <option value="제주도">
+					  <option value="전남">
+					  <option value="전북">
+					  <option value="경남">
+					  <option value="경북">
+					</datalist>
+                <input class="input_2" list="browsers" name="browser" id="browser" placeholder="가고싶은 곳">
+					<datalist id="browsers">
+					  <option value="서울">
+					  <option value="인천">
+					  <option value="경기">
+					  <option value="강원도">
+					  <option value="충청도">
+					  <option value="제주도">
+					  <option value="전남">
+					  <option value="전북">
+					  <option value="경남">
+					  <option value="경북">
+					</datalist>
                 <a href=""><img src="./pic/검색-removebg-preview.png" alt="" class="research_btn"></a>
             </div>
         </div>

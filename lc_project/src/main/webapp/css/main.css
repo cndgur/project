@@ -114,10 +114,11 @@ body{
     outline: none;
     background-color: rgb(255, 255, 255);
     font-size: 25px;
-    font-family: "Noto Sans KR", system-ui;
+    font-family: "Jua", sans-serif;
     box-sizing: border-box;
     text-align: left;
-    padding: 30px;
+    padding-left: 28px;
+    padding-bottom: 2px;
 }
 .input_1::placeholder {
     color: #000000;
@@ -137,7 +138,8 @@ body{
     font-family: "Noto Sans KR", system-ui;
     box-sizing: border-box;
     text-align: left;
-    padding: 24px;
+    padding-left: 28px;
+    padding-bottom: 6px;
 }
 .input_2::placeholder {
     color: #000000;
@@ -438,4 +440,12 @@ animation: beating .5s 1 alternate;
 #footer_wrapper{
     background: rgba(242, 242, 242, 228);
     padding-bottom: 20px;
+}
+option {
+  background-color: white;
+  padding: 4px;
+  color: blue;
+  margin-bottom: 1px;
+   font-size: 18px;
+  cursor: pointer;
 }
