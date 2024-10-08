@@ -52,26 +52,39 @@
                     <img src="./pic/logo.png" alt="" class="header_main_logo">
                 </a>
                 <c:choose>
-                	<c:when test="${empty loginUser }">
-                	<!-- 로그인 전 -->
-	                	<a onclick="location.href='login.me'" class="to_login">
-	                    	<div><input type="button" class="header_btn" value="로그인"></div>
-	                	</a>
-	                </c:when>
-	                <c:otherwise>
-	                <!-- 로그인 후 -->
-                  <div class="dropdown">
-                      <button type="button" class="btn" data-bs-toggle="dropdown">
-                        <img id="hamBtn" src="./pic/hamburgerBtn.png" alt="hamburgerBtn" width="30px" height="22px">
-               			 <img id="avatar" src="./pic/avatar.png" alt="avatar" width="35px" height="35px">
-                      </button>
-                      <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="./views/common/myPage.jsp">마이페이지</a></li>
-						  <li><a class="dropdown-item" href="#">로그아웃</a></li>
-                      </ul>
-                  </div>
-	                </c:otherwise>
-	            </c:choose>
+				    <c:when test="${empty loginUser && empty loginbs}">
+				        <!-- 로그인 전 -->
+				        <a href="./views/member/selectlogin.jsp" class="to_login">
+				            <div><input type="button" class="header_btn" value="로그인"></div>
+				        </a>
+				    </c:when>
+				    <c:when test="${!empty loginUser}">
+				        <!-- 일반 사용자 로그인 후 -->
+				        <div class="dropdown">
+				            <button type="button" class="btn" data-bs-toggle="dropdown">
+				                <img id="hamBtn" src="./pic/hamburgerBtn.png" alt="hamburgerBtn" width="30px" height="22px">
+				                <img id="avatar" src="./pic/avatar.png" alt="avatar" width="35px" height="35px">
+				            </button>
+				            <ul class="dropdown-menu">
+				                <li><a class="dropdown-item" href="./views/common/myPage.jsp">마이페이지</a></li>
+				                <li><a class="dropdown-item" href="logout.me">로그아웃</a></li>
+				            </ul>
+				        </div>
+				    </c:when>
+				    <c:when test="${!empty loginbs}">
+				        <!-- 사업자 로그인 후 -->
+				        <div class="dropdown">
+				            <button type="button" class="btn" data-bs-toggle="dropdown">
+				                <img id="hamBtn" src="./pic/hamburgerBtn.png" alt="hamburgerBtn" width="30px" height="22px">
+				                <img id="avatar" src="./pic/avatar.png" alt="avatar" width="35px" height="35px">
+				            </button>
+				            <ul class="dropdown-menu">
+				                <li><a class="dropdown-item" href="./views/common/myPage2.jsp">사업자마이페이지</a></li>
+				                <li><a class="dropdown-item" href="logout.bs">로그아웃</a></li>
+				            </ul>
+				        </div>
+				    </c:when>
+				</c:choose>
             </div>
        </div>
        <div class="textarea_container">
