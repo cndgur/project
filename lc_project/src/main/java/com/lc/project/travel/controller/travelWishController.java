@@ -3,8 +3,8 @@ package com.lc.project.travel.controller;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import com.google.gson.Gson;
 import com.lc.project.travel.model.vo.Travel;
-import com.lc.project.travel.model.vo.tReview;
 import com.lc.project.travel.service.TravelService;
 
 import jakarta.servlet.ServletException;
@@ -13,15 +13,15 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class travelInfoController
+ * Servlet implementation class travelWishController
  */
-public class travelInfoController extends HttpServlet {
+public class travelWishController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public travelInfoController() {
+    public travelWishController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,20 +30,12 @@ public class travelInfoController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String trName = request.getParameter("travel");
-		TravelService tServ = new TravelService();
-		Travel t = tServ.selectTravel(trName);
-		String[] strArr = t.getTrAddress().split(" ");
-		String tAdd = strArr[0]+" "+strArr[1];
-		ArrayList<Travel> tlist = tServ.selectNearbyTravel(tAdd,trName);
-		for(Travel tra : tlist) {
-			tra.setTrAddress(tAdd);
-		}
-		ArrayList<tReview> rlist = tServ.selectTReview(trName);
-		request.setAttribute("t", t);
-		request.setAttribute("tlist", tlist);
-		request.setAttribute("rlist", rlist);
-		request.getRequestDispatcher("views/detail/tr_infoPage.jsp").forward(request, response);
+		String userName = request.getParameter("userName");
+		
+		ArrayList<Travel> list = new TravelService().selectWishList(userName);
+		System.out.println(list);
+		response.setContentType("application/json; charset=utf-8");
+		new Gson().toJson(list, response.getWriter());
 	}
 
 	/**

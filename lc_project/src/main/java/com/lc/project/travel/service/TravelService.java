@@ -22,9 +22,21 @@ public class TravelService {
 		JDBCTemplate.close(conn);
 		return list;
 	}
+	public ArrayList<Travel> selectWishList(String userName){
+		Connection conn = JDBCTemplate.getConnection();
+		ArrayList<Travel> list = tDao.selectWishList(conn,userName);
+		JDBCTemplate.close(conn);
+		return list;
+	}
 	public ArrayList<tReview> selectTReview(String trName){
 		Connection conn = JDBCTemplate.getConnection();
 		ArrayList<tReview> list = tDao.selectTReview(conn,trName);
+		JDBCTemplate.close(conn);
+		return list;
+	}
+	public ArrayList<Travel> selectMainList(){
+		Connection conn = JDBCTemplate.getConnection();
+		ArrayList<Travel> list = tDao.selectMainList(conn);
 		JDBCTemplate.close(conn);
 		return list;
 	}

@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="com.lc.project.travel.model.vo.Travel, java.util.ArrayList, com.lc.project.travel.model.vo.tReview" %>
-<%
+    pageEncoding="UTF-8" import="com.lc.project.travel.model.vo.Travel, java.util.ArrayList, com.lc.project.travel.model.vo.tReview, com.lc.project.member.model.vo.Member" %>
+<%	
+	//Member loginUser = (Member)session.getAttribute("loginUser");
 	Travel t = (Travel)request.getAttribute("t");
 	ArrayList<Travel> tlist = (ArrayList<Travel>)request.getAttribute("tlist");
-	ArrayList<Travel> wlist = (ArrayList<Travel>)request.getAttribute("wishlist");
+	ArrayList<Travel> wlist = (ArrayList<Travel>)request.getAttribute("wlist");
 	ArrayList<tReview> rlist = (ArrayList<tReview>)request.getAttribute("rlist");
 %>
 <!DOCTYPE html>
@@ -76,6 +77,7 @@
 			font-size:0; 
 			margin-bottom: 5px;
 		}
+
 		#recommend .btn_like.on {
 			background: url(https://umings.github.io/images/i_like_on.png) no-repeat center / 20px; 
 			animation: beating .5s 1 alternate;
@@ -115,9 +117,9 @@
         	float: right;
         }
         #category button{
-            width: 60px;
-            height: 17px;
-            font-size: 9px;
+            width: 75px;
+            height: 25px;
+            font-size: 15px;
             border: 0px;
             background: #7bbcb0;
             color: white;
@@ -283,16 +285,12 @@
             <tr style="height:50px">
                 <td class="side"></td>
                 <td colspan="3" style="text-align: center; vertical-align: bottom;">
-                	<button id="wishlistbt" style="float: right;" onclick="insertwish"><b>찜하기</b></button>
+                	<button id="wishlistbt" style="float: right;" onclick="insertwish()"><b>찜하기</b></button>
                 	<script>
                 		function insertwish(){
-                			if(<%=t.getTrName()%> in <%=wlist%>){
-                				alert("이미 찜하였습니다.")
-                			}else if(length(<%=wlist%>) === 5){
-                				alert("찜하기는 최대 5개만 가능합니다.")
-                			}else{
-                				location.href="wish.list?tr=<%=t.getTrName()%>,user=<%=loginUser.getName()%>"
-                			}
+                			//if( === null){
+                		//		alert("로그인이 필요한 기능입니다.")
+                			//}
                 		}
                 	</script>
                 </td>
@@ -319,10 +317,9 @@
                 <td style="width: 20%; text-align: center; vertical-align: top;"><b style="font-size: 20px;"><%=t.getTrAddress()%></b></td>
                 <td class="side">
                     <div id="category">
-                        <button style="cursor:context-menu;">#1힐</button>
-                        <button style="cursor:context-menu;">#힐링</button>
-                        <button style="cursor:context-menu;">#여행</button>
-                        <button style="cursor:context-menu;">#1힐</button>
+                        <button style="cursor:context-menu;"><%=t.getTr_personnel() %></button>
+                        <button style="cursor:context-menu;"><%=t.getTr_location() %></button>
+                        <button style="cursor:context-menu;"><%=t.getTr_theme() %></button>
                     </div>
                 </td>
                 <td class="side"></td>
@@ -381,49 +378,46 @@
                 <td class="side" id="pic"></td>
                 <td colspan="3">
                     <div class="bpcontent">
-                        <img src="<%=contextPath %><%=t.getPicInfo() %>" width="100%" height="100%">
+                        <img src="<%=t.getPicInfo() %>" width="100%" height="100%">
                     </div>
-                    <!-- 
-                    <div class="spcontent" style="margin-bottom: 100px; width: 100%;">
-                        <img src="<%=contextPath %>/pic/picture.png">
-                        <img src="<%=contextPath %>/pic/picture.png">
-                        <img src="<%=contextPath %>/pic/picture.png">
-                    </div>
-                     -->
                 </td>
                 <td></td>
                 <td></td>
                 <td class="side">
                     <div class="sidenav">
                         <div class="sidenav-header">찜한 여행지</div>
-                        <%for(Travel tr : wlist){ %>
-	                        <div class="sidenav-item">
-	                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-	                            <p><strong>구 서도역</strong></p>
-	                            <p>전북 남원시</p>
-	                        </div>
-	                     <%} %>
-                        <!-- 
-                        <div class="sidenav-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="sidenav-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="sidenav-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
+                        <div class=sidecontent></div>
+                        <script>
+	                        window.onload = function() {
+	                        	$.ajax({
+                        			url: "wish.tr",
+                        			contentType: "application/json",
+                        			data: {
+                        				userName: 'user1@example.com' //loginUser
+                        			},
+                        			success: function(res){
+                        				console.log("여기까지는됨");
+                        				console.log(res);
+                        				let str = "";
+                                        for(let tra of res){
+                                        	str += ("<div class='sidenav-item'>" +
+                                                    "<img src='" + "/"+tra.picInfo + "'>" +
+                                                    "<p><strong>" + tra.trName + "</strong></p>" +
+                                                    "<p>" + tra.trAddress + "</p>" +
+                                                    "</div>")
+                                        }
+										
+                                        var element = document.getElementsByClassName("sidecontent")[0];  // 첫 번째 요소 선택
+    		                        	element.innerHTML = str;
+                        			},error: function(){
+                        				console.log("ajax통신 실패")
+                        			}
+                        		})
+	                        	
+	                        	
+	                        };
+                		</script>
                         
-                        <div>
-                            <img src="<%=contextPath %>/pic/arrow.png" style="align-self: center; margin-bottom: 0px; cursor: pointer;">
-                        </div>
-                         -->
                         <div class="sidenav-footer">
                             <button><div style="vertical-align: middle;">여행지 기준<br>호텔 검색</div></button>
                         </div>
@@ -470,21 +464,35 @@
                         <hr>
                     </div>
                     <%=t.getTrInfo() %>
-                    
                     <br><br>
-                    <%=t.getMapInfo() %>
-                    <!--  
-                    <div id="daumRoughmapContainer1726734009560" class="root_daum_roughmap root_daum_roughmap_landing" style="width: 100%; margin-bottom: 100px;"></div>
-
-                    <script charset="UTF-8">
-                        new daum.roughmap.Lander({
-                            "timestamp" : "1726734009560",
-                            "key" : "2koo7",
-                            "mapWidth" : "100%",
-                            "mapHeight" : "360"
-                        }).render();
-                    </script>
-                    -->
+					<!-- 지도를 표시할 div 입니다 -->
+			          <div id="map" style="width:100%;height:500px;"></div>
+			      
+			          <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=99929078a9d810f506f314a69d82b1f2"></script>
+			          <script>
+			              var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+			                  mapOption = { 
+			                      center: new kakao.maps.LatLng(<%=t.getTr_map_lat() %>,<%=t.getTr_map_long() %>), // 지도의 중심좌표
+			                      level: 3 // 지도의 확대 레벨
+			                  };
+			      
+			              var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+			      
+			              // 마커가 표시될 위치입니다 
+			              var markerPosition  = new kakao.maps.LatLng(<%=t.getTr_map_lat() %>,<%=t.getTr_map_long() %>); 
+			      
+			              // 마커를 생성합니다
+			              var marker = new kakao.maps.Marker({
+			                  position: markerPosition
+			              });
+			      
+			              // 마커가 지도 위에 표시되도록 설정합니다
+			              marker.setMap(map);
+			      
+			              // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+			              // marker.setMap(null);    
+			          </script>
+                    
                     <div style="margin-bottom: 100px;"></div>
                 </td>
                 <td></td>
@@ -539,16 +547,11 @@
                     <div class="recommendtr" style="margin-bottom: 100px;">
                     <% for(Travel tra : tlist){ %>
 	                        <div class="recommendtr-item">
-	                            <img class="recommendtrimg" src="<%=contextPath %><%=tra.getPicInfo() %>" onclick="location.href='travel.info?travel=<%=tra.getTrName()%>'">
+	                            <img class="recommendtrimg" src="<%=tra.getPicInfo() %>" onclick="location.href='travel.info?travel=<%=tra.getTrName()%>'">
 	                            <p onclick="location.href='travel.info?travel=<%=tra.getTrName()%>'" style="cursor: pointer;"><strong><%=tra.getTrName() %></strong></p>
 	                            <p onclick="location.href='travel.info?travel=<%=tra.getTrName()%>'" style="cursor: pointer;"><%=tra.getTrAddress() %></p>
 	                        </div>
 	                <%} %>
-	                	<!-- 
-                        <div style="margin-left:40px; display: flex; justify-content: center; align-items: center; float: right; heigth: 120px; width: 120px;">
-                            <img src="<%=contextPath %>/pic/sidearrow.png" style="align-self: center; margin-bottom: 0px; cursor: pointer;">
-                        </div>
-                         -->
                     </div>
                 </td>
                 <td></td>
