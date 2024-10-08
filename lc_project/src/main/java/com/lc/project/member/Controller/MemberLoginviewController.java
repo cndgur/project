@@ -30,19 +30,8 @@ public class MemberLoginviewController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-<<<<<<< HEAD
-<<<<<<< HEAD:lc_project/src/main/java/com/lc/project/member/Controller/MemberLoginController.java
-		request.getRequestDispatcher("views/member/loginmember.jsp").forward(request, response);
-=======
 		request.getRequestDispatcher("views/member/loginview.jsp").forward(request, response);
->>>>>>> 5761b0b40c3b1cc1c3d9848426aa0141b5aecfb7:lc_project/src/main/java/com/lc/project/member/Controller/MemberLoginviewController.java
-=======
-<<<<<<<< HEAD:lc_project/src/main/java/com/lc/project/member/Controller/MemberLoginController.java
-		request.getRequestDispatcher("views/member/loginmember.jsp").forward(request, response);
-========
-		request.getRequestDispatcher("views/member/loginview.jsp").forward(request, response);
->>>>>>>> 5761b0b40c3b1cc1c3d9848426aa0141b5aecfb7:lc_project/src/main/java/com/lc/project/member/Controller/MemberLoginviewController.java
->>>>>>> 5761b0b40c3b1cc1c3d9848426aa0141b5aecfb7
+
 	}
 
 	/**

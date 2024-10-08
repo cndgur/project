@@ -23,72 +23,71 @@
 		FROM (SELECT *,ROWNUM
 			    FROM (SELECT *
 			  			FROM TB_TOUR
-			  	   	   ORDER BY Field DESC))
+			  	   	   ))
 		WHERE ROWNUM &lt;= 10
 	</select>
 	<select id="selectTravel" resultMap="TravelResultSet">
 		SELECT AC_NAME,
 			   AC_ADDRESS,
 			   TR_INFO,
-			   FIELD,
+			   (
+			   		SELECT COUNT(ac_name)
+                    FROM tb_wishlist
+                    WHERE ac_name = #{trName}
+			   ),
 			   LOCATION
 		  FROM TB_TOUR
-		  JOIN TB_TOUR_PICTURE USING (AC_NAME)
 		 WHERE AC_NAME = #{trName}
 	</select>
 	<select id="locationList" resultMap="TravelResultSet">
-		SELECT  AC_NAME,
-			    AC_ADDRESS,
-			    LOCATION
-		FROM (
-				SELECT *
-				  FROM TB_TOUR
-				 WHERE ACT_THEME NOT IN ('맛집','축제')
-				 ORDER BY FIELD DESC
-		)
-		JOIN TB_TOUR_PICTURE USING (AC_NAME)
-		WHERE ACT_LOCATION = #{location}
-		  AND ROWNUM &lt;=4
+		SELECT AC_NAME, AC_ADDRESS,LOCATION
+		  FROM(SELECT AC_NAME,ROWNUM
+		     FROM(SELECT AC_NAME,COUNT(AC_NAME)
+		          FROM TB_TOUR
+		          LEFT JOIN TB_WISHLIST USING(AC_NAME)
+		          GROUP BY AC_NAME
+		          ORDER BY COUNT(AC_NAME)DESC))
+		  JOIN TB_TOUR using(AC_NAME)
+		 WHERE ROWNUM &lt;= 4
+		   AND ACT_LOCATION = #{location}
 	</select>
 	<select id="foodList" resultMap="TravelResultSet">
-		SELECT  ac_name,
-				ac_address,
-				LOCATION
-		FROM (
-				SELECT *
-				  FROM TB_TOUR
-				 WHERE ACT_THEME = '맛집'
-				 ORDER BY FIELD DESC
-		)
-		JOIN TB_TOUR_PICTURE USING (AC_NAME)
-		WHERE ACT_LOCATION = #{location}
-		  AND ROWNUM &lt;=4
+		SELECT AC_NAME, AC_ADDRESS,LOCATION
+		  FROM(SELECT AC_NAME,ROWNUM
+		     FROM(SELECT AC_NAME,COUNT(AC_NAME)
+		          FROM TB_TOUR
+		          LEFT JOIN TB_WISHLIST USING(AC_NAME)
+		          GROUP BY AC_NAME
+		          ORDER BY COUNT(AC_NAME)DESC))
+		  JOIN TB_TOUR using(AC_NAME)
+		 WHERE ROWNUM &lt;= 4
+		   AND ACT_LOCATION = #{location}
+		   AND ACT_THEME = '맛집'
 	</select>
 	<select id="festivalList" resultMap="TravelResultSet">
-		SELECT  ac_name,
-				tr_info 
-		FROM (
-				SELECT *
-				  FROM TB_TOUR
-				 WHERE ACT_THEME = '축제'
-				 ORDER BY FIELD DESC
-		)
-		WHERE ACT_LOCATION = #{location}
-		  AND ROWNUM &lt;=3
+		SELECT AC_NAME, AC_ADDRESS,LOCATION
+		  FROM(SELECT AC_NAME,ROWNUM
+		     FROM(SELECT AC_NAME,COUNT(AC_NAME)
+		          FROM TB_TOUR
+		          LEFT JOIN TB_WISHLIST USING(AC_NAME)
+		          GROUP BY AC_NAME
+		          ORDER BY COUNT(AC_NAME)DESC))
+		  JOIN TB_TOUR using(AC_NAME)
+		 WHERE ROWNUM &lt;= 4
+		   AND ACT_LOCATION = #{location}
+		   AND ACT_THEME = '축제'
 	</select>
 	<select id="otherList" resultMap="TravelResultSet">
-		SELECT  AC_NAME,
-			    AC_ADDRESS,
-			    LOCATION
-		FROM (
-				SELECT *
-				  FROM TB_TOUR
-				 WHERE ACT_THEME NOT IN ('맛집','축제')
-		  	 	   AND AC_NAME != #{trName}
-				 ORDER BY FIELD DESC
-		)
-		JOIN TB_TOUR_PICTURE USING (AC_NAME)
-		WHERE ACT_LOCATION = #{location}
-		  AND ROWNUM &lt;=4
+		SELECT AC_NAME, AC_ADDRESS,LOCATION
+		  FROM(SELECT AC_NAME,ROWNUM
+		     FROM(SELECT AC_NAME,COUNT(AC_NAME)
+		          FROM TB_TOUR
+		          LEFT JOIN TB_WISHLIST USING(AC_NAME)
+		          GROUP BY AC_NAME
+		          ORDER BY COUNT(AC_NAME)DESC))
+		  JOIN TB_TOUR using(AC_NAME)
+		 WHERE ROWNUM &lt;= 4
+		   AND ACT_LOCATION = #{location}
+		   AND AC_NAME != #{trName}
 	</select>
 </mapper>
