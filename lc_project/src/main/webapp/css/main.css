@@ -114,11 +114,11 @@ body{
     outline: none;
     background-color: rgb(255, 255, 255);
     font-size: 25px;
-    font-family: "Jua", sans-serif;
+    font-family: "Noto Sans KR", system-ui;
     box-sizing: border-box;
     text-align: left;
     padding-left: 28px;
-    padding-bottom: 2px;
+    padding-bottom: 6px;
 }
 .input_1::placeholder {
     color: #000000;

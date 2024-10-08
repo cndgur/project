@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="icon" href="./pic/logo.png"/>
+<title>로그인 선택</title>
+<link rel="icon" href="../../pic/logo.png"/>
     <link rel="apple-touch-icon" href="pic/logo.png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -125,15 +125,17 @@ body{
         </div>
         <h1>회원가입</h1>
     </div>
-    <div class="body">
-        <a href="/lc_project/login.me">
-            <button type="submit" id="btn1" class="normal_mem">일반회원로그인</button>
-        </a>
-    </div>
-    <div class="body2">
-         <a href="/lc_project/login.bs">
-            <button type="submit" id="btn2" class="bs_mem">사업자로그인</button>
-        </a>
+    <div class="select">
+        <div class="body">
+            <a href="/lc_project/login.me">
+                <button type="submit" id="btn1" class="normal_mem">일반회원로그인</button>
+            </a>
+        </div>
+        <div class="body2">
+            <a href="/lc_project/login.bs">
+                <button type="submit" id="btn2" class="bs_mem">사업자로그인</button>
+            </a>
+        </div>
     </div>
 </body>
 </html>

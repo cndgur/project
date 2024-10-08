@@ -89,6 +89,7 @@
        </div>
        <div class="textarea_container">
             <div class="search_text">
+              <div>
                 <span class="search_button1">찾아보기</span>
                 <a onclick="location.href='index.jsp'" class="to_login">
                 <input type="button" value="여행지" class="search_button2">
@@ -96,6 +97,7 @@
                 <a onclick="location.href='index2.jsp'" class="to_login">
                 <input type="button" value="호텔" class="search_button3">
                 </a>
+              </div>
             </div>
              <div class="textarea">
 				<input class="input_1" list="browsers" name="browser" id="browser" placeholder="지역">
