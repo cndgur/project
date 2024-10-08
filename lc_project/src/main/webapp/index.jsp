@@ -15,10 +15,12 @@
   <!-- CSS -->
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./css/main.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  
 
   <!-- JS -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <script
     src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
@@ -36,6 +38,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <div class="header">
@@ -48,9 +51,6 @@
                     <div class="header_name">방구석여행</div>
                     <img src="./pic/logo.png" alt="" class="header_main_logo">
                 </a>
-                <a onclick="location.href='login.me'" class="to_login">
-                    <div><input type="button" class="header_btn" value="로그인"></div>
-                </a>
                 <c:choose>
                 	<c:when test="${empty loginUser }">
                 	<!-- 로그인 전 -->
@@ -60,24 +60,57 @@
 	                </c:when>
 	                <c:otherwise>
 	                <!-- 로그인 후 -->
-	                	<img id="hamBtn" src="../../pic/hamburgerBtn.png" alt="hamburgerBtn" width="30px" height="22px">
+                  <div class="dropdown">
+                      <button type="button" class="btn" data-bs-toggle="dropdown">
+                        <img id="hamBtn" src="./pic/hamburgerBtn.png" alt="hamburgerBtn" width="30px" height="22px">
+               			 <img id="avatar" src="./pic/avatar.png" alt="avatar" width="35px" height="35px">
+                      </button>
+                      <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="./views/common/myPage.jsp">마이페이지</a></li>
+						  <li><a class="dropdown-item" href="#">로그아웃</a></li>
+                      </ul>
+                  </div>
 	                </c:otherwise>
 	            </c:choose>
             </div>
        </div>
        <div class="textarea_container">
             <div class="search_text">
-                <input type="button" value="찾아보기" class="search_button1">
-                <input type="button" value="지역" class="search_button2">
+                <span class="search_button1">찾아보기</span>
+                <a onclick="location.href='index.jsp'" class="to_login">
+                <input type="button" value="여행지" class="search_button2">
+                </a>
+                <a onclick="location.href='index2.jsp'" class="to_login">
                 <input type="button" value="호텔" class="search_button3">
-                <input type="button" value="여행지" class="search_button4">
+                </a>
             </div>
-        
-            <div class="textarea">
-                <input type="text" class="input_1" placeholder="출발지" onfocus="this.placeholder = ''" onblur="this.placeholder = '출발지';"></input>
-                <input type="text" class="input_2" placeholder="가고싶은 곳" onfocus="this.placeholder = ''" onblur="this.placeholder = '가고싶은 곳';"></input>
-                <input type="text" class="input_3" placeholder="출발 날짜 입력" onfocus="this.placeholder = ''" onblur="this.placeholder = '출발 날짜 입력';"></input>
-                <input type="text" class="input_4" placeholder="도착 날짜 입력" onfocus="this.placeholder = ''" onblur="this.placeholder = '도착 날짜 입력';"></input>
+             <div class="textarea">
+				<input class="input_1" list="browsers" name="browser" id="browser" placeholder="지역">
+					<datalist id="browsers">
+					  <option value="서울">
+					  <option value="인천">
+					  <option value="경기">
+					  <option value="강원도">
+					  <option value="충청도">
+					  <option value="제주도">
+					  <option value="전남">
+					  <option value="전북">
+					  <option value="경남">
+					  <option value="경북">
+					</datalist>
+                <input class="input_2" list="browsers" name="browser" id="browser" placeholder="가고싶은 곳">
+					<datalist id="browsers">
+					  <option value="서울">
+					  <option value="인천">
+					  <option value="경기">
+					  <option value="강원도">
+					  <option value="충청도">
+					  <option value="제주도">
+					  <option value="전남">
+					  <option value="전북">
+					  <option value="경남">
+					  <option value="경북">
+					</datalist>
                 <a href=""><img src="./pic/검색-removebg-preview.png" alt="" class="research_btn"></a>
             </div>
         </div>
@@ -336,6 +369,6 @@
       $(this).toggleClass("on")
     });
 	</script>
-	 <%@include file="views/common/footer.jsp"%>
+	 <%@include file="/views/common/footer.jsp"%>
 </body>
 </html>

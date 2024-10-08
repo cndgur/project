@@ -33,7 +33,7 @@
     <description></description>
     <display-name>login.me</display-name>
     <servlet-name>login.me</servlet-name>
-    <servlet-class>com.lc.project.member.Controller.MemberLoginController</servlet-class>
+    <servlet-class>com.lc.project.member.Controller.MemberLoginviewController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>login.me</servlet-name>
@@ -48,16 +48,6 @@
   <servlet-mapping>
     <servlet-name>enroll.me</servlet-name>
     <url-pattern>/enroll.me</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>insert.me</display-name>
-    <servlet-name>insert.me</servlet-name>
-    <servlet-class>com.lc.project.member.Controller.MemberInsertController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>insert.me</servlet-name>
-    <url-pattern>/insert.me</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -88,5 +78,55 @@
   <servlet-mapping>
     <servlet-name>selcetenroll.me</servlet-name>
     <url-pattern>/selcetenroll.me</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>insert.me</display-name>
+    <servlet-name>insert.me</servlet-name>
+    <servlet-class>com.lc.project.member.Controller.MemberinsertController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>insert.me</servlet-name>
+    <url-pattern>/insert.me</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>login.mem</display-name>
+    <servlet-name>login.mem</servlet-name>
+    <servlet-class>com.lc.project.member.Controller.MemberloginController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>login.mem</servlet-name>
+    <url-pattern>/login.mem</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>insert.bs</display-name>
+    <servlet-name>insert.bs</servlet-name>
+    <servlet-class>com.lc.project.business.Controller.BusinessInsertController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>insert.bs</servlet-name>
+    <url-pattern>/insert.bs</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>login.bs</display-name>
+    <servlet-name>login.bs</servlet-name>
+    <servlet-class>com.lc.project.business.Controller.BusinessLoginViewController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>login.bs</servlet-name>
+    <url-pattern>/login.bs</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>bslogin.bs</display-name>
+    <servlet-name>bslogin.bs</servlet-name>
+    <servlet-class>com.lc.project.business.Controller.BusinessLoginController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>bslogin.bs</servlet-name>
+    <url-pattern>/bslogin.bs</url-pattern>
   </servlet-mapping>
 </web-app>

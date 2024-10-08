@@ -53,6 +53,37 @@ body{
     top: 19px;
     cursor: pointer;
 }
+.dropdown{
+	position: absolute;
+	right: 33px;
+    top: 14px;
+    cursor: pointer;
+    width : 120px;
+    height : 50px;
+    border-radius: 50px;
+    background-color: white;
+}
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+#hamBtn{
+    display: flex;
+    align-items: center;
+    float: left;
+    position: relative;
+    left: 10px;
+    top: 7px;
+}
+#avatar{
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    float: right;
+    position: relative;
+    left: 26px;
+}
+
 .header_main_logo{
     position: absolute;
     width: 80px;
@@ -63,7 +94,7 @@ body{
 .textarea_container{
     margin: auto;
     position: relative;
-    top: -114px;
+    top: -121px;
 }
 .textarea {
     display: flex;
@@ -75,25 +106,28 @@ body{
     margin: auto;
 }
 .input_1{
-    width: 250px;
+	position: relative;
+    width: 550px;
     height: 75px;
     border-radius: 50px 0px 0px 50px;
     border: none;
     outline: none;
     background-color: rgb(255, 255, 255);
     font-size: 25px;
-    font-family: "Noto Sans KR", system-ui;
+    font-family: "Jua", sans-serif;
     box-sizing: border-box;
     text-align: left;
-    padding: 24px;
+    padding-left: 28px;
+    padding-bottom: 2px;
 }
 .input_1::placeholder {
     color: #000000;
     font-size: 25px;
-    font-family: "Noto Sans KR", system-ui;
+  	font-family: "Jua", sans-serif;
 }
 .input_2{
-    width: 250px;
+	position: relative;
+    width: 550px;
     height: 75px;
     border: none;
     outline: none;
@@ -104,52 +138,15 @@ body{
     font-family: "Noto Sans KR", system-ui;
     box-sizing: border-box;
     text-align: left;
-    padding: 24px;
+    padding-left: 28px;
+    padding-bottom: 6px;
 }
 .input_2::placeholder {
     color: #000000;
     font-size: 25px;
-    font-family: "Noto Sans KR", system-ui;
+    font-family: "Jua", sans-serif;
 }
-.input_3{
-    width: 250px;
-    height: 75px;
-    border: none;
-    outline: none;
-    background-color: rgb(255, 255, 255);
-    text-align: center;
-    justify-content: center;
-    font-size: 25px;
-    font-family: "Noto Sans KR", system-ui;
-    box-sizing: border-box;
-    text-align: left;
-    padding: 24px;
-}
-.input_3::placeholder {
-    color: #000000;
-    font-size: 25px;
-    font-family: "Noto Sans KR", system-ui;
-}
-.input_4{
-    width: 250px;
-    height: 75px;
-    border-radius: 0px 50px 50px 0px;
-    border: none;
-    outline: none;
-    background-color: rgb(255, 255, 255);
-    text-align: center;
-    justify-content: center;
-    font-size: 25px;
-    font-family: "Noto Sans KR", system-ui;
-    box-sizing: border-box;
-    text-align: left;
-    padding: 24px;
-}
-.input_4::placeholder {
-    color: #000000;
-    font-size: 25px;
-    font-family: "Noto Sans KR", system-ui;
-}
+
 textarea::placeholder{
     font-size: larger;
     color: #000000;
@@ -166,7 +163,7 @@ textarea{
 .research_btn{
     position: relative;
     width: 95px;
-    left: 13px;
+    left: 9px;
 }
 .search_text{
     width: 1100px;
@@ -178,7 +175,7 @@ textarea{
     background-color: transparent;
     border: none;
     font-family: "Noto Sans KR", system-ui;
-    font-size: 35px;
+    font-size: 40px;
     font-weight: bold;
     color: white;
 }
@@ -187,32 +184,26 @@ textarea{
     background-color: transparent;
     border: none;
     font-family: "Noto Sans KR", system-ui;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
     color: white;
     cursor: pointer;
-
+    position: relative;
+    left: 35px;
 }
 .search_button3{
     box-sizing: border-box;
     background-color: transparent;
     border: none;
     font-family: "Noto Sans KR", system-ui;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
     color: white;
     cursor: pointer;
+    position: relative;
+    left: 55px;
 }
-.search_button4{
-    box-sizing: border-box;
-    background-color: transparent;
-    border: none;
-    font-family: "Noto Sans KR", system-ui;
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    cursor: pointer;
-}
+
 
 /*
     -------------Tag Select-------------
@@ -449,4 +440,12 @@ animation: beating .5s 1 alternate;
 #footer_wrapper{
     background: rgba(242, 242, 242, 228);
     padding-bottom: 20px;
+}
+option {
+  background-color: white;
+  padding: 4px;
+  color: blue;
+  margin-bottom: 1px;
+   font-size: 18px;
+  cursor: pointer;
 }

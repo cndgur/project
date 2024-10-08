@@ -63,11 +63,11 @@
 	    margin: 0 auto;
 	    /* text-align: center; */
 	    position: absolute;
-	    top: 600px;
+	    top: 639px;
 	    transform: translate(0, -40%);
-	    height: 1036px;
+	    height: 1073px;
 	}
-	.name, .id, .pwd, .checkpwd, .phone, .address, .birth, .gender{
+	.name, .id, .pwd, .checkpwd, .phone, .email, .address, .birthday, .gender{
 	    font-weight: bold;
 	}
 	
@@ -79,7 +79,7 @@
 	    border: 1px solid #ccc;
 	    border-radius: 5px;
 	}
-	.name,.id, .pwd, .checkpwd, .phone, .address, .birth, input:focus {outline: none;}
+	.name,.id, .pwd, .checkpwd, .phone, .email, .address, .birth, input:focus {outline: none;}
 	
 	
 	.pwd , .phone, .address{
@@ -164,19 +164,19 @@
 	    </div>
 	
 	    <div class="body">
-	        <form action="" onsubmit="return test()">
+	        <form action="/lc_project/insert.me" method="post">
 	            <div class="name">
 	                <p>* 이름</p>
-	                <input type="text" placeholder="이름을 입력하세요." required> <br>
+	                <input type="text" name="userName" placeholder="이름을 입력하세요." required> <br>
 	            </div>
 	            <div class="id">
 	                <p class="id_title">* 아이디</p>
 	                <input type="button" value="아이디 중복확인" class="checkid">
-	                <input type="email" placeholder="이메일 주소" required> <br>
+	                <input type="text" name="userId" placeholder="아이디" required> <br>
 	            </div>
 	            <div class="pwd">
 	                <p>* 비밀번호</p>
-	                <input type="password" placeholder="비밀번호는 8자리 이상 입력해주세요" id="pwd" required> <br>
+	                <input type="password" name="userPwd" placeholder="비밀번호는 8자리 이상 입력해주세요" id="pwd" required> <br>
 	                <small id="pwdMessage" style="color:red"></small>
 	            </div>
 	            <div class="checkpwd">
@@ -186,28 +186,33 @@
 	            </div>
 	            <div class="phone">
 	                <p>전화번호</p>
-	                <input type="text" placeholder="* '-' 제외하고 입력해주세요" required id="phone"> <br>
+	                <input type="text" name="tel" placeholder="* '-' 포함해서 입력해주세요" required id="phone"> <br>
 	                <small id="phoneMessage" style="color:red"></small>
-	            </div>  
+	            </div>
+	            <div class="email">
+	                <p>이메일</p>
+	                <input type="email" name="email" placeholder="이메일"> <br>
+	            </div>
 	            <div class="address">
 	                <p>주소</p>
-	                <input type="text" placeholder="주소"> <br>
+	                <input type="text" name="address" placeholder="주소"> <br>
 	                <small>* 시/구/동</small> <br>
 	            </div>
-	            <div class="birth">
+	            <div class="birthday">
 	                <p>생년월일</p>
-	                <input type="text" placeholder="8자리 입력 ex)YYMMDD"> <br>
+	                <input type="text" name="birthday" placeholder="8자리 입력 ex)YYMMDD"> <br>
 	            </div>
 	            <div class="gender">
 	                <p>성별</p>
-	                <select name="" class="gender_select">
-	                    <option value="male">남성</option>
-	                    <option value="female">여성</option>
+	                <select name="gender" class="gender_select">
+	                    <option value="M" name="M">남성</option>
+	                    <option value="F" name="F">여성</option>
 	                </select>
 	            </div>
+	            
 	            <div class="btn">
-	                <button type="submit" id="btn">가입하기</button>
-	            </div>
+    			<button type="submit" id="btn" onclick="return test();">가입하기</button>
+				</div>
 	        </form>
 	    </div>
 	
@@ -217,8 +222,8 @@
 	            var phoneMessage = document.getElementById('phoneMessage');
 	
 	            // 전화번호가 11자리가 아닌 경우 경고 메시지 표시
-	            if (phone.length !== 11) {
-	                phoneMessage.textContent = '전화번호는 11자리여야 합니다.';
+	            if (phone.length !== 13) {
+	                phoneMessage.textContent = '전화번호는 13자리여야 합니다.';
 	            } else {
 	                phoneMessage.textContent = ''; // 조건 충족 시 메시지 삭제
 	            }
