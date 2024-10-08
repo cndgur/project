@@ -3567,3 +3567,6 @@ Binding(ALT+SHIFT+D R,
 
 !ENTRY org.eclipse.jst.jsp.core 4 4 2024-10-08 15:22:54.400
 !MESSAGE A workspace crash was detected. The previous session did not exit normally. Not using saved taglib indexes.
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-10-08 15:24:29.529
+!MESSAGE The workspace will exit with unsaved changes in this session.
