@@ -222,7 +222,7 @@ textarea{
     color: rgba(119, 128, 136, 120);
     font-weight: bold;
 }
-.selected_tag{
+.selected_tag_personnel, .selected_tag_location, .selected_tag_theme{
     font-family: "Noto Sans KR", system-ui;
     color: white;
     border: 1px solid rgba(123, 188, 176, 146);
@@ -232,7 +232,7 @@ textarea{
     height: 45px;
     font-weight: 500;
 }
-.unselected_tag{
+.unselected_tag_personnel, .unselected_tag_location, .unselected_tag_theme{
     font-family: "Noto Sans KR", system-ui;
     color: rgba(73, 85, 96, 80);
     border: 1px solid rgba(123, 188, 176, 146);
@@ -265,7 +265,7 @@ textarea{
     color: rgba(73, 85, 96, 80);
     background-color: white;
 }*/
-.unselected_tag:hover{
+.unselected_tag_personnel:hover, .unselected_tag_location:hover, .unselected_tag_theme:hover{
     color: white;
     background-color: rgba(123, 188, 176, 146);
 }
