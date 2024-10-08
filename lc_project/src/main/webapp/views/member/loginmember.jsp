@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>방구석 여행</title>
 <script src="./login.js" defer></script>
+<script type="text/javascript"></script>
     <link rel="icon" href="./pic/logo.png"/>
     <link rel="apple-touch-icon" href="pic/logo.png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -178,8 +179,16 @@
         <div class="links">
             <a href="#">아이디찾기</a> |
             <a href="#">비밀번호 찾기</a> |
-            <a onclick="location.href='enroll.me'">회원가입</a>
+            <a onclick="location.href='selcetenroll.me'">회원가입</a>
         </div>
     </div>
+     <script>
+        const btn = document.querySelector("#btn");
+        //이벤트를 걸고자하는 요소객체.addEventListener("이벤트명", 이벤트핸들러)
+
+        btn.addEventListener("click", function(){
+            alert("로그인실패")
+        })
+     </script>
 </body>
 </html>
