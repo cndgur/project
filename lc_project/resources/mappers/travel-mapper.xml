@@ -15,6 +15,7 @@
 		<result column="TR_MAP_LATITUDE" property="trMapLatitude" />
 		<result column="TR_MAP_LONGITUDE" property="trMapLongitude" />
 		<result column="FIELD" property="count" />
+		<result column="LOCATION" property="picInfo"/>
 	</resultMap>
 	<select id="selectTravelList" resultMap="TravelResultSet">
 		SELECT ac_name,
@@ -29,31 +30,37 @@
 		SELECT AC_NAME,
 			   AC_ADDRESS,
 			   TR_INFO,
-			   FIELD
+			   FIELD,
+			   LOCATION
 		  FROM TB_TOUR
+		  JOIN TB_TOUR_PICTURE USING (AC_NAME)
 		 WHERE AC_NAME = #{trName}
 	</select>
 	<select id="locationList" resultMap="TravelResultSet">
 		SELECT  AC_NAME,
-			    AC_ADDRESS
+			    AC_ADDRESS,
+			    LOCATION
 		FROM (
 				SELECT *
 				  FROM TB_TOUR
 				 WHERE ACT_THEME NOT IN ('맛집','축제')
 				 ORDER BY FIELD DESC
 		)
+		JOIN TB_TOUR_PICTURE USING (AC_NAME)
 		WHERE ACT_LOCATION = #{location}
 		  AND ROWNUM &lt;=4
 	</select>
 	<select id="foodList" resultMap="TravelResultSet">
 		SELECT  ac_name,
-				ac_address 
+				ac_address,
+				LOCATION
 		FROM (
 				SELECT *
 				  FROM TB_TOUR
 				 WHERE ACT_THEME = '맛집'
 				 ORDER BY FIELD DESC
 		)
+		JOIN TB_TOUR_PICTURE USING (AC_NAME)
 		WHERE ACT_LOCATION = #{location}
 		  AND ROWNUM &lt;=4
 	</select>
@@ -71,7 +78,8 @@
 	</select>
 	<select id="otherList" resultMap="TravelResultSet">
 		SELECT  AC_NAME,
-			    AC_ADDRESS
+			    AC_ADDRESS,
+			    LOCATION
 		FROM (
 				SELECT *
 				  FROM TB_TOUR
@@ -79,6 +87,7 @@
 		  	 	   AND AC_NAME != #{trName}
 				 ORDER BY FIELD DESC
 		)
+		JOIN TB_TOUR_PICTURE USING (AC_NAME)
 		WHERE ACT_LOCATION = #{location}
 		  AND ROWNUM &lt;=4
 	</select>

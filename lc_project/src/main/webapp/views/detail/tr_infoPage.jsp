@@ -225,8 +225,8 @@
             
         }
 
-        .recommendtr img {
-            width: auto;
+        .recommendtr-item img {
+            width: 100%;
             height: 80px;
             border-radius: 10px;
         }
@@ -328,7 +328,7 @@
                 <td class="side" id="pic"></td>
                 <td colspan="3">
                     <div class="bpcontent">
-                        <img src="" width="100%" height="100%">
+                        <img src="${t.picInfo}" width="100%" height="100%">
                     </div>
                     <!-- 
                     <div class="spcontent" style="margin-bottom: 100px; width: 100%;">
@@ -446,6 +446,7 @@
                 <td></td>
                 <td class="side"></td>
             </tr>
+            <!-- 근처 다른 여행지 -->
             <tr id="recommend">
                 <td class="side"></td>
                 <td colspan="3" class="content">
@@ -456,7 +457,7 @@
                     <div class="recommendtr" style="margin-bottom: 100px;">
                     	<c:forEach var="item" items="${otherList}">
                     		<div class="recommendtr-item">
-                            	<img src="<%=contextPath %>/pic/picture.png" alt="${item.trName}">
+                            	<img src="${item.picInfo }" alt="${item.trName}">
                             	<p><strong>${item.trName}</strong></p>
                             	<p>${item.trAddress}</p>
                         	</div>
