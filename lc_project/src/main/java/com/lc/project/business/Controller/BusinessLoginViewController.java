@@ -26,7 +26,7 @@ public class BusinessLoginViewController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		request.getRequestDispatcher("views/member/loginview2.jsp").forward(request, response);
+		request.getRequestDispatcher("views/member/loginviewbusiness.jsp").forward(request, response);
 	}
 
 	/**

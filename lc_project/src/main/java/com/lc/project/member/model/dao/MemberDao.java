@@ -12,4 +12,12 @@ public class MemberDao {
     public int insertMember(SqlSession sqlSession, Member member) {
         return sqlSession.insert("memberMapper.insertMember", member);
     }
+    
+    public Member searchidMember(SqlSession sqlSession, Member member) {
+    	return sqlSession.selectOne("memberMapper.searchidMember", member);
+    }
+    
+    public Member searchpwdMember(SqlSession sqlSession, Member member) {
+    	return sqlSession.selectOne("memberMapper.searchpwdMember", member);
+    }
 }

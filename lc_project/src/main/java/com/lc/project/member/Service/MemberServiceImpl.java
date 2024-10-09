@@ -35,6 +35,26 @@ public class MemberServiceImpl implements MemberService{
 		return result;
 	}
 
+	@Override
+	public Member searchidMember(Member m) {
+		SqlSession sqlSession = Template.getSqlSession();
+		Member searchid = mDao.searchidMember(sqlSession, m);
+		
+		sqlSession.close();
+		
+		return searchid;
+	}
+
+	@Override
+	public Member searchpwdMember(Member m) {
+		SqlSession sqlSession = Template.getSqlSession();
+		Member searchpwd = mDao.searchpwdMember(sqlSession, m);
+		
+		sqlSession.close();
+		
+		return searchpwd;
+	}
+
 
 
 }

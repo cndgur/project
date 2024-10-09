@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>방구석 여행</title>
+<title>사업자 로그인</title>
 <script type="text/javascript"></script>
     <link rel="icon" href="./pic/logo.png"/>
     <link rel="apple-touch-icon" href="pic/logo.png"/>
@@ -159,7 +159,7 @@
         <div class="logo">
             <a onclick="location.href='index.jsp'" class="to_main">
                 <div class="header_name">방구석여행</div>
-                <img src="./pic/logo.png" alt="" class="header_main_logo">
+                <img src="../../pic/logo.png" alt="" class="header_main_logo">
             </a>
         </div>
         <h1>로그인</h1>
@@ -167,20 +167,29 @@
     
     <div class="login-container">
         <div class="logo_form">
-            <img src="./pic/logo.png" alt="logo">
+            <img src="../../pic/logo.png" alt="logo">
             <p class="name">방구석여행</p>
         </div>
-        <form action="login.mem" method="post">
-            <input type="text" placeholder="아이디" required id="userId" name="userId">
-            <input type="password" placeholder="비밀번호" required id="userPwd" name="userPwd">
+        <form action="bslogin.bs" method="post">
+            <input type="text" placeholder="아이디" required id="userId" name="bsId">
+            <input type="password" placeholder="비밀번호" required id="userPwd" name="bsPwd">
             <button type="submit" id="btn">로그인</button>
         </form>
         <div class="links">
-            <a onclick="location.href='search.me'">아이디찾기</a> |
-            <a onclick="location.href='searchpwd.me'">비밀번호 찾기</a> |
+            <a href="views/member/searchIdbusiness.jsp">아이디찾기</a> |
+            <a href="views/member/serachpwdbusiness.jsp">비밀번호 찾기</a> |
             <a onclick="location.href='selcetenroll.me'">회원가입</a>
         </div>
     </div>
+		<% String loginSuccess = request.getParameter("loginSuccess"); %>
+		<script>
+		    window.onload = function() {
+		        var loginSuccess = "<%= (loginSuccess != null ? loginSuccess : "") %>";
+		        if (loginSuccess === "false") {
+		            alert("아이디와 비밀번호를 확인해주세요");
+		        }
+		    }
+		</script>
 
 </body>
 </html>

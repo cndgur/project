@@ -72,4 +72,16 @@
       #{bsTitle}
    )
 </insert>
+<select id="searchidBusiness" parameterType="Business" resultMap="businessResultSet">
+		SELECT BS_ID
+		FROM TB_BUSINESS
+		WHERE BS_NAME = #{bsName}
+		  AND BS_PWD = #{bsPwd}
+</select>
+<select id="searchpwdBusiness" parameterType="Business" resultMap="businessResultSet">
+		SELECT BS_PWD
+		FROM TB_BUSINESS
+		WHERE BS_NAME = #{bsName}
+		  AND BS_ID = #{bsId}
+</select>
 </mapper>

@@ -139,4 +139,44 @@
     <servlet-name>logout.me</servlet-name>
     <url-pattern>/logout.me</url-pattern>
   </servlet-mapping>
+      <servlet>
+    <description></description>
+    <display-name>searchid.bn</display-name>
+    <servlet-name>searchid.bn</servlet-name>
+    <servlet-class>com.lc.project.business.Controller.BusinesssearchidController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>searchid.bn</servlet-name>
+    <url-pattern>/searchid.bn</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>searchpwd.bn</display-name>
+    <servlet-name>searchpwd.bn</servlet-name>
+    <servlet-class>com.lc.project.business.Controller.BusinesssearchpwdController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>searchpwd.bn</servlet-name>
+    <url-pattern>/searchpwd.bn</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>searchid.me</display-name>
+    <servlet-name>searchid.me</servlet-name>
+    <servlet-class>com.lc.project.member.Controller.MembersearchidController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>searchid.me</servlet-name>
+    <url-pattern>/searchid.me</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <description></description>
+    <display-name>searchpwd.me</display-name>
+    <servlet-name>searchpwd.me</servlet-name>
+    <servlet-class>com.lc.project.member.Controller.MembersearchpwdController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>searchpwd.me</servlet-name>
+    <url-pattern>/searchpwd.me</url-pattern>
+  </servlet-mapping>
 </web-app>

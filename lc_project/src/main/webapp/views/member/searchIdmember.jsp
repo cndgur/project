@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+    String contextPath = request.getContextPath(); // 컨텍스트 경로 얻기
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -171,9 +174,9 @@
             <img src="./pic/logo.png" alt="logo">
             <p class="name">방구석여행</p>
         </div>
-        <form action="search.me" method="post">
-            <input type="text" placeholder="이름을 입력하세요." required id="username">
-            <input type="text" placeholder="생년월일을 입력하세요. ex)yyyy-mm-dd" required id="password">
+        <form action="<%=contextPath%>/searchid.me" method="post">
+            <input type="text" placeholder="이름을 입력하세요." required name="userName">
+            <input type="password" placeholder="비밀번호를 입력하세요." required name="userPwd">
             <button type="submit" id="btn">아이디찾기</button>
         </form>
     </div>
