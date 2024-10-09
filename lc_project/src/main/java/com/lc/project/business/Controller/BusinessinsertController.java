@@ -14,13 +14,13 @@ import jakarta.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class BusinessInsertController
  */
-public class BusinessInsertController extends HttpServlet {
+public class BusinessinsertController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BusinessInsertController() {
+    public BusinessinsertController() {
         super();
         // TODO Auto-generated constructor stub
     }

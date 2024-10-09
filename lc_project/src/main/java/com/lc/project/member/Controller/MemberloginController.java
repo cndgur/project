@@ -39,14 +39,13 @@ public class MemberloginController extends HttpServlet {
 		Member loginUser = memberService.loginMember(m);
 		
 		if (loginUser != null) {
-		    request.getSession().setAttribute("loginUser", loginUser);
-		    response.sendRedirect(request.getContextPath());
-		    System.out.println("로그인성공");
-		} else {
-		    request.setAttribute("errorMessage", "아이디 또는 비밀번호가 잘못되었습니다."); // 추가
-		    request.getRequestDispatcher("views/member/loginview.jsp").forward(request, response);
-		    System.out.println("로그인실패");
-		}
+            request.getSession().setAttribute("loginUser", loginUser);
+            System.out.println("로그인성공");
+            response.sendRedirect(request.getContextPath() + "/index.jsp?loginSuccess=true");
+        } else {
+            System.out.println("로그인실패");
+            response.sendRedirect(request.getContextPath() + "/login.me?loginSuccess=false");
+        }
 	}
 
 	/**

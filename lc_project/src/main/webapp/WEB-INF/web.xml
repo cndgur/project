@@ -93,7 +93,7 @@
     <description></description>
     <display-name>insert.bs</display-name>
     <servlet-name>insert.bs</servlet-name>
-    <servlet-class>com.lc.project.business.Controller.BusinessInsertController</servlet-class>
+    <servlet-class>com.lc.project.business.Controller.BusinessinsertController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>insert.bs</servlet-name>

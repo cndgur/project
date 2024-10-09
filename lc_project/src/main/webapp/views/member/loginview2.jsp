@@ -181,6 +181,15 @@
             <a onclick="location.href='selcetenroll.me'">회원가입</a>
         </div>
     </div>
+		<% String loginSuccess = request.getParameter("loginSuccess"); %>
+		<script>
+		    window.onload = function() {
+		        var loginSuccess = "<%= (loginSuccess != null ? loginSuccess : "") %>";
+		        if (loginSuccess === "false") {
+		            alert("아이디와 비밀번호를 확인해주세요");
+		        }
+		    }
+		</script>
 
 </body>
 </html>

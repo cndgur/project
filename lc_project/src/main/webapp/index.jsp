@@ -4,6 +4,9 @@
 <%
     String contextPath = request.getContextPath(); // 컨텍스트 경로 얻기
 %>
+<%@ page import="com.lc.project.business.model.vo.Business" %>
+<%@ page import="com.lc.project.member.model.vo.Member" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -349,6 +352,24 @@
   </div>
   
   <script>
+  
+		  <%
+		  String loginSuccess = request.getParameter("loginSuccess"); 
+		  Business loginbs = (Business) session.getAttribute("loginbs");
+		%>
+		
+		window.onload = function() {
+		    var loginSuccess = "<%= (loginSuccess != null ? loginSuccess : "") %>";
+		    
+		    if (loginSuccess === "true") {
+		        var bsName = "<%= (loginbs != null && loginbs.getBsName() != null ? loginbs.getBsName() : "") %>";
+		        alert(bsName.length > 0 ? bsName + "님 환영합니다." : "로그인 정보가 없습니다.");
+		    } else if (loginSuccess === "false") {
+		        alert("아이디와 비밀번호를 확인해주세요.");
+		    }
+		}
+
+
 		function travelInfo(){
 			location.href="<%=contextPath%>/travel.info?travel=1"
 		}

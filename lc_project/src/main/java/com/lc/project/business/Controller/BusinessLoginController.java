@@ -40,11 +40,10 @@ public class BusinessLoginController extends HttpServlet {
         if (loginbs != null) {
             request.getSession().setAttribute("loginbs", loginbs);
             System.out.println("로그인성공");
-            response.sendRedirect(request.getContextPath() + "?message=success"); // 성공 메시지 쿼리 파라미터 추가
+            response.sendRedirect(request.getContextPath() + "/index.jsp?loginSuccess=true");
         } else {
-            request.getSession().setAttribute("errorMessage", "아이디 또는 비밀번호가 잘못되었습니다."); // 에러 메시지 세션에 저장
             System.out.println("로그인실패");
-            response.sendRedirect(request.getContextPath() + "?message=error"); // 에러 메시지 쿼리 파라미터 추가
+            response.sendRedirect(request.getContextPath() + "/login.bs?loginSuccess=false");
         }
     }
 
