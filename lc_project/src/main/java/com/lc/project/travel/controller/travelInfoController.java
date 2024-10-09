@@ -3,6 +3,7 @@ package com.lc.project.travel.controller;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import com.lc.project.member.model.vo.Member;
 import com.lc.project.travel.model.vo.Travel;
 import com.lc.project.travel.model.vo.tReview;
 import com.lc.project.travel.service.TravelService;
@@ -11,6 +12,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class travelInfoController
@@ -40,9 +42,12 @@ public class travelInfoController extends HttpServlet {
 			tra.setTrAddress(tAdd);
 		}
 		ArrayList<tReview> rlist = tServ.selectTReview(trName);
+		HttpSession session = request.getSession();
+		session.setAttribute("loginUser", new Member("admin","1234","관리자","010-1111-2222"));
 		request.setAttribute("t", t);
 		request.setAttribute("tlist", tlist);
 		request.setAttribute("rlist", rlist);
+		
 		request.getRequestDispatcher("views/detail/tr_infoPage.jsp").forward(request, response);
 	}
 

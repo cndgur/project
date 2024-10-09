@@ -40,4 +40,16 @@ public class TravelService {
 		JDBCTemplate.close(conn);
 		return list;
 	}
+	public int insertReview(String review,String userName,String travel) {
+		Connection conn = JDBCTemplate.getConnection();
+		int result = tDao.insertReview(conn,review,userName, travel);
+		if(result>0) {
+			JDBCTemplate.commit(conn);
+		}else {
+			JDBCTemplate.rollback(conn);
+		}
+		JDBCTemplate.close(conn);
+		return result;
+	}
+
 }

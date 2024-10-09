@@ -171,5 +171,25 @@ public class TravelDao {
 		}
 		return list;
 	}
+	public int insertReview(Connection conn,String review,String userName,String travel){
+		int result = 0;
+		PreparedStatement pstmt = null;
+		String sql = "INSERT INTO TB_REVIEW(REV_NUM, REV_USER, AC_NAME, CONTENT, REVIEW_DATE,SCORE) "
+				+ "VALUES(25,?,?,?,SYSDATE,7)";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, userName);
+			pstmt.setString(2, travel);
+			pstmt.setString(3, review);
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		return result;
+	}
 	
 }

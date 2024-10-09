@@ -1,10 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="com.lc.project.travel.model.vo.Travel, java.util.ArrayList, com.lc.project.travel.model.vo.tReview, com.lc.project.member.model.vo.Member" %>
 <%	
-	//Member loginUser = (Member)session.getAttribute("loginUser");
+	Member loginUser = (Member)session.getAttribute("loginUser");
 	Travel t = (Travel)request.getAttribute("t");
 	ArrayList<Travel> tlist = (ArrayList<Travel>)request.getAttribute("tlist");
-	ArrayList<Travel> wlist = (ArrayList<Travel>)request.getAttribute("wlist");
 	ArrayList<tReview> rlist = (ArrayList<tReview>)request.getAttribute("rlist");
 %>
 <!DOCTYPE html>
@@ -286,13 +285,47 @@
                 <td class="side"></td>
                 <td colspan="3" style="text-align: center; vertical-align: bottom;">
                 	<button id="wishlistbt" style="float: right;" onclick="insertwish()"><b>찜하기</b></button>
-                	<script>
-                		function insertwish(){
-                			//if( === null){
-                		//		alert("로그인이 필요한 기능입니다.")
-                			//}
+                	<% if(loginUser == null) {%>
+						<script>
+						function insertwish(){
+                			alert("로그인이 필요한 기능입니다.")
                 		}
-                	</script>
+						</script>
+					<% } else{%>
+						<script>
+							function insertwish(){
+	                			location.href="insertwish.tr";
+	                		}
+						
+	                        window.onload = function() {
+	                        	$.ajax({
+                        			url: "wish.tr",
+                        			contentType: "application/json",
+                        			data: {
+                        				userName: "<%=loginUser.getName()%>" //loginUser
+                        			},
+                        			success: function(res){
+                        				console.log(res);
+                        				let str = "";
+                                        for(let tra of res){
+                                        	str += ("<div class='sidenav-item'>" +
+                                                    "<img src='" + "/"+tra.picInfo + "'>" +
+                                                    "<p><strong>" + tra.trName + "</strong></p>" +
+                                                    "<p>" + tra.trAddress + "</p>" +
+                                                    "</div>")
+                                        }
+										
+                                        var element = document.getElementsByClassName("sidecontent")[0];  // 첫 번째 요소 선택
+    		                        	element.innerHTML = str;
+                        			},error: function(){
+                        				console.log("ajax통신 실패")
+                        			}
+                        		})
+	                        	
+	                        	
+	                        };
+                		</script>
+					<%} %>
                 </td>
                 <td></td>
                 <td></td>
@@ -387,36 +420,6 @@
                     <div class="sidenav">
                         <div class="sidenav-header">찜한 여행지</div>
                         <div class=sidecontent></div>
-                        <script>
-	                        window.onload = function() {
-	                        	$.ajax({
-                        			url: "wish.tr",
-                        			contentType: "application/json",
-                        			data: {
-                        				userName: 'user1@example.com' //loginUser
-                        			},
-                        			success: function(res){
-                        				console.log("여기까지는됨");
-                        				console.log(res);
-                        				let str = "";
-                                        for(let tra of res){
-                                        	str += ("<div class='sidenav-item'>" +
-                                                    "<img src='" + "/"+tra.picInfo + "'>" +
-                                                    "<p><strong>" + tra.trName + "</strong></p>" +
-                                                    "<p>" + tra.trAddress + "</p>" +
-                                                    "</div>")
-                                        }
-										
-                                        var element = document.getElementsByClassName("sidecontent")[0];  // 첫 번째 요소 선택
-    		                        	element.innerHTML = str;
-                        			},error: function(){
-                        				console.log("ajax통신 실패")
-                        			}
-                        		})
-	                        	
-	                        	
-	                        };
-                		</script>
                         
                         <div class="sidenav-footer">
                             <button><div style="vertical-align: middle;">여행지 기준<br>호텔 검색</div></button>
@@ -505,10 +508,12 @@
                     <div>
                         <h2>여행지 리뷰</h2>
                         <hr>
-                        <form action="review.tra">
-                        	<div style="width: 100%; height: 250px; background: #ddeeeb; margin-bottom: 100px;">
-                            <textarea id="review" placeholder="리뷰를 작성해주세요." style="resize: none;"></textarea><br>
-                            <button id="reviewbt" type="submit">등록</button>
+                        <form action="review.tra" method="POST">
+                        	<input type="hidden" name="userName" value="12345">
+                        	<input type="hidden" name="travel" value="<%=t.getTrName()%>">
+                        	<div style="width: 100%; height: 300px; background: #ddeeeb; margin-bottom: 100px;">
+                            <textarea id="review" placeholder="리뷰를 작성해주세요." style="resize: none;" name="review"></textarea><br>
+                            <button id="reviewbt" type="submit" style="margin-bottom: 20px;">등록</button>
                         	</div>
                         </form>
                         <div>
