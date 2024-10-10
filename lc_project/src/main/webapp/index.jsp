@@ -22,9 +22,7 @@
   <link rel="stylesheet" href="./css/main.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   
-=======
   <link rel="stylesheet" href="./css/main.css?ver=1" />
->>>>>>> 8f89d988230f6b426e6e78463905c2026bd2ab35
 
   <!-- JS -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -324,7 +322,7 @@
   <div id="map">
   </div>
   <script>
-<<<<<<< HEAD
+
   
 		  <%
 		  String loginSuccess = request.getParameter("loginSuccess"); 
@@ -346,8 +344,7 @@
 		function travelInfo(){
 			location.href="<%=contextPath%>/travel.info?travel=1"
 		}
-=======
->>>>>>> 684d79f02d1b3404810036aad0d7344dcdb026e0
+
 	    const mySwiper2 = new Swiper(".mySwiper2", {
 	        slidesPerView: 'auto', // 한 번에 표시할 슬라이드 수
 	        spaceBetween: 20, // 슬라이드 간의 간격
@@ -374,19 +371,18 @@
 	        slideOffsetAfter: 10,
 	        slideOffsetBefore: 10
 	    });
-<<<<<<< HEAD
+
     
 	    $('.btn_like').click(function () {
 	      $(this).toggleClass("on")
 	    });
 	    //---------로그인 성공 메시지-----------
-=======
+
     	
 	    //$('.btn_like').click(function () {
 	    //  $(this).toggleClass("on")
 	    //});
 	    
->>>>>>> 684d79f02d1b3404810036aad0d7344dcdb026e0
 	</script>
 	 <%@include file="/views/common/footer.jsp"%>
 </body>
