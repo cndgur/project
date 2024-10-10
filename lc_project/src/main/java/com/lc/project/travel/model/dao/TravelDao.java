@@ -11,6 +11,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Properties;
 
+import org.apache.ibatis.session.SqlSession;
+
 import com.lc.project.travel.model.vo.Travel;
 import com.lc.project.travel.model.vo.tReview;
 
@@ -251,5 +253,17 @@ public class TravelDao {
 			close(pstmt);
 		}
 		return result;
+	}
+	
+	public ArrayList<Travel> selectList(SqlSession sqlSession, String location) {
+		return (ArrayList)sqlSession.selectList("travelMapper.locationList",location);
+	}
+
+	public ArrayList<Travel> foodSelectList(SqlSession sqlSession, String location) {
+		return (ArrayList)sqlSession.selectList("travelMapper.foodList",location);
+		}
+
+	public ArrayList<Travel> festivalList(SqlSession sqlSession, String location) {
+		return (ArrayList)sqlSession.selectList("travelMapper.festivalList",location);
 	}
 }
