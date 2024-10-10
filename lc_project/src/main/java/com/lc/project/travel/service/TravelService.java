@@ -28,9 +28,6 @@ public class TravelService {
 	public ArrayList<Travel> locationList(String location) {
 		SqlSession sqlSession = Template.getSqlSession();
 		ArrayList<Travel> list = tDao.selectList(sqlSession, location);
-		System.out.println(list);
-		System.out.println(location);
-		System.out.println(location.getClass().getName());
 		sqlSession.close();
 		
 		return list;
