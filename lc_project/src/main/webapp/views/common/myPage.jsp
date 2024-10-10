@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+    String contextPath = request.getContextPath(); // 컨텍스트 경로 얻기
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,10 +22,14 @@
 </head>
 <body>
     <div id="header_wrapper">
-        <div id="header_wrapper1">
-            <div id="header_logo"><a href=""><img src="../../pic/logo.png" alt="" width="80" height="64"></a></div>
-            <div id="header_letter"><a href="">방구석 여행</a></div>
-        </div>
+        <a href="<%=contextPath%>">
+            <div id="header_wrapper1">
+                <div id="header_logo">
+                    <img src="../../pic/logo.png" alt="" width="80" height="64">
+                </div>
+                <div id="header_letter">방구석 여행</div>
+            </div>
+        </a>
         <div id="header_wrapper2">
             <div id="header_toBusiness"><button>사업자 등록하기</button></div>
             <div id="myPage_Circle">
@@ -44,10 +51,10 @@
                 </div>
                 <button>프로필 사진 변경</button>
                 <div id="text-area">
-                    <h3>이충혁</h3>
+                    <h3>${loginUser.userName}님</h3>
                     <ul>
-                        <li>email <br> lee607080@naver.com</li>
-                        <li>phone <br> +82 010-8342-8022</li>
+                        <li>email <br>${loginUser.email}</li>
+                        <li>phone : ${loginUser.tel}</li>
                     </ul>
                 </div>
             </div>

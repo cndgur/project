@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+    String contextPath = request.getContextPath(); // 컨텍스트 경로 얻기
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -68,7 +71,7 @@
 	    text-align: center;
 	}
 	
-	.login-container {
+	.searchid-container {
 	    background-color: #e0f7f6;
 	    border-radius: 20px;
 	    width: 400px;
@@ -78,21 +81,21 @@
 	    margin-top: 90px;
 	}
 	
-	.login-container img {
+	.searchid-container img {
 	    width: 90px;
 	    height: 72px;
 		position: relative;
 		left: -15px;
 	}
 	
-	.login-container h2 {
+	.searchid-container h2 {
 	    position: relative;
 	    margin-top: -14px;
 	    font-family: "Jua", sans-serif;
 	    left: 2px;
 	}
 	
-	body input[type="email"],
+	body input[type="text"],
 	 input[type="password"] {
 	    width: 90%;
 	    padding: 15px;
@@ -102,7 +105,7 @@
 	    outline: none;
 	}
 	
-	.login-container button {
+	.searchid-container button {
 	    width: 100%;
 	    padding: 15px;
 	    background-color: #ffffff;
@@ -113,25 +116,25 @@
 	    color: #00bfa5;
 	}
 	
-	.login-container button:hover {
+	.searchid-container button:hover {
 	    background-color: #00bfa5;
 	    color: white;
 	}
 	
-	.login-container .links {
+	.searchid-container .links {
 	    margin-top: 20px;
 	    font-size: 0.9rem;
 	    color: #00bfa5;
 	}
 	
-	.login-container .links a {
+	.searchid-container .links a {
 	    text-decoration: none;
 	    color: #00bfa5;
 	    margin: 0 5px;
 		cursor: pointer;
 	}
 	
-	.login-container .links a:hover {
+	.searchid-container .links a:hover {
 	    text-decoration: underline;
 	}
 	.logo_form{
@@ -163,32 +166,20 @@
                 <img src="./pic/logo.png" alt="" class="header_main_logo">
             </a>
         </div>
-        <h1>이메일로 로그인하기</h1>
+        <h1>아이디찾기</h1>
     </div>
     
-    <div class="login-container">
+    <div class="searchid-container">
         <div class="logo_form">
             <img src="./pic/logo.png" alt="logo">
             <p class="name">방구석여행</p>
         </div>
-        <form action="index.jsp" method="post">
-            <input type="email" placeholder="이메일" required id="username">
-            <input type="password" placeholder="비밀번호" required id="password">
-            <button type="submit" id="btn">로그인</button>
+        <form action="<%=contextPath%>/searchid.me" method="post">
+            <input type="text" placeholder="이름을 입력하세요." required name="userName">
+            <input type="password" placeholder="비밀번호를 입력하세요." required name="userPwd">
+            <button type="submit" id="btn">아이디찾기</button>
         </form>
-        <div class="links">
-            <a href="#">아이디찾기</a> |
-            <a href="#">비밀번호 찾기</a> |
-            <a onclick="location.href='selcetenroll.me'">회원가입</a>
-        </div>
     </div>
-     <script>
-        const btn = document.querySelector("#btn");
-        //이벤트를 걸고자하는 요소객체.addEventListener("이벤트명", 이벤트핸들러)
 
-        btn.addEventListener("click", function(){
-            alert("로그인실패")
-        })
-     </script>
 </body>
 </html>

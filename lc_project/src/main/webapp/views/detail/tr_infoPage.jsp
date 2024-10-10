@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="com.lc.project.travel.model.vo.Travel"%>
-<%
-	Travel t = (Travel)request.getAttribute("t");
-%>
+    pageEncoding="UTF-8"%>
+    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -217,6 +217,7 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
         .recommendtr-item {
+        	width: 25%;
             margin: 15px;
             background-color: #ddeeeb;
             border-radius: 15px;
@@ -225,8 +226,8 @@
             
         }
 
-        .recommendtr img {
-            width: auto;
+        .recommendtr-item img {
+            width: 100%;
             height: 80px;
             border-radius: 10px;
         }
@@ -256,15 +257,15 @@
             </tr>
             <tr>
                 <td class="side"></td>
-                <td colspan="3" style="text-align: center; vertical-align: bottom;"><b style="font-size: 40px;"><%=t.getTrName()%></b></td>
+                <td colspan="3" style="text-align: center; vertical-align: bottom;"><b style="font-size: 40px;">${t.trName}</b></td>
                 <td></td>
                 <td></td>
                 <td class="side"></td>
             </tr>
             <tr>
                 <td class="side"></td>
-                <td class="side" ><img src="<%=contextPath %>/pic/heart.png" width="20px" height="20px" style="margin-right: 5px;"><b><%=t.getCount()%></b></td>
-                <td style="width: 20%; text-align: center; vertical-align: top;"><b style="font-size: 20px;"><%=t.getTrAddress()%></td>
+                <td class="side" ><img src="<%=contextPath %>/pic/heart.png" width="20px" height="20px" style="margin-right: 5px;"><b>${t.count}</b></td>
+                <td style="width: 20%; text-align: center; vertical-align: top;"><b style="font-size: 20px;">${t.trAddress }</td>
                 <td class="side">
                     <div id="category">
                         <button style="cursor:context-menu;">#1인여행</button>
@@ -328,7 +329,7 @@
                 <td class="side" id="pic"></td>
                 <td colspan="3">
                     <div class="bpcontent">
-                        <img src="<%=contextPath %><%=t.getPicInfo() %>" width="100%" height="100%">
+                        <img src="${t.picInfo}" width="100%" height="100%">
                     </div>
                     <!-- 
                     <div class="spcontent" style="margin-bottom: 100px; width: 100%;">
@@ -406,10 +407,10 @@
                         <h2>상세정보</h2>
                         <hr>
                     </div>
-                    <%=t.getTrInfo() %>
+                    ${t.trInfo}
                     
                     <br><br>
-                    <%=t.getMapInfo() %>
+                    <!-- t.getMapInfo() -->
                     <!--  
                     <div id="daumRoughmapContainer1726734009560" class="root_daum_roughmap root_daum_roughmap_landing" style="width: 100%; margin-bottom: 100px;"></div>
 
@@ -446,6 +447,7 @@
                 <td></td>
                 <td class="side"></td>
             </tr>
+            <!-- 근처 다른 여행지 -->
             <tr id="recommend">
                 <td class="side"></td>
                 <td colspan="3" class="content">
@@ -454,44 +456,13 @@
                         <hr>
                     </div>
                     <div class="recommendtr" style="margin-bottom: 100px;">
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div style="margin-left:40px; display: flex; justify-content: center; align-items: center;">
-                            <img src="<%=contextPath %>/pic/sidearrow.png" style="align-self: center; margin-bottom: 0px; cursor: pointer;">
-                        </div>
+                    	<c:forEach var="item" items="${otherList}">
+                    		<div class="recommendtr-item">
+                            	<img src="${item.picInfo }" alt="${item.trName}" onclick="location.href='travel.info?travel=${item.trName}&&location=${location}'">
+                            	<p><strong>${item.trName}</strong></p>
+                            	<p>${item.trAddress}</p>
+                        	</div>
+                    	</c:forEach>
                     </div>
                 </td>
                 <td></td>

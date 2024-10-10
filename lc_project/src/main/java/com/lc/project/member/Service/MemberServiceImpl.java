@@ -1,29 +1,14 @@
 package com.lc.project.member.Service;
 
 import org.apache.ibatis.session.SqlSession;
-
 import com.lc.project.common.template.Template;
 import com.lc.project.member.model.dao.MemberDao;
 import com.lc.project.member.model.vo.Member;
 
-public class MemberServiceImpl implements MemberService {
+public class MemberServiceImpl implements MemberService{
 
 	private MemberDao mDao = new MemberDao();
-
-	@Override
-	public int insertMember(Member m) {
-		SqlSession sqlSession = Template.getSqlSession();
-		int result = mDao.insertMember(sqlSession, m);
-		
-		if(result > 0) {
-			sqlSession.commit();
-		}else {
-			sqlSession.rollback();
-		}
-		sqlSession.close();
-		return result;
-	}
-
+	
 	@Override
 	public Member loginMember(Member m) {
 		SqlSession sqlSession = Template.getSqlSession();
@@ -32,8 +17,44 @@ public class MemberServiceImpl implements MemberService {
 		sqlSession.close();
 		
 		return loginUser;
-
 	}
-	
-	
+
+	@Override
+	public int insertMember(Member m) {
+		SqlSession sqlSession = Template.getSqlSession();
+		int result = mDao.insertMember(sqlSession, m);
+		
+		if(result > 0) {
+			sqlSession.commit();
+		} else {
+			sqlSession.rollback();
+		}
+		
+		sqlSession.close();
+		
+		return result;
+	}
+
+	@Override
+	public Member searchidMember(Member m) {
+		SqlSession sqlSession = Template.getSqlSession();
+		Member searchid = mDao.searchidMember(sqlSession, m);
+		
+		sqlSession.close();
+		
+		return searchid;
+	}
+
+	@Override
+	public Member searchpwdMember(Member m) {
+		SqlSession sqlSession = Template.getSqlSession();
+		Member searchpwd = mDao.searchpwdMember(sqlSession, m);
+		
+		sqlSession.close();
+		
+		return searchpwd;
+	}
+
+
+
 }

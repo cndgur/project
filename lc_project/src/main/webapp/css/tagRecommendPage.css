@@ -137,3 +137,8 @@ display: block;
 width: 100%;
 text-align: center;
 }
+
+.tagbtn{
+    display: grid;
+    grid-template-columns: minmax(100px, max-content) 1fr;
+}
