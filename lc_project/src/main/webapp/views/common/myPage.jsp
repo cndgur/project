@@ -44,17 +44,20 @@
             <div id="profile">
                 <div id="img-area">
 
-                    <img src="../..pic/profile.png">
-
                     <img src="../../pic/profile.png">
 
                 </div>
-                <button>프로필 사진 변경</button>
+                <div class="upload_profile_pic">
+	                <label for="file">
+					  <div class="btn-upload">프로필 사진 변경</div>
+					</label>
+					<input type="file" name="file" id="file">
+				</div>
                 <div id="text-area">
                     <h3>${loginUser.userName}님</h3>
                     <ul>
-                        <li>email <br>${loginUser.email}</li>
-                        <li>phone : ${loginUser.tel}</li>
+                        <li>아이디 : ${loginUser.userId}</li>
+                        <li>전화번호 : ${loginUser.tel}</li>
                     </ul>
                 </div>
             </div>
