@@ -238,11 +238,11 @@
 			<div class="swiper mySwiper2">
 				<div class="swiper-wrapper">
 		        	<div class="swiper-slide">
-		          		<img src="../pic/main-seoul.webp" alt="seoul" onclick="location.href='location.tr?location=수도권'">
+		          		<img src="./pic/main-seoul.webp" alt="seoul" onclick="location.href='location.tr?location=수도권'">
 			            <p>수도권</p>
 		        	</div>        
 		          	<div class="swiper-slide">
-		            	<img src="../pic/main-gangwon.jpg" alt="gangwon" onclick="location.href='location.tr?location=강원도'">
+		            	<img src="./pic/main-gangwon.jpg" alt="gangwon" onclick="location.href='location.tr?location=강원도'">
 		            	<p>강원</p>
 		          	</div>
 		          	<div class="swiper-slide">
