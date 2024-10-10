@@ -63,10 +63,7 @@ body{
     border-radius: 50px;
     background-color: white;
 }
-.btn:focus {
-    outline: none;
-    box-shadow: none;
-}
+
 #hamBtn{
     display: flex;
     align-items: center;
@@ -82,6 +79,11 @@ body{
     float: right;
     position: relative;
     left: 26px;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: none;
 }
 
 .header_main_logo{
@@ -124,27 +126,6 @@ body{
     color: #000000;
     font-size: 25px;
   	font-family: "Jua", sans-serif;
-}
-.input_2{
-	position: relative;
-    width: 550px;
-    height: 75px;
-    border: none;
-    outline: none;
-    background-color: rgb(255, 255, 255);
-    text-align: center;
-    justify-content: center;
-    font-size: 25px;
-    font-family: "Noto Sans KR", system-ui;
-    box-sizing: border-box;
-    text-align: left;
-    padding-left: 28px;
-    padding-bottom: 6px;
-}
-.input_2::placeholder {
-    color: #000000;
-    font-size: 25px;
-    font-family: "Jua", sans-serif;
 }
 
 textarea::placeholder{
