@@ -4,34 +4,39 @@ public class Travel {
 	private String trName;
 	private String trAddress;
 	private String trInfo;
+<<<<<<< HEAD
+	private String mapInfo;
+	private String trId;
+	private int count;
+=======
 	private String tr_personnel;
 	private String tr_location;
 	private String tr_theme;
 	private String tr_map_lat;
 	private String tr_map_long;
 <<<<<<< HEAD
+>>>>>>> 360f04d532dd42d02e2bc1b4d80b8ccf435c0936
 	private String picInfo;
 	public Travel() {
 		super();
 	}
+<<<<<<< HEAD
+	public Travel(String trName, String trAddress, String trInfo, String mapInfo, String trId, int count,
+			String picInfo) {
+=======
 =======
 >>>>>>> 684d79f02d1b3404810036aad0d7344dcdb026e0
 	public Travel(String trName, String trAddress, String trInfo, String tr_personnel, String tr_location,
 			String tr_theme, String tr_map_lat, String tr_map_long, String picInfo) {
+>>>>>>> 360f04d532dd42d02e2bc1b4d80b8ccf435c0936
 		super();
 		this.trName = trName;
 		this.trAddress = trAddress;
 		this.trInfo = trInfo;
-		this.tr_personnel = tr_personnel;
-		this.tr_location = tr_location;
-		this.tr_theme = tr_theme;
-		this.tr_map_lat = tr_map_lat;
-		this.tr_map_long = tr_map_long;
+		this.mapInfo = mapInfo;
+		this.trId = trId;
+		this.count = count;
 		this.picInfo = picInfo;
-	}
-	private String picInfo;
-	public Travel() {
-		super();
 	}
 	public String getTrName() {
 		return trName;
@@ -51,35 +56,23 @@ public class Travel {
 	public void setTrInfo(String trInfo) {
 		this.trInfo = trInfo;
 	}
-	public String getTr_personnel() {
-		return tr_personnel;
+	public String getMapInfo() {
+		return mapInfo;
 	}
-	public void setTr_personnel(String tr_personnel) {
-		this.tr_personnel = tr_personnel;
+	public void setMapInfo(String mapInfo) {
+		this.mapInfo = mapInfo;
 	}
-	public String getTr_location() {
-		return tr_location;
+	public String getTrId() {
+		return trId;
 	}
-	public void setTr_location(String tr_location) {
-		this.tr_location = tr_location;
+	public void setTrId(String trId) {
+		this.trId = trId;
 	}
-	public String getTr_theme() {
-		return tr_theme;
+	public int getCount() {
+		return count;
 	}
-	public void setTr_theme(String tr_theme) {
-		this.tr_theme = tr_theme;
-	}
-	public String getTr_map_lat() {
-		return tr_map_lat;
-	}
-	public void setTr_map_lat(String tr_map_lat) {
-		this.tr_map_lat = tr_map_lat;
-	}
-	public String getTr_map_long() {
-		return tr_map_long;
-	}
-	public void setTr_map_long(String tr_map_long) {
-		this.tr_map_long = tr_map_long;
+	public void setCount(int count) {
+		this.count = count;
 	}
 	public String getPicInfo() {
 		return picInfo;
@@ -89,15 +82,17 @@ public class Travel {
 	}
 	@Override
 	public String toString() {
-		return "Travel [trName=" + trName + ", trAddress=" + trAddress + ", trInfo=" + trInfo + ", tr_personnel="
-				+ tr_personnel + ", tr_location=" + tr_location + ", tr_theme=" + tr_theme + ", tr_map_lat="
-				+ tr_map_lat + ", tr_map_long=" + tr_map_long + ", picInfo=" + picInfo + "]";
+		return "Travel [trName=" + trName + ", trAddress=" + trAddress + ", trInfo=" + trInfo + ", mapInfo=" + mapInfo
+				+ ", trId=" + trId + ", count=" + count + ", picInfo=" + picInfo + "]";
 	}
 <<<<<<< HEAD
 =======
 	
 	
+<<<<<<< HEAD
+=======
 	
 	
 >>>>>>> 684d79f02d1b3404810036aad0d7344dcdb026e0
+>>>>>>> 360f04d532dd42d02e2bc1b4d80b8ccf435c0936
 }

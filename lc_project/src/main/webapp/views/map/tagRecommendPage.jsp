@@ -41,10 +41,14 @@
 <body>
 <<<<<<< HEAD
 	<!-- header -->
+=======
+<<<<<<< HEAD
+	<!-- header -->
 	<%@include file="../common/header.jsp" %>
 
 =======
 
+>>>>>>> 360f04d532dd42d02e2bc1b4d80b8ccf435c0936
 	<%@include file="../common/header.jsp" %>
 >>>>>>> 684d79f02d1b3404810036aad0d7344dcdb026e0
     <!-- main -->

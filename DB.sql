@@ -101,9 +101,9 @@ CREATE TABLE TB_TOUR (
 	AC_NAME VARCHAR2(255) NOT NULL,
 	AC_ADDRESS VARCHAR2(255) NOT NULL,
 	TR_INFO VARCHAR2(4000) NOT NULL,
-    MAP_INFO VARCHAR2(4000) NOT NULL,
 	ACT_ID VARCHAR2(255) NOT NULL,
-	CNT NUMBER NOT NULL,
+	FIELD NUMBER NOT NULL,
+	TR_MAP_INFO VARCHAR2(1000),
 	PRIMARY KEY (AC_NAME)
 >>>>>>> 684d79f02d1b3404810036aad0d7344dcdb026e0
 );
@@ -184,7 +184,10 @@ VALUES ('/images/villa.jpg', 3, 'B003');
 
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 
+>>>>>>> 360f04d532dd42d02e2bc1b4d80b8ccf435c0936
 -- TB_MEMBER 테이블에 데이터 삽입
 -- 3명의 회원 정보를 추가
 INSERT INTO TB_MEMBER (EMAIL, PASSWORD, TEL, NAME)
@@ -212,13 +215,17 @@ INSERT INTO TB_TOUR_PICTURE (LOCATION, AC_NAME)
 VALUES ('/tour/mountain.jpg', '산장 투어');
 INSERT INTO TB_TOUR_PICTURE (LOCATION, AC_NAME)
 VALUES ('/tour/villa.jpg', '럭셔리 빌라 투어');
-INSERT INTO TB_TOUR_PICTURE (LOCATION, AC_NAME)
-VALUES ('/pic/구서도역.jpg', '구 서도역');
-INSERT INTO TB_TOUR_PICTURE (LOCATION, AC_NAME)
-VALUES ('/pic/태하중도생태공원.png', '태하중도생태공원');
 
 -- TB_TOUR 테이블에 데이터 삽입
 -- 3개의 투어 정보를 추가
+<<<<<<< HEAD
+INSERT INTO TB_TOUR (AC_NAME, AC_ADDRESS, TR_INFO, ACT_ID, FIELD)
+VALUES ('오션뷰 투어', '제주도 서귀포시', '바다를 보며 즐기는 투어', 101, 1);
+INSERT INTO TB_TOUR (AC_NAME, AC_ADDRESS, TR_INFO, ACT_ID, FIELD)
+VALUES ('산장 투어', '강원도 평창군', '산 속에서 힐링하는 투어', 102, 2);
+INSERT INTO TB_TOUR (AC_NAME, AC_ADDRESS, TR_INFO, ACT_ID, FIELD)
+VALUES ('럭셔리 빌라 투어', '경기도 가평군', '럭셔리한 휴양을 즐기는 투어', 103, 3);
+=======
 <<<<<<< HEAD
 INSERT INTO TB_TOUR (AC_NAME, AC_ADDRESS, TR_INFO, ACT_ID, FIELD)
 VALUES ('오션뷰 투어', '제주도 서귀포시', '바다를 보며 즐기는 투어', '축제', 1);
@@ -234,6 +241,7 @@ VALUES ('구 서도역', '전북 남원시', '구 서도역은 1932년 조성된 우리나라에서 가장
 INSERT INTO TB_TOUR (AC_NAME, AC_ADDRESS, TR_INFO, MAP_INFO,  ACT_ID, CNT)
 VALUES ('태하중도생태공원', '강원 춘천시', '춘천 의암호에 있는 섬, 중도에 조성한 생태공원이다. 중도는 상중도와 하중도로 나뉘는데 하중도는 선사 유적지와 레고랜드로 유명하다. 생태공원은 하중도의 남쪽에 위치한다. 하중도의 아름다운 수변 공간을 활용해 만든 생태공원으로 자연 속에서 편안하게 쉬어가기 좋은 장소다. 수변을 따라 걷는 둘레길과 섬 안을 걷는 산책로가 조성되어 있다. 군데군데 쉼터와 의자, 테이블이 있어 호수 풍경을 감상하며 휴식하기 좋다. 공원 끝쪽에는 산과 호수 풍광을 담아내는 액자 포토존도 있다. 현재 하중도는 춘천대교로 뭍과 연결돼 차로 쉽게 접근 가능하다. 소양강스카이워크, 공지천, 춘천 명동 등이 모두 자동차로 10분 거리 내 위치한다.','<div id="daumRoughmapContainer1727937355357" class="root_daum_roughmap root_daum_roughmap_landing" style="width: 100%"></div><script charset="UTF-8">new daum.roughmap.Lander({"timestamp" : "1727937355357","key" : "2ksuf","mapWidth" : "100%","mapHeight" : "360"}).render();</script>', '여행지', 3);
 >>>>>>> 684d79f02d1b3404810036aad0d7344dcdb026e0
+>>>>>>> 360f04d532dd42d02e2bc1b4d80b8ccf435c0936
 
 -- TB_WISHLIST 테이블에 데이터 삽입
 -- 3명의 사용자가 관심있는 투어를 추가
@@ -311,7 +319,10 @@ ALTER TABLE TB_BUSINESS
 ADD CONSTRAINT CHK_TB_BUSINESS_STATUS
 <<<<<<< HEAD
 CHECK (STATUS IN('Y','N'));
+<<<<<<< HEAD
+=======
 =======
 CHECK (STATUS IN('Y','N'));
 COMMIT;
 >>>>>>> 684d79f02d1b3404810036aad0d7344dcdb026e0
+>>>>>>> 360f04d532dd42d02e2bc1b4d80b8ccf435c0936

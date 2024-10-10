@@ -17,18 +17,25 @@ body{
 header{
     width: 100%;
 }
-
+button{
+    width: 60px;
+    height: 17px;
+    font-size: 9px;
+    border: 0px;
+    background: #7bbcb0;
+    color: white;
+    border-radius: 40px;
+}
 /* 기본 상태: 상단에서 40%에 위치 */
 .sidenav {
-    width: 180px;
-    height: 700px;
+    width: 150px;
     background-color: #ddeeeb;
     padding: 10px;
     position: absolute;
     top: 30%;
-    left: 120px;
+    left: 150px;
     border-radius: 15px;
-    overflow: auto; /* 스크롤바를 자동으로 생성 */
+    
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     transition: top 0.5s ease-in-out; /* top 값이 변할 때 부드럽게 변화 */
 }
@@ -37,7 +44,7 @@ header{
 .sidenav.fixed {
     position: fixed;
     top: 30%; /* 화면 중앙에 고정 */
-    left: 120px;
+    left: 150px;
     transform: translateY(-50%);
     z-index: 100;
 }
