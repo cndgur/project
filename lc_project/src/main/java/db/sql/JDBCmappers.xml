@@ -2,7 +2,7 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
 	<entry key="travelTopList">
-		SELECT 	ac_name,
+		SELECT ac_name,
 				ac_address,
 				tr_info,
 				act_id,
@@ -11,7 +11,7 @@
 			    FROM (SELECT *
 			  			FROM TB_TOUR
 			  	   	   ORDER BY Field DESC))
-		WHERE ROWNUM &lt;= 10
+		WHERE ROWNUM <= 10
 	</entry>
 	<entry key="selecttravel">
 		SELECT ac_name,
@@ -21,11 +21,6 @@
 				Field
 		FROM TB_TOUR
 		WHERE ac_name = ?
-	</entry>
-	<entry key="locationList">
-		SELECT AC_NAME, AC_ADDRESS
-		  FROM TB_TOUR
-		 WHERE AC_ADDRESS LIKE '서울%'
 	</entry>
 </properties>
 

@@ -36,12 +36,12 @@ public class travelInsertWishController extends HttpServlet {
 		Member loginUser = (Member)session.getAttribute("loginUser");
 		String travel = request.getParameter("travel");
 		String encodedTravel = URLEncoder.encode(travel, "UTF-8");
-		int count = new TravelService().countWish(loginUser.getName());
+		int count = new TravelService().countWish(loginUser.getUserName());
 		if(count>=5) {
 			session.setAttribute("alertMsg", "찜하기는 최대 5개까지만 가능합니다.");
 			response.sendRedirect(request.getContextPath()+"/travel.info?travel="+encodedTravel);
 		}else {
-			int result = new TravelService().insertWish(loginUser.getName(),travel);	
+			int result = new TravelService().insertWish(loginUser.getUserName(),travel);	
 			if(result >0) {
 				response.sendRedirect(request.getContextPath()+"/travel.info?travel="+encodedTravel);
 			}else {
