@@ -61,11 +61,6 @@
                     </ul>
                 </div>
             </div>
-            <div>
-                <div id="booking-area">
-                    예약현황
-                </div>
-            </div>
         </div>
     </div>
 </body>
