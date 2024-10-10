@@ -7,6 +7,7 @@
 	}
 	Travel t = (Travel)request.getAttribute("t");
 	ArrayList<Travel> tlist = (ArrayList<Travel>)request.getAttribute("tlist");
+	ArrayList<String> category = (ArrayList<String>)request.getAttribute("category");
 	ArrayList<tReview> rlist = (ArrayList<tReview>)request.getAttribute("rlist");
 	String alertMsg = (String)session.getAttribute("alertMsg");
 %>
@@ -102,9 +103,11 @@
             
         }
         #category{
+        	display:felx;
         	float: right;
         }
         #category button{
+        	float: right;
             width: 75px;
             height: 25px;
             font-size: 15px;
@@ -112,6 +115,7 @@
             background: #7bbcb0;
             color: white;
             border-radius: 40px;
+            margin: 2px;
             
         }
         .sidenav-header {
@@ -354,7 +358,9 @@
                 <td style="width: 20%; text-align: center; vertical-align: top;"><b style="font-size: 20px;"><%=t.getTrAddress()%></b></td>
                 <td class="side">
                     <div id="category">
-                        <button style="cursor:context-menu;"><%=t.getTr_personnel() %></button>
+                    	<%for (String ca : category){ %>
+                        	<button style="cursor:context-menu;"><%=ca %></button>
+                        <% } %>
                         <button style="cursor:context-menu;"><%=t.getTr_location() %></button>
                         <button style="cursor:context-menu;"><%=t.getTr_theme() %></button>
                     </div>

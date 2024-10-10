@@ -7,12 +7,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import com.lc.project.member.Service.MemberService;
-import com.lc.project.member.Service.MemberServiceImpl;
-import com.lc.project.member.model.vo.Member;
-
 /**
- * Servlet implementation class MemberLoginController
+ * Servlet implementation class BusinessLoginController
  */
 public class MemberLoginviewController extends HttpServlet {
 	private static final long serialVersionUID = 1L;

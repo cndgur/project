@@ -35,6 +35,9 @@ public class TagRecommendController extends HttpServlet {
 		String personnel = request.getParameter("personnel");
 		String location = request.getParameter("location");
 		String theme = request.getParameter("theme");
+		System.out.println(personnel);
+		System.out.println(location);
+		System.out.println(theme);
 		
 		System.out.println(request.getParameter("personnel"));
 		System.out.println(request.getParameter("location"));

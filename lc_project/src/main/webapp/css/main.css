@@ -63,10 +63,7 @@ body{
     border-radius: 50px;
     background-color: white;
 }
-.btn:focus {
-    outline: none;
-    box-shadow: none;
-}
+
 #hamBtn{
     display: flex;
     align-items: center;
@@ -82,6 +79,11 @@ body{
     float: right;
     position: relative;
     left: 26px;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: none;
 }
 
 .header_main_logo{
@@ -124,27 +126,6 @@ body{
     color: #000000;
     font-size: 25px;
   	font-family: "Jua", sans-serif;
-}
-.input_2{
-	position: relative;
-    width: 550px;
-    height: 75px;
-    border: none;
-    outline: none;
-    background-color: rgb(255, 255, 255);
-    text-align: center;
-    justify-content: center;
-    font-size: 25px;
-    font-family: "Noto Sans KR", system-ui;
-    box-sizing: border-box;
-    text-align: left;
-    padding-left: 28px;
-    padding-bottom: 6px;
-}
-.input_2::placeholder {
-    color: #000000;
-    font-size: 25px;
-    font-family: "Jua", sans-serif;
 }
 
 textarea::placeholder{
@@ -204,7 +185,6 @@ textarea{
     left: 55px;
 }
 
-
 /*
     -------------Tag Select-------------
 */
@@ -213,7 +193,7 @@ textarea{
     color: rgba(119, 128, 136, 120);
     font-weight: bold;
 }
-.selected_tag{
+.selected_tag_personnel, .selected_tag_location, .selected_tag_theme{
     font-family: "Noto Sans KR", system-ui;
     color: white;
     border: 1px solid rgba(123, 188, 176, 146);
@@ -223,7 +203,7 @@ textarea{
     height: 45px;
     font-weight: 500;
 }
-.unselected_tag{
+.unselected_tag_personnel, .unselected_tag_location, .unselected_tag_theme{
     font-family: "Noto Sans KR", system-ui;
     color: rgba(73, 85, 96, 80);
     border: 1px solid rgba(123, 188, 176, 146);
@@ -256,7 +236,7 @@ textarea{
     color: rgba(73, 85, 96, 80);
     background-color: white;
 }*/
-.unselected_tag:hover{
+.unselected_tag_personnel:hover, .unselected_tag_location:hover, .unselected_tag_theme:hover{
     color: white;
     background-color: rgba(123, 188, 176, 146);
 }
@@ -440,12 +420,4 @@ animation: beating .5s 1 alternate;
 #footer_wrapper{
     background: rgba(242, 242, 242, 228);
     padding-bottom: 20px;
-}
-option {
-  background-color: white;
-  padding: 4px;
-  color: blue;
-  margin-bottom: 1px;
-   font-size: 18px;
-  cursor: pointer;
 }

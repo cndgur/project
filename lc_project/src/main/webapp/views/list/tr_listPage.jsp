@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="com.lc.project.travel.model.vo.Travel, java.util.ArrayList"%>
-<%
+<%	
 	Travel t = (Travel)request.getAttribute("t");
 	ArrayList<Travel> tlist = (ArrayList<Travel>)request.getAttribute("tlist");
 %>
@@ -24,7 +24,6 @@
     
     <!-- css -->
     <link rel="stylesheet" href="../../css/ht_listPage.css">
-        
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
@@ -58,35 +57,29 @@
                             <input type="radio" value="hotel" name="lo" id="hotel">
                             <label for="hotel">전라남도</label><br>                
                             <input type="radio" value="hotel" name="lo" id="hotel">
-                            <label for="hotel">제주</label><br>
+                            <label for="hotel">제주도</label><br>
                     	</div>
+
                     	<div class="sidenav-header">카테고리</div>
-                        <div class="sidenav-item">
-                            <input type="radio" value="all" name="cate" id="all" checked>
-                            <label for="all">전체</label><br>
-                            <input type="radio" value="motel" name="cate" id="motel">
-                            <label for="motel">모텔</label><br>
-                            <input type="radio" value="hotel" name="cate" id="hotel">
-                            <label for="hotel">호텔•리조트</label><br>
-                            <input type="radio" value="all" name="cate" id="all">
-                            <label for="all">펜션</label><br>
-                            <input type="radio" value="motel" name="cate" id="motel">
-                            <label for="motel">홈&빌라</label><br>
-                            <input type="radio" value="hotel" name="cate" id="hotel">
-                            <label for="hotel">캠핑</label><br>
-                            <input type="radio" value="hotel" name="cate" id="hotel">
-                            <label for="hotel">게하•한옥</label><br>                
-                    	</div>
-                    	<div class="sidenav-header">지역</div>
                         <div class="sidenav-item">
                             <input type="radio" value="all" name="kind" id="all" checked>
                             <label for="all">전체</label><br>
                             <input type="radio" value="motel" name="kind" id="tr">
-                            <label for="tr">여행지</label><br>
+                            <label for="tr">액티비티</label><br>
+                            <input type="radio" value="motel" name="kind" id="tr">
+                            <label for="tr">맛집</label><br>
+                            <input type="radio" value="motel" name="kind" id="tr">
+                            <label for="tr">힐링</label><br>
                             <input type="radio" value="hotel" name="kind" id="re">
-                            <label for="re">맛집</label><br>
+                            <label for="re">축제</label><br>
                             <input type="radio" value="all" name="kind" id="ac">
-                            <label for="ac">엑티비티</label><br>              
+                            <label for="ac">역사</label><br>
+                            <input type="radio" value="motel" name="kind" id="tr">
+                            <label for="tr">쇼핑</label><br>
+                            <input type="radio" value="motel" name="kind" id="tr">
+                            <label for="tr">자연</label><br>
+                            <input type="radio" value="motel" name="kind" id="tr">
+                            <label for="tr">문화</label><br>
                     	</div>
                     </div>
                     <script>
@@ -123,7 +116,7 @@
                 </td>
                 <td class="content" >
                     <div style="height: 2000px;">
-                        <h3>'경주' 검색결과 2,301개 </h3>
+                        <h3>'<%=search %>' 검색결과 2,301개 </h3>
                         <hr>
                         <div class="reviewcon" >
                             <table onclick="location.href='<%=contextPath%>/travel.info?travel=구 서도역'">

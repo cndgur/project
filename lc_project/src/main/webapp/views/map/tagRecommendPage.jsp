@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -91,7 +92,11 @@
                 <c:forEach var="tr" items="${trList }">
                     <a href="travel.info?travel=${travel}">
                         <div id="content">
+<<<<<<< HEAD
                             <img src="<%=contextPath%>/pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
+=======
+                            <img src="${tr.picInfo }" alt="${tr.trName }" id="img">                    
+>>>>>>> cad50e2e5862b83e8871697566c49431bb1b87a8
                             <div id="text">${tr.trName }</div>
                         </div>
                     </a>

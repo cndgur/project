@@ -174,7 +174,7 @@ public class TravelDao {
 		int result = 0;
 		PreparedStatement pstmt = null;
 		String sql = "INSERT INTO TB_REVIEW(REV_NUM, REV_USER, AC_NAME, CONTENT, REVIEW_DATE,SCORE) "
-				+ "VALUES(26,?,?,?,SYSDATE,7)";
+				+ "VALUES(SEQ_REV_NUM.NEXTVAL,?,?,?,SYSDATE,7)";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, userName);
