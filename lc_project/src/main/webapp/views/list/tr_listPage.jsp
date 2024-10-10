@@ -116,9 +116,29 @@
                 </td>
                 <td class="content" >
                     <div style="height: 2000px;">
-                        <h3>'<%=search %>' 검색결과 2,301개 </h3>
+                        <h3>'' 검색결과 2,301개 </h3>
                         <hr>
                         <div class="reviewcon" >
+                        <%for(Travel tra : tlist){ %>
+                        	<table onclick="location.href='travel.info?travel=<%=tra.getTrName()%>'">
+                                <tr>
+                                    <td style="width: 30%;"><img src="../../pic/ht_main_pic.png" style="width: 300px; height: 200px; margin: 8px; border-radius: 15px;"></td>
+                                    <td style="width: 50%;">
+                                        <div style="margin-left: 20px;">
+                                            호텔<br>
+                                        <h4>힐튼경주</h4><br>
+                                        <img src="../../pic/star.png">9.5
+                                        </div>
+                                    </td>
+                                    <td style="width: 20%; padding-top: 90px;">
+                                        <div style="margin-left: 50px;">
+                                            <h6>최소 가격</h6>
+                                            <h5>217,000원</h5>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        <%} %>
                             <table onclick="location.href='<%=contextPath%>/travel.info?travel=구 서도역'">
                                 <tr>
                                     <td style="width: 30%;"><img src="../../pic/ht_main_pic.png" style="width: 300px; height: 200px; margin: 8px; border-radius: 15px;"></td>
