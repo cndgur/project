@@ -307,7 +307,6 @@
        			url: "main.tr",
        			contentType: "application/json",
        			success: function(res){
-       				console.log(res);
        				let str = "";
                        for(let tra of res){
                        	str += ("<div class='swiper-slide'>" +

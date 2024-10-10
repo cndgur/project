@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="com.lc.project.hotel.model.vo.Hotel, java.util.ArrayList, com.lc.project.travel.model.vo.tReview, com.lc.project.travel.model.vo.Travel"%>
 <%	
-	Hotel h = new Hotel();
 	//(Hotel)request.getAttribute("h");
 	ArrayList<Travel> tlist = (ArrayList<Travel>)request.getAttribute("tlist");
 %>
