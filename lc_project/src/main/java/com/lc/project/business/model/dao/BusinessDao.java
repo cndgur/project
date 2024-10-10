@@ -13,4 +13,13 @@ public class BusinessDao {
 	public Business loginBusiness(SqlSession sqlSession, Business business) {
 		return sqlSession.selectOne("businessMapper.loginBusiness", business);
 	}
+	
+	public Business searchidBusiness(SqlSession sqlSession, Business business) {
+		return sqlSession.selectOne("businessMapper.searchidBusiness", business);
+	}
+	
+	public Business searchpwdBusiness(SqlSession sqlSession, Business business) {
+		return sqlSession.selectOne("businessMapper.searchpwdBusiness", business);
+	}
+	
 }

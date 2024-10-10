@@ -1,16 +1,19 @@
 package com.lc.project.member.Controller;
 
+import java.io.IOException;
+
+import com.lc.project.member.Service.MemberService;
+import com.lc.project.member.Service.MemberServiceImpl;
+import com.lc.project.member.model.vo.Member;
+
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 /**
  * Servlet implementation class MembersearchidController
  */
-@WebServlet("/search.me")
 public class MembersearchidController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -27,7 +30,33 @@ public class MembersearchidController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		request.getRequestDispatcher("views/member/searchId.jsp").forward(request, response);
+		
+		 Member m = new Member();
+	        m.setUserName(request.getParameter("userName"));
+	        m.setUserPwd(request.getParameter("userPwd"));
+
+	        MemberService memberService = new MemberServiceImpl();
+	        Member searchid = memberService.searchidMember(m);
+
+	        if (searchid != null) {
+	
+	            String foundId = searchid.getUserId();
+
+	  
+	            response.setContentType("text/html; charset=UTF-8");
+	            response.getWriter().write("<html><head><title>아이디 찾기 결과</title></head><body>");
+	            response.getWriter().write("<script>alert('찾은 아이디 : " + foundId + "');</script>");
+	            response.getWriter().write("<script>window.location.href = '" + request.getContextPath() + "/index.jsp';</script>");
+	            response.getWriter().write("</body></html>");
+	        } else {
+
+	            response.setContentType("text/html; charset=UTF-8");
+	            response.getWriter().write("<html><head><title>아이디 찾기 실패</title></head><body>");
+	            response.getWriter().write("<script>alert('아아디를 찾을 수 없습니다.');</script>");
+	            response.getWriter().write("<script>window.location.href = '" + request.getContextPath() + "/index.jsp';</script>");
+	            response.getWriter().write("</body></html>");
+	        }
+		
 	}
 
 	/**

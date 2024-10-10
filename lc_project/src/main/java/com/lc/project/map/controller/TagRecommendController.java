@@ -1,11 +1,16 @@
 package com.lc.project.map.controller;
 
+import java.io.IOException;
+import java.util.ArrayList;
+
+import com.lc.project.map.service.MapService;
+import com.lc.project.map.service.MapServiceImpl;
+import com.lc.project.travel.model.vo.Travel;
+
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 /**
  * Servlet implementation class TagRecommendController
@@ -25,8 +30,24 @@ public class TagRecommendController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		MapService mService = new MapServiceImpl();
+		
+		String personnel = request.getParameter("personnel");
+		String location = request.getParameter("location");
+		String theme = request.getParameter("theme");
+		
+		System.out.println(request.getParameter("personnel"));
+		System.out.println(request.getParameter("location"));
+		System.out.println(request.getParameter("theme"));
+		
+		request.setAttribute("personnel", personnel);
+	    request.setAttribute("location", location);
+	    request.setAttribute("theme", theme);
+	    
+	    ArrayList<Travel> trList = mService.selectTravelTag(personnel, location, theme);
+	    request.setAttribute("tr", trList);
+	    
+	    request.getRequestDispatcher("views/map/tagRecommendPage.jsp").forward(request, response);
 	}
 
 	/**

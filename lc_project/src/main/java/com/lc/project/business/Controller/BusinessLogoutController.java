@@ -5,18 +5,20 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 
 /**
- * Servlet implementation class BusinessLoginController
+ * Servlet implementation class BusinessLogoutController
  */
-public class BusinessLoginViewController extends HttpServlet {
+public class BusinessLogoutController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BusinessLoginViewController() {
+    public BusinessLogoutController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -25,9 +27,19 @@ public class BusinessLoginViewController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
-		request.getRequestDispatcher("views/member/loginviewbusiness.jsp").forward(request, response);
-	}
+		 
+		HttpSession session = request.getSession(false);
+	        
+	        if (session != null) {
+	            // 세션에서 로그인 정보 제거
+	            session.removeAttribute("loginbs");
+	            // 세션 무효화
+	            session.invalidate();
+	        }
+	        
+	        // 로그인 페이지로 리다이렉트
+	        response.sendRedirect(request.getContextPath());
+	    }
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

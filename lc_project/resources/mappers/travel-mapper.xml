@@ -14,9 +14,29 @@
 		<result column="ACT_THEME" property="trId" />
 		<result column="TR_MAP_LATITUDE" property="trMapLatitude" />
 		<result column="TR_MAP_LONGITUDE" property="trMapLongitude" />
+<<<<<<< HEAD
 		<result column="FIELD" property="count" />
 		<result column="LOCATION" property="picInfo"/>
 	</resultMap>
+=======
+		<result column="LOCATION" property="picInfo"/>
+	</resultMap>
+	<select id="selectTravelTag" resultMap="TravelResultSet">
+		SELECT AC_NAME,
+			   AC_ADDRESS,
+			   TR_INFO,
+			   ACT_PERSONNEL,
+			   ACT_LOCATION,
+			   ACT_THEME,
+			   TR_MAP_LATITUDE,
+			   TR_MAP_LONGITUDE,
+			   LOCATION
+		FROM TB_TOUR
+		WHERE ACT_PERSONNEL = #{personnel} AND
+			  ACT_LOCATION = #{location} AND
+			  ACT_THEME = #{theme}
+	</select>
+>>>>>>> 360f04d532dd42d02e2bc1b4d80b8ccf435c0936
 	<select id="selectTravelList" resultMap="TravelResultSet">
 		SELECT ac_name,
 				ac_address
@@ -50,7 +70,10 @@
 		  JOIN TB_TOUR using(AC_NAME)
 		 WHERE ROWNUM &lt;= 4
 		   AND ACT_LOCATION = #{location}
+<<<<<<< HEAD
 		   AND ACT_THEME NOT IN ('맛집', '축제')
+=======
+>>>>>>> 360f04d532dd42d02e2bc1b4d80b8ccf435c0936
 	</select>
 	<select id="foodList" resultMap="TravelResultSet">
 		SELECT AC_NAME, AC_ADDRESS,LOCATION

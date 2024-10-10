@@ -35,4 +35,24 @@ public class BusinessServiceImpl implements BusinessService {
 		return result;
 	}
 
+	@Override
+	public Business searchidBusiness(Business b) {
+		SqlSession sqlSession = Template.getSqlSession();
+		Business searchid = bDao.searchidBusiness(sqlSession, b);
+		
+		sqlSession.close();
+		
+		return searchid;
+	}
+
+	@Override
+	public Business searchpwdBusiness(Business b) {
+		SqlSession sqlSession = Template.getSqlSession();
+		Business searchpwd = bDao.searchpwdBusiness(sqlSession, b);
+		
+		sqlSession.close();
+		
+		return searchpwd;
+	}
+
 }

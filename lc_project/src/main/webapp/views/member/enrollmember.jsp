@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>회원가입</title>
-	<link rel="icon" href="./pic/logo.png"/>
+	<link rel="icon" href="../../pic/logo.png"/>
 	<script src="https://code.jquery.com/jquery-3.7.1.js" 
     integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
     crossorigin="anonymous"></script>
@@ -65,7 +65,7 @@
 	    position: absolute;
 	    top: 639px;
 	    transform: translate(0, -40%);
-	    height: 1073px;
+	    height: 971px;
 	}
 	.name, .id, .pwd, .checkpwd, .phone, .email, .address, .birthday, .gender{
 	    font-weight: bold;
@@ -188,10 +188,6 @@
 	                <p>전화번호</p>
 	                <input type="text" name="tel" placeholder="* '-' 포함해서 입력해주세요" required id="phone"> <br>
 	                <small id="phoneMessage" style="color:red"></small>
-	            </div>
-	            <div class="email">
-	                <p>이메일</p>
-	                <input type="email" name="email" placeholder="이메일"> <br>
 	            </div>
 	            <div class="address">
 	                <p>주소</p>

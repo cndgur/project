@@ -4,8 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>방구석 여행</title>
-<script src="./login.js" defer></script>
+<title>사업자 로그인</title>
 <script type="text/javascript"></script>
     <link rel="icon" href="./pic/logo.png"/>
     <link rel="apple-touch-icon" href="pic/logo.png"/>
@@ -68,7 +67,7 @@
 	    text-align: center;
 	}
 	
-	.searchpwd-container {
+	.login-container {
 	    background-color: #e0f7f6;
 	    border-radius: 20px;
 	    width: 400px;
@@ -78,14 +77,14 @@
 	    margin-top: 90px;
 	}
 	
-	.searchpwd-container img {
+	.login-container img {
 	    width: 90px;
 	    height: 72px;
 		position: relative;
 		left: -15px;
 	}
 	
-	.searchpwd-container h2 {
+	.login-container h2 {
 	    position: relative;
 	    margin-top: -14px;
 	    font-family: "Jua", sans-serif;
@@ -102,7 +101,7 @@
 	    outline: none;
 	}
 	
-	.searchpwd-container button {
+	.login-container button {
 	    width: 100%;
 	    padding: 15px;
 	    background-color: #ffffff;
@@ -113,25 +112,25 @@
 	    color: #00bfa5;
 	}
 	
-	.searchpwd-container button:hover {
+	.login-container button:hover {
 	    background-color: #00bfa5;
 	    color: white;
 	}
 	
-	.searchpwd-container .links {
+	.login-container .links {
 	    margin-top: 20px;
 	    font-size: 0.9rem;
 	    color: #00bfa5;
 	}
 	
-	.searchpwd-container .links a {
+	.login-container .links a {
 	    text-decoration: none;
 	    color: #00bfa5;
 	    margin: 0 5px;
 		cursor: pointer;
 	}
 	
-	.searchpwd-container .links a:hover {
+	.login-container .links a:hover {
 	    text-decoration: underline;
 	}
 	.logo_form{
@@ -163,20 +162,34 @@
                 <img src="./pic/logo.png" alt="" class="header_main_logo">
             </a>
         </div>
-        <h1>비밀번호찾기</h1>
+        <h1>로그인</h1>
     </div>
     
-    <div class="searchpwd-container">
+    <div class="login-container">
         <div class="logo_form">
             <img src="./pic/logo.png" alt="logo">
             <p class="name">방구석여행</p>
         </div>
-        <form action="search.me" method="post">
-            <input type="text" placeholder="이름을 입력하세요." required id="username">
-            <input type="password" placeholder="아이디를 입력하세요." required id="userId">
-            <button type="submit" id="btn">비밀번호찾기</button>
+        <form action="bslogin.bs" method="post">
+            <input type="text" placeholder="아이디" required id="bsId" name="bsId">
+            <input type="password" placeholder="비밀번호" required id="bsPwd" name="bsPwd">
+            <button type="submit" id="btn">로그인</button>
         </form>
+        <div class="links">
+            <a href="views/member/searchIdbusiness.jsp">아이디찾기</a> |
+            <a href="views/member/searchpwdbusiness.jsp">비밀번호 찾기</a> |
+            <a href="views/member/enrollbusiness.jsp">회원가입</a>
+        </div>
     </div>
+		<% String loginSuccess = request.getParameter("loginSuccess"); %>
+		<script>
+		    window.onload = function() {
+		        var loginSuccess = "<%= (loginSuccess != null ? loginSuccess : "") %>";
+		        if (loginSuccess === "false") {
+		            alert("아이디와 비밀번호를 확인해주세요");
+		        }
+		    }
+		</script>
 
 </body>
 </html>

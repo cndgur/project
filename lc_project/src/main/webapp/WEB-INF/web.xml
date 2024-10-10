@@ -81,6 +81,10 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 360f04d532dd42d02e2bc1b4d80b8ccf435c0936
     <display-name>insert.me</display-name>
     <servlet-name>insert.me</servlet-name>
     <servlet-class>com.lc.project.member.Controller.MemberinsertController</servlet-class>
@@ -103,7 +107,7 @@
     <description></description>
     <display-name>insert.bs</display-name>
     <servlet-name>insert.bs</servlet-name>
-    <servlet-class>com.lc.project.business.Controller.BusinessInsertController</servlet-class>
+    <servlet-class>com.lc.project.business.Controller.BusinessinsertController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>insert.bs</servlet-name>
@@ -128,6 +132,77 @@
   <servlet-mapping>
     <servlet-name>bslogin.bs</servlet-name>
     <url-pattern>/bslogin.bs</url-pattern>
+<<<<<<< HEAD
+=======
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>logout.bs</display-name>
+    <servlet-name>logout.bs</servlet-name>
+    <servlet-class>com.lc.project.business.Controller.BusinessLogoutController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>logout.bs</servlet-name>
+    <url-pattern>/logout.bs</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>logout.me</display-name>
+    <servlet-name>logout.me</servlet-name>
+    <servlet-class>com.lc.project.member.Controller.MemberLogoutController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>logout.me</servlet-name>
+    <url-pattern>/logout.me</url-pattern>
+  </servlet-mapping>
+      <servlet>
+    <description></description>
+    <display-name>searchid.bn</display-name>
+    <servlet-name>searchid.bn</servlet-name>
+    <servlet-class>com.lc.project.business.Controller.BusinesssearchidController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>searchid.bn</servlet-name>
+    <url-pattern>/searchid.bn</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>searchpwd.bn</display-name>
+    <servlet-name>searchpwd.bn</servlet-name>
+    <servlet-class>com.lc.project.business.Controller.BusinesssearchpwdController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>searchpwd.bn</servlet-name>
+    <url-pattern>/searchpwd.bn</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>searchid.me</display-name>
+    <servlet-name>searchid.me</servlet-name>
+    <servlet-class>com.lc.project.member.Controller.MembersearchidController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>searchid.me</servlet-name>
+    <url-pattern>/searchid.me</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <description></description>
+    <display-name>searchpwd.me</display-name>
+    <servlet-name>searchpwd.me</servlet-name>
+    <servlet-class>com.lc.project.member.Controller.MembersearchpwdController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>searchpwd.me</servlet-name>
+    <url-pattern>/searchpwd.me</url-pattern>
+=======
+    <display-name>hotel.list</display-name>
+    <servlet-name>hotel.list</servlet-name>
+    <servlet-class>com.lc.project.hotel.model.controller.hotelListController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>hotel.list</servlet-name>
+    <url-pattern>/hotel.list</url-pattern>
+>>>>>>> 360f04d532dd42d02e2bc1b4d80b8ccf435c0936
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -136,7 +211,33 @@
     <servlet-class>com.lc.project.travel.controller.RentCarController</servlet-class>
   </servlet>
   <servlet-mapping>
+<<<<<<< HEAD
     <servlet-name>list.rc</servlet-name>
     <url-pattern>/list.rc</url-pattern>
+=======
+    <servlet-name>wish.tr</servlet-name>
+    <url-pattern>/wish.tr</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>main.tr</display-name>
+    <servlet-name>main.tr</servlet-name>
+    <servlet-class>com.lc.project.travel.controller.travelMainController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>main.tr</servlet-name>
+    <url-pattern>/main.tr</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>deletewish.tr</display-name>
+    <servlet-name>deletewish.tr</servlet-name>
+    <servlet-class>com.lc.project.travel.controller.wishDeleteController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deletewish.tr</servlet-name>
+    <url-pattern>/deletewish.tr</url-pattern>
+>>>>>>> 684d79f02d1b3404810036aad0d7344dcdb026e0
+>>>>>>> 360f04d532dd42d02e2bc1b4d80b8ccf435c0936
   </servlet-mapping>
 </web-app>

@@ -33,103 +33,109 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="../../css/tagRecommendPage.css">
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/css/tagRecommendPage.css">
 
-	<link rel="icon" href="../../pic/logo.png"/>
-    <link rel="apple-touch-icon" href="../../pic/logo.png"/>
+	<link rel="icon" href="<%=request.getContextPath()%>/pic/logo.png"/>
+    <link rel="apple-touch-icon" href="<%=request.getContextPath()%>/pic/logo.png"/>
 </head>
 <body>
+<<<<<<< HEAD
+	<!-- header -->
+=======
+<<<<<<< HEAD
 	<!-- header -->
 	<%@include file="../common/header.jsp" %>
+
+=======
+
+>>>>>>> 360f04d532dd42d02e2bc1b4d80b8ccf435c0936
+	<%@include file="../common/header.jsp" %>
+>>>>>>> 684d79f02d1b3404810036aad0d7344dcdb026e0
     <!-- main -->
     <div id="wrapper">
         <div class="area" style="font-weight: bold;">
             <h5>테마가 있는 여행을 즐겨보세요</h5>
             <br>
-            <div id="map">
-                <!-- * 카카오맵 - 지도퍼가기 -->
-                <!-- 1. 지도 노드 -->
-                <div id="daumRoughmapContainer1726734009560" class="root_daum_roughmap root_daum_roughmap_landing" style="width: 100%;"></div>
-    
-                <!--
-                    2. 설치 스크립트
-                    * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
-                -->
-                <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
-    
-                <!-- 3. 실행 스크립트 -->
-                <script charset="UTF-8">
-                    new daum.roughmap.Lander({
-                        "timestamp" : "1726734009560",
-                        "key" : "2koo7",
-                        "mapWidth" : "100%",
-                        "mapHeight" : "750"
-                    }).render();
-                </script>
-            </div>
+            <!-- 지도를 표시할 div 입니다 -->
+		    <div id="map" style="width:100%;height:900px;"></div>
+		
+		    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=99929078a9d810f506f314a69d82b1f2"></script>
+		    <script>
+		        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+		            mapOption = { 
+		                center: new kakao.maps.LatLng(37.577555, 126.976928), // 지도의 중심좌표
+		                level: 3 // 지도의 확대 레벨
+		            };
+		
+		        var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+		
+		        // 마커가 표시될 위치입니다 
+		        var markerPosition  = new kakao.maps.LatLng(37.578395, 126.97708); 
+		
+		        // 마커를 생성합니다
+		        var marker = new kakao.maps.Marker({
+		            position: markerPosition
+		        });
+		
+		        // 마커가 지도 위에 표시되도록 설정합니다
+		        marker.setMap(map);
+		
+		        // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+		        // marker.setMap(null);    
+		    </script>
         </div>
         <div class="area">
             <div id="chtag" style="margin-left: 10px;">
-                <button style="cursor:context-menu;">#1인여행</button>
-                <button style="cursor:context-menu;">#힐링</button>
-                <button style="cursor:context-menu;">#여행</button>
+                <c:if test="${personnel} not empty">
+                    <button class="tagbtn" style="cursor:context-menu;">#${personnel}</button>
+                </c:if>
+                <c:if test="${location} not empty">
+                    <button class="tagbtn" style="cursor:context-menu;">#${location}</button>
+                </c:if>
+                <c:if test="${theme} not empty">
+                    <button class="tagbtn" style="cursor:context-menu;">#${theme}</button>
+                </c:if>
             </div>
             <div id="tour">
-                <a href="">
-                    <div id="content">
-                        <img src="../../pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
-                        <div id="text">별마로 천문대</div>
-                    </div>
-                </a>
-                <a href="">
-                    <div id="content">
-                        <img src="../../pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
-                        <div id="text">별마로 천문대</div>
-                    </div>
-                </a>
-                <a href="">
-                    <div id="content">
-                        <img src="../../pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
-                        <div id="text">별마로 천문대</div>
-                    </div>
-                </a>
-                <a href="">
-                    <div id="content">
-                        <img src="../../pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
-                        <div id="text">별마로 천문대</div>
-                    </div>
-                </a>
+                <c:forEach var="t" items="${tr }">
+                    <a href="travel.info?travel=${travel}">
+                        <div id="content">
+                            <img src="<%=contextPath%>/pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
+                            <div id="text"><%=t.getTrName() %></div>
+                        </div>
+                    </a>
+                </c:forEach>
             </div>
             <div id="tagsty">찜한 여행지</div>
             <div id="wish">
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <img src="../../pic/heart.png" alt="">
+                            <img src="<%=contextPath%>/pic/heart.png" alt="">
                             <p>경북 단양</p>
                         </div>
                         <div class="swiper-slide">
-                            <img src="../../pic/ansclwo.webp" alt="">
+                            <img src="<%=contextPath%>/pic/ansclwo.webp" alt="">
                             <p>문치재?</p>
                         </div>
                         <div class="swiper-slide">
-                            <img src="../../pic/heart.png" alt="">
+                            <img src="<%=contextPath%>/pic/heart.png" alt="">
                             <p>경북 단양</p>
                         </div>
                         <div class="swiper-slide">
-                            <img src="../../pic/ansclwo.webp" alt="">
+                            <img src="<%=contextPath%>/pic/ansclwo.webp" alt="">
                             <p>문치재?</p>
                         </div>
                         <div class="swiper-slide">
-                            <img src="../../pic/heart.png" alt="">
+                            <img src="<%=contextPath%>/pic/heart.png" alt="">
                             <p>경북 단양</p>
                         </div>
                         <div class="swiper-slide">
-                            <img src="../../pic/ansclwo.webp" alt="">
+                            <img src="<%=contextPath%>/pic/ansclwo.webp" alt="">
                             <p>문치재?</p>
                         </div>
                         <div class="swiper-slide">
-                            <img src="../../pic/heart.png" alt="">
+                            <img src="<%=contextPath%>/pic/heart.png" alt="">
                             <p>경북 단양</p>
                         </div>
                         <div class="swiper-slide">
