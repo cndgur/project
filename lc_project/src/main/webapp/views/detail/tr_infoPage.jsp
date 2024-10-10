@@ -522,7 +522,11 @@
                         	<input type="hidden" name="userName" value="<%=loginUser.getUserName()%>">
                         	<input type="hidden" name="travel" value="<%=t.getTrName()%>">
                         	<div style="width: 100%; height: 300px; background: #ddeeeb; margin-bottom: 100px;">
-                            <textarea id="review" placeholder="리뷰를 작성해주세요." style="resize: none;" name="review"></textarea><br>
+                        	<%if(loginUser.getUserName().equals("000")){ %>
+                        		<textarea id="review" placeholder="로그인이 필요한 기능입니다." style="resize: none; font-size: 20px;" name="review"></textarea><br>
+                        	<%}else{ %>
+                            	<textarea id="review" placeholder="리뷰를 작성해주세요." style="resize: none; font-size: 20px;" name="review"></textarea><br>
+                            <%} %>
                             <button id="reviewbt" type="submit" style="margin-bottom: 20px;">등록</button>
                         	</div>
                         </form>

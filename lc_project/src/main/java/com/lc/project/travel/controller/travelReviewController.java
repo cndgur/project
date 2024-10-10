@@ -10,6 +10,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class travelReviewController
@@ -31,18 +32,23 @@ public class travelReviewController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		
+		HttpSession session = request.getSession();
 		String review = request.getParameter("review");
 		String userName = request.getParameter("userName");
 		String travel = request.getParameter("travel");
-		int result = new TravelService().insertReview(review,userName,travel);
 		String encodedTravel = URLEncoder.encode(travel, "UTF-8");
-		if(result >0) {
+		if(userName.equals("000")) {
+			session.setAttribute("alertMsg", "로그인이 필요한 기능입니다.");
 			response.sendRedirect(request.getContextPath()+"/travel.info?travel="+encodedTravel);
 		}else {
-			
-			request.getRequestDispatcher(request.getContextPath()).forward(request, response);
+			int result = new TravelService().insertReview(review,userName,travel);
+			if(result >0) {
+				response.sendRedirect(request.getContextPath()+"/travel.info?travel="+encodedTravel);
+			}else {
+				request.getRequestDispatcher(request.getContextPath()).forward(request, response);
+			}
 		}
+		
 	}
 
 	/**
