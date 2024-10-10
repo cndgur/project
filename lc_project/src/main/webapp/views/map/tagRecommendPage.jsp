@@ -78,30 +78,18 @@
         </div>
         <div class="area">
             <div id="chtag" style="margin-left: 10px;">
-                <c:if test="${personnel} not empty">
-                    <button class="tagbtn" style="cursor:context-menu;">#${personnel}</button>
-                </c:if>
-                <c:if test="${location} not empty">
-                    <button class="tagbtn" style="cursor:context-menu;">#${location}</button>
-                </c:if>
-                <c:if test="${theme} not empty">
-                    <button class="tagbtn" style="cursor:context-menu;">#${theme}</button>
-                </c:if>
+	            <button class="tagbtn" style="cursor:context-menu;">#${personnel}</button>
+	            <button class="tagbtn" style="cursor:context-menu;">#${location}</button>
+	            <button class="tagbtn" style="cursor:context-menu;">#${theme}</button>
             </div>
             <div id="tour">
                 <c:forEach var="tr" items="${trList }">
                     <a href="travel.info?travel=${travel}">
                         <div id="content">
-<<<<<<< HEAD
                             <img src="<%=contextPath%>/pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
                             <img src="${tr.picInfo }" alt="${tr.trName }" id="img">                    
-=======
-
                             <img src="<%=contextPath%>/pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
-
                             <img src="${tr.picInfo }" alt="${tr.trName }" id="img">                    
-
->>>>>>> 4b9816f32b601361d328ff1964d481b9cb6ccdd7
                             <div id="text">${tr.trName }</div>
                         </div>
                     </a>
@@ -140,7 +128,7 @@
                             <p>경북 단양</p>
                         </div>
                         <div class="swiper-slide">
-                            <img src="../../pic/ansclwo.webp" alt="">
+                            <img src="<%=contextPath%>/pic/ansclwo.webp" alt="">
                             <p>문치재?</p>
                         </div>
                     </div>
