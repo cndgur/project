@@ -275,7 +275,7 @@
 		      
 
 <div id="main-content2">
-    <div id="title">
+    <div id="title" style="font-family: 'Noto Sans KR', sans-serif">
       <h1>"인기 폭발 여행지, 예약은 서둘러야 제맛!"</h1>
       <p>요즘 핫한 여행지, 나만 빼고 다 갔다? <br>
         더 늦기 전에 떠나세요! 인기 폭발 중인 여행지에서 잊지 못할 순간을 만들어보세요!</p>
