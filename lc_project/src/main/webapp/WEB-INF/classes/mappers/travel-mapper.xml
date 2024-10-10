@@ -9,12 +9,11 @@
 		<result column="AC_NAME" property="trName" />
 		<result column="AC_ADDRESS" property="trAddress" />
 		<result column="TR_INFO" property="trInfo" />
-		<result column="ACT_PERSONNEL" property="trPersonal" />
-		<result column="ACT_LOCATION" property="trLocation" />
-		<result column="ACT_THEME" property="trId" />
-		<result column="TR_MAP_LATITUDE" property="trMapLatitude" />
-		<result column="TR_MAP_LONGITUDE" property="trMapLongitude" />
-		<result column="FIELD" property="count" />
+		<result column="ACT_PERSONNEL" property="tr_personnel" />
+		<result column="ACT_LOCATION" property="tr_location" />
+		<result column="ACT_THEME" property="tr_theme" />
+		<result column="TR_MAP_LATITUDE" property="tr_map_lat" />
+		<result column="TR_MAP_LONGITUDE" property="tr_map_long" />
 		<result column="LOCATION" property="picInfo"/>
 		<result column="LOCATION" property="picInfo"/>
 	</resultMap>
@@ -29,7 +28,7 @@
 			   TR_MAP_LONGITUDE,
 			   LOCATION
 		FROM TB_TOUR
-		WHERE ACT_PERSONNEL = #{personnel} AND
+		WHERE ACT_PERSONNEL LIKE '%' || #{personnel} || '%' AND
 			  ACT_LOCATION = #{location} AND
 			  ACT_THEME = #{theme}
 	</select>
