@@ -92,8 +92,16 @@
                 <c:forEach var="tr" items="${trList }">
                     <a href="travel.info?travel=${travel}">
                         <div id="content">
+<<<<<<< HEAD
                             <img src="<%=contextPath%>/pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
                             <img src="${tr.picInfo }" alt="${tr.trName }" id="img">                    
+=======
+
+                            <img src="<%=contextPath%>/pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
+
+                            <img src="${tr.picInfo }" alt="${tr.trName }" id="img">                    
+
+>>>>>>> 4b9816f32b601361d328ff1964d481b9cb6ccdd7
                             <div id="text">${tr.trName }</div>
                         </div>
                     </a>
