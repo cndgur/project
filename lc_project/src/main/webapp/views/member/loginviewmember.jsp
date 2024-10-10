@@ -178,7 +178,7 @@
         <div class="links">
             <a href="views/member/searchIdmember.jsp">아이디찾기</a> |
             <a href="views/member/searchpwdmember.jsp">비밀번호 찾기</a> |
-            <a onclick="location.href='selcetenroll.me'">회원가입</a>
+            <a  href="views/member/enrollmember.jsp">회원가입</a>
         </div>
     </div>
 

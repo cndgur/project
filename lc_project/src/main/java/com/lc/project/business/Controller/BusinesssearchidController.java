@@ -51,7 +51,7 @@ public class BusinesssearchidController extends HttpServlet {
             // 아이디를 찾지 못한 경우
             response.setContentType("text/html; charset=UTF-8");
             response.getWriter().write("<html><head><title>아이디 찾기 실패</title></head><body>");
-            response.getWriter().write("<script>alert('아아디를 찾을 수 없습니다.');</script>");
+            response.getWriter().write("<script>alert('아이디를 찾을 수 없습니다.');</script>");
             response.getWriter().write("<script>window.location.href = '" + request.getContextPath() + "/index.jsp';</script>");
             response.getWriter().write("</body></html>");
         }

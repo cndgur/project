@@ -101,7 +101,7 @@ body{
     background-color: white;
     border-radius: 50px;
     box-shadow: 0px 0px 20px 0px #000000;
-    width: 1100px;
+    width: 550px;
     height: 75px;
     margin: auto;
 }
@@ -166,7 +166,7 @@ textarea{
     left: 9px;
 }
 .search_text{
-    width: 1100px;
+    width: 550px;
     padding-bottom: 20px;
     margin: auto;
 }

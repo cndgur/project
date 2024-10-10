@@ -159,7 +159,7 @@
         <div class="logo">
             <a onclick="location.href='index.jsp'" class="to_main">
                 <div class="header_name">방구석여행</div>
-                <img src="../../pic/logo.png" alt="" class="header_main_logo">
+                <img src="./pic/logo.png" alt="" class="header_main_logo">
             </a>
         </div>
         <h1>로그인</h1>
@@ -167,18 +167,18 @@
     
     <div class="login-container">
         <div class="logo_form">
-            <img src="../../pic/logo.png" alt="logo">
+            <img src="./pic/logo.png" alt="logo">
             <p class="name">방구석여행</p>
         </div>
         <form action="bslogin.bs" method="post">
-            <input type="text" placeholder="아이디" required id="userId" name="bsId">
-            <input type="password" placeholder="비밀번호" required id="userPwd" name="bsPwd">
+            <input type="text" placeholder="아이디" required id="bsId" name="bsId">
+            <input type="password" placeholder="비밀번호" required id="bsPwd" name="bsPwd">
             <button type="submit" id="btn">로그인</button>
         </form>
         <div class="links">
             <a href="views/member/searchIdbusiness.jsp">아이디찾기</a> |
-            <a href="views/member/serachpwdbusiness.jsp">비밀번호 찾기</a> |
-            <a onclick="location.href='selcetenroll.me'">회원가입</a>
+            <a href="views/member/searchpwdbusiness.jsp">비밀번호 찾기</a> |
+            <a href="views/member/enrollbusiness.jsp">회원가입</a>
         </div>
     </div>
 		<% String loginSuccess = request.getParameter("loginSuccess"); %>

@@ -90,7 +90,7 @@
 				</c:choose>
             </div>
        </div>
-       <div class="textarea_container">
+      <div class="textarea_container">
             <div class="search_text">
               <div>
                 <span class="search_button1">찾아보기</span>
@@ -102,33 +102,20 @@
                 </a>
               </div>
             </div>
-             <div class="textarea">
-				<input class="input_1" list="browsers" name="browser" id="browser" placeholder="지역">
-					<datalist id="browsers">
-					  <option value="서울">
-					  <option value="인천">
-					  <option value="경기">
-					  <option value="강원도">
-					  <option value="충청도">
-					  <option value="제주도">
-					  <option value="전남">
-					  <option value="전북">
-					  <option value="경남">
-					  <option value="경북">
-					</datalist>
-                <input class="input_2" list="browsers" name="browser" id="browser" placeholder="가고싶은 곳">
-					<datalist id="browsers">
-					  <option value="서울">
-					  <option value="인천">
-					  <option value="경기">
-					  <option value="강원도">
-					  <option value="충청도">
-					  <option value="제주도">
-					  <option value="전남">
-					  <option value="전북">
-					  <option value="경남">
-					  <option value="경북">
-					</datalist>
+            <div class="textarea">
+                <input class="input_1" list="browsers" name="browser" id="browser" placeholder="가고싶은 곳">
+                <datalist id="browsers">
+                  <option value="서울">
+                  <option value="인천">
+                  <option value="경기">
+                  <option value="강원도">
+                  <option value="충청도">
+                  <option value="제주도">
+                  <option value="전남">
+                  <option value="전북">
+                  <option value="경남">
+                  <option value="경북">
+                </datalist>
                 <a href=""><img src="./pic/검색-removebg-preview.png" alt="" class="research_btn"></a>
             </div>
         </div>
