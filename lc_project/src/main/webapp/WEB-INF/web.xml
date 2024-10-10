@@ -129,4 +129,14 @@
     <servlet-name>bslogin.bs</servlet-name>
     <url-pattern>/bslogin.bs</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>list.rc</display-name>
+    <servlet-name>list.rc</servlet-name>
+    <servlet-class>com.lc.project.travel.controller.RentCarController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>list.rc</servlet-name>
+    <url-pattern>/list.rc</url-pattern>
+  </servlet-mapping>
 </web-app>
