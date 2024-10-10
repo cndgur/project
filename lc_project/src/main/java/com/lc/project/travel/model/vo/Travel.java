@@ -9,10 +9,13 @@ public class Travel {
 	private String tr_theme;
 	private String tr_map_lat;
 	private String tr_map_long;
+<<<<<<< HEAD
 	private String picInfo;
 	public Travel() {
 		super();
 	}
+=======
+>>>>>>> 684d79f02d1b3404810036aad0d7344dcdb026e0
 	public Travel(String trName, String trAddress, String trInfo, String tr_personnel, String tr_location,
 			String tr_theme, String tr_map_lat, String tr_map_long, String picInfo) {
 		super();
@@ -25,6 +28,10 @@ public class Travel {
 		this.tr_map_lat = tr_map_lat;
 		this.tr_map_long = tr_map_long;
 		this.picInfo = picInfo;
+	}
+	private String picInfo;
+	public Travel() {
+		super();
 	}
 	public String getTrName() {
 		return trName;
@@ -86,4 +93,11 @@ public class Travel {
 				+ tr_personnel + ", tr_location=" + tr_location + ", tr_theme=" + tr_theme + ", tr_map_lat="
 				+ tr_map_lat + ", tr_map_long=" + tr_map_long + ", picInfo=" + picInfo + "]";
 	}
+<<<<<<< HEAD
+=======
+	
+	
+	
+	
+>>>>>>> 684d79f02d1b3404810036aad0d7344dcdb026e0
 }
