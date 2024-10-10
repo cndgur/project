@@ -9,7 +9,7 @@
 <%@ page import="com.lc.project.member.model.vo.Member" %>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -125,6 +125,7 @@
        </div>
    </div>
    
+<<<<<<< HEAD
     <form action="recommend.tr" method="post" onsubmit="return tagSelected();">
         <table id="mainPage_tagSelect_table" align="center">
             <tr>
@@ -138,11 +139,30 @@
           </tr>
           <tr>
               <td class="mainPage_tag"><button class="unselected_tag_personnel" type="button" onclick="mainPage_tagSelect_personnel(this)" value="가족여행">#가족여행</button></td>
+=======
+  <form action="recommend.tr" method="post">
+    <table id="mainPage_tagSelect_table" align="center">
+      <tr>
+        <td id="mainPage_tagSelect_table_title" colspan="8">나만의 맞춤 여행!</td>
+      </tr>
+      <tr>
+        <td colspan="8">태그로 쉽게 찾아보세요!</td>
+      </tr>
+      <tr>
+        <td colspan="8">관심 있는 여행 스타일을 선택하면 당신에게 딱 맞는 여행지를 추천해드립니다. 지금 떠날 준비 되셨나요?</td>
+      </tr>
+      <tr>
+         <td class="mainPage_tag"><button class="unselected_tag_personnel" type="button" onclick="mainPage_tagSelect_personnel(this)" value="가족여행">#가족여행</button></td>
+>>>>>>> b31eb5300964bb3a4752fa7352a44817f18ed0f7
               <td class="mainPage_tag"><button class="unselected_tag_personnel" type="button" onclick="mainPage_tagSelect_personnel(this)" value="친구들과">#친구들과</button></td>
               <td class="mainPage_tag"><button class="unselected_tag_personnel" type="button" onclick="mainPage_tagSelect_personnel(this)" value="1인여행">#1인여행</button></td>
               <td class="mainPage_tag"><button class="unselected_tag_personnel" type="button" onclick="mainPage_tagSelect_personnel(this)" value="커플여행">#커플여행</button></td>
               <td class="mainPage_tag"><button class="unselected_tag_personnel" type="button" onclick="mainPage_tagSelect_personnel(this)" value="반려동물">#반려동물</button></td>
+<<<<<<< HEAD
               <td class="mainPage_tag"><button class="unselected_tag_personnel" type="button" onclick="mainPage_tagSelect_personnel(this)" value="동호회/친목모임">#동호회/친목모임</button></td>
+=======
+              <td class="mainPage_tag"><button class="unselected_tag_personnel" type="button" onclick="mainPage_tagSelect_personnel(this)" value="친목모임">#친목모임</button></td>
+>>>>>>> b31eb5300964bb3a4752fa7352a44817f18ed0f7
               <td class="mainPage_tag"><button class="unselected_tag_personnel" type="button" onclick="mainPage_tagSelect_personnel(this)" value="워크숍">#워크숍</button></td>
               <td class="mainPage_tag"><button class="unselected_tag_personnel" type="button" onclick="mainPage_tagSelect_personnel(this)" value="아이들과">#아이들과</button></td>
           </tr>
@@ -225,6 +245,7 @@
                  return true;
              }
          </script>
+<<<<<<< HEAD
       </table>
    </form>
    <br><br><br>
@@ -351,5 +372,154 @@
        
    </script>
     <%@include file="/views/common/footer.jsp"%>
+=======
+	  </table>
+  </form>
+	<br><br><br>
+	
+	<div id="wrap-main-content1">
+		  <div id="main-content1">
+		    <div id="title">
+		      <h1>"떠나볼래? 지역 따라 골라보는 여행 스팟"</h1>
+		      <p>이제는 골라 떠나는 재미! <br> 인기 만점 지역별 여행지에서 특별한 순간을 만들어보세요!</p>
+		    </div>
+			<div class="swiper mySwiper2">
+				<div class="swiper-wrapper">
+		        	<div class="swiper-slide">
+		          		<img src="<%=contextPath%>/pic/main-seoul.jpg" alt="seoul" onclick="location.href='location.tr?location=수도권'">
+			            <p>수도권</p>
+		        	</div>        
+		          	<div class="swiper-slide">
+		            	<img src="<%=contextPath%>/pic/gangwon.jpg" alt="gangwon" onclick="location.href='location.tr?location=강원도'">
+		            	<p>강원</p>
+		          	</div>
+		          	<div class="swiper-slide">
+		            	<img src="<%=contextPath%>/pic/chungcheong.jpg" alt="chungcheong" onclick="location.href='location.tr?location=충청도'">
+		            	<p>충청</p>
+		          	</div>
+		          	<div class="swiper-slide">
+		            	<img src="<%=contextPath%>/pic/jellabuk.png" alt="jeollabuk" onclick="location.href='location.tr?location=전라북도'">
+		            	<p>전북</p>
+		          	</div>
+		          	<div class="swiper-slide">
+			            <img src="<%=contextPath%>/pic/jellanam.png" alt="jeollanam" onclick="location.href='location.tr?location=전라남도'">
+			            <p>전남</p>
+			        </div>
+		          	<div class="swiper-slide">
+		            	<img src="<%=contextPath%>/pic/gyeongsangbuk.jpg" alt="gyeongsangbuk" onclick="location.href='location.tr?location=경상북도'">
+		            	<p>경북</p>
+		          	</div>
+		          	<div class="swiper-slide">
+		            	<img src="<%=contextPath%>/pic/gyeongsangnam.jpg" alt="gyeongsangnam" onclick="location.href='location.tr?location=경상남도'">
+		            	<p>경남</p>
+		          	</div>
+		          	<div class="swiper-slide">
+		            	<img src="<%=contextPath%>/pic/제주도.jpg" alt="jeju" onclick="location.href='location.tr?location=제주도'">
+						<p>제주</p>
+		      	</div>
+		      	<div class="swiper-button-next"></div>
+		      	<div class="swiper-button-prev"></div>
+		    </div>
+		     </div>
+		     </div>
+		     <br> 	
+  	
+  	<!-- 이충혁 -->
+	<script>
+		<%
+		  String loginSuccess = request.getParameter("loginSuccess"); 
+		  Business loginbs = (Business) session.getAttribute("loginbs");
+		%>
+		
+		window.onload = function() {
+		    var loginSuccess = "<%= (loginSuccess != null ? loginSuccess : "") %>";
+		    
+		    if (loginSuccess === "true") {
+		        var bsName = "<%= (loginbs != null && loginbs.getBsName() != null ? loginbs.getBsName() : "") %>";
+		        alert(bsName.length > 0 ? bsName + "님 환영합니다." : "로그인 정보가 없습니다.");
+		    } else if (loginSuccess === "false") {
+		        alert("아이디와 비밀번호를 확인해주세요.");
+		    }
+		}
+	</script>
+
+<div id="main-content2">
+    <div id="title">
+      <h1>"인기 폭발 여행지, 예약은 서둘러야 제맛!"</h1>
+      <p>요즘 핫한 여행지, 나만 빼고 다 갔다? <br>
+        더 늦기 전에 떠나세요! 인기 폭발 중인 여행지에서 잊지 못할 순간을 만들어보세요!</p>
+    </div>
+    <div class="swiper mySwiper2">
+      <div class="swiper-wrapper">
+      <script>
+        window.onload = function() {
+        	$.ajax({
+       			url: "main.tr",
+       			contentType: "application/json",
+       			success: function(res){
+       				console.log(res);
+       				let str = "";
+                       for(let tra of res){
+                       	str += ("<div class='swiper-slide'>" +
+                       			"<img src=\'"+tra.picInfo+"\'"+" onclick='trInfoPage(\"" + encodeURIComponent(tra.trName) + "\")'>" +
+                                   "<p><strong>" + tra.trName + "</strong></p>" +
+                                   "</div>")
+                       }
+
+                var element = document.getElementsByClassName("swiper-wrapper")[1];  // 첫 번째 요소 선택
+             	element.innerHTML = str;
+       			},error: function(){
+       				console.log("ajax통신 실패")
+       			}
+       		})
+        	
+        	
+        };
+        
+       	function trInfoPage(travel){
+       		location.href="travel.info?travel="+travel
+        };
+	</script>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+  
+  <script>
+	    const mySwiper2 = new Swiper(".mySwiper2", {
+	        slidesPerView: 'auto', // 한 번에 표시할 슬라이드 수
+	        spaceBetween: 20, // 슬라이드 간의 간격
+	        breakpoints : {
+	            700: {
+	            slidesPerView: 4,
+	            spaceBetween: 20,
+	            },
+	            1024: {
+	                slidesPerView: 6,
+	                spaceBetween: 20,
+	            }
+	        }, 
+	        slideToclickedSlide : true,
+	        navigation: {
+	            nextEl: ".swiper-button-next", 
+	            prevEl: ".swiper-button-prev"
+	        },
+	        loop: true,
+	        freemode : true,
+	        watchOverflow : true,
+	        centeredSlides : false,
+	        initialSlide: 0,
+	        slideOffsetAfter: 10,
+	        slideOffsetBefore: 10
+	    });
+
+	    $('.btn_like').click(function () {
+	      $(this).toggleClass("on")
+	    });
+	    //---------로그인 성공 메시지-----------
+	</script>
+		<%@include file="/views/common/footer.jsp"%>
+>>>>>>> b31eb5300964bb3a4752fa7352a44817f18ed0f7
 </body>
 </html>

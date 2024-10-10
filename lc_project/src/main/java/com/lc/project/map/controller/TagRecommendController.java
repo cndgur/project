@@ -35,6 +35,9 @@ public class TagRecommendController extends HttpServlet {
 		String personnel = request.getParameter("personnel");
 		String location = request.getParameter("location");
 		String theme = request.getParameter("theme");
+		System.out.println(personnel);
+		System.out.println(location);
+		System.out.println(theme);
 		
 		System.out.println(request.getParameter("personnel"));
 		System.out.println(request.getParameter("location"));
@@ -45,7 +48,7 @@ public class TagRecommendController extends HttpServlet {
 	    request.setAttribute("theme", theme);
 	    
 	    ArrayList<Travel> trList = mService.selectTravelTag(personnel, location, theme);
-	    request.setAttribute("tr", trList);
+	    request.setAttribute("trList", trList);
 	    
 	    request.getRequestDispatcher("views/map/tagRecommendPage.jsp").forward(request, response);
 	}
