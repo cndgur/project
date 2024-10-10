@@ -234,83 +234,46 @@
 			<div class="swiper mySwiper2">
 				<div class="swiper-wrapper">
 		        	<div class="swiper-slide">
-<<<<<<< HEAD
-<<<<<<< HEAD
-		          		<img src="./pic/main-seoul.webp" alt="seoul" onclick="location.href='location.tr?location=수도권'">
+		          		<img src="<%=contextPath%>/pic/main-seoul.jpg" alt="seoul" onclick="location.href='location.tr?location=수도권'">
 			            <p>수도권</p>
 		        	</div>        
 		          	<div class="swiper-slide">
-		            	<img src="./pic/main-gangwon.jpg" alt="gangwon" onclick="location.href='location.tr?location=강원도'">
+		            	<img src="<%=contextPath%>/pic/gangwon.jpg" alt="gangwon" onclick="location.href='location.tr?location=강원도'">
 		            	<p>강원</p>
 		          	</div>
 		          	<div class="swiper-slide">
-		            	<img src="./pic/main-chungcheong.jpg" alt="chungcheong" onclick="location.href='location.tr?location=충청도'">
+		            	<img src="<%=contextPath%>/pic/chungcheong.jpg" alt="chungcheong" onclick="location.href='location.tr?location=충청도'">
 		            	<p>충청</p>
 		          	</div>
 		          	<div class="swiper-slide">
-		            	<img src="./pic/main-jeollabuk.jpg" alt="jeollabuk" onclick="location.href='location.tr?location=전라북도'">
+		            	<img src="<%=contextPath%>/pic/jellabuk.png" alt="jeollabuk" onclick="location.href='location.tr?location=전라북도'">
 		            	<p>전북</p>
 		          	</div>
 		          	<div class="swiper-slide">
-			            <img src="./pic/main-jeollanam.jpg" alt="jeollanam" onclick="location.href='location.tr?location=전라남도'">
+			            <img src="<%=contextPath%>/pic/jellanam.png" alt="jeollanam" onclick="location.href='location.tr?location=전라남도'">
 			            <p>전남</p>
 			        </div>
 		          	<div class="swiper-slide">
-		            	<img src="./pic/main-gyeongsangbuk.jpg" alt="gyeongsangbuk" onclick="location.href='location.tr?location=경상북도'">
+		            	<img src="<%=contextPath%>/pic/gyeongsangbuk.jpg" alt="gyeongsangbuk" onclick="location.href='location.tr?location=경상북도'">
 		            	<p>경북</p>
 		          	</div>
 		          	<div class="swiper-slide">
-		            	<img src="./pic/main-gyeongsangnam.jpg" alt="gyeongsangnam" onclick="location.href='location.tr?location=경상남도'">
+		            	<img src="<%=contextPath%>/pic/gyeongsangnam.jpg" alt="gyeongsangnam" onclick="location.href='location.tr?location=경상남도'">
 		            	<p>경남</p>
 		          	</div>
 		          	<div class="swiper-slide">
-		            	<img src="./pic/main-jeju.png" alt="jeju" onclick="location.href='location.tr?location=제주도'">
-=======
-		          		<img src="../pic/main-seoul.webp" alt="seoul" onclick="location.href='location.tr?location=수도권'">
-=======
-		          		<img src="./pic/main-seoul.webp" alt="seoul" onclick="location.href='location.tr?location=수도권'">
->>>>>>> cad50e2e5862b83e8871697566c49431bb1b87a8
-			            <p>수도권</p>
-		        	</div>        
-		          	<div class="swiper-slide">
-		            	<img src="./pic/main-gangwon.jpg" alt="gangwon" onclick="location.href='location.tr?location=강원도'">
-		            	<p>강원</p>
-		          	</div>
-		          	<div class="swiper-slide">
-		            	<img src="../pic/main-chungcheong.jpg" alt="chungcheong" onclick="location.href='location.tr?location=충청도'">
-		            	<p>충청</p>
-		          	</div>
-		          	<div class="swiper-slide">
-		            	<img src="../pic/main-jeollabuk.jpg" alt="jeollabuk" onclick="location.href='location.tr?location=전라북도'">
-		            	<p>전북</p>
-		          	</div>
-		          	<div class="swiper-slide">
-			            <img src="../pic/main-jeollanam.jpg" alt="jeollanam" onclick="location.href='location.tr?location=전라남도'">
-			            <p>전남</p>
-			        </div>
-		          	<div class="swiper-slide">
-		            	<img src="../pic/main-gyeongsangbuk.jpg" alt="gyeongsangbuk" onclick="location.href='location.tr?location=경상북도'">
-		            	<p>경북</p>
-		          	</div>
-		          	<div class="swiper-slide">
-		            	<img src="../pic/main-gyeongsangnam.jpg" alt="gyeongsangnam" onclick="location.href='location.tr?location=경상남도'">
-		            	<p>경남</p>
-		          	</div>
-		          	<div class="swiper-slide">
-		            	<img src="../pic/main-jeju.png" alt="jeju" onclick="location.href='location.tr?location=제주도'">
->>>>>>> 9fb7e234a51b8384b68325df72a4e703320931d5
+		            	<img src="<%=contextPath%>/pic/제주도.jpg" alt="jeju" onclick="location.href='location.tr?location=제주도'">
 		            	<p>제주</p>
 		          	</div>
 		      	</div>
 		      	<div class="swiper-button-next"></div>
 		      	<div class="swiper-button-prev"></div>
-		      </div>
+		    </div>
 		     </div>
 		     </div>
 		     <br> 	
 		      
 
-<<<<<<< HEAD
     <div id="main-content2">
 	    <div id="title">
 	      <h1>"인기 폭발 여행지, 예약은 서둘러야 제맛!"</h1>
@@ -382,10 +345,6 @@
 		    }
 		}
 	</script>
-	
-	<!-- 송혁규 -->
-	<script>
-=======
 <div id="main-content2">
     <div id="title">
       <h1>"인기 폭발 여행지, 예약은 서둘러야 제맛!"</h1>
@@ -430,11 +389,7 @@
   </div>
   
   <script>
-  
-		
 
-
->>>>>>> 9fb7e234a51b8384b68325df72a4e703320931d5
 	    const mySwiper2 = new Swiper(".mySwiper2", {
 	        slidesPerView: 'auto', // 한 번에 표시할 슬라이드 수
 	        spaceBetween: 20, // 슬라이드 간의 간격
@@ -461,18 +416,11 @@
 	        slideOffsetAfter: 10,
 	        slideOffsetBefore: 10
 	    });
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
+
 	    $('.btn_like').click(function () {
 	      $(this).toggleClass("on")
 	    });
 	    //---------로그인 성공 메시지-----------
-=======
-	    
->>>>>>> 9fb7e234a51b8384b68325df72a4e703320931d5
-=======
->>>>>>> cad50e2e5862b83e8871697566c49431bb1b87a8
 	</script>
 		<%@include file="/views/common/footer.jsp"%>
 </body>
