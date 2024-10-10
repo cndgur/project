@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <libraryInfos>
 <<<<<<< HEAD
+    <libraryInfo home="C:\div_tool\jdk-17.0.0.1" version="17.0.0.1"/>
+    <libraryInfo home="C:\Users\user1\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.2.v20240802-1626\jre" version="22.0.2"/>
+    <libraryInfo home="C:\Users\user1\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.2.v20240802-1626" version="22.0.2">
+=======
+<<<<<<< HEAD
     <libraryInfo home="C:\dev_tool\jdk-17.0.0.1" version="17.0.0.1"/>
     <libraryInfo home="C:\Users\이충혁\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.2.v20240802-1626" version="22.0.2">
 =======
@@ -17,6 +22,7 @@
     <libraryInfo home="C:\Users\user1\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.1.v20240426-1149" version="22.0.1">
 >>>>>>> 8cb2ee71314d230c926477ebe3eef6afe38a6a9f
 >>>>>>> 8f89d988230f6b426e6e78463905c2026bd2ab35
+>>>>>>> a602dfed56df53c68a2beccbc0f368216659daa3
         <bootpath>
             <entry path="null"/>
         </bootpath>
@@ -27,6 +33,8 @@
             <entry path="null"/>
         </endorsedDirs>
     </libraryInfo>
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -46,4 +54,5 @@
     <libraryInfo home="C:\Users\user1\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.1.v20240426-1149\jre" version="22.0.1"/>
 >>>>>>> 8cb2ee71314d230c926477ebe3eef6afe38a6a9f
 >>>>>>> 8f89d988230f6b426e6e78463905c2026bd2ab35
+>>>>>>> a602dfed56df53c68a2beccbc0f368216659daa3
 </libraryInfos>
