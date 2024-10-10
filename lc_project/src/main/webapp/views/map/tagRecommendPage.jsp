@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -86,13 +87,16 @@
                 <c:if test="${theme} not empty">
                     <button class="tagbtn" style="cursor:context-menu;">#${theme}</button>
                 </c:if>
+                #${personnel}
+                #${location}
+                #${theme}
             </div>
             <div id="tour">
-                <c:forEach var="t" items="${tr }">
+                <c:forEach var="tr" items="${trList }">
                     <a href="travel.info?travel=${travel}">
                         <div id="content">
-                            <img src="<%=contextPath%>/pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
-                            <div id="text"><%=t.getTrName() %></div>
+                            <img src="${tr.picInfo }" alt="${tr.trName }" id="img">                    
+                            <div id="text">${tr.trName }</div>
                         </div>
                     </a>
                 </c:forEach>
