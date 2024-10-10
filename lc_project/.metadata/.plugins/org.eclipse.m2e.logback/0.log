@@ -8,11 +8,6 @@
 2024-10-03 15:31:20,571 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
 =======
 >>>>>>> 8cb2ee71314d230c926477ebe3eef6afe38a6a9f
-<<<<<<< HEAD
-2024-10-10 12:38:06,187 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
-2024-10-10 12:39:15,343 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
-2024-10-10 12:40:40,168 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
-=======
 >>>>>>> edbc04a47975ec8bcebbd3526adbecf30b8f9a36
 2024-10-06 17:27:40,910 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
 =======
@@ -22,4 +17,3 @@
 >>>>>>> 8cb2ee71314d230c926477ebe3eef6afe38a6a9f
 >>>>>>> edbc04a47975ec8bcebbd3526adbecf30b8f9a36
 >>>>>>> 8f89d988230f6b426e6e78463905c2026bd2ab35
->>>>>>> a602dfed56df53c68a2beccbc0f368216659daa3
