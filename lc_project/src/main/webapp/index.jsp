@@ -213,10 +213,15 @@
                   tagList.push(selectTag1);
                   tagList.push(selectTag2);
                   tagList.push(selectTag3);
+                  document.getElementById("personnel").value = selectTag1;
+                  document.getElementById("location").value = selectTag2;
+                  document.getElementById("theme").value = selectTag3;
                
                   // document.getElementById("personnel").value = document.querySelector(".selected_tag_personnel").value;
-                  document.getElementById("selectedTags").value = tagList.join;
                   console.log(tagList);
+                  console.log(document.getElementById("personnel").value)
+                  console.log(document.getElementById("location").value)
+                  console.log(document.getElementById("theme").value)
                   
                  return true;
              }
