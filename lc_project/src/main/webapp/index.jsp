@@ -17,7 +17,6 @@
   <link rel="apple-touch-icon" href="./pic/logo.png"/>
   <!-- CSS -->
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-<<<<<<< HEAD
   <link rel="stylesheet" href="./css/main.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   
@@ -367,10 +366,7 @@
   </div>
   
   <script>
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
 		function travelInfo(){
 			location.href="<%=contextPath%>/travel.info?travel=1"
 		}
@@ -405,9 +401,6 @@
     $('.btn_like').click(function () {
       $(this).toggleClass("on")
     });
-=======
-<<<<<<< HEAD
->>>>>>> 755ecd0d34fc30af693ddeb77d3d053c354eafd9
   
 		  <%
 		  String loginSuccess = request.getParameter("loginSuccess"); 
@@ -468,11 +461,6 @@
 	    //  $(this).toggleClass("on")
 	    //});
 	    
-<<<<<<< HEAD
-=======
->>>>>>> 684d79f02d1b3404810036aad0d7344dcdb026e0
->>>>>>> 360f04d532dd42d02e2bc1b4d80b8ccf435c0936
->>>>>>> 755ecd0d34fc30af693ddeb77d3d053c354eafd9
 	</script>
 	 <%@include file="/views/common/footer.jsp"%>
 </body>
