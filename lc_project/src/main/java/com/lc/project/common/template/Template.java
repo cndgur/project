@@ -11,9 +11,14 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import com.lc.project.common.vo.PageInfo;
 
 public class Template {
-	public static SqlSession getSqlSession() {		
+	public static SqlSession getSqlSession() {
+		//mybatis-config.xml 읽어드리기
+		
 		SqlSession sqlSession = null;
-
+		
+		//SqlSession생성하기 위해서는 -> SqlSessionFactory객체 필요
+		//SqlSessionFactory생성하기위해서는 -> SqlSessionFactoryFactoryBuilder필요
+		
 		String resource = "/mybatis-config.xml";
 		
 		try {
