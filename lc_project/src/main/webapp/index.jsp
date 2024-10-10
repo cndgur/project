@@ -234,8 +234,7 @@
 			<div class="swiper mySwiper2">
 				<div class="swiper-wrapper">
 		        	<div class="swiper-slide">
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 		          		<img src="./pic/main-seoul.webp" alt="seoul" onclick="location.href='location.tr?location=수도권'">
 			            <p>수도권</p>
 		        	</div>        
@@ -265,11 +264,11 @@
 		          	</div>
 		          	<div class="swiper-slide">
 		            	<img src="./pic/main-jeju.png" alt="jeju" onclick="location.href='location.tr?location=제주도'">
-=======
+
 		          		<img src="../pic/main-seoul.webp" alt="seoul" onclick="location.href='location.tr?location=수도권'">
-=======
+
 		          		<img src="./pic/main-seoul.webp" alt="seoul" onclick="location.href='location.tr?location=수도권'">
->>>>>>> cad50e2e5862b83e8871697566c49431bb1b87a8
+
 			            <p>수도권</p>
 		        	</div>        
 		          	<div class="swiper-slide">
@@ -298,7 +297,7 @@
 		          	</div>
 		          	<div class="swiper-slide">
 		            	<img src="../pic/main-jeju.png" alt="jeju" onclick="location.href='location.tr?location=제주도'">
->>>>>>> 9fb7e234a51b8384b68325df72a4e703320931d5
+
 		            	<p>제주</p>
 		          	</div>
 		      	</div>
@@ -310,7 +309,7 @@
 		     <br> 	
 		      
 
-<<<<<<< HEAD
+
     <div id="main-content2">
 	    <div id="title">
 	      <h1>"인기 폭발 여행지, 예약은 서둘러야 제맛!"</h1>
@@ -385,7 +384,7 @@
 	
 	<!-- 송혁규 -->
 	<script>
-=======
+
 <div id="main-content2">
     <div id="title">
       <h1>"인기 폭발 여행지, 예약은 서둘러야 제맛!"</h1>
@@ -431,10 +430,7 @@
   
   <script>
   
-		
-
-
->>>>>>> 9fb7e234a51b8384b68325df72a4e703320931d5
+	
 	    const mySwiper2 = new Swiper(".mySwiper2", {
 	        slidesPerView: 'auto', // 한 번에 표시할 슬라이드 수
 	        spaceBetween: 20, // 슬라이드 간의 간격
@@ -461,18 +457,12 @@
 	        slideOffsetAfter: 10,
 	        slideOffsetBefore: 10
 	    });
-<<<<<<< HEAD
-<<<<<<< HEAD
     
 	    $('.btn_like').click(function () {
 	      $(this).toggleClass("on")
 	    });
 	    //---------로그인 성공 메시지-----------
-=======
-	    
->>>>>>> 9fb7e234a51b8384b68325df72a4e703320931d5
-=======
->>>>>>> cad50e2e5862b83e8871697566c49431bb1b87a8
+
 	</script>
 		<%@include file="/views/common/footer.jsp"%>
 </body>
