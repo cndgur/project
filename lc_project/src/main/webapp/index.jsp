@@ -20,7 +20,6 @@
   <!-- CSS -->
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./css/main.css?ver=1" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   
   <!-- JS -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -51,7 +50,7 @@
         <div class="header_pic">
            <img src="./pic/caption.jpg" alt="" class="main_img">
        	</div>
-       	<div class="header_bar">
+       	<div class="header_bar"></div>
            	<div class="header_func">
 				<a href="" class="to_main">
                    	<div class="header_name">방구석여행</div>
