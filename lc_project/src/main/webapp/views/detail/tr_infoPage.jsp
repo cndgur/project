@@ -2,6 +2,9 @@
     pageEncoding="UTF-8" import="com.lc.project.travel.model.vo.Travel, java.util.ArrayList, com.lc.project.travel.model.vo.tReview, com.lc.project.member.model.vo.Member" %>
 <%	
 	Member loginUser = (Member)session.getAttribute("loginUser");
+	if (loginUser==null){
+		loginUser = new Member("000");
+	}
 	Travel t = (Travel)request.getAttribute("t");
 	ArrayList<Travel> tlist = (ArrayList<Travel>)request.getAttribute("tlist");
 	ArrayList<tReview> rlist = (ArrayList<tReview>)request.getAttribute("rlist");
@@ -68,6 +71,7 @@
             height: 40px;	
         }
 
+<<<<<<< HEAD
 		#recommend .btn_like {
 			width: 20px; 
 			height: 20px;
@@ -83,6 +87,8 @@
 			animation: beating .5s 1 alternate;
 		}
 
+=======
+>>>>>>> f0050235a2d02661eedce1d26df78f6517aa1601
         .nav-area{ 
             display: flex;
             justify-content: center;
@@ -276,9 +282,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
     
-    <!-- css -->
-    <link rel="stylesheet" href="../../css/tr_infoPage.css">
-    
 </head>
 <body>
     <%@include file="../common/header.jsp" %>
@@ -288,12 +291,20 @@
 		</script>
 		<% session.removeAttribute("alertMsg"); %>
 	<% } %>
+<<<<<<< HEAD
+=======
+
+>>>>>>> f0050235a2d02661eedce1d26df78f6517aa1601
     <div id="wrapper">
         <table>
             <tr style="height:50px">
                 <td class="side"></td>
                 <td colspan="3" style="text-align: center; vertical-align: bottom;" id="wisharea">
+<<<<<<< HEAD
                 	<% if(loginUser == null) {%>
+=======
+                	<% if(loginUser.getUserName().equals("000")) {%>
+>>>>>>> f0050235a2d02661eedce1d26df78f6517aa1601
 						<script>
 						function insertwish(){
                 			alert("로그인이 필요한 기능입니다.")
@@ -574,7 +585,7 @@
 	                            <p onclick="location.href='travel.info?travel=<%=tra.getTrName()%>'" style="cursor: pointer;"><strong><%=tra.getTrName() %></strong></p>
 	                            <p onclick="location.href='travel.info?travel=<%=tra.getTrName()%>'" style="cursor: pointer;"><%=tra.getTrAddress() %></p>
 	                        </div>
-	                <%} %>
+	                <%}%>
                     </div>
                 </td>
                 <td></td>

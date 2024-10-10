@@ -1,124 +1,35 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    pageEncoding="UTF-8" import="com.lc.project.travel.model.vo.Travel, java.util.ArrayList"%>
+<%
+	Travel t = (Travel)request.getAttribute("t");
+	ArrayList<Travel> tlist = (ArrayList<Travel>)request.getAttribute("tlist");
+%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>방구석 여행</title>
-    <link rel="stylesheet" href="../../css/tr_list.css">
+    <title>방구석여행</title>
+    <link rel="icon" href="pic/logo.png"/>
+    <link rel="apple-touch-icon" href="pic/logo.png"/>
+    <!-- jQuery -->
+    <script 
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
+    <script
+        src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"
+        integrity="sha256-Fb0zP4jE3JHqu+IBB9YktLcSjI1Zc6J2b6gTjB0LpoM="
+        crossorigin="anonymous"></script>
+    
+    <!-- css -->
+    <link rel="stylesheet" href="../../css/ht_listPage.css">
+        
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
-    <style>
-    
-/* font */
-body {
-    font-family: "Noto Sans KR", system-ui;
-    margin: 0;
-    padding: 0;
-}
-
-/* section */
-section {
-    margin: 20px auto;
-    padding: 20px;
-    max-width: 1024px;
-}
-
-.sec {
-    background-color: #ddeeed;
-}
-
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 0px;
-}
-
-.gallery div {
-    background-color: white;
-    border-radius: 8px;
-    padding: 10px;
-    width: 200px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.gallery img {
-    width: 100%;
-    height: 60%;
-    border-radius: 8px;
-}
-
-.food {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 0px;
-}
-
-.food div {
-    background-color: white;
-    border-radius: 8px;
-    padding: 10px;
-    width: 200px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.food img {
-    width: 100%;
-    height: 60%;
-    border-radius: 8px;
-}
-
-/* 행사 섹션 스타일 */
-.events {
-    display: flex;
-    justify-content: space-around;
-    gap: 0px; /* 박스 사이의 간격 */
-    margin-bottom: 30px;
-}
-
-.events div {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    width: 30%;
-    min-width: 150px;
-    max-height: 300px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    margin: 10px; /* 각 박스 주변에 여백을 추가 */
-    border: 2px solid black; /* 테두리(선) 색을 검은색으로 설정 */
-}
-
-.events div > p{
-    height: 40%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nomal;
-    line-height: 2.8;
-    word-wrap: break-word;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-}
-
-.but {
-    all: unset;
-    float: right;
-}
-
-    </style>
+    <link rel="icon" href="../../pic/logo.png"/>
+    <link rel="apple-touch-icon" href="../../pic/logo.png"/>
 </head>
 <body>
     <header>
@@ -169,6 +80,6 @@ section {
 	<footer>
 		<%@include file="../common/footer.jsp"%>
 	</footer>
+
 </body>
 </html>
-

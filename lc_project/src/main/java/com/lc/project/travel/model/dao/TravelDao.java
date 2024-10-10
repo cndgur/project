@@ -9,10 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Properties;
-
-import org.apache.ibatis.session.SqlSession;
 
 import com.lc.project.travel.model.vo.Travel;
 import com.lc.project.travel.model.vo.tReview;
@@ -255,25 +252,4 @@ public class TravelDao {
 		}
 		return result;
 	}
-	
-	public ArrayList<Travel> selectList(SqlSession sqlSession, String location) {
-		return (ArrayList)sqlSession.selectList("travelMapper.locationList",location);
-	}
-
-	public ArrayList<Travel> foodSelectList(SqlSession sqlSession, String location) {
-		return (ArrayList)sqlSession.selectList("travelMapper.foodList",location);
-		}
-
-	public Travel selectTravel(SqlSession sqlSession, String trName) {
-		return sqlSession.selectOne("travelMapper.selectTravel",trName);
-	}
-
-	public ArrayList<Travel> festivalList(SqlSession sqlSession, String location) {
-		return (ArrayList)sqlSession.selectList("travelMapper.festivalList",location);
-	}
-	
-	public ArrayList<Travel> otherList(SqlSession sqlSession, HashMap<String, String> map) {
-		return (ArrayList)sqlSession.selectList("travelMapper.otherList",map);
-	}
 }
-

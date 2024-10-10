@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="com.lc.project.hotel.model.vo.Hotel, java.util.ArrayList, com.lc.project.travel.model.vo.tReview, com.lc.project.travel.model.vo.Travel"%>
+<%	
+	Hotel h = new Hotel();
+	//(Hotel)request.getAttribute("h");
+	ArrayList<Travel> tlist = (ArrayList<Travel>)request.getAttribute("tlist");
+%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -17,14 +22,19 @@
         src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"
         integrity="sha256-Fb0zP4jE3JHqu+IBB9YktLcSjI1Zc6J2b6gTjB0LpoM="
         crossorigin="anonymous"></script>
-        
-
+    <link rel="stylesheet" href="/lc/css/ht_infoPage.css">
+	<!--
+        2. 설치 스크립트
+        * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+    -->
+    <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
 
     <script src="https://cdn.portone.io/v2/browser-sdk.js"></script>
-    
+    <link rel="icon" href="../../pic/logo.png"/>
+    <link rel="apple-touch-icon" href="../../pic/logo.png"/>
     
 </head>
 <body id=system-ui>
@@ -33,51 +43,37 @@
         <table>
             <tr>
                 <td class="side"></td>
-                <td></td>
+                <td ></td>
                 <td></td>
                 <td></td>
                 <td class="side"></td>
             </tr>
             <tr class="picture">
                 <td class="side"></td>
-                <td rowspan="2">
+                <td colspan="3">
                     <img src="<%=contextPath %>/pic/ht_main_pic.png" class="large-image">
                 </td>
-                <td>
-                    <img src="<%=contextPath %>/pic/ht_sub_pic1.png" class="small-image">
-                </td>
-                <td>
-                    <img src="<%=contextPath %>/pic/ht_sub_pic2.png" class="small-image" style="border-start-end-radius: 10px;">
-                </td>
-                <td class="side"></td>
-            </tr>
-            <tr class="picture">
-                <td class="side"></td>
-                <td>
-                    <img src="<%=contextPath %>/pic/ht_sub_pic3.png" class="small-image">
-                </td>
-                <td>
-                    <img src="<%=contextPath %>/pic/ht_sub_pic1.png" class="small-image" style="border-end-end-radius: 10px;">
-                </td>
+                <td></td>
+                <td></td>
                 <td class="side"></td>
             </tr>
             <tr id="info">
                 <td class="side"></td>
                 <td colspan="3" class="content">
                     <div style="margin-top: 100px;">
-                        <b style="font-size: 15px; margin-bottem: 0px">호텔 • 5성급</b><br>
-                        <b style="font-size: 30px">힐튼 경주</b>
+                        <b style="font-size: 15px; margin-bottom: 0px">호텔</b><br>
+                        <b style="font-size: 30px"><%=h.gethName() %></b>
                         <hr>
                     </div>
                     <div style="margin-bottom: 20px;">
-                        <img src="<%=contextPath %>/pic/star.png"><b>  9.3</b><span style="color: #959c9b;">  294명 평가</span>
+                        <img src="/lc/pic/star.png"><b>  9.3</b>
                     </div>
                     <div style="display: flex;">
                         <div class="reviewcon">
                             <table>
                                 <tr>
                                     <div style="padding-top: 10px;">
-                                        <img src="<%=contextPath %>/pic/star.png"><b>  8.5</b>
+                                        <img src="/lc/pic/star.png"><b>  8.5</b>
                                     </div>
                                 </tr>
                                 <tr>
@@ -151,11 +147,7 @@
                     <!-- 1. 지도 노드 -->
                     <div id="daumRoughmapContainer1727164187996" class="root_daum_roughmap root_daum_roughmap_landing" style="width: 100%;"></div>
 
-                    <!--
-                        2. 설치 스크립트
-                        * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
-                    -->
-                    <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+                    
 
                     <!-- 3. 실행 스크립트 -->
                     <script charset="UTF-8">
@@ -242,21 +234,49 @@
                                 </tr>
                             </table>
                             <script>
-                                function requestPay() {
-                                  PortOne.requestPayment({
-                                    storeId: "store-e4038486-8d83-41a5-acf1-844a009e0d94",
-                                    paymentId: "test12",
-                                    orderName: "테스트 결제",
-                                    totalAmount: 100,
-                                    currency: "KRW",
-                                    channelKey: "channel-key-01764171-b249-4c16-9d18-e9174fa8e611",
-                                    payMethod: "EASY_PAY",
-                                    easyPay: {
-                                      easyPayProvider: "KAKAOPAY",
-                                    },
-                                  });
-                                }
-                                </script>
+	                            function generateUUID() { 
+	                                return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+	                                    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+	                                    return v.toString(16);
+	                                });
+	                            }
+	                           
+                            	function requestPay() {
+                            		const paymentId = generateUUID();
+                            		
+                            		console.log("결제 요청 시작");
+                            		const response = await PortOne.requestPayment({
+                                	    storeId: "store-2c741ae7-334b-4984-9a8c-62eba220c91b",
+                                	    paymentId: paymentId,
+                                	    orderName: "테스트 결제",
+                                	    totalAmount: 100,
+                                	    currency: "KRW",
+                                	    channelKey: "channel-key-1882d49b-8325-4d68-9244-2cf5574ca062",
+                                	    payMethod: "EASY_PAY",
+                                	    easyPay: {
+                                	      easyPayProvider: "KAKAOPAY"
+                                	    }               	    
+                                	  }, function(response) {
+                                		  console.log("결제 응답:", response);  // 결제 응답 확인용 로그
+                                          alert(JSON.stringify(response));  // 결제 응답을 알림으로 표시
+
+                                          if (response.status === "AUTHENTICATED") {
+                                              // 결제 성공 시 처리
+                                              console.log("결제 성공:", response);
+                                              window.location.href = "/payment-success";  // 결제 성공 페이지로 이동
+                                          } else {
+                                              // 결제 실패 시 처리
+                                              console.log("결제 실패:", response);
+                                              alert("결제 실패: " + (response.errorMessage || "알 수 없는 오류"));
+                                          }
+                                          
+                                	  });
+                            		
+                            		 alert(response.message);
+                            		
+                            	  console.log("결제 요청 whdfy");
+                            	}
+                            </script>
                         </div>
                         <div style="width: 100%; height: 250px; background: #ddeeeb; margin-bottom: 50px; border-radius: 15px;">
                             <table>
@@ -336,109 +356,13 @@
                             </table>
                             
                         </div>
-                        <div>
-                            <!-- 리뷰나올영역-->
-                        </div>
                     </div>
                 </td>
                 <td></td>
                 <td></td>
                 <td class="side"></td>
             </tr>
-            <tr id="recommendht">
-                <td class="side"></td>
-                <td colspan="3" class="content">
-                    <div>
-                        <h2>근처 다른 호텔</h2>
-                        <hr>
-                    </div>
-                    <div class="recommendtr" style="margin-bottom: 100px;">
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div style="margin-left:40px; display: flex; justify-content: center; align-items: center;">
-                            <img src="<%=contextPath %>/pic/sidearrow.png" style="align-self: center; margin-bottom: 0px; cursor: pointer;">
-                        </div>
-                    </div>
-                </td>
-                <td></td>
-                <td></td>
-                <td class="side"></td>
-            </tr>
-            <tr id="recommendtr">
-                <td class="side"></td>
-                <td colspan="3" class="content">
-                    <div>
-                        <h2>근처 다른 여행지</h2>
-                        <hr>
-                    </div>
-                    <div class="recommendtr" style="margin-bottom: 100px;">
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div class="recommendtr-item">
-                            <img src="<%=contextPath %>/pic/picture.png" alt="구 서도역">
-                            <p><strong>구 서도역</strong></p>
-                            <p>전북 남원시</p>
-                        </div>
-                        <div style="margin-left:40px; display: flex; justify-content: center; align-items: center;">
-                            <img src="<%=contextPath %>/pic/sidearrow.png" style="align-self: center; margin-bottom: 0px; cursor: pointer;">
-                        </div>
-                    </div>
-                </td>
-                <td></td>
-                <td></td>
-                <td class="side"></td>
-            </tr>
+			
         </table>
     </div>
      <%@include file="../common/footer.jsp"%>

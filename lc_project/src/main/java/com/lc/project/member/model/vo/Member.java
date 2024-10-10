@@ -52,6 +52,12 @@ public class Member {
 		this.birthday = birthday;
 		this.gender = gender;
 	}
+	
+
+	public Member(String userName) {
+		super();
+		this.userName = userName;
+	}
 
 
 	public Member(String userId, String userPwd, String userName, String tel) {
