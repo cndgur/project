@@ -234,7 +234,42 @@
 			<div class="swiper mySwiper2">
 				<div class="swiper-wrapper">
 		        	<div class="swiper-slide">
+<<<<<<< HEAD
+<<<<<<< HEAD
 		          		<img src="./pic/main-seoul.webp" alt="seoul" onclick="location.href='location.tr?location=수도권'">
+			            <p>수도권</p>
+		        	</div>        
+		          	<div class="swiper-slide">
+		            	<img src="./pic/main-gangwon.jpg" alt="gangwon" onclick="location.href='location.tr?location=강원도'">
+		            	<p>강원</p>
+		          	</div>
+		          	<div class="swiper-slide">
+		            	<img src="./pic/main-chungcheong.jpg" alt="chungcheong" onclick="location.href='location.tr?location=충청도'">
+		            	<p>충청</p>
+		          	</div>
+		          	<div class="swiper-slide">
+		            	<img src="./pic/main-jeollabuk.jpg" alt="jeollabuk" onclick="location.href='location.tr?location=전라북도'">
+		            	<p>전북</p>
+		          	</div>
+		          	<div class="swiper-slide">
+			            <img src="./pic/main-jeollanam.jpg" alt="jeollanam" onclick="location.href='location.tr?location=전라남도'">
+			            <p>전남</p>
+			        </div>
+		          	<div class="swiper-slide">
+		            	<img src="./pic/main-gyeongsangbuk.jpg" alt="gyeongsangbuk" onclick="location.href='location.tr?location=경상북도'">
+		            	<p>경북</p>
+		          	</div>
+		          	<div class="swiper-slide">
+		            	<img src="./pic/main-gyeongsangnam.jpg" alt="gyeongsangnam" onclick="location.href='location.tr?location=경상남도'">
+		            	<p>경남</p>
+		          	</div>
+		          	<div class="swiper-slide">
+		            	<img src="./pic/main-jeju.png" alt="jeju" onclick="location.href='location.tr?location=제주도'">
+=======
+		          		<img src="../pic/main-seoul.webp" alt="seoul" onclick="location.href='location.tr?location=수도권'">
+=======
+		          		<img src="./pic/main-seoul.webp" alt="seoul" onclick="location.href='location.tr?location=수도권'">
+>>>>>>> cad50e2e5862b83e8871697566c49431bb1b87a8
 			            <p>수도권</p>
 		        	</div>        
 		          	<div class="swiper-slide">
@@ -263,6 +298,7 @@
 		          	</div>
 		          	<div class="swiper-slide">
 		            	<img src="../pic/main-jeju.png" alt="jeju" onclick="location.href='location.tr?location=제주도'">
+>>>>>>> 9fb7e234a51b8384b68325df72a4e703320931d5
 		            	<p>제주</p>
 		          	</div>
 		      	</div>
@@ -274,6 +310,82 @@
 		     <br> 	
 		      
 
+<<<<<<< HEAD
+    <div id="main-content2">
+	    <div id="title">
+	      <h1>"인기 폭발 여행지, 예약은 서둘러야 제맛!"</h1>
+	      <p>요즘 핫한 여행지, 나만 빼고 다 갔다? <br>
+	        더 늦기 전에 떠나세요! 인기 폭발 중인 여행지에서 잊지 못할 순간을 만들어보세요!</p>
+	    </div>
+    <!-- 
+    <script>
+    	window.onload = function(){
+    		const opt = document.querySelector("#search-area option[value=${condition}]");
+    		opt.setAttribute("selected", true);
+    	}
+    
+    </script>
+    -->
+    <!-- 송혁규 -->
+	    <div class="swiper mySwiper2">
+	    	<div class="swiper-wrapper">
+				<script>
+			        window.onload = function() {
+			        	$.ajax({
+			       			url: "main.tr",
+			       			contentType: "application/json",
+			       			success: function(res){
+			       				console.log(res);
+			       				let str = "";
+			                       for(let tra of res){
+			                       	str += ("<div class='swiper-slide'>" +
+			                       			"<img src=\'"+tra.picInfo+"\'"+" onclick='trInfoPage(\"" + encodeURIComponent(tra.trName) + "\")'>" +
+			                                   "<p><strong>" + tra.trName + "</strong></p>" +
+			                                   "</div>")
+			                       }
+			
+			                var element = document.getElementsByClassName("swiper-wrapper")[1];  // 첫 번째 요소 선택
+			             	element.innerHTML = str;
+			       			},error: function(){
+			       				console.log("ajax통신 실패")
+			       			}
+			       		})
+			        	
+			        	
+			        };
+			        
+			       	function trInfoPage(travel){
+			       		location.href="travel.info?travel="+travel
+			        };
+				</script>
+	      		<div class="swiper-button-next"></div>
+	      		<div class="swiper-button-prev"></div>
+	    	</div>
+		</div>
+	</div>
+  	
+  	<!-- 이충혁 -->
+	<script>
+		<%
+		  String loginSuccess = request.getParameter("loginSuccess"); 
+		  Business loginbs = (Business) session.getAttribute("loginbs");
+		%>
+		
+		window.onload = function() {
+		    var loginSuccess = "<%= (loginSuccess != null ? loginSuccess : "") %>";
+		    
+		    if (loginSuccess === "true") {
+		        var bsName = "<%= (loginbs != null && loginbs.getBsName() != null ? loginbs.getBsName() : "") %>";
+		        alert(bsName.length > 0 ? bsName + "님 환영합니다." : "로그인 정보가 없습니다.");
+		    } else if (loginSuccess === "false") {
+		        alert("아이디와 비밀번호를 확인해주세요.");
+		    }
+		}
+	</script>
+	
+	<!-- 송혁규 -->
+	<script>
+=======
 <div id="main-content2">
     <div id="title">
       <h1>"인기 폭발 여행지, 예약은 서둘러야 제맛!"</h1>
@@ -322,6 +434,7 @@
 		
 
 
+>>>>>>> 9fb7e234a51b8384b68325df72a4e703320931d5
 	    const mySwiper2 = new Swiper(".mySwiper2", {
 	        slidesPerView: 'auto', // 한 번에 표시할 슬라이드 수
 	        spaceBetween: 20, // 슬라이드 간의 간격
@@ -348,7 +461,19 @@
 	        slideOffsetAfter: 10,
 	        slideOffsetBefore: 10
 	    });
+<<<<<<< HEAD
+<<<<<<< HEAD
+    
+	    $('.btn_like').click(function () {
+	      $(this).toggleClass("on")
+	    });
+	    //---------로그인 성공 메시지-----------
+=======
+	    
+>>>>>>> 9fb7e234a51b8384b68325df72a4e703320931d5
+=======
+>>>>>>> cad50e2e5862b83e8871697566c49431bb1b87a8
 	</script>
-	 <%@include file="/views/common/footer.jsp"%>
+		<%@include file="/views/common/footer.jsp"%>
 </body>
 </html>
