@@ -16,8 +16,20 @@
 		<result column="TR_MAP_LONGITUDE" property="trMapLongitude" />
 		<result column="LOCATION" property="picInfo"/>
 	</resultMap>
-	<select id="selectTravelAll">
-		
+	<select id="selectTravelTag" resultMap="TravelResultSet">
+		SELECT AC_NAME,
+			   AC_ADDRESS,
+			   TR_INFO,
+			   ACT_PERSONNEL,
+			   ACT_LOCATION,
+			   ACT_THEME,
+			   TR_MAP_LATITUDE,
+			   TR_MAP_LONGITUDE,
+			   LOCATION
+		FROM TB_TOUR
+		WHERE ACT_PERSONNEL = #{personnel} AND
+			  ACT_LOCATION = #{location} AND
+			  ACT_THEME = #{theme}
 	</select>
 	<select id="selectTravelList" resultMap="TravelResultSet">
 		SELECT ac_name,

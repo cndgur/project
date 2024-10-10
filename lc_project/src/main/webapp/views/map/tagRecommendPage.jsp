@@ -88,30 +88,14 @@
                 </c:if>
             </div>
             <div id="tour">
-                <a href="travel.info?travel=${travel}">
-                    <div id="content">
-                        <img src="<%=contextPath%>/pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
-                        <div id="text">별마로 천문대</div>
-                    </div>
-                </a>
-                <a href="">
-                    <div id="content">
-                        <img src="<%=contextPath%>/pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
-                        <div id="text">별마로 천문대</div>
-                    </div>
-                </a>
-                <a href="">
-                    <div id="content">
-                        <img src="<%=contextPath%>/pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
-                        <div id="text">별마로 천문대</div>
-                    </div>
-                </a>
-                <a href="">
-                    <div id="content">
-                        <img src="<%=contextPath%>/pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
-                        <div id="text">별마로 천문대</div>
-                    </div>
-                </a>
+                <c:forEach var="t" items="${tr }">
+                    <a href="travel.info?travel=${travel}">
+                        <div id="content">
+                            <img src="<%=contextPath%>/pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
+                            <div id="text"><%=t.getTrName() %></div>
+                        </div>
+                    </a>
+                </c:forEach>
             </div>
             <div id="tagsty">찜한 여행지</div>
             <div id="wish">

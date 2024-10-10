@@ -1,5 +1,7 @@
 package com.lc.project.map.service;
 
+import java.util.ArrayList;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.lc.common.JDBCTemplate;
@@ -12,12 +14,12 @@ public class MapServiceImpl implements MapService{
 	private MapDao mDao = new MapDao();
 	
 	@Override
-	public Travel selectTravel(String personnel, String location, String theme) {
+	public ArrayList<Travel> selectTravelTag(String personnel, String location, String theme) {
 		SqlSession sqlSession = Template.getSqlSession();
-		Travel tr = mDao.selectTravel(personnel, location, theme);
+		ArrayList<Travel> trList = mDao.selectTravelTag(sqlSession, personnel, location, theme);
 		
 		sqlSession.close();
-		return tr;
+		return trList;
 	}
 	
 }

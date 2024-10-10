@@ -1,6 +1,7 @@
 package com.lc.project.map.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import com.lc.project.map.service.MapService;
 import com.lc.project.map.service.MapServiceImpl;
@@ -43,9 +44,10 @@ public class TagRecommendController extends HttpServlet {
 	    request.setAttribute("location", location);
 	    request.setAttribute("theme", theme);
 	    
-	    request.getRequestDispatcher("views/map/tagRecommendPage.jsp").forward(request, response);
+	    ArrayList<Travel> trList = mService.selectTravelTag(personnel, location, theme);
+	    request.setAttribute("tr", trList);
 	    
-	    Travel tr = mService.selectTravel(personnel, location, theme);
+	    request.getRequestDispatcher("views/map/tagRecommendPage.jsp").forward(request, response);
 	}
 
 	/**
