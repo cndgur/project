@@ -108,21 +108,10 @@
 			</div>
 		</div>
 		<div class="textarea">
-        	<input class="input_1" list="browsers" name="browser" id="browser" placeholder="가고싶은 곳">
-            <datalist id="browsers">
-	            <option value="서울">
-	            <option value="인천">
-	            <option value="경기">
-	            <option value="강원도">
-	            <option value="충청도">
-	            <option value="제주도">
-	            <option value="전남">
-	            <option value="전북">
-	            <option value="경남">
-	            <option value="경북">
-            </datalist>
-            <a href=""><img src="./pic/검색-removebg-preview.png" alt="" class="research_btn"></a>
-    	</div>
+        	<input type="text" class="input_1" placeholder="지역" onfocus="this.placeholder = ''" onblur="this.placeholder = '지역';"></input>
+        	<input type="text" class="input_2" placeholder="가고싶은 호텔" onfocus="this.placeholder = ''" onblur="this.placeholder = '가고싶은 곳';"></input>
+        	<a href=""><img src="./pic/검색-removebg-preview.png" alt="" class="research_btn"></a>
+		</div>
 	</div>
    
  	<form action="recommend.tr" method="post" onsubmit="return tagSelected();">
@@ -278,50 +267,80 @@
   
 	<br>
 
-<div id="main-content2">
-    <div id="title">
-      <h1>"인기 폭발 여행지, 예약은 서둘러야 제맛!"</h1>
-      <p>요즘 핫한 여행지, 나만 빼고 다 갔다? <br>
-        더 늦기 전에 떠나세요! 인기 폭발 중인 여행지에서 잊지 못할 순간을 만들어보세요!</p>
-    </div>
-    <div class="swiper mySwiper2">
-      <div class="swiper-wrapper">
-      <script>
-        window.onload = function() {
-        	$.ajax({
-       			url: "main.tr",
-       			contentType: "application/json",
-       			success: function(res){
-       				console.log(res);
-       				let str = "";
-                       for(let tra of res){
-                       	str += ("<div class='swiper-slide'>" +
-                       			"<img src=\'"+tra.picInfo+"\'"+" onclick='trInfoPage(\"" + encodeURIComponent(tra.trName) + "\")'>" +
-                                   "<p><strong>" + tra.trName + "</strong></p>" +
-                                   "</div>")
-                       }
-
-                var element = document.getElementsByClassName("swiper-wrapper")[1];  // 첫 번째 요소 선택
-             	element.innerHTML = str;
-       			},error: function(){
-       				console.log("ajax통신 실패")
-       			}
-       		})
-        	
-        	
-        };
-        
-       	function trInfoPage(travel){
-       		location.href="travel.info?travel="+travel
-        };
+    <div id="main-content2">
+	    <div id="title">
+	      <h1>"인기 폭발 여행지, 예약은 서둘러야 제맛!"</h1>
+	      <p>요즘 핫한 여행지, 나만 빼고 다 갔다? <br>
+	        더 늦기 전에 떠나세요! 인기 폭발 중인 여행지에서 잊지 못할 순간을 만들어보세요!</p>
+	    </div>
+    <!-- 
+    <script>
+    	window.onload = function(){
+    		const opt = document.querySelector("#search-area option[value=${condition}]");
+    		opt.setAttribute("selected", true);
+    	}
+    
+    </script>
+    -->
+    <!-- 송혁규 -->
+	    <div class="swiper mySwiper2">
+	    	<div class="swiper-wrapper">
+				<script>
+			        window.onload = function() {
+			        	$.ajax({
+			       			url: "main.tr",
+			       			contentType: "application/json",
+			       			success: function(res){
+			       				console.log(res);
+			       				let str = "";
+			                       for(let tra of res){
+			                       	str += ("<div class='swiper-slide'>" +
+			                       			"<img src=\'"+tra.picInfo+"\'"+" onclick='trInfoPage(\"" + encodeURIComponent(tra.trName) + "\")'>" +
+			                                   "<p><strong>" + tra.trName + "</strong></p>" +
+			                                   "</div>")
+			                       }
+			
+			                var element = document.getElementsByClassName("swiper-wrapper")[1];  // 첫 번째 요소 선택
+			             	element.innerHTML = str;
+			       			},error: function(){
+			       				console.log("ajax통신 실패")
+			       			}
+			       		})
+			        	
+			        	
+			        };
+			        
+			       	function trInfoPage(travel){
+			       		location.href="travel.info?travel="+travel
+			        };
+				</script>
+	      		<div class="swiper-button-next"></div>
+	      		<div class="swiper-button-prev"></div>
+	    	</div>
+		</div>
+	</div>
+  	
+  	<!-- 이충혁 -->
+	<script>
+		<%
+		  String loginSuccess = request.getParameter("loginSuccess"); 
+		  Business loginbs = (Business) session.getAttribute("loginbs");
+		%>
+		
+		window.onload = function() {
+		    var loginSuccess = "<%= (loginSuccess != null ? loginSuccess : "") %>";
+		    
+		    if (loginSuccess === "true") {
+		        var bsName = "<%= (loginbs != null && loginbs.getBsName() != null ? loginbs.getBsName() : "") %>";
+		        alert(bsName.length > 0 ? bsName + "님 환영합니다." : "로그인 정보가 없습니다.");
+		    } else if (loginSuccess === "false") {
+		        alert("아이디와 비밀번호를 확인해주세요.");
+		    }
+		}
 	</script>
-      </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-    </div>
-  </div>
-  <script>
-
+	
+	<!-- 송혁규 -->
+	<script>
 	    const mySwiper2 = new Swiper(".mySwiper2", {
 	        slidesPerView: 'auto', // 한 번에 표시할 슬라이드 수
 	        spaceBetween: 20, // 슬라이드 간의 간격
@@ -348,8 +367,12 @@
 	        slideOffsetAfter: 10,
 	        slideOffsetBefore: 10
 	    });
-	    
+    
+	    $('.btn_like').click(function () {
+	      $(this).toggleClass("on")
+	    });
+	    //---------로그인 성공 메시지-----------
 	</script>
-	 <%@include file="/views/common/footer.jsp"%>
+		<%@include file="/views/common/footer.jsp"%>
 </body>
 </html>
