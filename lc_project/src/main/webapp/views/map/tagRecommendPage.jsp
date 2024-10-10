@@ -39,18 +39,8 @@
     <link rel="apple-touch-icon" href="<%=request.getContextPath()%>/pic/logo.png"/>
 </head>
 <body>
-<<<<<<< HEAD
-	<!-- header -->
-=======
-<<<<<<< HEAD
 	<!-- header -->
 	<%@include file="../common/header.jsp" %>
-
-=======
-
->>>>>>> 360f04d532dd42d02e2bc1b4d80b8ccf435c0936
-	<%@include file="../common/header.jsp" %>
->>>>>>> 684d79f02d1b3404810036aad0d7344dcdb026e0
     <!-- main -->
     <div id="wrapper">
         <div class="area" style="font-weight: bold;">
@@ -97,11 +87,11 @@
                 </c:if>
             </div>
             <div id="tour">
-                <c:forEach var="t" items="${tr }">
+                <c:forEach var="t" items="${tr}">
                     <a href="travel.info?travel=${travel}">
                         <div id="content">
                             <img src="<%=contextPath%>/pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
-                            <div id="text"><%=t.getTrName() %></div>
+                            <div id="text">${t.trName}</div>
                         </div>
                     </a>
                 </c:forEach>

@@ -54,6 +54,15 @@ public class Member {
 	}
 
 
+	public Member(String userId, String userPwd, String userName, String tel) {
+		super();
+		this.userId = userId;
+		this.userPwd = userPwd;
+		this.userName = userName;
+		this.tel = tel;
+	}
+
+
 	public int getUserNo() {
 		return userNo;
 	}

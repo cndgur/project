@@ -11,17 +11,8 @@
   
   <!-- typeAliases : VO/DTO클래스들의 풀클래스명을 단순한 클래스명(별칭)으로 사용하기위한 별칭등록을 하는 영역 -->
   <typeAliases>
-<<<<<<< HEAD
   	<typeAlias type="com.lc.project.travel.model.vo.Travel" alias="Travel" />
   	<typeAlias type="com.lc.project.member.model.vo.Member" alias="Member" />
-=======
-<<<<<<< HEAD
-    <typeAlias type="com.lc.project.member.model.vo.Member" alias="Member"/>
-=======
-  	<typeAlias type="com.lc.project.travel.model.vo.Travel" alias="Travel" />
-  	<typeAlias type="com.lc.project.member.model.vo.Member" alias="Member" />
->>>>>>> 8f89d988230f6b426e6e78463905c2026bd2ab35
->>>>>>> 360f04d532dd42d02e2bc1b4d80b8ccf435c0936
     <typeAlias type="com.lc.project.business.model.vo.Business" alias="Business"/>
   </typeAliases>
 
@@ -40,19 +31,8 @@
   
   <!-- mappers : 실행할 sql문들을 기록해둔 mapper파일들을 등록하는 영역 -->
   <mappers>
-<<<<<<< HEAD
    <mapper resource="/mappers/member-mapper.xml"/>
    <mapper resource="/mappers/travel-mapper.xml"/>
    <mapper resource="/mappers/business-mapper.xml"/>
-=======
-<<<<<<< HEAD
-    <mapper resource="/mappers/member-mapper.xml"/>
-    <mapper resource="/mappers/business-mapper.xml"/>
-=======
-   <mapper resource="/mappers/member-mapper.xml"/>
-   <mapper resource="/mappers/travel-mapper.xml"/>
-   <mapper resource="/mappers/business-mapper.xml"/>
->>>>>>> 8f89d988230f6b426e6e78463905c2026bd2ab35
->>>>>>> 360f04d532dd42d02e2bc1b4d80b8ccf435c0936
   </mappers>
 </configuration>

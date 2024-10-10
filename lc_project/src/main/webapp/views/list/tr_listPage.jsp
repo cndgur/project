@@ -131,7 +131,7 @@ section {
         <div class="gallery">
             <c:forEach var="item" items="${list1}">
                 <div>
-                    <img src="${item.picInfo}" alt="${item.trName}" onclick="location.href='travel.info?travel=${item.trName}&&location=${location}'">
+                    <img src="${item.picInfo}" alt="${item.trName}" onclick="location.href='travel.info?travel=${item.trName}'">
                     <h3>${item.trName}</h3>
                     <p>${item.trAddress}</p>
                 </div>
@@ -161,7 +161,7 @@ section {
 	                <h2>행사</h2>
 	                <h3>${item3.trName}</h3>
 	                <p>${item3.trInfo}</p>
-	                <button onclick="location.href='travel.info?travel=${item3.trName}&&location=${location}'" class="but">자세히보기-></button>
+	                <button onclick="location.href='travel.info?travel=${item3.trName}'" class="but">자세히보기-></button>
             	</div>
 			</c:forEach>
         </div>
