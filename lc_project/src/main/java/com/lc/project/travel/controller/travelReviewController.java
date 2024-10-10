@@ -41,7 +41,7 @@ public class travelReviewController extends HttpServlet {
 			response.sendRedirect(request.getContextPath()+"/travel.info?travel="+encodedTravel);
 		}else {
 			
-			request.getRequestDispatcher("views/common/errorPage.jsp").forward(request, response);
+			request.getRequestDispatcher(request.getContextPath()).forward(request, response);
 		}
 	}
 

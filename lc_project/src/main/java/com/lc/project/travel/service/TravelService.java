@@ -51,5 +51,32 @@ public class TravelService {
 		JDBCTemplate.close(conn);
 		return result;
 	}
-
+	public int insertWish(String userName,String travel) {
+		Connection conn = JDBCTemplate.getConnection();
+		int result = tDao.insertWish(conn,userName,travel);
+		if(result>0) {
+			JDBCTemplate.commit(conn);
+		}else {
+			JDBCTemplate.rollback(conn);
+		}
+		JDBCTemplate.close(conn);
+		return result;
+	}
+	public int countWish(String userName){
+		Connection conn = JDBCTemplate.getConnection();
+		int result = tDao.countWish(conn, userName);
+		JDBCTemplate.close(conn);
+		return result;
+	}
+	public int deleteWish(String userName,String travel) {
+		Connection conn = JDBCTemplate.getConnection();
+		int result = tDao.deleteWish(conn,userName,travel);
+		if(result>0) {
+			JDBCTemplate.commit(conn);
+		}else {
+			JDBCTemplate.rollback(conn);
+		}
+		JDBCTemplate.close(conn);
+		return result;
+	}
 }

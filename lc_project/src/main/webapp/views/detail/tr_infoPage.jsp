@@ -5,6 +5,7 @@
 	Travel t = (Travel)request.getAttribute("t");
 	ArrayList<Travel> tlist = (ArrayList<Travel>)request.getAttribute("tlist");
 	ArrayList<tReview> rlist = (ArrayList<tReview>)request.getAttribute("rlist");
+	String alertMsg = (String)session.getAttribute("alertMsg");
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -191,6 +192,8 @@
             position: absolute;
             top: 40%;
             right: 50px;
+			max-height: 600px;
+            overflow: auto;
             border-radius: 15px;
             text-align: center;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -279,12 +282,17 @@
 </head>
 <body>
     <%@include file="../common/header.jsp" %>
+    <% if(alertMsg != null) {%>
+		<script>
+			alert("<%=alertMsg%>");
+		</script>
+		<% session.removeAttribute("alertMsg"); %>
+	<% } %>
     <div id="wrapper">
         <table>
             <tr style="height:50px">
                 <td class="side"></td>
-                <td colspan="3" style="text-align: center; vertical-align: bottom;">
-                	<button id="wishlistbt" style="float: right;" onclick="insertwish()"><b>찜하기</b></button>
+                <td colspan="3" style="text-align: center; vertical-align: bottom;" id="wisharea">
                 	<% if(loginUser == null) {%>
 						<script>
 						function insertwish(){
@@ -294,28 +302,37 @@
 					<% } else{%>
 						<script>
 							function insertwish(){
-	                			location.href="insertwish.tr";
+	                			location.href="insertwish.tr?travel=<%=t.getTrName() %>";
+	                	
 	                		}
-						
+							function deletewish(){
+	                			location.href="deletewish.tr?travel=<%=t.getTrName() %>";
+	                	
+	                		}
+							const travelName = "<%= t.getTrName() %>";
 	                        window.onload = function() {
 	                        	$.ajax({
                         			url: "wish.tr",
                         			contentType: "application/json",
                         			data: {
-                        				userName: "<%=loginUser.getName()%>" //loginUser
+                        				userName: "<%=loginUser.getName()%>"
                         			},
                         			success: function(res){
                         				console.log(res);
                         				let str = "";
                                         for(let tra of res){
-                                        	str += ("<div class='sidenav-item'>" +
-                                                    "<img src='" + "/"+tra.picInfo + "'>" +
+                                        	str += ("<div class='sidenav-item' onclick='location.href=\"travel.info?travel="+tra.trName+"\"'>" +
+                                                    "<img src=\"" +tra.picInfo + "\">" +
                                                     "<p><strong>" + tra.trName + "</strong></p>" +
                                                     "<p>" + tra.trAddress + "</p>" +
                                                     "</div>")
+                                              if(tra.trName === travelName){
+                                          		var el = document.getElementById("wisharea");
+                                          		el.innerHTML = "<button id='wishlistbt' style='float: right;' onclick='deletewish()'><b>취소하기</b></button>"
+                                          	}
                                         }
 										
-                                        var element = document.getElementsByClassName("sidecontent")[0];  // 첫 번째 요소 선택
+                                        var element = document.getElementsByClassName("sidecontent")[0];  
     		                        	element.innerHTML = str;
                         			},error: function(){
                         				console.log("ajax통신 실패")
@@ -326,6 +343,7 @@
 	                        };
                 		</script>
 					<%} %>
+					<button id="wishlistbt" style="float: right;" onclick="insertwish()"><b>찜하기</b></button>
                 </td>
                 <td></td>
                 <td></td>
@@ -509,7 +527,7 @@
                         <h2>여행지 리뷰</h2>
                         <hr>
                         <form action="review.tra" method="POST">
-                        	<input type="hidden" name="userName" value="12345">
+                        	<input type="hidden" name="userName" value="<%=loginUser.getName()%>">
                         	<input type="hidden" name="travel" value="<%=t.getTrName()%>">
                         	<div style="width: 100%; height: 300px; background: #ddeeeb; margin-bottom: 100px;">
                             <textarea id="review" placeholder="리뷰를 작성해주세요." style="resize: none;" name="review"></textarea><br>

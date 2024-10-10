@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="com.lc.project.hotel.model.vo.Hotel, java.util.ArrayList, com.lc.project.travel.model.vo.tReview"%>
+    pageEncoding="UTF-8" import="com.lc.project.hotel.model.vo.Hotel, java.util.ArrayList, com.lc.project.travel.model.vo.tReview, com.lc.project.travel.model.vo.Travel"%>
 <%	
-	Hotel h = (Hotel)request.getAttribute("h");
+	Hotel h = new Hotel();
+	//(Hotel)request.getAttribute("h");
+	ArrayList<Travel> tlist = (ArrayList<Travel>)request.getAttribute("tlist");
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -41,14 +43,14 @@
         <table>
             <tr>
                 <td class="side"></td>
-                <td></td>
+                <td ></td>
                 <td></td>
                 <td></td>
                 <td class="side"></td>
             </tr>
             <tr class="picture">
                 <td class="side"></td>
-                <td rowspan="3">
+                <td colspan="3">
                     <img src="<%=contextPath %>/pic/ht_main_pic.png" class="large-image">
                 </td>
                 <td></td>
@@ -59,8 +61,8 @@
                 <td class="side"></td>
                 <td colspan="3" class="content">
                     <div style="margin-top: 100px;">
-                        <b style="font-size: 15px; margin-bottom: 0px">호텔 • 5성급</b><br>
-                        <b style="font-size: 30px">힐튼 경주</b>
+                        <b style="font-size: 15px; margin-bottom: 0px">호텔</b><br>
+                        <b style="font-size: 30px"><%=h.gethName() %></b>
                         <hr>
                     </div>
                     <div style="margin-bottom: 20px;">
@@ -238,35 +240,40 @@
 	                                    return v.toString(16);
 	                                });
 	                            }
+	                           
                             	function requestPay() {
                             		const paymentId = generateUUID();
                             		
                             		console.log("결제 요청 시작");
-                            	  PortOne.requestPayment({
-                            	    storeId: "store-e4038486-8d83-41a5-acf1-844a009e0d94",
-                            	    paymentId: paymentId,
-                            	    orderName: "테스트 결제",
-                            	    totalAmount: 100,
-                            	    currency: "KRW",
-                            	    channelKey: "channel-key-01764171-b249-4c16-9d18-e9174fa8e611",
-                            	    payMethod: "EASY_PAY",
-                            	    easyPay: {
-                            	      easyPayProvider: "KAKAOPAY",
-                            	    }
-                            	  }, function(response) {
-                            		  console.log("결제 응답:", response);  // 결제 응답 확인용 로그
-                                      alert(JSON.stringify(response));  // 결제 응답을 알림으로 표시
+                            		const response = await PortOne.requestPayment({
+                                	    storeId: "store-2c741ae7-334b-4984-9a8c-62eba220c91b",
+                                	    paymentId: paymentId,
+                                	    orderName: "테스트 결제",
+                                	    totalAmount: 100,
+                                	    currency: "KRW",
+                                	    channelKey: "channel-key-1882d49b-8325-4d68-9244-2cf5574ca062",
+                                	    payMethod: "EASY_PAY",
+                                	    easyPay: {
+                                	      easyPayProvider: "KAKAOPAY"
+                                	    }               	    
+                                	  }, function(response) {
+                                		  console.log("결제 응답:", response);  // 결제 응답 확인용 로그
+                                          alert(JSON.stringify(response));  // 결제 응답을 알림으로 표시
 
-                                      if (response.status === "AUTHENTICATED") {
-                                          // 결제 성공 시 처리
-                                          console.log("결제 성공:", response);
-                                          window.location.href = "/payment-success";  // 결제 성공 페이지로 이동
-                                      } else {
-                                          // 결제 실패 시 처리
-                                          console.log("결제 실패:", response);
-                                          alert("결제 실패: " + (response.errorMessage || "알 수 없는 오류"));
-                                      }
-                            	  });
+                                          if (response.status === "AUTHENTICATED") {
+                                              // 결제 성공 시 처리
+                                              console.log("결제 성공:", response);
+                                              window.location.href = "/payment-success";  // 결제 성공 페이지로 이동
+                                          } else {
+                                              // 결제 실패 시 처리
+                                              console.log("결제 실패:", response);
+                                              alert("결제 실패: " + (response.errorMessage || "알 수 없는 오류"));
+                                          }
+                                          
+                                	  });
+                            		
+                            		 alert(response.message);
+                            		
                             	  console.log("결제 요청 whdfy");
                             	}
                             </script>
@@ -355,48 +362,7 @@
                 <td></td>
                 <td class="side"></td>
             </tr>
-			            <tr id="recommendht">
-                <td class="side"></td>
-                <td colspan="3" class="content">
-                    <div>
-                        <h2>근처 다른 호텔</h2>
-                        <hr>
-                    </div>
-                    <div class="recommendtr" style="margin-bottom: 100px;">
-                        <% for(Travel tra : tlist){ %>
-	                        <div class="recommendtr-item">
-	                            <img class="recommendtrimg" src="<%=contextPath %><%=tra.getPicInfo() %>" onclick="location.href='travel.info?travel=<%=tra.getTrName()%>'">
-	                            <p onclick="location.href='travel.info?travel=<%=tra.getTrName()%>'" style="cursor: pointer;"><strong><%=tra.getTrName() %></strong></p>
-	                            <p onclick="location.href='travel.info?travel=<%=tra.getTrName()%>'" style="cursor: pointer;"><%=tra.getTrAddress() %></p>
-	                        </div>
-	                	<%} %>
-                    </div>
-                </td>
-                <td></td>
-                <td></td>
-                <td class="side"></td>
-            </tr>
-            <tr id="recommendtr">
-                <td class="side"></td>
-                <td colspan="3" class="content">
-                    <div>
-                        <h2>근처 다른 여행지</h2>
-                        <hr>
-                    </div>
-                    <div class="recommendtr" style="margin-bottom: 100px;">
-                        <% for(Travel tra : tlist){ %>
-	                        <div class="recommendtr-item">
-	                            <img class="recommendtrimg" src="<%=contextPath %><%=tra.getPicInfo() %>" onclick="location.href='travel.info?travel=<%=tra.getTrName()%>'">
-	                            <p onclick="location.href='travel.info?travel=<%=tra.getTrName()%>'" style="cursor: pointer;"><strong><%=tra.getTrName() %></strong></p>
-	                            <p onclick="location.href='travel.info?travel=<%=tra.getTrName()%>'" style="cursor: pointer;"><%=tra.getTrAddress() %></p>
-	                        </div>
-	                	<%} %>
-                    </div>
-                </td>
-                <td></td>
-                <td></td>
-                <td class="side"></td>
-            </tr>
+			
         </table>
     </div>
      <%@include file="../common/footer.jsp"%>

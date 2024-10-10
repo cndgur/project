@@ -94,11 +94,10 @@ public class TravelDao {
 		String sql = "SELECT AC_NAME, AC_ADDRESS, LOCATION "
 				+"FROM TB_TOUR "
 				+"LEFT JOIN TB_WISHLIST USING(AC_NAME) "
-				+"LEFT JOIN TB_TOUR_PICTURE USING(AC_NAME) " 
-				+"WHERE EMAIL = 'user1@example.com'";
+				+"WHERE WISH_USER = ?";
 		try {
 			pstmt = conn.prepareStatement(sql);
-//			pstmt.setString(1, userName);
+			pstmt.setString(1, userName);
 			rset = pstmt.executeQuery();
 			while(rset.next()) {
 				Travel t = new Travel();
@@ -175,7 +174,7 @@ public class TravelDao {
 		int result = 0;
 		PreparedStatement pstmt = null;
 		String sql = "INSERT INTO TB_REVIEW(REV_NUM, REV_USER, AC_NAME, CONTENT, REVIEW_DATE,SCORE) "
-				+ "VALUES(25,?,?,?,SYSDATE,7)";
+				+ "VALUES(26,?,?,?,SYSDATE,7)";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, userName);
@@ -191,5 +190,66 @@ public class TravelDao {
 		}
 		return result;
 	}
-	
+	public int insertWish(Connection conn,String userName,String travel){
+		int result = 0;
+		PreparedStatement pstmt = null;
+		String sql = "INSERT INTO TB_WISHLIST(AC_NAME, WISH_USER) "
+				+ "VALUES(?,?)";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, travel);
+			pstmt.setString(2, userName);
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		return result;
+	}
+	public int countWish(Connection conn,String userName){
+		int result = 0;
+		ResultSet rset = null;
+		PreparedStatement pstmt = null;
+		String sql = "SELECT WISH_USER,COUNT(WISH_USER) "
+					+"FROM TB_WISHLIST "
+					+"WHERE WISH_USER = ? "
+					+"GROUP BY WISH_USER";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, userName);
+			rset = pstmt.executeQuery();
+			if(rset.next()) {
+				result = rset.getInt("COUNT(WISH_USER)");
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		return result;
+	}
+	public int deleteWish(Connection conn,String userName,String travel){
+		int result = 0;
+		PreparedStatement pstmt = null;
+		String sql = "DELETE FROM TB_WISHLIST WHERE AC_NAME=? AND WISH_USER=? ";
+				
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, travel);
+			pstmt.setString(2, userName);
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		return result;
+	}
 }

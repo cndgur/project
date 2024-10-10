@@ -109,4 +109,14 @@
     <servlet-name>main.tr</servlet-name>
     <url-pattern>/main.tr</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>deletewish.tr</display-name>
+    <servlet-name>deletewish.tr</servlet-name>
+    <servlet-class>com.lc.project.travel.controller.wishDeleteController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deletewish.tr</servlet-name>
+    <url-pattern>/deletewish.tr</url-pattern>
+  </servlet-mapping>
 </web-app>
