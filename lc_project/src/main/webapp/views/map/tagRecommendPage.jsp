@@ -88,11 +88,11 @@
                 </c:if>
             </div>
             <div id="tour">
-                <c:forEach var="t" items="${tr }">
+                <c:forEach var="tr" items="${trList }">
                     <a href="travel.info?travel=${travel}">
                         <div id="content">
                             <img src="<%=contextPath%>/pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
-                            <div id="text"><%=t.getTrName() %></div>
+                            <div id="text">${tr.trName }</div>
                         </div>
                     </a>
                 </c:forEach>
