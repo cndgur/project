@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -76,22 +77,27 @@
         </div>
         <div class="area">
             <div id="chtag" style="margin-left: 10px;">
-                <c:if test="${personnel} not empty">
-                    <button class="tagbtn" style="cursor:context-menu;">#${personnel}</button>
-                </c:if>
-                <c:if test="${location} not empty">
-                    <button class="tagbtn" style="cursor:context-menu;">#${location}</button>
-                </c:if>
-                <c:if test="${theme} not empty">
-                    <button class="tagbtn" style="cursor:context-menu;">#${theme}</button>
-                </c:if>
+	            <button class="tagbtn" style="cursor:context-menu;">#${personnel}</button>
+	            <button class="tagbtn" style="cursor:context-menu;">#${location}</button>
+	            <button class="tagbtn" style="cursor:context-menu;">#${theme}</button>
             </div>
             <div id="tour">
+<<<<<<< HEAD
                 <c:forEach var="t" items="${tr}">
                     <a href="travel.info?travel=${travel}">
                         <div id="content">
                             <img src="<%=contextPath%>/pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
                             <div id="text">${t.trName}</div>
+=======
+                <c:forEach var="tr" items="${trList }">
+                    <a href="travel.info?travel=${travel}">
+                        <div id="content">
+                            <img src="<%=contextPath%>/pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
+                            <img src="${tr.picInfo }" alt="${tr.trName }" id="img">                    
+                            <img src="<%=contextPath%>/pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
+                            <img src="${tr.picInfo }" alt="${tr.trName }" id="img">                    
+                            <div id="text">${tr.trName }</div>
+>>>>>>> a5cf78a320d87ce322d0c5ade94482cb3092a06f
                         </div>
                     </a>
                 </c:forEach>
@@ -129,7 +135,7 @@
                             <p>경북 단양</p>
                         </div>
                         <div class="swiper-slide">
-                            <img src="../../pic/ansclwo.webp" alt="">
+                            <img src="<%=contextPath%>/pic/ansclwo.webp" alt="">
                             <p>문치재?</p>
                         </div>
                     </div>
