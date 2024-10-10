@@ -92,9 +92,89 @@
         top: 200px;
         left: 30px;
     }
-    .accommodations {
-        top: 200px;
-        right: 30px;
+    .box.accommodations {
+    position: relative;
+    max-height: 450px;  /* 박스의 최대 높이 설정 */
+    overflow: hidden;   /* 초과되는 박스 내용 숨기기 */
+    top: 200px;
+    right: 30px;
+    }
+
+    .hotel-box-container {
+        height: auto;
+        max-height: 350px;  /* 3개까지 보여줄 높이 설정 */
+        overflow-y: hidden; /* 스크롤 숨기기 */
+        transition: max-height 0.3s ease; /* 스크롤 시 부드럽게 */
+    }
+
+    .scroll-down-button {
+        position: absolute;
+        bottom: 10px;
+        right: 50%;
+        transform: translateX(50%);
+        width: 40px;
+        height: 40px;
+        background-color: rgba(123, 188, 176, 0.9); /* 버튼 색상 */
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .scroll-down-button:active {
+        background-color: rgba(123, 188, 176, 1); /* 클릭 시 색상 변화 */
+    }
+
+     /* 각각의 호텔 정보를 담는 박스 (이미지를 왼쪽에 배치하고 텍스트를 오른쪽에 배치) */
+     .hotel-box {
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
+
+    .hotel-box img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-right: 10px; /* 이미지와 텍스트 간의 간격 */
+    }
+
+    .hotel-info {
+        flex: 1; /* 텍스트 영역이 남은 공간을 차지하도록 설정 */
+    }
+
+    .hotel-name {
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .hotel-price {
+        font-size: 12px;
+        color: #555;
+        margin-bottom: 10px;
+    }
+
+    .hotel-button {
+        width: 80px;
+        padding: 5px;
+        background-color: rgba(123, 188, 176, 0.9);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        text-align: center;
+        font-size: 12px;
     }
 </style>
 </head>
@@ -110,30 +190,56 @@
     </header>
 
     <!-- 지도를 표시할 div 입니다 -->
-        <!-- 관광지 박스 -->
-        <div class="box tourist-spots">
-            <div class="box-title">찜한 여행지</div>
-            <ul>
-                <li>경복궁</li>
-                <li>대한민국 역사박물관</li>
-                <li>금호미술관</li>
-                <li>종묘</li>
-                <li>창덕궁</li>
-            </ul>
-        </div>
+    <!-- 관광지 박스 -->
+    <div class="box tourist-spots">
+        <div class="box-title">찜한 여행지</div>
+        <ul>
+            <li>경복궁</li>
+            <li>대한민국 역사박물관</li>
+            <li>금호미술관</li>
+            <li>종묘</li>
+            <li>창덕궁</li>
+        </ul>
+    </div>
 
-        <!-- 숙박업소 박스 -->
-        <div class="box accommodations">
-            <div class="box-title">근처 숙박업소</div>
-            <ul>
-                <li>포시즌스 호텔 서울</li>
-                <li>신라스테이 광화문</li>
-                <li>서머셋팰리스 서울</li>
-                <li>나잇트리 프리미어 호텔 인사동</li>
-                <li>아미드호텔 서울</li>
-            </ul>
+<!-- 숙박업소 박스 -->
+<div class="box accommodations">
+    <div class="box-title">근처 숙박업소</div>
+    <div class="hotel-box-container" id="hotelBoxContainer">
+        <div class="hotel-box">
+            <img src="./pic/hotel1.jpg" alt="포시즌스 호텔 서울">
+            <div class="hotel-name">포시즌스 호텔 서울</div>
+            <div class="hotel-price">165,000원</div>
+            <button class="hotel-button">예약하기</button>
+        </div>
+        <div class="hotel-box">
+            <img src="./pic/hotel2.jpg" alt="신라스테이 광화문">
+            <div class="hotel-name">신라스테이 광화문</div>
+            <div class="hotel-price">145,000원</div>
+            <button class="hotel-button">예약하기</button>
+        </div>
+        <div class="hotel-box">
+            <img src="./pic/hotel3.jpg" alt="서머셋팰리스 서울">
+            <div class="hotel-name">서머셋팰리스 서울</div>
+            <div class="hotel-price">130,000원</div>
+            <button class="hotel-button">예약하기</button>
+        </div>
+        <div class="hotel-box">
+            <img src="./pic/hotel4.jpg" alt="나잇트리 프리미어 호텔 인사동">
+            <div class="hotel-name">나잇트리 프리미어 호텔 인사동</div>
+            <div class="hotel-price">110,000원</div>
+            <button class="hotel-button">예약하기</button>
+        </div>
+        <div class="hotel-box">
+            <img src="./pic/hotel5.jpg" alt="아미드호텔 서울">
+            <div class="hotel-name">아미드호텔 서울</div>
+            <div class="hotel-price">105,000원</div>
+            <button class="hotel-button">예약하기</button>
         </div>
     </div>
+    <button class="scroll-down-button" onclick="scrollDown()">&#x25BC;</button>
+</div>
+
    <!-- 지도를 표시할 div 입니다 -->
     <div id="map" style="width:100%;height:900px;"></div>
 
@@ -240,6 +346,18 @@
                 image : markerImage // 마커 이미지  
             });
         }
+    </script>
+    <script>
+        function scrollDown() {
+        var hotelBoxContainer = document.getElementById('hotelBoxContainer');
+        
+        // max-height 값을 변경하여 더 많은 박스를 표시합니다.
+        if (hotelBoxContainer.style.maxHeight === '350px' || hotelBoxContainer.style.maxHeight === '') {
+            hotelBoxContainer.style.maxHeight = '700px'; // 6개까지 보여주기
+        } else {
+            hotelBoxContainer.style.maxHeight = '350px'; // 다시 3개로 제한
+        }
+    }
     </script>
 </body>
 </html>
