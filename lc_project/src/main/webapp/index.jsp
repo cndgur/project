@@ -234,45 +234,64 @@
 			<div class="swiper mySwiper2">
 				<div class="swiper-wrapper">
 		        	<div class="swiper-slide">
-		          		<img src="./pic/main-seoul.webp" alt="seoul" onclick="location.href='location.tr?location=수도권'">
+		          		<img src="<%=contextPath%>/pic/main-seoul.jpg" alt="seoul" onclick="location.href='location.tr?location=수도권'">
 			            <p>수도권</p>
 		        	</div>        
 		          	<div class="swiper-slide">
-		            	<img src="./pic/main-gangwon.jpg" alt="gangwon" onclick="location.href='location.tr?location=강원도'">
+		            	<img src="<%=contextPath%>/pic/gangwon.jpg" alt="gangwon" onclick="location.href='location.tr?location=강원도'">
 		            	<p>강원</p>
 		          	</div>
 		          	<div class="swiper-slide">
-		            	<img src="../pic/main-chungcheong.jpg" alt="chungcheong" onclick="location.href='location.tr?location=충청도'">
+		            	<img src="<%=contextPath%>/pic/chungcheong.jpg" alt="chungcheong" onclick="location.href='location.tr?location=충청도'">
 		            	<p>충청</p>
 		          	</div>
 		          	<div class="swiper-slide">
-		            	<img src="../pic/main-jeollabuk.jpg" alt="jeollabuk" onclick="location.href='location.tr?location=전라북도'">
+		            	<img src="<%=contextPath%>/pic/jellabuk.png" alt="jeollabuk" onclick="location.href='location.tr?location=전라북도'">
 		            	<p>전북</p>
 		          	</div>
 		          	<div class="swiper-slide">
-			            <img src="../pic/main-jeollanam.jpg" alt="jeollanam" onclick="location.href='location.tr?location=전라남도'">
+			            <img src="<%=contextPath%>/pic/jellanam.png" alt="jeollanam" onclick="location.href='location.tr?location=전라남도'">
 			            <p>전남</p>
 			        </div>
 		          	<div class="swiper-slide">
-		            	<img src="../pic/main-gyeongsangbuk.jpg" alt="gyeongsangbuk" onclick="location.href='location.tr?location=경상북도'">
+		            	<img src="<%=contextPath%>/pic/gyeongsangbuk.jpg" alt="gyeongsangbuk" onclick="location.href='location.tr?location=경상북도'">
 		            	<p>경북</p>
 		          	</div>
 		          	<div class="swiper-slide">
-		            	<img src="../pic/main-gyeongsangnam.jpg" alt="gyeongsangnam" onclick="location.href='location.tr?location=경상남도'">
+		            	<img src="<%=contextPath%>/pic/gyeongsangnam.jpg" alt="gyeongsangnam" onclick="location.href='location.tr?location=경상남도'">
 		            	<p>경남</p>
 		          	</div>
 		          	<div class="swiper-slide">
-		            	<img src="../pic/main-jeju.png" alt="jeju" onclick="location.href='location.tr?location=제주도'">
-		            	<p>제주</p>
-		          	</div>
-		      	</div>
+		            	<img src="<%=contextPath%>/pic/제주도.jpg" alt="jeju" onclick="location.href='location.tr?location=제주도'">
+						<p>제주</p>
+		      		</div>
 		      	<div class="swiper-button-next"></div>
 		      	<div class="swiper-button-prev"></div>
-		      </div>
-		     </div>
-		     </div>
+		    </div>
+		   </div>
+		  </div>
+		  </div>
 		     <br> 	
-		      
+
+  	
+  	<!-- 이충혁 -->
+	<script>
+		<%
+		  String loginSuccess = request.getParameter("loginSuccess"); 
+		  Business loginbs = (Business) session.getAttribute("loginbs");
+		%>
+		
+		window.onload = function() {
+		    var loginSuccess = "<%= (loginSuccess != null ? loginSuccess : "") %>";
+		    
+		    if (loginSuccess === "true") {
+		        var bsName = "<%= (loginbs != null && loginbs.getBsName() != null ? loginbs.getBsName() : "") %>";
+		        alert(bsName.length > 0 ? bsName + "님 환영합니다." : "로그인 정보가 없습니다.");
+		    } else if (loginSuccess === "false") {
+		        alert("아이디와 비밀번호를 확인해주세요.");
+		    }
+		}
+	</script>
 
 <div id="main-content2">
     <div id="title">
@@ -318,10 +337,6 @@
   </div>
   
   <script>
-  
-		
-
-
 	    const mySwiper2 = new Swiper(".mySwiper2", {
 	        slidesPerView: 'auto', // 한 번에 표시할 슬라이드 수
 	        spaceBetween: 20, // 슬라이드 간의 간격
@@ -348,7 +363,8 @@
 	        slideOffsetAfter: 10,
 	        slideOffsetBefore: 10
 	    });
+
 	</script>
-	 <%@include file="/views/common/footer.jsp"%>
+		<%@include file="/views/common/footer.jsp"%>
 </body>
 </html>

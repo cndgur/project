@@ -3,7 +3,10 @@ package com.lc.project.travel.service;
 import java.sql.Connection;
 import java.util.ArrayList;
 
+import org.apache.ibatis.session.SqlSession;
+
 import com.lc.project.common.template.JDBCTemplate;
+import com.lc.project.common.template.Template;
 import com.lc.project.travel.model.dao.TravelDao;
 import com.lc.project.travel.model.vo.Travel;
 import com.lc.project.travel.model.vo.tReview;
@@ -78,5 +81,26 @@ public class TravelService {
 		}
 		JDBCTemplate.close(conn);
 		return result;
+	}
+	
+	public ArrayList<Travel> travelList(String location) {
+		SqlSession sqlSession = Template.getSqlSession();
+		ArrayList<Travel> list = tDao.selectList(sqlSession, location);
+		sqlSession.close();
+		
+		return list;
+	}
+	public ArrayList<Travel> foodList(String location) {
+		SqlSession sqlSession = Template.getSqlSession();
+		ArrayList<Travel> list = tDao.foodSelectList(sqlSession, location);
+		sqlSession.close();
+		return list;
+	}
+	
+	public ArrayList<Travel> festivalList(String location) {
+		SqlSession sqlSession = Template.getSqlSession();
+		ArrayList<Travel> list = tDao.festivalList(sqlSession, location);
+		sqlSession.close();
+		return list;
 	}
 }

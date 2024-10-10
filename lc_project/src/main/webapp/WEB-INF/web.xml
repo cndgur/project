@@ -23,7 +23,7 @@
     <description></description>
     <display-name>location.tr</display-name>
     <servlet-name>location.tr</servlet-name>
-    <servlet-class>com.lc.project.travel.controller.locationListController</servlet-class>
+    <servlet-class>com.lc.project.travel.controller.travelListController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>location.tr</servlet-name>
@@ -149,7 +149,7 @@
     <servlet-name>logout.me</servlet-name>
     <url-pattern>/logout.me</url-pattern>
   </servlet-mapping>
-      <servlet>
+  <servlet>
     <description></description>
     <display-name>searchid.bn</display-name>
     <servlet-name>searchid.bn</servlet-name>
@@ -179,7 +179,7 @@
     <servlet-name>searchid.me</servlet-name>
     <url-pattern>/searchid.me</url-pattern>
   </servlet-mapping>
-   <servlet>
+  <servlet>
     <description></description>
     <display-name>searchpwd.me</display-name>
     <servlet-name>searchpwd.me</servlet-name>
@@ -189,7 +189,7 @@
     <servlet-name>searchpwd.me</servlet-name>
     <url-pattern>/searchpwd.me</url-pattern>
   </servlet-mapping>
-	<servlet>
+  <servlet>
     <description></description>
     <display-name>hotel.list</display-name>
     <servlet-name>hotel.list</servlet-name>
@@ -209,7 +209,7 @@
     <servlet-name>list.rc</servlet-name>
     <url-pattern>/list.rc</url-pattern>
   </servlet-mapping>
- <servlet>
+  <servlet>
     <description></description>
     <display-name>wish.tr</display-name>
     <servlet-name>wish.tr</servlet-name>

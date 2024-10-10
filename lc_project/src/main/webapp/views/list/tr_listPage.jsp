@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="com.lc.project.travel.model.vo.Travel, java.util.ArrayList"%>
-<%	
-	Travel t = (Travel)request.getAttribute("t");
-	ArrayList<Travel> tlist = (ArrayList<Travel>)request.getAttribute("tlist");
-%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -23,7 +21,9 @@
         crossorigin="anonymous"></script>
     
     <!-- css -->
-    <link rel="stylesheet" href="../../css/ht_listPage.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/tr_list.css">
+    
+        
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
@@ -31,35 +31,11 @@
     <link rel="apple-touch-icon" href="../../pic/logo.png"/>
 </head>
 <body>
-    <%@include file="../common/header.jsp"%>
-    <div id="wrapper">
-        <table style="margin-top: 70px;">
-            <tr>
-                <td class="side"></td>
-                <td>
-                    <div class="sidenav">
-                        <div class="sidenav-header">지역</div>
-                        <div class="sidenav-item">
-                            <input type="radio" value="all" name="lo" id="all" checked>
-                            <label for="all">전체</label><br>
-                            <input type="radio" value="motel" name="lo" id="motel">
-                            <label for="motel">수도권 • 경기</label><br>
-                            <input type="radio" value="hotel" name="lo" id="hotel">
-                            <label for="hotel">강원도</label><br>
-                            <input type="radio" value="hotel" name="lo" id="hotel">
-                            <label for="hotel">충청도</label><br>
-                            <input type="radio" value="all" name="lo" id="all">
-                            <label for="all">경상북도</label><br>
-                            <input type="radio" value="motel" name="lo" id="motel">
-                            <label for="motel">경상남도</label><br>
-                            <input type="radio" value="hotel" name="lo" id="hotel">
-                            <label for="hotel">전라북도</label><br>
-                            <input type="radio" value="hotel" name="lo" id="hotel">
-                            <label for="hotel">전라남도</label><br>                
-                            <input type="radio" value="hotel" name="lo" id="hotel">
-                            <label for="hotel">제주도</label><br>
-                    	</div>
+   <header>
+        <%@include file="../common/header.jsp"%>
+    </header>
 
+<<<<<<< HEAD
                     	<div class="sidenav-header">카테고리</div>
                         <div class="sidenav-item">
                             <input type="radio" value="all" name="kind" id="all" checked>
@@ -237,5 +213,51 @@
         </table>
     </div>
     <%@include file="../common/footer.jsp"%>
+=======
+    <!-- 서울 추천 여행지 섹션 -->
+    <section>
+        <h1>${location} 추천 여행지</h1>
+        <div class="gallery">
+            <c:forEach var="item" items="${list1}">
+                <div>
+                    <img src="${item.picInfo}" alt="${item.trName}" onclick="location.href='travel.info?travel=${item.trName}'">
+                    <h3>${item.trName}</h3>
+                    <p>${item.trAddress}</p>
+                </div>
+        	</c:forEach>
+        </div>
+    </section>
+
+    <!-- 서울 추천 맛집 섹션 -->
+    <section class="sec">
+        <h1>${location} 추천 맛집</h1>
+        <div class="food">
+            <c:forEach var="item2" items="${list2}">
+            	<div>
+	                <img src="${item2.picInfo}" alt="${item2.trName}" onclick="location.href='travel.info?travel=${item2.trName}'">
+	                <h3>${item2.trName}</h3>
+	                <p>${item2.trAddress}</p>
+            	</div>
+			</c:forEach>
+        </div>
+    </section>
+
+    <!-- 행사 정보 섹션 -->
+    <section>
+        <div class="events">
+            <c:forEach var="item3" items="${list3}">
+            	<div>
+	                <h2>행사</h2>
+	                <h3>${item3.trName}</h3>
+	                <p>${item3.trInfo}</p>
+	                <button onclick="location.href='travel.info?travel=${item3.trName}'" class="but">자세히보기-></button>
+            	</div>
+			</c:forEach>
+        </div>
+    </section>
+	<footer>
+		<%@include file="../common/footer.jsp"%>
+	</footer>
+>>>>>>> 4b9816f32b601361d328ff1964d481b9cb6ccdd7
 </body>
 </html>

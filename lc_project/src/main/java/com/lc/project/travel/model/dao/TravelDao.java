@@ -11,6 +11,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Properties;
 
+import org.apache.ibatis.session.SqlSession;
+
 import com.lc.project.travel.model.vo.Travel;
 import com.lc.project.travel.model.vo.tReview;
 
@@ -174,7 +176,7 @@ public class TravelDao {
 		int result = 0;
 		PreparedStatement pstmt = null;
 		String sql = "INSERT INTO TB_REVIEW(REV_NUM, REV_USER, AC_NAME, CONTENT, REVIEW_DATE,SCORE) "
-				+ "VALUES(SEQ_REV_NUM.NEXTVAL,?,?,?,SYSDATE,7)";
+				+ "VALUES(26,?,?,?,SYSDATE,7)";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, userName);
@@ -251,5 +253,17 @@ public class TravelDao {
 			close(pstmt);
 		}
 		return result;
+	}
+	
+	public ArrayList<Travel> selectList(SqlSession sqlSession, String location) {
+		return (ArrayList)sqlSession.selectList("travelMapper.locationList",location);
+	}
+
+	public ArrayList<Travel> foodSelectList(SqlSession sqlSession, String location) {
+		return (ArrayList)sqlSession.selectList("travelMapper.foodList",location);
+		}
+
+	public ArrayList<Travel> festivalList(SqlSession sqlSession, String location) {
+		return (ArrayList)sqlSession.selectList("travelMapper.festivalList",location);
 	}
 }
