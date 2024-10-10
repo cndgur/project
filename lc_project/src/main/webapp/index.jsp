@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="com.lc.project.member.model.vo.Member"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
     String contextPath = request.getContextPath(); // 컨텍스트 경로 얻기
+    Member loginUser = (Member)session.getAttribute("loginUser");
 %>
 <%@ page import="com.lc.project.business.model.vo.Business" %>
 <%@ page import="com.lc.project.member.model.vo.Member" %>
@@ -254,91 +255,46 @@
       <p>요즘 핫한 여행지, 나만 빼고 다 갔다? <br>
         더 늦기 전에 떠나세요! 인기 폭발 중인 여행지에서 잊지 못할 순간을 만들어보세요!</p>
     </div>
-    <!-- 
-    <script>
-    	window.onload = function(){
-    		const opt = document.querySelector("#search-area option[value=${condition}]");
-    		opt.setAttribute("selected", true);
-    	}
-     -->
-    </script>
     <div class="swiper mySwiper2">
       <div class="swiper-wrapper">
- 		<!--  
-	    <c:forEach var="tra" items="${list}">
-	    	<div class="swiper-slide">
-	              <img src="./pic/qntks.jfif" onclick="location.href='<%=contextPath%>/travel.info?travel=${tra.trName}'" style="cursor: pointer;">
-	              <button class="btn_like" onclick="">like</button>
-	              <p>${tra.trName}</p>
-	          </div>
-	    </c:forEach>
-	    -->  
-          <div class="swiper-slide">
-              <img src="./pic/qntks.jfif" onclick="travelInfo()">
-              <button class="btn_like" onclick="">like</button>
-              <p>에버랜드</p>
-          </div>
-          <div class="swiper-slide">
-            <img src="./pic/wpwn.jfif" onclick="location.href='travel.info?travel=구 서도역'">
-            <button class="btn_like" onclick="">like</button>
-            <p>송도해상케이블카</p>
-          </div>
-          <div class="swiper-slide">
-            <img src="./pic/rudwn.jfif">
-            <button class="btn_like" onclick="">like</button>
-            <p>남이섬</p>
-          </div>
-          <div class="swiper-slide">
-            <img src="./pic/thrch.jfif">
-            <button class="btn_like" onclick="">like</button>
-            <p>롯데월드</p>
-          </div>
-          <div class="swiper-slide">
-            <img src="./pic/thrch.jfif">
-            <button class="btn_like" onclick="">like</button>
-            <p>알파카목장</p>
-          </div>
-          <div class="swiper-slide">
-            <img src="./pic/tjdnf.jfif">
-            <button class="btn_like" onclick="">like</button>
-            <p>캐리비안베이</p>
-          </div>
-          <div class="swiper-slide">
-              <img src="./pic/qntks.jfif">
-              <button class="btn_like" onclick="">like</button>
-              <p>에버랜드</p>
-          </div>
-          <div class="swiper-slide">
-            <img src="./pic/wpwn.jfif">
-            <button class="btn_like" onclick="">like</button>
-            <p>송도해상케이블카</p>
-          </div>          <div class="swiper-slide">
-            <img src="./pic/qntks.jfif">
-            <button class="btn_like" onclick="">like</button>
-            <p>에버랜드</p>
-          </div>
-          <div class="swiper-slide">
-            <img src="./pic/wpwn.jfif">
-            <button class="btn_like" onclick="">like</button>
-            <p>송도해상케이블카</p>
-          </div>          
-          <div class="swiper-slide">
-            <img src="./pic/qntks.jfif">
-            <button class="btn_like" onclick="">like</button>
-            <p>에버랜드</p>
-          </div>
-          <div class="swiper-slide">
-            <img src="./pic/wpwn.jfif">
-            <button class="btn_like" onclick="">like</button>
-            <p>송도해상케이블카</p>
-          </div>
+      <script>
+        window.onload = function() {
+        	$.ajax({
+       			url: "main.tr",
+       			contentType: "application/json",
+       			success: function(res){
+       				console.log(res);
+       				let str = "";
+                       for(let tra of res){
+                       	str += ("<div class='swiper-slide'>" +
+                       			"<img src=\'"+tra.picInfo+"\'"+" onclick='trInfoPage(\"" + encodeURIComponent(tra.trName) + "\")'>" +
+                                   "<p><strong>" + tra.trName + "</strong></p>" +
+                                   "</div>")
+                       }
+
+                var element = document.getElementsByClassName("swiper-wrapper")[1];  // 첫 번째 요소 선택
+             	element.innerHTML = str;
+       			},error: function(){
+       				console.log("ajax통신 실패")
+       			}
+       		})
+        	
+        	
+        };
+        
+       	function trInfoPage(travel){
+       		location.href="travel.info?travel="+travel
+        };
+	</script>
       </div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
     </div>
   </div>
-  
+  <div id="map">
+  </div>
   <script>
+<<<<<<< HEAD
   
 		  <%
 		  String loginSuccess = request.getParameter("loginSuccess"); 
@@ -360,6 +316,8 @@
 		function travelInfo(){
 			location.href="<%=contextPath%>/travel.info?travel=1"
 		}
+=======
+>>>>>>> 684d79f02d1b3404810036aad0d7344dcdb026e0
 	    const mySwiper2 = new Swiper(".mySwiper2", {
 	        slidesPerView: 'auto', // 한 번에 표시할 슬라이드 수
 	        spaceBetween: 20, // 슬라이드 간의 간격
@@ -386,11 +344,19 @@
 	        slideOffsetAfter: 10,
 	        slideOffsetBefore: 10
 	    });
+<<<<<<< HEAD
     
 	    $('.btn_like').click(function () {
 	      $(this).toggleClass("on")
 	    });
 	    //---------로그인 성공 메시지-----------
+=======
+    	
+	    //$('.btn_like').click(function () {
+	    //  $(this).toggleClass("on")
+	    //});
+	    
+>>>>>>> 684d79f02d1b3404810036aad0d7344dcdb026e0
 	</script>
 	 <%@include file="/views/common/footer.jsp"%>
 </body>

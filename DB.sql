@@ -92,8 +92,9 @@ CREATE TABLE TB_TOUR (
 	AC_NAME VARCHAR2(255) NOT NULL,
 	AC_ADDRESS VARCHAR2(255) NOT NULL,
 	TR_INFO VARCHAR2(4000) NOT NULL,
+    MAP_INFO VARCHAR2(4000) NOT NULL,
 	ACT_ID VARCHAR2(255) NOT NULL,
-	FIELD NUMBER NOT NULL,
+	CNT NUMBER NOT NULL,
 	PRIMARY KEY (AC_NAME)
 );
 
@@ -171,6 +172,7 @@ VALUES ('/images/mountain.jpg', 2, 'B002');
 INSERT INTO TB_PICTURE (LOCATION, ROOM_NUM, BU_ID)
 VALUES ('/images/villa.jpg', 3, 'B003');
 
+
 -- TB_MEMBER 테이블에 데이터 삽입
 -- 3명의 회원 정보를 추가
 INSERT INTO TB_MEMBER (EMAIL, PASSWORD, TEL, NAME)
@@ -197,15 +199,19 @@ INSERT INTO TB_TOUR_PICTURE (LOCATION, AC_NAME)
 VALUES ('/tour/mountain.jpg', '산장 투어');
 INSERT INTO TB_TOUR_PICTURE (LOCATION, AC_NAME)
 VALUES ('/tour/villa.jpg', '럭셔리 빌라 투어');
+INSERT INTO TB_TOUR_PICTURE (LOCATION, AC_NAME)
+VALUES ('/pic/구서도역.jpg', '구 서도역');
+INSERT INTO TB_TOUR_PICTURE (LOCATION, AC_NAME)
+VALUES ('/pic/태하중도생태공원.png', '태하중도생태공원');
 
 -- TB_TOUR 테이블에 데이터 삽입
 -- 3개의 투어 정보를 추가
-INSERT INTO TB_TOUR (AC_NAME, AC_ADDRESS, TR_INFO, ACT_ID, FIELD)
+INSERT INTO TB_TOUR (AC_NAME, AC_ADDRESS, TR_INFO, MAP_INFO, ACT_ID, CNT)
 VALUES ('오션뷰 투어', '제주도 서귀포시', '바다를 보며 즐기는 투어', 101, 1);
-INSERT INTO TB_TOUR (AC_NAME, AC_ADDRESS, TR_INFO, ACT_ID, FIELD)
-VALUES ('산장 투어', '강원도 평창군', '산 속에서 힐링하는 투어', 102, 2);
-INSERT INTO TB_TOUR (AC_NAME, AC_ADDRESS, TR_INFO, ACT_ID, FIELD)
-VALUES ('럭셔리 빌라 투어', '경기도 가평군', '럭셔리한 휴양을 즐기는 투어', 103, 3);
+INSERT INTO TB_TOUR (AC_NAME, AC_ADDRESS, TR_INFO, MAP_INFO,  ACT_ID, CNT)
+VALUES ('구 서도역', '전북 남원시', '구 서도역은 1932년 조성된 우리나라에서 가장 오래된 목조건물 폐역으로, 전라선 기차역으로 산성역(하행)과 오수역(상행) 사이에 있다. 1934년 10월 1일 역무원 배치 간이역으로 영업을 시작하여 1937년 10월 1일 보통역으로 승격되었다. 2002년 10월 27일 전라선 개량공사를 하면서 현재의 위치를 신축하여 이전하였다. 2004년 7월 15일 여객 취급이 중지되었고, 2008년 7월 1일부터 역무원 무배치 간이역으로 격하되어 역무실이 폐쇄되었다. 최근 드라마 ‘미스터 선샤인’의 촬영지로 알려져 있으며, 최명희 작가 대하소설 「혼불」의 주 무대이기도 하다. 전라선 역사와 시설물로 옛 모습 그대로 보존 및 관리되고 있다. 보존된 시설물을 통해 그 시절의 역사를 느낄 수 있는 것과 동시에 자연과 기찻길이 어우러져 다양하고 감성적인 포토존을 즐길 수 있다.', '<div id="daumRoughmapContainer1727937403107" class="root_daum_roughmap root_daum_roughmap_landing" style="width: 100%"></div><script charset="UTF-8">new daum.roughmap.Lander({"timestamp" : "1727937403107","key" : "2ksug","mapWidth" : "100%","mapHeight" : "360"}).render();</script>' , '여행지', 2);
+INSERT INTO TB_TOUR (AC_NAME, AC_ADDRESS, TR_INFO, MAP_INFO,  ACT_ID, CNT)
+VALUES ('태하중도생태공원', '강원 춘천시', '춘천 의암호에 있는 섬, 중도에 조성한 생태공원이다. 중도는 상중도와 하중도로 나뉘는데 하중도는 선사 유적지와 레고랜드로 유명하다. 생태공원은 하중도의 남쪽에 위치한다. 하중도의 아름다운 수변 공간을 활용해 만든 생태공원으로 자연 속에서 편안하게 쉬어가기 좋은 장소다. 수변을 따라 걷는 둘레길과 섬 안을 걷는 산책로가 조성되어 있다. 군데군데 쉼터와 의자, 테이블이 있어 호수 풍경을 감상하며 휴식하기 좋다. 공원 끝쪽에는 산과 호수 풍광을 담아내는 액자 포토존도 있다. 현재 하중도는 춘천대교로 뭍과 연결돼 차로 쉽게 접근 가능하다. 소양강스카이워크, 공지천, 춘천 명동 등이 모두 자동차로 10분 거리 내 위치한다.','<div id="daumRoughmapContainer1727937355357" class="root_daum_roughmap root_daum_roughmap_landing" style="width: 100%"></div><script charset="UTF-8">new daum.roughmap.Lander({"timestamp" : "1727937355357","key" : "2ksuf","mapWidth" : "100%","mapHeight" : "360"}).render();</script>', '여행지', 3);
 
 -- TB_WISHLIST 테이블에 데이터 삽입
 -- 3명의 사용자가 관심있는 투어를 추가
@@ -282,3 +288,4 @@ CHECK (STATUS IN('Y','N'));
 ALTER TABLE TB_BUSINESS
 ADD CONSTRAINT CHK_TB_BUSINESS_STATUS
 CHECK (STATUS IN('Y','N'));
+COMMIT;
