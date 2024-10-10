@@ -35,15 +35,31 @@ public class TagRecommendController extends HttpServlet {
 		String personnel = request.getParameter("personnel");
 		String location = request.getParameter("location");
 		String theme = request.getParameter("theme");
+		
+		request.setAttribute("personnel", personnel);
+		
+		if(personnel.equals("가족여행")) {
+			personnel = "1";
+		} else if(personnel.equals("친구들과")) {
+			personnel = "2";
+		} else if(personnel.equals("1인여행")) {
+			personnel = "3";
+		} else if(personnel.equals("커플여행")) {
+			personnel = "4";
+		} else if(personnel.equals("반려동물")) {
+			personnel = "5";
+		} else if(personnel.equals("친목모임")) {
+			personnel = "6";
+		} else if(personnel.equals("워크숍")) {
+			personnel = "7";
+		} else {
+			personnel = "8";
+		}
+		
 		System.out.println(personnel);
 		System.out.println(location);
 		System.out.println(theme);
 		
-		System.out.println(request.getParameter("personnel"));
-		System.out.println(request.getParameter("location"));
-		System.out.println(request.getParameter("theme"));
-		
-		request.setAttribute("personnel", personnel);
 	    request.setAttribute("location", location);
 	    request.setAttribute("theme", theme);
 	    
