@@ -87,9 +87,6 @@
                 <c:if test="${theme} not empty">
                     <button class="tagbtn" style="cursor:context-menu;">#${theme}</button>
                 </c:if>
-                #${personnel}
-                #${location}
-                #${theme}
             </div>
             <div id="tour">
                 <c:forEach var="tr" items="${trList }">
