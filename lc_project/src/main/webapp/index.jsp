@@ -263,7 +263,7 @@
 		          	</div>
 		          	<div class="swiper-slide">
 		            	<img src="<%=contextPath%>/pic/제주도.jpg" alt="jeju" onclick="location.href='location.tr?location=제주도'">
-
+						<p>제주</p>
 		      	</div>
 		      	<div class="swiper-button-next"></div>
 		      	<div class="swiper-button-prev"></div>
@@ -271,57 +271,6 @@
 		     </div>
 		     </div>
 		     <br> 	
-    <div id="main-content2">
-	    <div id="title">
-	      <h1>"인기 폭발 여행지, 예약은 서둘러야 제맛!"</h1>
-	      <p>요즘 핫한 여행지, 나만 빼고 다 갔다? <br>
-	        더 늦기 전에 떠나세요! 인기 폭발 중인 여행지에서 잊지 못할 순간을 만들어보세요!</p>
-	    </div>
-    <!-- 
-    <script>
-    	window.onload = function(){
-    		const opt = document.querySelector("#search-area option[value=${condition}]");
-    		opt.setAttribute("selected", true);
-    	}
-    
-    </script>
-    -->
-	    <div class="swiper mySwiper2">
-	    	<div class="swiper-wrapper">
-				<script>
-			        window.onload = function() {
-			        	$.ajax({
-			       			url: "main.tr",
-			       			contentType: "application/json",
-			       			success: function(res){
-			       				console.log(res);
-			       				let str = "";
-			                       for(let tra of res){
-			                       	str += ("<div class='swiper-slide'>" +
-			                       			"<img src=\'"+tra.picInfo+"\'"+" onclick='trInfoPage(\"" + encodeURIComponent(tra.trName) + "\")'>" +
-			                                   "<p><strong>" + tra.trName + "</strong></p>" +
-			                                   "</div>")
-			                       }
-			
-			                var element = document.getElementsByClassName("swiper-wrapper")[1];  // 첫 번째 요소 선택
-			             	element.innerHTML = str;
-			       			},error: function(){
-			       				console.log("ajax통신 실패")
-			       			}
-			       		})
-			        	
-			        	
-			        };
-			        
-			       	function trInfoPage(travel){
-			       		location.href="travel.info?travel="+travel
-			        };
-				</script>
-	      		<div class="swiper-button-next"></div>
-	      		<div class="swiper-button-prev"></div>
-	    	</div>
-		</div>
-	</div>
   	
   	<!-- 이충혁 -->
 	<script>
