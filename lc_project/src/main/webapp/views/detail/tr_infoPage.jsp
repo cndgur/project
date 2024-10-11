@@ -7,6 +7,10 @@
 	}
 	Travel t = (Travel)request.getAttribute("t");
 	ArrayList<Travel> tlist = (ArrayList<Travel>)request.getAttribute("tlist");
+<<<<<<< HEAD
+=======
+	ArrayList<String> category = (ArrayList<String>)request.getAttribute("category");
+>>>>>>> 41ce5b8ec6a1fc14e78e5419fcba05e3e156e4a0
 	ArrayList<tReview> rlist = (ArrayList<tReview>)request.getAttribute("rlist");
 	String alertMsg = (String)session.getAttribute("alertMsg");
 %>
@@ -72,6 +76,7 @@
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		#recommend .btn_like {
 			width: 20px; 
 			height: 20px;
@@ -89,6 +94,8 @@
 
 =======
 >>>>>>> f0050235a2d02661eedce1d26df78f6517aa1601
+=======
+>>>>>>> 41ce5b8ec6a1fc14e78e5419fcba05e3e156e4a0
         .nav-area{ 
             display: flex;
             justify-content: center;
@@ -120,9 +127,17 @@
             
         }
         #category{
+<<<<<<< HEAD
         	float: right;
         }
         #category button{
+=======
+        	display:felx;
+        	float: right;
+        }
+        #category button{
+        	float: right;
+>>>>>>> 41ce5b8ec6a1fc14e78e5419fcba05e3e156e4a0
             width: 75px;
             height: 25px;
             font-size: 15px;
@@ -130,6 +145,10 @@
             background: #7bbcb0;
             color: white;
             border-radius: 40px;
+<<<<<<< HEAD
+=======
+            margin: 2px;
+>>>>>>> 41ce5b8ec6a1fc14e78e5419fcba05e3e156e4a0
             
         }
         .sidenav-header {
@@ -292,19 +311,27 @@
 		<% session.removeAttribute("alertMsg"); %>
 	<% } %>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> f0050235a2d02661eedce1d26df78f6517aa1601
+=======
+
+>>>>>>> 41ce5b8ec6a1fc14e78e5419fcba05e3e156e4a0
     <div id="wrapper">
         <table>
             <tr style="height:50px">
                 <td class="side"></td>
                 <td colspan="3" style="text-align: center; vertical-align: bottom;" id="wisharea">
 <<<<<<< HEAD
+<<<<<<< HEAD
                 	<% if(loginUser == null) {%>
 =======
                 	<% if(loginUser.getUserName().equals("000")) {%>
 >>>>>>> f0050235a2d02661eedce1d26df78f6517aa1601
+=======
+                	<% if(loginUser.getUserName().equals("000")) {%>
+>>>>>>> 41ce5b8ec6a1fc14e78e5419fcba05e3e156e4a0
 						<script>
 						function insertwish(){
                 			alert("로그인이 필요한 기능입니다.")
@@ -379,7 +406,13 @@
                 <td style="width: 20%; text-align: center; vertical-align: top;"><b style="font-size: 20px;"><%=t.getTrAddress()%></b></td>
                 <td class="side">
                     <div id="category">
+<<<<<<< HEAD
                         <button style="cursor:context-menu;"><%=t.getTr_personnel() %></button>
+=======
+                    	<%for (String ca : category){ %>
+                        	<button style="cursor:context-menu;"><%=ca %></button>
+                        <% } %>
+>>>>>>> 41ce5b8ec6a1fc14e78e5419fcba05e3e156e4a0
                         <button style="cursor:context-menu;"><%=t.getTr_location() %></button>
                         <button style="cursor:context-menu;"><%=t.getTr_theme() %></button>
                     </div>
@@ -585,7 +618,11 @@
 	                            <p onclick="location.href='travel.info?travel=<%=tra.getTrName()%>'" style="cursor: pointer;"><strong><%=tra.getTrName() %></strong></p>
 	                            <p onclick="location.href='travel.info?travel=<%=tra.getTrName()%>'" style="cursor: pointer;"><%=tra.getTrAddress() %></p>
 	                        </div>
+<<<<<<< HEAD
 	                <%}%>
+=======
+	                <%} %>
+>>>>>>> 41ce5b8ec6a1fc14e78e5419fcba05e3e156e4a0
                     </div>
                 </td>
                 <td></td>

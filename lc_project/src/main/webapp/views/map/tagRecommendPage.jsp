@@ -18,6 +18,13 @@
         crossorigin="anonymous"></script>
         
     <!-- 부트스트랩 -->
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+>>>>>>> 90581a0d9a4d72a768bfd2e80c652056bfcab795
+>>>>>>> a988212f37af7f2b67dd00244d8cf097d075ceb6
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link
@@ -91,27 +98,8 @@
 =======
                 <c:forEach var="tr" items="${trList }">
                     <a href="travel.info?travel=${travel}">
-<<<<<<< HEAD
-                        <div id="content">                                        
-=======
                         <div id="content">
-<<<<<<< HEAD
-
-                            <img src="<%=contextPath%>/pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
                             <img src="${tr.picInfo }" alt="${tr.trName }" id="img">                    
-
-
-=======
-                            <img src="<%=contextPath%>/pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
->>>>>>> bc803067a61f85de5da5f11530a87538b5105a08
-                            <img src="${tr.picInfo }" alt="${tr.trName }" id="img">                    
->>>>>>> a5cf78a320d87ce322d0c5ade94482cb3092a06f
-                            <img src="<%=contextPath%>/pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
-                            <img src="${tr.picInfo }" alt="${tr.trName }" id="img">                    
-<<<<<<< HEAD
-
-=======
->>>>>>> a5cf78a320d87ce322d0c5ade94482cb3092a06f
                             <div id="text">${tr.trName }</div>
 >>>>>>> a5cf78a320d87ce322d0c5ade94482cb3092a06f
                         </div>

@@ -27,4 +27,16 @@
 		  FROM TB_RENTCAR
 		  ORDER BY CAR_NUM
 	</select>
+<<<<<<< HEAD
+=======
+	<update id="bookingCar">
+		UPDATE TB_CAR_BOOKING
+		   SET CAR_RECIEVE_PLACE = #{location},
+		       CAR_RETURN_PLACE = #{location},
+		       CAR_TIME_START = #{startDate},
+		       CAR_TIME_OVER = #{endDate},
+		       CAR_USER = #{loginUser}
+		 WHERE CAR_NUM = #{carNum}
+	</update>
+>>>>>>> 41ce5b8ec6a1fc14e78e5419fcba05e3e156e4a0
 </mapper>

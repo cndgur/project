@@ -1,9 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="com.lc.project.travel.model.vo.Travel, java.util.ArrayList"%>
+<<<<<<< HEAD
 <%
 	Travel t = (Travel)request.getAttribute("t");
 	ArrayList<Travel> tlist = (ArrayList<Travel>)request.getAttribute("tlist");
 %>
+=======
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+>>>>>>> 41ce5b8ec6a1fc14e78e5419fcba05e3e156e4a0
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -23,7 +28,12 @@
         crossorigin="anonymous"></script>
     
     <!-- css -->
+<<<<<<< HEAD
     <link rel="stylesheet" href="../../css/ht_listPage.css">
+=======
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/tr_list.css">
+    
+>>>>>>> 41ce5b8ec6a1fc14e78e5419fcba05e3e156e4a0
         
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,7 +42,11 @@
     <link rel="apple-touch-icon" href="../../pic/logo.png"/>
 </head>
 <body>
+<<<<<<< HEAD
     <header>
+=======
+   <header>
+>>>>>>> 41ce5b8ec6a1fc14e78e5419fcba05e3e156e4a0
         <%@include file="../common/header.jsp"%>
     </header>
 
@@ -80,6 +94,9 @@
 	<footer>
 		<%@include file="../common/footer.jsp"%>
 	</footer>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 41ce5b8ec6a1fc14e78e5419fcba05e3e156e4a0
 </body>
 </html>

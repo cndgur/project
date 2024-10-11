@@ -3,7 +3,10 @@ package com.lc.project.travel.controller;
 import java.io.IOException;
 import java.util.ArrayList;
 
+<<<<<<< HEAD
 import com.lc.project.member.model.vo.Member;
+=======
+>>>>>>> 41ce5b8ec6a1fc14e78e5419fcba05e3e156e4a0
 import com.lc.project.travel.model.vo.Travel;
 import com.lc.project.travel.model.vo.tReview;
 import com.lc.project.travel.service.TravelService;
@@ -35,6 +38,41 @@ public class travelInfoController extends HttpServlet {
 		String trName = request.getParameter("travel");
 		TravelService tServ = new TravelService();
 		Travel t = tServ.selectTravel(trName);
+<<<<<<< HEAD
+=======
+		char[] charArray = t.getTr_personnel().toCharArray();
+		ArrayList<String> category = new ArrayList();
+		for(int i = 0 ; i <charArray.length; i++) {
+			int a = Integer.parseInt(charArray[i]+"");
+			switch(a) {
+			case 1:
+				category.add("가족여행");
+				break;
+			case 2:
+				category.add("친구들과");
+				break;
+			case 3:
+				category.add("1인여행");
+				break;
+			case 4:
+				category.add("커플여행");
+				break;
+			case 5:
+				category.add("반려동물");
+				break;
+			case 6:
+				category.add("친목모임");
+				break;
+			case 7:
+				category.add("워크숍");
+				break;
+			case 8:
+				category.add("아이들과");
+				break;
+			}
+		}
+		
+>>>>>>> 41ce5b8ec6a1fc14e78e5419fcba05e3e156e4a0
 		String[] strArr = t.getTrAddress().split(" ");
 		String tAdd = strArr[0]+" "+strArr[1];
 		ArrayList<Travel> tlist = tServ.selectNearbyTravel(tAdd,trName);
@@ -43,8 +81,13 @@ public class travelInfoController extends HttpServlet {
 		}
 		ArrayList<tReview> rlist = tServ.selectTReview(trName);
 		HttpSession session = request.getSession();
+<<<<<<< HEAD
 		session.setAttribute("loginUser", new Member("admin","1234","관리자","010-1111-2222"));
 		request.setAttribute("t", t);
+=======
+		request.setAttribute("t", t);
+		request.setAttribute("category",category);
+>>>>>>> 41ce5b8ec6a1fc14e78e5419fcba05e3e156e4a0
 		request.setAttribute("tlist", tlist);
 		request.setAttribute("rlist", rlist);
 		

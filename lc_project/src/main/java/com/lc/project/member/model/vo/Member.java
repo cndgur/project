@@ -60,6 +60,7 @@ public class Member {
 	}
 
 
+<<<<<<< HEAD
 	public Member(String userId, String userPwd, String userName, String tel) {
 		super();
 		this.userId = userId;
@@ -69,6 +70,8 @@ public class Member {
 	}
 
 
+=======
+>>>>>>> 41ce5b8ec6a1fc14e78e5419fcba05e3e156e4a0
 	public int getUserNo() {
 		return userNo;
 	}
