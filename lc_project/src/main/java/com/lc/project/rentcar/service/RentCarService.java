@@ -1,6 +1,7 @@
 package com.lc.project.rentcar.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -16,5 +17,18 @@ public class RentCarService {
 		ArrayList<RentCar> carList = rDao.carList(sqlSession);
 		sqlSession.close();
 		return carList;
+	}
+	public int bookingCar(HashMap<String, String> map) {
+		SqlSession sqlSession = Template.getSqlSession();
+		int result = rDao.bookingCar(sqlSession, map);
+		System.out.println(map);
+		sqlSession.close();
+		return result;
+	}
+	public int carStatus(String carNum) {
+		SqlSession sqlSession = Template.getSqlSession();
+		int result = rDao.carStatus(sqlSession,carNum);
+		sqlSession.close();
+		return result;
 	}
 }

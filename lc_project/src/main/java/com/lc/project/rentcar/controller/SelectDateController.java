@@ -6,20 +6,17 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.HashMap;
-
-import com.lc.project.rentcar.service.RentCarService;
 
 /**
- * Servlet implementation class RentCarBookingController
+ * Servlet implementation class SelectDateController
  */
-public class RentCarBookingController extends HttpServlet {
+public class SelectDateController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RentCarBookingController() {
+    public SelectDateController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,36 +25,17 @@ public class RentCarBookingController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-
-		String carNum = request.getParameter("carNum");
 		String startDate = request.getParameter("startDate");
 		String endDate = request.getParameter("endDate");
-		String location = request.getParameter("location");
-		String loginUser = request.getParameter("loginUser");
+		int day = Integer.parseInt(endDate.substring(8)) + 1 - Integer.parseInt(startDate.substring(8));
+		String location = request.getParameter("rent-location");
 		
-//		if(loginUser == null) {
-//			request.getRequestDispatcher("views/member/selectLogin.jsp").forward(request, response);
-//			request.setAttribute("alertMsg", "로그인 후 이용해주세요");
-//		} else {
-			HashMap<String, String> map = new HashMap<String, String>();
-			
-			map.put("loginUser", loginUser);
-			map.put("startDate", startDate);
-			map.put("endDate", endDate);
-			map.put("carNum", carNum);
-			map.put("location", location);
-			
-			int result = new RentCarService().bookingCar(map);
-			
-			if(result > 0) {
-				int carStatus = new RentCarService().carStatus(carNum);
-				System.out.println(carStatus);
-			} else {
-				System.out.println("실패");
-			}
-		}		
-//	}
+		request.setAttribute("day", day);
+		request.setAttribute("startDate", startDate);
+		request.setAttribute("endDate", endDate);
+		request.setAttribute("location", location);
+		request.getRequestDispatcher("list.rc").forward(request, response);
+	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
