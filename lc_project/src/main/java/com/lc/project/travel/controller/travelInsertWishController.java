@@ -36,6 +36,8 @@ public class travelInsertWishController extends HttpServlet {
 		Member loginUser = (Member)session.getAttribute("loginUser");
 		String travel = request.getParameter("travel");
 		String encodedTravel = URLEncoder.encode(travel, "UTF-8");
+		System.out.println(loginUser);
+		System.out.println(travel);
 		int count = new TravelService().countWish(loginUser.getUserName());
 		if(count>=5) {
 			session.setAttribute("alertMsg", "찜하기는 최대 5개까지만 가능합니다.");
