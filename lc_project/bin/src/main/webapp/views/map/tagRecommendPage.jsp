@@ -85,27 +85,8 @@
             <div id="tour">
                 <c:forEach var="tr" items="${trList }">
                     <a href="travel.info?travel=${travel}">
-<<<<<<< HEAD
-                        <div id="content">                                        
-=======
                         <div id="content">
-<<<<<<< HEAD
-
-                            <img src="<%=contextPath%>/pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
                             <img src="${tr.picInfo }" alt="${tr.trName }" id="img">                    
-
-
-=======
-                            <img src="<%=contextPath%>/pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
->>>>>>> bc803067a61f85de5da5f11530a87538b5105a08
-                            <img src="${tr.picInfo }" alt="${tr.trName }" id="img">                    
->>>>>>> a5cf78a320d87ce322d0c5ade94482cb3092a06f
-                            <img src="<%=contextPath%>/pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
-                            <img src="${tr.picInfo }" alt="${tr.trName }" id="img">                    
-<<<<<<< HEAD
-
-=======
->>>>>>> a5cf78a320d87ce322d0c5ade94482cb3092a06f
                             <div id="text">${tr.trName }</div>
                         </div>
                     </a>
