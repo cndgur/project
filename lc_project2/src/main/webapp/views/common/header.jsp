@@ -25,6 +25,7 @@
             <div id="header_logo"><a href="<%=contextPath %>"><img src="<%=contextPath %>/pic/logo.png" alt="" width="80" height="64"></a></div>
             <div id="header_letter"><a href="<%=contextPath %>">방구석 여행</a></div>
         </div>
+<<<<<<< HEAD
         <div id="header_signIn"><button>로그인</button></div>
     </div>
     <div class="header">
@@ -69,6 +70,40 @@
 				</c:when>
 			</c:choose>
 		</div>
+=======
+        <c:choose>
+        	<!-- 로그인 전 -->
+        	<c:when test="${empty loginUser && empty loginbs}">
+        		<a href="./views/member/selectlogin.jsp"><div id="header_signIn"><button>로그인</button></div></a>
+        	</c:when>
+        	<!-- 일반 사용자 로그인 후 -->
+        	<when test="${!empty loginUser}">
+        		<div class="dropdown">
+                    <button type="button" class="btn" data-bs-toggle="dropdown">
+                        <img id="hamBtn" src="./pic/hamburgerBtn.png" alt="hamburgerBtn" width="30px" height="22px">
+                        <img id="avatar" src="./pic/avatar.png" alt="avatar" width="35px" height="35px">
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="./views/common/myPage.jsp">마이페이지</a></li>
+                        <li><a class="dropdown-item" href="logout.me">로그아웃</a></li>
+                    </ul>
+                </div>
+        	</when>
+        	<!-- 사업자 로그인 후 -->
+        	<when test="${!empty loginbs}">
+        		<div class="dropdown">
+			        <button type="button" class="btn" data-bs-toggle="dropdown">
+			            <img id="hamBtn" src="./pic/hamburgerBtn.png" alt="hamburgerBtn" width="30px" height="22px">
+			            <img id="avatar" src="./pic/profile-removebg-preview.png" alt="avatar" width="35px" height="35px">
+			        </button>
+			        <ul class="dropdown-menu">
+			            <li><a class="dropdown-item" href="./views/common/myPage2.jsp">사업자마이페이지</a></li>
+			            <li><a class="dropdown-item" href="logout.bs">로그아웃</a></li>
+			        </ul>
+			    </div>
+        	</when>
+        </c:choose>
+>>>>>>> a9081cfda73430a4be8ea51d15587f67988b5c24
     </div>
 </body>
 </html>
