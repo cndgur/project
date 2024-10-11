@@ -57,7 +57,7 @@
                     <td>How To Host?</td>
                     <td>Email: company@email.com</td>
                     <td>&nbsp;</td>
-                </tr>&nbsp
+                </tr>
                 <tr>
                     <td>Contact Us</td>
                     <td>Why Us?</td>

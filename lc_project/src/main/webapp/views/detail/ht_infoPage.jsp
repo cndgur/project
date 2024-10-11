@@ -12,8 +12,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>방구석여행</title>
-    <link rel="icon" href="../pic/logo.png"/>
-    <link rel="apple-touch-icon" href="../pic/logo.png"/>
     <!-- jQuery -->
     <script 
         src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -23,12 +21,6 @@
         src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"
         integrity="sha256-Fb0zP4jE3JHqu+IBB9YktLcSjI1Zc6J2b6gTjB0LpoM="
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/lc/css/ht_infoPage.css">
-	<!--
-        2. 설치 스크립트
-        * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
-    -->
-    <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
@@ -125,8 +117,7 @@
                         <h2>객실 선택</h2>
                         <hr>
                         <%for (Room ro : rlist){ %>
-                        	<div style="width: 100%; height: 250px; background: #ddeeeb; margin-bottom: 50px; border-radius: 15px;">
-	                            <table>
+	                            <table  style="background: #ddeeeb; border-radius: 15px;">
 	                                <tr>
 	                                    <td rowspan="2">
 	                                        <img src="<%=ro.getPicInfo() %>" class="reservepic">
@@ -142,7 +133,7 @@
 	                                            객실정보<br>
 	                                            최대<%=ro.getrMax() %>인<br>
 	                                            추가정보<br>
-	                                            <%=ro.getrInfo() %><br>
+	                                            <%=ro.getrInfo() %>
 	                                            <button id="reviewbt" onclick="requestPay()">예약하기</button>
 	                                        </div>
 	                                    </td>  
@@ -193,7 +184,7 @@
 	                            </script>
 	                        </div>
                         <%} %>
-                    </div>
+                    <div style="margin-bottom: 50px;"></div>
                 </td>
                 <td></td>
                 <td></td>
