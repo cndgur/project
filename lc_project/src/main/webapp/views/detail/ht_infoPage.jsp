@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="com.lc.project.hotel.model.vo.Hotel, java.util.ArrayList, com.lc.project.travel.model.vo.Travel, com.lc.project.hotel.model.vo.Room"%>
 <%	
-	Hotel h = (Hotel)request.getAttribute("h");
+	Hotel h = (Hotel)request.getAttribute("h");	
 	ArrayList<Travel> tlist = (ArrayList<Travel>)request.getAttribute("tlist");
 	ArrayList<Hotel> hlist = (ArrayList<Hotel>)request.getAttribute("hlist");
 	ArrayList<Room> rlist = (ArrayList<Room>)request.getAttribute("rlist");
@@ -32,11 +32,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
-
+	
     <script src="https://cdn.portone.io/v2/browser-sdk.js"></script>
-    <link rel="icon" href="../../pic/logo.png"/>
-    <link rel="apple-touch-icon" href="../../pic/logo.png"/>
-    
+    <link rel="icon" href="././pic/logo.png"/>
+    <link rel="apple-touch-icon" href="././pic/logo.png"/>
+    <link rel="stylesheet" href="././css/ht_infoPage.css" />
 </head>
 <body id=system-ui>
     <%@include file="../common/header.jsp" %>
@@ -74,7 +74,7 @@
                     
                     <br><br>
                     <!-- 지도를 표시할 div 입니다 -->
-			          <div id="map" style="width:100%;height:500px;"></div>
+			          <div id="map" style="width:100%; height:500px;"></div>
 			      
 			          <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=99929078a9d810f506f314a69d82b1f2"></script>
 			          <script>
@@ -97,8 +97,6 @@
 			              // 마커가 지도 위에 표시되도록 설정합니다
 			              marker.setMap(map);
 			      
-			              // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
-			              // marker.setMap(null);    
 			          </script>
                 </td>
                 <td></td>
@@ -141,9 +139,9 @@
 	                                            체크인 : <%=ro.getCheckin() %><br>
 	                                            체크아웃 : <%=ro.getCheckout() %><br>
 	                                            가격 : <%=ro.getPrice() %>원<br>
-	                                            객실정보
+	                                            객실정보<br>
 	                                            최대<%=ro.getrMax() %>인<br>
-	                                            추가정보
+	                                            추가정보<br>
 	                                            <%=ro.getrInfo() %><br>
 	                                            <button id="reviewbt" onclick="requestPay()">예약하기</button>
 	                                        </div>
@@ -162,7 +160,7 @@
 	                            		const paymentId = generateUUID();
 	                            		
 	                            		console.log("결제 요청 시작");
-	                            		const response = await PortOne.requestPayment({
+	                            		PortOne.requestPayment({
 	                                	    storeId: "store-2c741ae7-334b-4984-9a8c-62eba220c91b",
 	                                	    paymentId: paymentId,
 	                                	    orderName: "테스트 결제",
@@ -187,9 +185,10 @@
 	                                              alert("결제 실패: " + (response.errorMessage || "알 수 없는 오류"));
 	                                          }
 	                                          
+	                                          
 	                                	  });
-	                            		
-	                            	  location.href="<%=contextPath%>/views/common/paysuc.jsp"
+	                            		location.href="<%=contextPath%>/views/common/paysuc.jsp"
+	                            	  
 	                            	}
 	                            </script>
 	                        </div>

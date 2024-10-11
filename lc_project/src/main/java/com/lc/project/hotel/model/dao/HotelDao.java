@@ -2,16 +2,29 @@ package com.lc.project.hotel.model.dao;
 
 import static com.lc.project.common.template.JDBCTemplate.close;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Properties;
 
 import com.lc.project.hotel.model.vo.Hotel;
 import com.lc.project.hotel.model.vo.Room;
+import com.lc.project.travel.model.dao.TravelDao;
 
 public class HotelDao {
+	private Properties prop = new Properties();
+	public HotelDao() {
+		String filePath = TravelDao.class.getResource("/db/sql/JDBCmappers.xml").getPath();
+		try {
+			prop.loadFromXML(new FileInputStream(filePath));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 	public Hotel selectHotel(Connection conn, String hName) {
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
@@ -77,7 +90,7 @@ public class HotelDao {
 		ArrayList<Room> list = new ArrayList<>();
 		String sql = "SELECT ROOM_NAME, CHECKIN,CHECKOUT,LOCATION,ROOM_INFO,ROOM_MAX,ROOM_PRICE "
 					+"FROM TB_ROOM "
-					+"WHERE BU_ID = ?";
+					+"WHERE BS_ID = ?";
 
 		try {
 			pstmt = conn.prepareStatement(sql);
