@@ -10,7 +10,7 @@
 <title>방구석 여행</title>
 <script src="./login.js" defer></script>
 <script type="text/javascript"></script>
-    <link rel="icon" href="../../pic/logo.png"/>
+    <link rel="icon" href="<%=contextPath %>/pic/logo.png"/>
     <link rel="apple-touch-icon" href="pic/logo.png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -163,7 +163,7 @@
         <div class="logo">
             <a onclick="location.href='index.jsp'" class="to_main">
                 <div class="header_name">방구석여행</div>
-                <img src="../../pic/logo.png" alt="" class="header_main_logo">
+                <img src="<%=contextPath %>/pic/logo.png" alt="" class="header_main_logo">
             </a>
         </div>
         <h1>비밀번호찾기</h1>
@@ -171,10 +171,10 @@
     
     <div class="searchpwd-container">
         <div class="logo_form">
-            <img src="../../pic/logo.png" alt="logo">
+            <img src="<%=contextPath %>/pic/logo.png" alt="logo">
             <p class="name">방구석여행</p>
         </div>
-        <form action="<%=contextPath%>/searchpwd.bn" method="post">
+        <form action="views/member/loginviewbusiness.jsp" method="post">
             <input type="text" placeholder="이름을 입력하세요." required name="bsName">
             <input type="text" placeholder="아이디를 입력하세요." required name="bsId">
             <button type="submit" id="btn">비밀번호찾기</button>

@@ -117,7 +117,11 @@
                         <h2>객실 선택</h2>
                         <hr>
                         <%for (Room ro : rlist){ %>
+<<<<<<< HEAD
 	                            <table  style="background: #ddeeeb; border-radius: 15px;">
+=======
+	                            <table  style="background: #ddeeeb; border-radius: 15px; height: 250px">
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
 	                                <tr>
 	                                    <td rowspan="2">
 	                                        <img src="<%=ro.getPicInfo() %>" class="reservepic">
@@ -190,7 +194,52 @@
                 <td></td>
                 <td class="side"></td>
             </tr>
+<<<<<<< HEAD
 			
+=======
+			<tr class="recommend">
+                <td class="side"></td>
+                <td colspan="3" class="content">
+                    <div style="margin-top: 50px;">
+                        <h2>근처 다른 호텔</h2>
+                        <hr>
+                    </div>
+                    <div class="recommendtr" style="margin-bottom: 100px;">
+                    <% for(Hotel ht : hlist){ %>
+	                        <div class="recommendtr-item">
+	                            <img class="recommendtrimg" src="<%=ht.getPicInfo() %>" onclick="location.href='hotel.info?travel=<%=ht.gethName()%>'">
+	                            <p onclick="location.href='hotel.info?hotel=<%=ht.gethName()%>'" style="cursor: pointer;"><strong><%=ht.gethName() %></strong></p>
+	                            <p onclick="location.href='hotel.info?hotel=<%=ht.gethName()%>'" style="cursor: pointer;"><%=ht.gethAddress() %></p>
+	                        </div>
+	                <%} %>
+                    </div>
+                </td>
+                <td></td>
+                <td></td>
+                <td class="side"></td>
+            </tr>
+            <tr class="recommend">
+                <td class="side"></td>
+                <td colspan="3" class="content">
+                    <div style="margin-top: 50px;">
+                        <h2>근처 다른 여행지</h2>
+                        <hr>
+                    </div>
+                    <div class="recommendtr" style="margin-bottom: 100px;">
+                    <% for(Travel tra : tlist){ %>
+	                        <div class="recommendtr-item">
+	                            <img class="recommendtrimg" src="<%=tra.getPicInfo() %>" onclick="location.href='travel.info?travel=<%=tra.getTrName()%>'">
+	                            <p onclick="location.href='travel.info?travel=<%=tra.getTrName()%>'" style="cursor: pointer;"><strong><%=tra.getTrName() %></strong></p>
+	                            <p onclick="location.href='travel.info?travel=<%=tra.getTrName()%>'" style="cursor: pointer;"><%=tra.getTrAddress() %></p>
+	                        </div>
+	                <%} %>
+                    </div>
+                </td>
+                <td></td>
+                <td></td>
+                <td class="side"></td>
+            </tr>
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
         </table>
     </div>
      <%@include file="../common/footer.jsp"%>

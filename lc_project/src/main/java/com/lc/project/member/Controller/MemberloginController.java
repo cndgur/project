@@ -47,7 +47,11 @@ public class MemberloginController extends HttpServlet {
             response.setContentType("text/html; charset=UTF-8");
             response.getWriter().write("<html><head><title>로그인 실패</title></head><body>");
             response.getWriter().write("<script>alert('아이디, 비밀번호를 확인해주세요');</script>");
+<<<<<<< HEAD
             response.getWriter().write("<script>window.location.href = '" + request.getContextPath() + "/index.jsp';</script>");
+=======
+            response.getWriter().write("<script>window.location.href = '" + request.getContextPath() + "/views/member/loginviewmember.jsp';</script>");
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
             response.getWriter().write("</body></html>");
         }
     }

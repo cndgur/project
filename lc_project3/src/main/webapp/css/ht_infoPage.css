@@ -55,10 +55,10 @@
         }
         .container{
             width: 97%; 
-            height: 150px; 
+            height: 180px; 
             background: white; 
             border-radius: 15px;
-            margin-right: 20px;
+            margin-bottom: 20px;
         }
         #reviewbt{
             width: 100px;
@@ -69,6 +69,8 @@
             background: #7bbcb0;
             color: white;
             border-radius: 40px;
+            margin-right: 20px;
+            
         }
 		#reviewArrow{
 			width: 50px; 

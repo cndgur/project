@@ -20,11 +20,14 @@
         padding: 0px;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     /*오른쪽 사이드바*/
 	.right-title {
     	font-size: 18px;
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
     /*오른쪽 사이드바*/
 	.right-title {
     	font-size: 18px;
@@ -73,6 +76,7 @@
         z-index: 2;
         overflow: auto;
     }
+<<<<<<< HEAD
 =======
     #header_wrapper {
         height: 90px;
@@ -190,6 +194,8 @@
     
 >>>>>>> 90581a0d9a4d72a768bfd2e80c652056bfcab795
 >>>>>>> a988212f37af7f2b67dd00244d8cf097d075ceb6
+=======
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
     /* 각각의 호텔 정보를 담는 박스 (이미지를 왼쪽에 배치하고 텍스트를 오른쪽에 배치) */
     .hotel-box {
         display: flex;
@@ -197,10 +203,14 @@
         padding: 15px;
         background-color: white;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
         border-radius: 15px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         margin-bottom: 20px;
     }
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
         border-radius: 15px;
@@ -215,6 +225,8 @@
 
 >>>>>>> 90581a0d9a4d72a768bfd2e80c652056bfcab795
 >>>>>>> a988212f37af7f2b67dd00244d8cf097d075ceb6
+=======
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
     .hotel-box img {
         width: 50px;  /* 이미지 너비를 줄임 */
         height: 50px;  /* 이미지 높이도 동일하게 줄임 */
@@ -223,6 +235,7 @@
         margin-right: 10px; /* 이미지와 텍스트 간의 간격 */
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     .hotel-info {
         flex: 1; /* 텍스트 영역이 남은 공간을 차지하도록 설정 */
     }
@@ -239,19 +252,28 @@
 
 >>>>>>> 90581a0d9a4d72a768bfd2e80c652056bfcab795
 >>>>>>> a988212f37af7f2b67dd00244d8cf097d075ceb6
+=======
+    .hotel-info {
+        flex: 1; /* 텍스트 영역이 남은 공간을 차지하도록 설정 */
+    }
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
     .hotel-name {
         font-size: 14px;
         font-weight: bold;
         margin-bottom: 5px;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
     .hotel-price {
         font-size: 12px;
         font-weight: bold;
         margin-bottom: 5px;
     }
+<<<<<<< HEAD
 =======
 
 >>>>>>> a988212f37af7f2b67dd00244d8cf097d075ceb6
@@ -265,6 +287,8 @@
 
 >>>>>>> 90581a0d9a4d72a768bfd2e80c652056bfcab795
 >>>>>>> a988212f37af7f2b67dd00244d8cf097d075ceb6
+=======
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
     .hotel-button {
         width: 70px;
         padding: 5px;
@@ -277,9 +301,12 @@
         font-size: 12px; /* 버튼 텍스트 크기 줄임 */
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     /* 각각의 여행지 정보를 넣는 박스 */
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
     /* 각각의 여행지 정보를 넣는 박스 */
 </style>
 </head>
@@ -340,6 +367,7 @@
             <div class="right-title">근처 숙박업소</div>
             <div class="hotel-box">
                 <img src="./pic/hotel1.jpg" alt="">
+<<<<<<< HEAD
 =======
 >>>>>>> a988212f37af7f2b67dd00244d8cf097d075ceb6
 </style>
@@ -406,6 +434,8 @@
                 <img src="./pic/hotel1.jpg" alt="포시즌스 호텔 서울">
 >>>>>>> 90581a0d9a4d72a768bfd2e80c652056bfcab795
 >>>>>>> a988212f37af7f2b67dd00244d8cf097d075ceb6
+=======
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
                 <div class="hotel-info">
                     <div class="hotel-name">포시즌스 호텔 서울</div>
                     <div class="hotel-price">₩400,000</div>
@@ -415,6 +445,7 @@
             <!-- 두 번째 호텔 박스 -->
             <div class="hotel-box">
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <img src="./pic/hotel2.jpg" alt="">
 =======
 <<<<<<< HEAD
@@ -423,6 +454,9 @@
                 <img src="./pic/hotel2.jpg" alt="신라스테이 광화문">
 >>>>>>> 90581a0d9a4d72a768bfd2e80c652056bfcab795
 >>>>>>> a988212f37af7f2b67dd00244d8cf097d075ceb6
+=======
+                <img src="./pic/hotel2.jpg" alt="">
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
                 <div class="hotel-info">
                     <div class="hotel-name">신라스테이 광화문</div>
                     <div class="hotel-price">₩180,000</div>
@@ -433,6 +467,7 @@
             <!-- 세 번째 호텔 박스 -->
             <div class="hotel-box">
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <img src="./pic/hotel3.jpg" alt="">
 =======
 <<<<<<< HEAD
@@ -441,6 +476,9 @@
                 <img src="./pic/hotel3.jpg" alt="서머셋팰리스 서울">
 >>>>>>> 90581a0d9a4d72a768bfd2e80c652056bfcab795
 >>>>>>> a988212f37af7f2b67dd00244d8cf097d075ceb6
+=======
+                <img src="./pic/hotel3.jpg" alt="">
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
                 <div class="hotel-info">
                     <div class="hotel-name">서머셋팰리스 서울</div>
                     <div class="hotel-price">₩250,000</div>
@@ -451,6 +489,7 @@
             <!-- 네 번째 호텔 박스 -->
             <div class="hotel-box">
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <img src="./pic/hotel4.jpg" alt="">
 =======
 <<<<<<< HEAD
@@ -459,6 +498,9 @@
                 <img src="./pic/hotel4.jpg" alt="나잇트리 프리미어 호텔 인사동">
 >>>>>>> 90581a0d9a4d72a768bfd2e80c652056bfcab795
 >>>>>>> a988212f37af7f2b67dd00244d8cf097d075ceb6
+=======
+                <img src="./pic/hotel4.jpg" alt="">
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
                 <div class="hotel-info">
                     <div class="hotel-name">나잇트리 프리미어 호텔 인사동</div>
                     <div class="hotel-price">₩200,000</div>
@@ -469,6 +511,7 @@
             <!-- 다섯 번째 호텔 박스 -->
             <div class="hotel-box">
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <img src="./pic/hotel5.jpg" alt="">
 =======
 <<<<<<< HEAD
@@ -477,6 +520,9 @@
                 <img src="./pic/hotel5.jpg" alt="아미드호텔 서울">
 >>>>>>> 90581a0d9a4d72a768bfd2e80c652056bfcab795
 >>>>>>> a988212f37af7f2b67dd00244d8cf097d075ceb6
+=======
+                <img src="./pic/hotel5.jpg" alt="">
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
                 <div class="hotel-info">
                     <div class="hotel-name">아미드호텔 서울</div>
                     <div class="hotel-price">₩150,000</div>
@@ -593,6 +639,7 @@
     </script>
 </body>
 <<<<<<< HEAD
+<<<<<<< HEAD
 </html>
 =======
 <<<<<<< HEAD
@@ -601,3 +648,6 @@
 </html>
 >>>>>>> 90581a0d9a4d72a768bfd2e80c652056bfcab795
 >>>>>>> a988212f37af7f2b67dd00244d8cf097d075ceb6
+=======
+</html>
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b

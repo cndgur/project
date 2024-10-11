@@ -64,6 +64,10 @@ public class TagRecommendController extends HttpServlet {
 	    request.setAttribute("theme", theme);
 	    
 	    ArrayList<Travel> trList = mService.selectTravelTag(personnel, location, theme);
+<<<<<<< HEAD
+=======
+	    request.setAttribute("len", trList.size());
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
 	    request.setAttribute("trList", trList);
 	    
 	    request.getRequestDispatcher("views/map/tagRecommendPage.jsp").forward(request, response);

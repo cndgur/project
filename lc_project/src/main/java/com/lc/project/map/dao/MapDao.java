@@ -15,7 +15,11 @@ public class MapDao {
 	    params.put("personnel", personnel);
 	    params.put("location", location);
 	    params.put("theme", theme);
+<<<<<<< HEAD
 	    
+=======
+
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
 		return (ArrayList)sqlSession.selectList("travelMapper.selectTravelTag", params);
 	}
 }
