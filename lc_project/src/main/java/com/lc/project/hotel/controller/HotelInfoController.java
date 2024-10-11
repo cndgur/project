@@ -33,21 +33,21 @@ public class HotelInfoController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HotelService hServ = new HotelService(); 
-		Hotel h = hServ.selectHotel("신라호텔");
-		System.out.println(h);
+		Hotel h = hServ.selectHotel("럭셔리 빌라");
 		ArrayList<Room> rlist = hServ.selectRoomList(h.getBsId());
 		String[] strArr = h.gethAddress().split(" ");
 		String hAdd = strArr[0]+" "+strArr[1];
-		ArrayList<Travel> tlist = new TravelService().selectNearbyTravel(hAdd,"");
+		System.out.println(hAdd);
+		ArrayList<Travel> tlist = new TravelService().selectNearbyTravel(hAdd," ");
 		for(Travel tra : tlist) {
 			tra.setTrAddress(hAdd);
 		}
 		ArrayList<Hotel> hlist = hServ.selectHotelList(hAdd,h.gethName());
+		System.out.println(hlist);
 		request.setAttribute("h", h);
 		request.setAttribute("hlist", hlist);
 		request.setAttribute("tlist", tlist);
 		request.setAttribute("rlist", rlist);
-		System.out.println(rlist);
 		request.getRequestDispatcher("views/detail/ht_infoPage.jsp").forward(request, response);
 	}
 

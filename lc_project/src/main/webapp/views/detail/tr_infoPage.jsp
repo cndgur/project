@@ -431,7 +431,7 @@
                         <div class=sidecontent></div>
                         
                         <div class="sidenav-footer">
-                            <button><div style="vertical-align: middle;">여행지 기준<br>호텔 검색</div></button>
+                            <button onclick="location.href='hotel.info'"><div style="vertical-align: middle;">여행지 기준<br>호텔 검색</div></button>
                         </div>
                         <script>
                             $(document).ready(function() {
@@ -518,7 +518,7 @@
                         <h2>여행지 리뷰</h2>
                         <hr>
                         <form action="review.tra" method="POST">
-                        	<input type="hidden" name="userName" value="<%=loginUser.getUserName()%>">
+                        	<input type="hidden" name="userId" value="<%=loginUser.getUserId()%>">
                         	<input type="hidden" name="travel" value="<%=t.getTrName()%>">
                         	<div style="width: 100%; height: 300px; background: #ddeeeb; margin-bottom: 100px;">
                             <textarea id="review" placeholder="리뷰를 작성해주세요." style="resize: none;" name="review"></textarea><br>

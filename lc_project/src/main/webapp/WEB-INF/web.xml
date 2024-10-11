@@ -19,7 +19,7 @@
 <url-pattern>/travel.info</url-pattern>
 </servlet-mapping>
 <servlet>
-<description/>
+<description/> 
 <display-name>login.me</display-name>
 <servlet-name>login.me</servlet-name>
 <servlet-class>com.lc.project.member.Controller.MemberLoginviewController</servlet-class>
