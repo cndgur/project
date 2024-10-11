@@ -57,9 +57,9 @@
                 <c:choose>
                 <c:when test="${empty loginUser && empty loginbs}">
                     <!-- 로그인 전 -->
-                    <a href="./views/member/selectlogin.jsp" class="to_login">
-                        <div><input type="button" class="header_btn" value="로그인"></div>
-                    </a>
+                     <form action="selcetenroll.me" method="post" class="to_login">
+                        <div><button type="submit" class="header_btn">로그인</button></div>
+                    </form>
                 </c:when>
                 <c:when test="${!empty loginUser}">
                     <!-- 일반 사용자 로그인 후 -->
@@ -273,9 +273,10 @@
                      <img src="<%=contextPath%>/pic/제주도.jpg" alt="jeju" onclick="location.href='location.tr?location=제주도'">
                   <p>제주</p>
                </div>
+               </div>
                <div class="swiper-button-next"></div>
                <div class="swiper-button-prev"></div>
-          </div>
+          
            </div>
            </div>
            <br>    

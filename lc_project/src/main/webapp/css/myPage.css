@@ -86,9 +86,6 @@ body{
 }
 #myPage_body{
     margin: 50px;
-    position: relative;
-    top: 100px;
-    width: 253px;
 }
 .myPage{
     width: 90%;
@@ -100,7 +97,7 @@ body{
 #profile{
     width: 20%;
     min-width: 250px;
-    height: 80%;
+    height: 364px;
     border-radius: 25px;
     text-align: center;
     background-color: #EFF0F2;
@@ -129,8 +126,6 @@ body{
 
 #text-area{
     margin: 30px 0;
-    position: relative;
-    bottom: 34px;
 }
 
 #text-area > ul > li{
@@ -143,29 +138,18 @@ body{
     font-size: large;
 }
 
-.btn-upload {
-  width: 150px;
-  height: 30px;
-  background: #fff;
-  border: 1px solid rgb(77,77,77);
-  border-radius: 10px;
-  font-weight: 500;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  &:hover {
-    background: rgb(77,77,77);
-    color: #fff;
-  }
+.profile_info{
+    position: relative;
+    bottom: 23px;
 }
 
-#file {
-  display: none;
+.userName{
+    position: relative;
+    bottom: 8px;
 }
 
-.upload_profile_pic{
-	position: relative;
-	left: 49px;
-	top: -18px;
+.updateprofile{
+    border: none;
+    cursor: pointer;
+    font-weight: bolder;
 }

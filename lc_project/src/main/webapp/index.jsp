@@ -55,14 +55,14 @@
                     <img src="./pic/logo.png" alt="" class="header_main_logo">
                 </a>
                 <c:choose>
-				    <c:when test="${empty loginUser && empty loginbs}">
-				        <!-- 로그인 전 -->
-				        <a href="./views/member/selectlogin.jsp" class="to_login">
-				            <div><input type="button" class="header_btn" value="로그인"></div>
-				        </a>
-				    </c:when>
-				    <c:when test="${!empty loginUser}">
-				        <!-- 일반 사용자 로그인 후 -->
+                <c:when test="${empty loginUser && empty loginbs}">
+                    <!-- 로그인 전 -->
+                     <form action="selcetenroll.me" method="post" class="to_login">
+                        <div><button type="submit" class="header_btn">로그인</button></div>
+                    </form>
+                </c:when>
+                <c:when test="${!empty loginUser}">
+                    <!-- 일반 사용자 로그인 후 -->
                   <div class="dropdown">
                       <button type="button" class="btn" data-bs-toggle="dropdown">
                           <img id="hamBtn" src="./pic/hamburgerBtn.png" alt="hamburgerBtn" width="30px" height="22px">
@@ -73,21 +73,21 @@
                           <li><a class="dropdown-item" href="logout.me">로그아웃</a></li>
                       </ul>
                   </div>
-				    </c:when>
-				    <c:when test="${!empty loginbs}">
-				        <!-- 사업자 로그인 후 -->
-				        <div class="dropdown">
-				            <button type="button" class="btn" data-bs-toggle="dropdown">
-				                <img id="hamBtn" src="./pic/hamburgerBtn.png" alt="hamburgerBtn" width="30px" height="22px">
-				                <img id="avatar" src="./pic/profile-removebg-preview.png" alt="avatar" width="35px" height="35px">
-				            </button>
-				            <ul class="dropdown-menu">
-				                <li><a class="dropdown-item" href="./views/common/myPage2.jsp">사업자마이페이지</a></li>
-				                <li><a class="dropdown-item" href="logout.bs">로그아웃</a></li>
-				            </ul>
-				        </div>
-				    </c:when>
-				</c:choose>
+                </c:when>
+                <c:when test="${!empty loginbs}">
+                    <!-- 사업자 로그인 후 -->
+                    <div class="dropdown">
+                        <button type="button" class="btn" data-bs-toggle="dropdown">
+                            <img id="hamBtn" src="./pic/hamburgerBtn.png" alt="hamburgerBtn" width="30px" height="22px">
+                            <img id="avatar" src="./pic/profile-removebg-preview.png" alt="avatar" width="35px" height="35px">
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./views/common/myPage2.jsp">사업자마이페이지</a></li>
+                            <li><a class="dropdown-item" href="logout.bs">로그아웃</a></li>
+                        </ul>
+                    </div>
+                </c:when>
+            </c:choose>
             </div>
        </div>
       <div class="textarea_container">
@@ -100,10 +100,13 @@
                 <a onclick="location.href='index2.jsp'" class="to_login">
                 <input type="button" value="호텔" class="search_button3">
                 </a>
+                <a onclick="location.href='list.rc'" class="to_rentcar">
+                <input type="button" value="렌트카 바로가기" class="search_button4">
+                </a>
               </div>
             </div>
             <div class="textarea">
-                <input class="input_1" list="browsers" name="browser" id="browser" placeholder="가고싶은 곳">
+                <input class="input_1" list="browsers" name="browser" id="browser" placeholder="가고싶은 여행지를 입력해주세요.">
                 <datalist id="browsers">
                   <option value="박물관">
                   <option value="">
@@ -226,75 +229,76 @@
                  return true;
              }
          </script>
-	  </table>
+     </table>
   </form>
-	<br><br><br>
-	
-	<div id="wrap-main-content1">
-		  <div id="main-content1">
-		    <div id="title">
-		      <h1>"떠나볼래? 지역 따라 골라보는 여행 스팟"</h1>
-		      <p>이제는 골라 떠나는 재미! <br> 인기 만점 지역별 여행지에서 특별한 순간을 만들어보세요!</p>
-		    </div>
-			<div class="swiper mySwiper2">
-				<div class="swiper-wrapper">
-		        	<div class="swiper-slide">
-		          		<img src="<%=contextPath%>/pic/main-seoul.jpg" alt="seoul" onclick="location.href='location.tr?location=수도권'">
-			            <p>수도권</p>
-		        	</div>        
-		          	<div class="swiper-slide">
-		            	<img src="<%=contextPath%>/pic/gangwon.jpg" alt="gangwon" onclick="location.href='location.tr?location=강원도'">
-		            	<p>강원</p>
-		          	</div>
-		          	<div class="swiper-slide">
-		            	<img src="<%=contextPath%>/pic/chungcheong.jpg" alt="chungcheong" onclick="location.href='location.tr?location=충청도'">
-		            	<p>충청</p>
-		          	</div>
-		          	<div class="swiper-slide">
-		            	<img src="<%=contextPath%>/pic/jellabuk.png" alt="jeollabuk" onclick="location.href='location.tr?location=전라북도'">
-		            	<p>전북</p>
-		          	</div>
-		          	<div class="swiper-slide">
-			            <img src="<%=contextPath%>/pic/jellanam.png" alt="jeollanam" onclick="location.href='location.tr?location=전라남도'">
-			            <p>전남</p>
-			        </div>
-		          	<div class="swiper-slide">
-		            	<img src="<%=contextPath%>/pic/gyeongsangbuk.jpg" alt="gyeongsangbuk" onclick="location.href='location.tr?location=경상북도'">
-		            	<p>경북</p>
-		          	</div>
-		          	<div class="swiper-slide">
-		            	<img src="<%=contextPath%>/pic/gyeongsangnam.jpg" alt="gyeongsangnam" onclick="location.href='location.tr?location=경상남도'">
-		            	<p>경남</p>
-		          	</div>
-		          	<div class="swiper-slide">
-		            	<img src="<%=contextPath%>/pic/제주도.jpg" alt="jeju" onclick="location.href='location.tr?location=제주도'">
-						<p>제주</p>
-		      	</div>
-		      	<div class="swiper-button-next"></div>
-		      	<div class="swiper-button-prev"></div>
-		    </div>
-		     </div>
-		     </div>
-		     <br> 	
-  	
-  	<!-- 이충혁 -->
-	<script>
-		<%
-		  String loginSuccess = request.getParameter("loginSuccess"); 
-		  Business loginbs = (Business) session.getAttribute("loginbs");
-		%>
-		
-		window.onload = function() {
-		    var loginSuccess = "<%= (loginSuccess != null ? loginSuccess : "") %>";
-		    
-		    if (loginSuccess === "true") {
-		        var bsName = "<%= (loginbs != null && loginbs.getBsName() != null ? loginbs.getBsName() : "") %>";
-		        alert(bsName.length > 0 ? bsName + "님 환영합니다." : "로그인 정보가 없습니다.");
-		    } else if (loginSuccess === "false") {
-		        alert("아이디와 비밀번호를 확인해주세요.");
-		    }
-		}
-	</script>
+   <br><br><br>
+   
+   <div id="wrap-main-content1">
+        <div id="main-content1">
+          <div id="title">
+            <h1>"떠나볼래? 지역 따라 골라보는 여행 스팟"</h1>
+            <p>이제는 골라 떠나는 재미! <br> 인기 만점 지역별 여행지에서 특별한 순간을 만들어보세요!</p>
+          </div>
+         <div class="swiper mySwiper2">
+            <div class="swiper-wrapper">
+                 <div class="swiper-slide">
+                      <img src="<%=contextPath%>/pic/main-seoul.jpg" alt="seoul" onclick="location.href='location.tr?location=수도권'">
+                     <p>수도권</p>
+                 </div>        
+                   <div class="swiper-slide">
+                     <img src="<%=contextPath%>/pic/gangwon.jpg" alt="gangwon" onclick="location.href='location.tr?location=강원도'">
+                     <p>강원</p>
+                   </div>
+                   <div class="swiper-slide">
+                     <img src="<%=contextPath%>/pic/chungcheong.jpg" alt="chungcheong" onclick="location.href='location.tr?location=충청도'">
+                     <p>충청</p>
+                   </div>
+                   <div class="swiper-slide">
+                     <img src="<%=contextPath%>/pic/jellabuk.png" alt="jeollabuk" onclick="location.href='location.tr?location=전라북도'">
+                     <p>전북</p>
+                   </div>
+                   <div class="swiper-slide">
+                     <img src="<%=contextPath%>/pic/jellanam.png" alt="jeollanam" onclick="location.href='location.tr?location=전라남도'">
+                     <p>전남</p>
+                 </div>
+                   <div class="swiper-slide">
+                     <img src="<%=contextPath%>/pic/gyeongsangbuk.jpg" alt="gyeongsangbuk" onclick="location.href='location.tr?location=경상북도'">
+                     <p>경북</p>
+                   </div>
+                   <div class="swiper-slide">
+                     <img src="<%=contextPath%>/pic/gyeongsangnam.jpg" alt="gyeongsangnam" onclick="location.href='location.tr?location=경상남도'">
+                     <p>경남</p>
+                   </div>
+                   <div class="swiper-slide">
+                     <img src="<%=contextPath%>/pic/제주도.jpg" alt="jeju" onclick="location.href='location.tr?location=제주도'">
+                  <p>제주</p>
+               </div>
+               </div>
+               <div class="swiper-button-next"></div>
+               <div class="swiper-button-prev"></div>
+          
+           </div>
+           </div>
+           <br>    
+     
+     <!-- 이충혁 -->
+   <script>
+      <%
+        String loginSuccess = request.getParameter("loginSuccess"); 
+        Business loginbs = (Business) session.getAttribute("loginbs");
+      %>
+      
+      window.onload = function() {
+          var loginSuccess = "<%= (loginSuccess != null ? loginSuccess : "") %>";
+          
+          if (loginSuccess === "true") {
+              var bsName = "<%= (loginbs != null && loginbs.getBsName() != null ? loginbs.getBsName() : "") %>";
+              alert(bsName.length > 0 ? bsName + "님 환영합니다." : "로그인 정보가 없습니다.");
+          } else if (loginSuccess === "false") {
+              alert("아이디와 비밀번호를 확인해주세요.");
+          }
+      }
+   </script>
 
 <div id="main-content2">
     <div id="title">
@@ -306,33 +310,33 @@
       <div class="swiper-wrapper">
       <script>
         window.onload = function() {
-        	$.ajax({
-       			url: "main.tr",
-       			contentType: "application/json",
-       			success: function(res){
-       				console.log(res);
-       				let str = "";
+           $.ajax({
+                url: "main.tr",
+                contentType: "application/json",
+                success: function(res){
+                   console.log(res);
+                   let str = "";
                        for(let tra of res){
-                       	str += ("<div class='swiper-slide'>" +
-                       			"<img src=\'"+tra.picInfo+"\'"+" onclick='trInfoPage(\"" + encodeURIComponent(tra.trName) + "\")'>" +
+                          str += ("<div class='swiper-slide'>" +
+                                "<img src=\'"+tra.picInfo+"\'"+" onclick='trInfoPage(\"" + encodeURIComponent(tra.trName) + "\")'>" +
                                    "<p><strong>" + tra.trName + "</strong></p>" +
                                    "</div>")
                        }
 
                 var element = document.getElementsByClassName("swiper-wrapper")[1];  // 첫 번째 요소 선택
-             	element.innerHTML = str;
-       			},error: function(){
-       				console.log("ajax통신 실패")
-       			}
-       		})
-        	
-        	
+                element.innerHTML = str;
+                },error: function(){
+                   console.log("ajax통신 실패")
+                }
+             })
+           
+           
         };
         
-       	function trInfoPage(travel){
-       		location.href="travel.info?travel="+travel
+          function trInfoPage(travel){
+             location.href="travel.info?travel="+travel
         };
-	</script>
+   </script>
       </div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
@@ -340,38 +344,38 @@
   </div>
   
   <script>
-	    const mySwiper2 = new Swiper(".mySwiper2", {
-	        slidesPerView: 'auto', // 한 번에 표시할 슬라이드 수
-	        spaceBetween: 20, // 슬라이드 간의 간격
-	        breakpoints : {
-	            700: {
-	            slidesPerView: 4,
-	            spaceBetween: 20,
-	            },
-	            1024: {
-	                slidesPerView: 6,
-	                spaceBetween: 20,
-	            }
-	        }, 
-	        slideToclickedSlide : true,
-	        navigation: {
-	            nextEl: ".swiper-button-next", 
-	            prevEl: ".swiper-button-prev"
-	        },
-	        loop: true,
-	        freemode : true,
-	        watchOverflow : true,
-	        centeredSlides : false,
-	        initialSlide: 0,
-	        slideOffsetAfter: 10,
-	        slideOffsetBefore: 10
-	    });
+       const mySwiper2 = new Swiper(".mySwiper2", {
+           slidesPerView: 'auto', // 한 번에 표시할 슬라이드 수
+           spaceBetween: 20, // 슬라이드 간의 간격
+           breakpoints : {
+               700: {
+               slidesPerView: 4,
+               spaceBetween: 20,
+               },
+               1024: {
+                   slidesPerView: 6,
+                   spaceBetween: 20,
+               }
+           }, 
+           slideToclickedSlide : true,
+           navigation: {
+               nextEl: ".swiper-button-next", 
+               prevEl: ".swiper-button-prev"
+           },
+           loop: true,
+           freemode : true,
+           watchOverflow : true,
+           centeredSlides : false,
+           initialSlide: 0,
+           slideOffsetAfter: 10,
+           slideOffsetBefore: 10
+       });
 
-	    $('.btn_like').click(function () {
-	      $(this).toggleClass("on")
-	    });
-	    //---------로그인 성공 메시지-----------
-	</script>
-		<%@include file="/views/common/footer.jsp"%>
+       $('.btn_like').click(function () {
+         $(this).toggleClass("on")
+       });
+       //---------로그인 성공 메시지-----------
+   </script>
+      <%@include file="/views/common/footer.jsp"%>
 </body>
 </html>

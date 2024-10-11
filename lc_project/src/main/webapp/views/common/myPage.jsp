@@ -47,24 +47,18 @@
                     <img src="../../pic/profile.png">
 
                 </div>
-                <div class="upload_profile_pic">
-	                <label for="file">
-					  <div class="btn-upload">프로필 사진 변경</div>
-					</label>
-					<input type="file" name="file" id="file">
-				</div>
-                <div id="text-area">
-                    <h3>${loginUser.userName}님</h3>
-                    <ul>
-                        <li>아이디 : ${loginUser.userId}</li>
-                        <li>전화번호 : ${loginUser.tel}</li>
-                    </ul>
-                </div>
-            </div>
-            <div>
-                <div id="booking-area">
-                    예약현황
-                </div>
+                    <div class="profile_info">
+                        <form action="update.me" method="post">
+                            <input type="submit" value="프로필 수정" class="updateprofile">
+                        </form>
+                        <div id="text-area">
+                            <h3 class="userName">${loginUser.userName}님</h3>
+                            <ul>
+                                <li>아이디 : ${loginUser.userId}</li>
+                                <li>전화번호 : ${loginUser.tel}</li>
+                            </ul>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
