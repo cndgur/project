@@ -21,16 +21,6 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>location.tr</display-name>
-    <servlet-name>location.tr</servlet-name>
-    <servlet-class>com.lc.project.travel.controller.travelListController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>location.tr</servlet-name>
-    <url-pattern>/location.tr</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
     <display-name>login.me</display-name>
     <servlet-name>login.me</servlet-name>
     <servlet-class>com.lc.project.member.Controller.MemberLoginviewController</servlet-class>
@@ -149,7 +139,7 @@
     <servlet-name>logout.me</servlet-name>
     <url-pattern>/logout.me</url-pattern>
   </servlet-mapping>
-  <servlet>
+      <servlet>
     <description></description>
     <display-name>searchid.bn</display-name>
     <servlet-name>searchid.bn</servlet-name>
@@ -179,7 +169,7 @@
     <servlet-name>searchid.me</servlet-name>
     <url-pattern>/searchid.me</url-pattern>
   </servlet-mapping>
-  <servlet>
+    <servlet>
     <description></description>
     <display-name>searchpwd.me</display-name>
     <servlet-name>searchpwd.me</servlet-name>
@@ -189,37 +179,17 @@
     <servlet-name>searchpwd.me</servlet-name>
     <url-pattern>/searchpwd.me</url-pattern>
   </servlet-mapping>
-  <servlet>
+    <servlet>
     <description></description>
-    <display-name>hotel.list</display-name>
-    <servlet-name>hotel.list</servlet-name>
-    <servlet-class>com.lc.project.hotel.model.controller.hotelListController</servlet-class>
+    <display-name>deletewish.tr</display-name>
+    <servlet-name>deletewish.tr</servlet-name>
+    <servlet-class>com.lc.project.travel.controller.wishDeleteController</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>hotel.list</servlet-name>
-    <url-pattern>/hotel.list</url-pattern>
+    <servlet-name>deletewish.tr</servlet-name>
+    <url-pattern>/deletewish.tr</url-pattern>
   </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>list.rc</display-name>
-    <servlet-name>list.rc</servlet-name>
-    <servlet-class>com.lc.project.travel.controller.RentCarController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>list.rc</servlet-name>
-    <url-pattern>/list.rc</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>wish.tr</display-name>
-    <servlet-name>wish.tr</servlet-name>
-    <servlet-class>com.lc.project.travel.controller.travelWishController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>wish.tr</servlet-name>
-    <url-pattern>/wish.tr</url-pattern>
-  </servlet-mapping>
-  <servlet>
+    <servlet>
     <description></description>
     <display-name>main.tr</display-name>
     <servlet-name>main.tr</servlet-name>
@@ -231,12 +201,22 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>deletewish.tr</display-name>
-    <servlet-name>deletewish.tr</servlet-name>
-    <servlet-class>com.lc.project.travel.controller.wishDeleteController</servlet-class>
+    <display-name>wish.tr</display-name>
+    <servlet-name>wish.tr</servlet-name>
+    <servlet-class>com.lc.project.travel.controller.travelWishController</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>deletewish.tr</servlet-name>
-    <url-pattern>/deletewish.tr</url-pattern>
+    <servlet-name>wish.tr</servlet-name>
+    <url-pattern>/wish.tr</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <description></description>
+    <display-name>hotel.list</display-name>
+    <servlet-name>hotel.list</servlet-name>
+    <servlet-class>com.lc.project.hotel.model.controller.hotelListController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>hotel.list</servlet-name>
+    <url-pattern>/hotel.list</url-pattern>
   </servlet-mapping>
 </web-app>
