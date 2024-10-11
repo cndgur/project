@@ -86,6 +86,9 @@ body{
 }
 #myPage_body{
     margin: 50px;
+    position: relative;
+    top: 100px;
+    width: 253px;
 }
 .myPage{
     width: 90%;
@@ -126,6 +129,8 @@ body{
 
 #text-area{
     margin: 30px 0;
+    position: relative;
+    bottom: 34px;
 }
 
 #text-area > ul > li{
@@ -136,4 +141,31 @@ body{
 
 #text-area > ul > li::marker{
     font-size: large;
+}
+
+.btn-upload {
+  width: 150px;
+  height: 30px;
+  background: #fff;
+  border: 1px solid rgb(77,77,77);
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    background: rgb(77,77,77);
+    color: #fff;
+  }
+}
+
+#file {
+  display: none;
+}
+
+.upload_profile_pic{
+	position: relative;
+	left: 49px;
+	top: -18px;
 }
