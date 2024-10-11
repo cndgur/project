@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-<<<<<<< HEAD
-        
     <wb-module deploy-name="lc_project">
-                
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
-                
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/resources"/>
-                
         <property name="context-root" value="lc_project"/>
-                
         <property name="java-output-path" value="/lc_project/src/main/webapp/WEB-INF/classes"/>
-            
     </wb-module>
+<<<<<<< HEAD
+=======
     
 =======
             
@@ -34,4 +29,5 @@
         
 
 >>>>>>> f7cb9689101323d0736fdaa384cbd365880daf84
+>>>>>>> a9081cfda73430a4be8ea51d15587f67988b5c24
 </project-modules>

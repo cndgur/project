@@ -5,7 +5,11 @@ import org.apache.ibatis.session.SqlSession;
 import com.lc.project.business.model.dao.BusinessDao;
 import com.lc.project.business.model.vo.Business;
 import com.lc.project.common.template.Template;
+<<<<<<< HEAD
+ 
+=======
 
+>>>>>>> a9081cfda73430a4be8ea51d15587f67988b5c24
 public class BusinessServiceImpl implements BusinessService {
 
 	private BusinessDao bDao = new BusinessDao();

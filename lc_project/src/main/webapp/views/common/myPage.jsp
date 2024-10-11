@@ -44,8 +44,6 @@
             <div id="profile">
                 <div id="img-area">
 
-                    <img src="../..pic/profile.png">
-
                     <img src="../../pic/profile.png">
 
                 </div>

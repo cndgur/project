@@ -51,6 +51,9 @@ body{
     border: none;
     font-size: large;
     color: white;
+<<<<<<< HEAD
+}
+=======
 }
 
 /* --------------------------------------------- */
@@ -236,3 +239,4 @@ textarea{
     position: relative;
     left: 460px;
 }
+>>>>>>> a9081cfda73430a4be8ea51d15587f67988b5c24
