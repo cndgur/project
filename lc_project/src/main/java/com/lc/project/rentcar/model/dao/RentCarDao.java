@@ -1,4 +1,4 @@
-package com.lc.project.rentcar.model.dao;
+package com.lc.project.rentcar.model.Dao;
 
 import java.util.ArrayList;
 
