@@ -239,4 +239,14 @@
     <servlet-name>deletewish.tr</servlet-name>
     <url-pattern>/deletewish.tr</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>hotel.info</display-name>
+    <servlet-name>hotel.info</servlet-name>
+    <servlet-class>com.lc.project.hotel.controller.HotelInfoController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>hotel.info</servlet-name>
+    <url-pattern>/hotel.info</url-pattern>
+  </servlet-mapping>
 </web-app>

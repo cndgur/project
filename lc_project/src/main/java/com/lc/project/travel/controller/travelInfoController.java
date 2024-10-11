@@ -73,7 +73,6 @@ public class travelInfoController extends HttpServlet {
 			tra.setTrAddress(tAdd);
 		}
 		ArrayList<tReview> rlist = tServ.selectTReview(trName);
-		HttpSession session = request.getSession();
 		request.setAttribute("t", t);
 		request.setAttribute("category",category);
 		request.setAttribute("tlist", tlist);
