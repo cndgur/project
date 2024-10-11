@@ -305,10 +305,9 @@
                         			url: "wish.tr",
                         			contentType: "application/json",
                         			data: {
-                        				userName: "<%=loginUser.getUserName()%>"
+                        				userId: "<%=loginUser.getUserId()%>"
                         			},
                         			success: function(res){
-                        				console.log(res);
                         				let str = "";
                                         for(let tra of res){
                                         	str += ("<div class='sidenav-item' onclick='location.href=\"travel.info?travel="+tra.trName+"\"'>" +
