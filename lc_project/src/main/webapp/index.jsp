@@ -233,7 +233,7 @@
   </form>
    <br><br><br>
    
-   <div id="wrap-main-content1">
+ <div id="wrap-main-content1">
         <div id="main-content1">
           <div id="title">
             <h1>"떠나볼래? 지역 따라 골라보는 여행 스팟"</h1>
@@ -273,11 +273,13 @@
                      <img src="<%=contextPath%>/pic/제주도.jpg" alt="jeju" onclick="location.href='location.tr?location=제주도'">
                   <p>제주</p>
                </div>
+               </div>
                <div class="swiper-button-next"></div>
                <div class="swiper-button-prev"></div>
           </div>
            </div>
            </div>
+		
            <br>    
      
      <!-- 이충혁 -->

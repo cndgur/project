@@ -200,9 +200,9 @@
                     <div class="recommendtr" style="margin-bottom: 100px;">
                     <% for(Hotel ht : hlist){ %>
 	                        <div class="recommendtr-item">
-	                            <img class="recommendtrimg" src="<%=ht.getPicInfo() %>" onclick="location.href='travel.info?travel=<%=ht.gethName()%>'">
-	                            <p onclick="location.href='travel.info?travel=<%=ht.gethName()%>'" style="cursor: pointer;"><strong><%=ht.gethName() %></strong></p>
-	                            <p onclick="location.href='travel.info?travel=<%=ht.gethName()%>'" style="cursor: pointer;"><%=ht.gethAddress() %></p>
+	                            <img class="recommendtrimg" src="<%=ht.getPicInfo() %>" onclick="location.href='hotel.info?travel=<%=ht.gethName()%>'">
+	                            <p onclick="location.href='hotel.info?hotel=<%=ht.gethName()%>'" style="cursor: pointer;"><strong><%=ht.gethName() %></strong></p>
+	                            <p onclick="location.href='hotel.info?hotel=<%=ht.gethName()%>'" style="cursor: pointer;"><%=ht.gethAddress() %></p>
 	                        </div>
 	                <%} %>
                     </div>

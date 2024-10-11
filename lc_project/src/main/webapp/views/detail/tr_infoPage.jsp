@@ -431,7 +431,8 @@
                         <div class=sidecontent></div>
                         
                         <div class="sidenav-footer">
-                            <button onclick="location.href='hotel.info'"><div style="vertical-align: middle;">여행지 기준<br>호텔 검색</div></button>
+                        	<button onclick="location.href='hotel.info?hotel=럭셔리 빌라'"><div style="vertical-align: middle;">여행지 기준<br>호텔 검색</div></button>
+                            
                         </div>
                         <script>
                             $(document).ready(function() {

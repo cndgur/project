@@ -32,17 +32,20 @@ public class HotelInfoController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String HotelName = request.getParameter("hotel");
 		HotelService hServ = new HotelService(); 
-		Hotel h = hServ.selectHotel("럭셔리 빌라");
+		Hotel h = hServ.selectHotel(HotelName);
 		ArrayList<Room> rlist = hServ.selectRoomList(h.getBsId());
 		String[] strArr = h.gethAddress().split(" ");
 		String hAdd = strArr[0]+" "+strArr[1];
-		System.out.println(hAdd);
 		ArrayList<Travel> tlist = new TravelService().selectNearbyTravel(hAdd," ");
 		for(Travel tra : tlist) {
 			tra.setTrAddress(hAdd);
 		}
 		ArrayList<Hotel> hlist = hServ.selectHotelList(hAdd,h.gethName());
+		for(Hotel ht : hlist) {
+			ht.sethAddress(hAdd);
+		}
 		System.out.println(hlist);
 		request.setAttribute("h", h);
 		request.setAttribute("hlist", hlist);
