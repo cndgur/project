@@ -11,8 +11,13 @@
 			    FROM (SELECT *
 			  			FROM TB_TOUR
 			  	   	   ORDER BY Field DESC))
+<<<<<<< HEAD
 		WHERE ROWNUM <= 10
 	</entry>
+=======
+		WHERE ROWNUM &lt;= 10
+	</entry> 
+>>>>>>> f7cb9689101323d0736fdaa384cbd365880daf84
 	<entry key="selecttravel">
 		SELECT ac_name,
 				ac_address,
