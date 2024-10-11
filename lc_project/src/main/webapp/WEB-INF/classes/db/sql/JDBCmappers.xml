@@ -11,8 +11,8 @@
 			    FROM (SELECT *
 			  			FROM TB_TOUR
 			  	   	   ORDER BY Field DESC))
-		WHERE ROWNUM <= 10
-	</entry>
+		WHERE ROWNUM &lt;= 10
+	</entry> 
 	<entry key="selecttravel">
 		SELECT ac_name,
 				ac_address,
