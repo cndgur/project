@@ -32,6 +32,21 @@ public class HotelInfoController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+<<<<<<< HEAD
+		String HotelName = request.getParameter("hotel");
+=======
+<<<<<<< HEAD
+>>>>>>> 921d9ed8b117b1b3a18f339debf1c62a98765fac
+		HotelService hServ = new HotelService(); 
+		Hotel h = hServ.selectHotel(HotelName);
+		ArrayList<Room> rlist = hServ.selectRoomList(h.getBsId());
+		String[] strArr = h.gethAddress().split(" ");
+		String hAdd = strArr[0]+" "+strArr[1];
+<<<<<<< HEAD
+		ArrayList<Travel> tlist = new TravelService().selectNearbyTravel(hAdd," ");
+=======
+		ArrayList<Travel> tlist = new TravelService().selectNearbyTravel(hAdd,"");
+=======
 		String HotelName = request.getParameter("hotel");
 		HotelService hServ = new HotelService(); 
 		Hotel h = hServ.selectHotel(HotelName);
@@ -39,18 +54,36 @@ public class HotelInfoController extends HttpServlet {
 		String[] strArr = h.gethAddress().split(" ");
 		String hAdd = strArr[0]+" "+strArr[1];
 		ArrayList<Travel> tlist = new TravelService().selectNearbyTravel(hAdd," ");
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
+>>>>>>> 921d9ed8b117b1b3a18f339debf1c62a98765fac
 		for(Travel tra : tlist) {
 			tra.setTrAddress(hAdd);
 		}
 		ArrayList<Hotel> hlist = hServ.selectHotelList(hAdd,h.gethName());
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 921d9ed8b117b1b3a18f339debf1c62a98765fac
 		for(Hotel ht : hlist) {
 			ht.sethAddress(hAdd);
 		}
 		System.out.println(hlist);
+<<<<<<< HEAD
+=======
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
+>>>>>>> 921d9ed8b117b1b3a18f339debf1c62a98765fac
 		request.setAttribute("h", h);
 		request.setAttribute("hlist", hlist);
 		request.setAttribute("tlist", tlist);
 		request.setAttribute("rlist", rlist);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+		System.out.println(rlist);
+=======
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
+>>>>>>> 921d9ed8b117b1b3a18f339debf1c62a98765fac
 		request.getRequestDispatcher("views/detail/ht_infoPage.jsp").forward(request, response);
 	}
 
@@ -62,4 +95,8 @@ public class HotelInfoController extends HttpServlet {
 		doGet(request, response);
 	}
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b

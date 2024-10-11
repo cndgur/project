@@ -97,7 +97,7 @@ body{
 #profile{
     width: 20%;
     min-width: 250px;
-    height: 80%;
+    height: 364px;
     border-radius: 25px;
     text-align: center;
     background-color: #EFF0F2;
@@ -136,4 +136,23 @@ body{
 
 #text-area > ul > li::marker{
     font-size: large;
+<<<<<<< HEAD
+=======
+}
+
+.profile_info{
+    position: relative;
+    bottom: 23px;
+}
+
+.userName{
+    position: relative;
+    bottom: 8px;
+}
+
+.updateprofile{
+    border: none;
+    cursor: pointer;
+    font-weight: bolder;
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
 }

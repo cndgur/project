@@ -55,10 +55,24 @@
         }
         .container{
             width: 97%; 
+<<<<<<< HEAD
             height: 180px; 
             background: white; 
             border-radius: 15px;
             margin-bottom: 20px;
+=======
+<<<<<<< HEAD
+            height: 150px; 
+            background: white; 
+            border-radius: 15px;
+            margin-right: 20px;
+=======
+            height: 180px; 
+            background: white; 
+            border-radius: 15px;
+            margin-bottom: 20px;
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
+>>>>>>> 921d9ed8b117b1b3a18f339debf1c62a98765fac
         }
         #reviewbt{
             width: 100px;
@@ -69,8 +83,16 @@
             background: #7bbcb0;
             color: white;
             border-radius: 40px;
+<<<<<<< HEAD
             margin-right: 20px;
             
+=======
+<<<<<<< HEAD
+=======
+            margin-right: 20px;
+            
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
+>>>>>>> 921d9ed8b117b1b3a18f339debf1c62a98765fac
         }
 		#reviewArrow{
 			width: 50px; 

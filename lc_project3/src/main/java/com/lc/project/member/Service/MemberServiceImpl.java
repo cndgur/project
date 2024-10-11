@@ -55,6 +55,22 @@ public class MemberServiceImpl implements MemberService{
 		return searchpwd;
 	}
 
+	@Override
+	public int updateMember(Member m) {
+		SqlSession sqlSession = Template.getSqlSession();
+		int result = mDao.updateMember(sqlSession, m);
+		
+		if(result > 0) {
+			sqlSession.commit();
+		} else {
+			sqlSession.rollback();
+		}
+		
+		sqlSession.close();
+		
+		return result;
+	}
+
 
 
 }

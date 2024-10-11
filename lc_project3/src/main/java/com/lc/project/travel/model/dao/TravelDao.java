@@ -89,7 +89,7 @@ public class TravelDao {
 		}
 		return list;
 	}
-	public ArrayList<Travel> selectWishList(Connection conn,String userName){
+	public ArrayList<Travel> selectWishList(Connection conn,String userId){
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		ArrayList<Travel> list = new ArrayList<>();
@@ -99,7 +99,7 @@ public class TravelDao {
 				+"WHERE WISH_USER = ?";
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, userName);
+			pstmt.setString(1, userId);
 			rset = pstmt.executeQuery();
 			while(rset.next()) {
 				Travel t = new Travel();
@@ -172,14 +172,14 @@ public class TravelDao {
 		}
 		return list;
 	}
-	public int insertReview(Connection conn,String review,String userName,String travel){
+	public int insertReview(Connection conn,String review,String userId,String travel){
 		int result = 0;
 		PreparedStatement pstmt = null;
-		String sql = "INSERT INTO TB_REVIEW(REV_NUM, REV_USER, AC_NAME, CONTENT, REVIEW_DATE,SCORE) "
-				+ "VALUES(26,?,?,?,SYSDATE,7)";
+		String sql = "INSERT INTO TB_REVIEW(REV_USER, AC_NAME, CONTENT, REVIEW_DATE,SCORE) "
+				+ "VALUES(?,?,?,SYSDATE,7)";
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, userName);
+			pstmt.setString(1, userId);
 			pstmt.setString(2, travel);
 			pstmt.setString(3, review);
 			result = pstmt.executeUpdate();
@@ -192,7 +192,7 @@ public class TravelDao {
 		}
 		return result;
 	}
-	public int insertWish(Connection conn,String userName,String travel){
+	public int insertWish(Connection conn,String userId,String travel){
 		int result = 0;
 		PreparedStatement pstmt = null;
 		String sql = "INSERT INTO TB_WISHLIST(AC_NAME, WISH_USER) "
@@ -200,7 +200,7 @@ public class TravelDao {
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, travel);
-			pstmt.setString(2, userName);
+			pstmt.setString(2, userId);
 			result = pstmt.executeUpdate();
 			
 		} catch (SQLException e) {

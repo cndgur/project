@@ -20,4 +20,8 @@ public class MemberDao {
     public Member searchpwdMember(SqlSession sqlSession, Member member) {
     	return sqlSession.selectOne("memberMapper.searchpwdMember", member);
     }
+    
+    public int updateMember(SqlSession sqlSession, Member member) {
+    	return sqlSession.update("memberMapper.updateMember", member);
+    }
 }
