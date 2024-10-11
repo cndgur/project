@@ -13,6 +13,7 @@
   <typeAliases>
 
   	<typeAlias type="com.lc.project.travel.model.vo.Travel" alias="Travel" />
+  	<typeAlias type="com.lc.project.rentcar.model.vo.RentCar" alias="RentCar" />
   	<typeAlias type="com.lc.project.member.model.vo.Member" alias="Member" />
     <typeAlias type="com.lc.project.business.model.vo.Business" alias="Business"/>
   </typeAliases>
@@ -36,6 +37,7 @@
    <mapper resource="/mappers/member-mapper.xml"/>
    <mapper resource="/mappers/travel-mapper.xml"/>
    <mapper resource="/mappers/business-mapper.xml"/>
+   <mapper resource="/mappers/rentcar-mapper.xml"/>
    
   </mappers>
 </configuration>

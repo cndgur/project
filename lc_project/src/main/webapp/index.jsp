@@ -100,7 +100,7 @@
                 <a onclick="location.href='index2.jsp'" class="to_login">
                 <input type="button" value="호텔" class="search_button3">
                 </a>
-                <a onclick="" class="to_rentcar">
+                <a onclick="location.href='list.rc'" class="to_rentcar">
                 <input type="button" value="렌트카 바로가기" class="search_button4">
                 </a>
               </div>
