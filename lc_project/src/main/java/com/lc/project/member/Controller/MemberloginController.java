@@ -14,46 +14,49 @@ import com.lc.project.member.model.vo.Member;
 /**
  * Servlet implementation class MemberloginController
  */
+@WebServlet("/memberLogin") // Servlet 매핑 추가
 public class MemberloginController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+    private static final long serialVersionUID = 1L;
+
     public MemberloginController() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
-		
-		Member m = new Member();
-		m.setUserId(request.getParameter("userId"));
-		m.setUserPwd(request.getParameter("userPwd"));
-		
-		MemberService memberService = new MemberServiceImpl(); 
-		Member loginUser = memberService.loginMember(m);
-		
-		if (loginUser != null) {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        
+        Member m = new Member();
+        m.setUserId(request.getParameter("userId"));
+        m.setUserPwd(request.getParameter("userPwd"));
+        
+        MemberService memberService = new MemberServiceImpl(); 
+        Member loginUser = memberService.loginMember(m);
+        
+        if (loginUser != null) {
             request.getSession().setAttribute("loginUser", loginUser);
-            System.out.println("로그인성공");
-            response.sendRedirect(request.getContextPath() + "/index.jsp?loginSuccess=true");
+            
+            String userName = loginUser.getUserName();
+            
+            response.setContentType("text/html; charset=UTF-8");
+            response.getWriter().write("<html><head><title>로그인 성공</title></head><body>");
+            response.getWriter().write("<script>alert('환영합니다, " + userName + "님!');</script>");
+            response.getWriter().write("<script>window.location.href = '" + request.getContextPath() + "/index.jsp';</script>");
+            response.getWriter().write("</body></html>");
         } else {
             System.out.println("로그인실패");
-            response.sendRedirect(request.getContextPath() + "/login.me?loginSuccess=false");
+            response.setContentType("text/html; charset=UTF-8");
+            response.getWriter().write("<html><head><title>로그인 실패</title></head><body>");
+            response.getWriter().write("<script>alert('아이디, 비밀번호를 확인해주세요');</script>");
+<<<<<<< HEAD
+            response.getWriter().write("<script>window.location.href = '" + request.getContextPath() + "/index.jsp';</script>");
+=======
+            response.getWriter().write("<script>window.location.href = '" + request.getContextPath() + "/views/member/loginviewmember.jsp';</script>");
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
+            response.getWriter().write("</body></html>");
         }
-	}
+    }
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doGet(request, response);
+    }
 }

@@ -52,6 +52,26 @@ public class Member {
 		this.birthday = birthday;
 		this.gender = gender;
 	}
+	
+
+<<<<<<< HEAD
+=======
+	public Member(String userName, String userId, String userPwd, String tel, String email, String address) {
+		super();
+		this.userName = userName;
+		this.userId = userId;
+		this.userPwd = userPwd;
+		this.tel = tel;
+		this.email = email;
+		this.address = address;
+	}
+
+
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
+	public Member(String userName) {
+		super();
+		this.userName = userName;
+	}
 
 
 	public int getUserNo() {

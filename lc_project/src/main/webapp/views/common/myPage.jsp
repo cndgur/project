@@ -49,6 +49,7 @@
                     <img src="../../pic/profile.png">
 
                 </div>
+<<<<<<< HEAD
                 <button>프로필 사진 변경</button>
                 <div id="text-area">
                     <h3>${loginUser.userName}님</h3>
@@ -62,6 +63,20 @@
                 <div id="booking-area">
                     예약현황
                 </div>
+=======
+                    <div class="profile_info">
+                        <form action="update.me" method="post">
+                            <input type="submit" value="프로필 수정" class="updateprofile">
+                        </form>
+                        <div id="text-area">
+                            <h3 class="userName">${loginUser.userName}님</h3>
+                            <ul>
+                                <li>아이디 : ${loginUser.userId}</li>
+                                <li>전화번호 : ${loginUser.tel}</li>
+                            </ul>
+                        </div>
+                    </div>
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
             </div>
         </div>
     </div>
