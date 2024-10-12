@@ -1,11 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<<<<<<< HEAD
+=======
+<%
+    String contextPath = request.getContextPath(); // 컨텍스트 경로 얻기
+%>
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>로그인 선택</title>
+<<<<<<< HEAD
 <link rel="icon" href="../../pic/logo.png"/>
+=======
+<link rel="icon" href="<%=contextPath %>/pic/logo.png"/>
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
     <link rel="apple-touch-icon" href="pic/logo.png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -120,7 +130,11 @@ body{
         <div class="logo">
             <a href="/lc_project/index.jsp" class="to_main">
                 <div class="header_name">방구석여행</div>
+<<<<<<< HEAD
                 <img src="../../pic/logo.png" alt="" class="header_main_logo">
+=======
+                <img src="<%=contextPath %>/pic/logo.png" alt="" class="header_main_logo">
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
             </a>
         </div>
         <h1>회원가입</h1>

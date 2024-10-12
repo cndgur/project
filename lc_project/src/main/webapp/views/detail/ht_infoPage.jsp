@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="com.lc.project.hotel.model.vo.Hotel, java.util.ArrayList, com.lc.project.travel.model.vo.tReview, com.lc.project.travel.model.vo.Travel"%>
+    pageEncoding="UTF-8" import="com.lc.project.hotel.model.vo.Hotel, java.util.ArrayList, com.lc.project.travel.model.vo.Travel, com.lc.project.hotel.model.vo.Room"%>
 <%	
-	Hotel h = new Hotel();
-	//(Hotel)request.getAttribute("h");
+	Hotel h = (Hotel)request.getAttribute("h");	
 	ArrayList<Travel> tlist = (ArrayList<Travel>)request.getAttribute("tlist");
+	ArrayList<Hotel> hlist = (ArrayList<Hotel>)request.getAttribute("hlist");
+	ArrayList<Room> rlist = (ArrayList<Room>)request.getAttribute("rlist");
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -11,8 +12,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>방구석여행</title>
-    <link rel="icon" href="../pic/logo.png"/>
-    <link rel="apple-touch-icon" href="../pic/logo.png"/>
     <!-- jQuery -->
     <script 
         src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -22,20 +21,14 @@
         src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"
         integrity="sha256-Fb0zP4jE3JHqu+IBB9YktLcSjI1Zc6J2b6gTjB0LpoM="
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/lc/css/ht_infoPage.css">
-	<!--
-        2. 설치 스크립트
-        * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
-    -->
-    <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
-
+	
     <script src="https://cdn.portone.io/v2/browser-sdk.js"></script>
-    <link rel="icon" href="../../pic/logo.png"/>
-    <link rel="apple-touch-icon" href="../../pic/logo.png"/>
-    
+    <link rel="icon" href="././pic/logo.png"/>
+    <link rel="apple-touch-icon" href="././pic/logo.png"/>
+    <link rel="stylesheet" href="././css/ht_infoPage.css" />
 </head>
 <body id=system-ui>
     <%@include file="../common/header.jsp" %>
@@ -51,7 +44,7 @@
             <tr class="picture">
                 <td class="side"></td>
                 <td colspan="3">
-                    <img src="<%=contextPath %>/pic/ht_main_pic.png" class="large-image">
+                    <img src="<%=h.getPicInfo()%>" class="large-image">
                 </td>
                 <td></td>
                 <td></td>
@@ -61,103 +54,42 @@
                 <td class="side"></td>
                 <td colspan="3" class="content">
                     <div style="margin-top: 100px;">
-                        <b style="font-size: 15px; margin-bottom: 0px">호텔</b><br>
-                        <b style="font-size: 30px"><%=h.gethName() %></b>
+                        <b style="font-size: 30px"><%=h.gethName() %></b><br>
+                        <b style="font-size: 15px; margin-bottom: 0px"><%=h.gethAddress() %></b>
                         <hr>
                     </div>
                     <div style="margin-bottom: 20px;">
-                        <img src="/lc/pic/star.png"><b>  9.3</b>
+                    	사업자 정보 <br>
+                        <%=h.getBsName() %> <br>
+						<%=h.getBsTel() %>
                     </div>
-                    <div style="display: flex;">
-                        <div class="reviewcon">
-                            <table>
-                                <tr>
-                                    <div style="padding-top: 10px;">
-                                        <img src="/lc/pic/star.png"><b>  8.5</b>
-                                    </div>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 10px;">
-                                        경주 보문단지내 위치한 힐튼 호텔 경주 시내 관광을 하기보단 보문단지내 휴식을 하며 쉬기 좋음
-                                        언제나 늘 항상 친절하며 룸 컨디션이 좋음 
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td style="float: right; padding-right: 10px;">예다니</td>
-                                </tr>
-                                <tr >
-                                    <td style="float: right; padding-right: 10px;">24.07.06</td>
-                                    
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="reviewcon">
-                            <table>
-                                <tr>
-                                    <div style="padding-top: 10px;">
-                                        <img src="<%=contextPath %>/pic/star.png"><b>  9.0</b>
-                                    </div>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 10px;">
-                                        경주 보문단지내 위치한 힐튼 호텔 경주 시내 관광을 하기보단 보문단지내 휴식을 하며 쉬기 좋음
-                                        언제나 늘 항상 친절하며 룸 컨디션이 좋음 
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td style="float: right; padding-right: 10px;">예다니</td>
-                                </tr>
-                                <tr >
-                                    <td style="float: right; padding-right: 10px;">24.07.06</td>
-                                    
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="reviewcon">
-                            <table>
-                                <tr>
-                                    <div style="padding-top: 10px;">
-                                        <img src="<%=contextPath %>/pic/star.png"><b>  10</b>
-                                    </div>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 10px;">
-                                        경주 보문단지내 위치한 힐튼 호텔 경주 시내 관광을 하기보단 보문단지내 휴식을 하며 쉬기 좋음
-                                        언제나 늘 항상 친절하며 룸 컨디션이 좋음 
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td style="float: right; padding-right: 10px;">예다니</td>
-                                </tr>
-                                <tr >
-                                    <td style="float: right; padding-right: 10px;">24.07.06</td>
-                                    
-                                </tr>
-                            </table>
-                        </div>
-                        <div style="margin-left:20px; display: flex; justify-content: center; align-items: center; cursor: pointer">
-                            <img src="<%=contextPath %>/pic/ht_larrow.png" id="reviewArrow">
-                        </div>
-                    </div>
-                    <br><br>
-                    <!-- * 카카오맵 - 지도퍼가기 -->
-                    <!-- 1. 지도 노드 -->
-                    <div id="daumRoughmapContainer1727164187996" class="root_daum_roughmap root_daum_roughmap_landing" style="width: 100%;"></div>
-
                     
-
-                    <!-- 3. 실행 스크립트 -->
-                    <script charset="UTF-8">
-                        new daum.roughmap.Lander({
-                            "timestamp" : "1727164187996",
-                            "key" : "2kq5w",
-                            "mapWidth" : "100%",
-                            "mapHeight" : "360"
-                        }).render();
-                    </script>
+                    <br><br>
+                    <!-- 지도를 표시할 div 입니다 -->
+			          <div id="map" style="width:100%; height:500px;"></div>
+			      
+			          <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=99929078a9d810f506f314a69d82b1f2"></script>
+			          <script>
+			              var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+			                  mapOption = { 
+			                      center: new kakao.maps.LatLng(<%=h.getHt_map_lat() %>,<%=h.getHt_map_long() %>), // 지도의 중심좌표
+			                      level: 3 // 지도의 확대 레벨
+			                  };
+			      
+			              var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+			      
+			              // 마커가 표시될 위치입니다 
+			              var markerPosition  = new kakao.maps.LatLng(<%=h.getHt_map_lat() %>,<%=h.getHt_map_long() %>); 
+			      
+			              // 마커를 생성합니다
+			              var marker = new kakao.maps.Marker({
+			                  position: markerPosition
+			              });
+			      
+			              // 마커가 지도 위에 표시되도록 설정합니다
+			              marker.setMap(map);
+			      
+			          </script>
                 </td>
                 <td></td>
                 <td></td>
@@ -184,185 +116,130 @@
                     <div>
                         <h2>객실 선택</h2>
                         <hr>
-                        <div style="width: 100%; height: 250px; background: #ddeeeb; margin-bottom: 50px; border-radius: 15px;">
-                            <table>
-                                <tr>
-                                    <td rowspan="2">
-                                        <img src="<%=contextPath %>/pic/picture.png" class="reservepic">
-                                    </td>
-                                    <td class="roomti"><b><h3>[숙박 페스타] 디럭스 트윈 (세미싱글 2개)</h3></b></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="container">
-                                            입실 15:00
-                                            퇴실 11:00<br>
-                                            148,500원<br>
-                                            객실정보
-                                            기준2인 · 최대2인<br>
-                                            추가정보
-                                            성인 4명 투숙 불가<br>
-                                            <button id="reviewbt">예약하기</button>
-                                        </div>
-                                    </td>
-                                    
-                                </tr>
-                            </table>
-                            
-                        </div>
-                        <div style="width: 100%; height: 250px; background: #ddeeeb; margin-bottom: 50px; border-radius: 15px;">
-                            <table>
-                                <tr>
-                                    <td rowspan="2">
-                                        <img src="<%=contextPath %>/pic/picture.png" class="reservepic">
-                                    </td>
-                                    <td class="roomti"><b><h3>[숙박 페스타] 디럭스 패밀리 (킹베드+세미싱글)</h3></b></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="container">
-                                            입실 15:00
-                                            퇴실 11:00<br>
-                                            148,500원<br>
-                                            객실정보
-                                            기준2인 · 최대2인<br>
-                                            추가정보
-                                            성인 4명 투숙 불가<br>
-                                            <button id="reviewbt" onclick="requestPay()">예약하기</button>
-                                        </div>
-                                    </td>  
-                                </tr>
-                            </table>
-                            <script>
-	                            function generateUUID() { 
-	                                return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-	                                    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-	                                    return v.toString(16);
-	                                });
-	                            }
-	                           
-                            	function requestPay() {
-                            		const paymentId = generateUUID();
-                            		
-                            		console.log("결제 요청 시작");
-                            		const response = await PortOne.requestPayment({
-                                	    storeId: "store-2c741ae7-334b-4984-9a8c-62eba220c91b",
-                                	    paymentId: paymentId,
-                                	    orderName: "테스트 결제",
-                                	    totalAmount: 100,
-                                	    currency: "KRW",
-                                	    channelKey: "channel-key-1882d49b-8325-4d68-9244-2cf5574ca062",
-                                	    payMethod: "EASY_PAY",
-                                	    easyPay: {
-                                	      easyPayProvider: "KAKAOPAY"
-                                	    }               	    
-                                	  }, function(response) {
-                                		  console.log("결제 응답:", response);  // 결제 응답 확인용 로그
-                                          alert(JSON.stringify(response));  // 결제 응답을 알림으로 표시
-
-                                          if (response.status === "AUTHENTICATED") {
-                                              // 결제 성공 시 처리
-                                              console.log("결제 성공:", response);
-                                              window.location.href = "/payment-success";  // 결제 성공 페이지로 이동
-                                          } else {
-                                              // 결제 실패 시 처리
-                                              console.log("결제 실패:", response);
-                                              alert("결제 실패: " + (response.errorMessage || "알 수 없는 오류"));
-                                          }
-                                          
-                                	  });
-                            		
-                            		 alert(response.message);
-                            		
-                            	  console.log("결제 요청 whdfy");
-                            	}
-                            </script>
-                        </div>
-                        <div style="width: 100%; height: 250px; background: #ddeeeb; margin-bottom: 50px; border-radius: 15px;">
-                            <table>
-                                <tr>
-                                    <td rowspan="2">
-                                        <img src="<%=contextPath %>/pic/picture.png" class="reservepic">
-                                    </td>
-                                    <td style="text-align: left; vertical-align:bottom; width: 100%;"><b><h3>[숙박 페스타] 온돌</h3></b></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="container">
-                                            입실 15:00
-                                            퇴실 11:00<br>
-                                            148,500원<br>
-                                            객실정보
-                                            기준2인 · 최대2인<br>
-                                            추가정보
-                                            성인 4명 투숙 불가<br>
-                                            <button id="reviewbt">예약하기</button>
-                                        </div>
-                                    </td>
-                                    
-                                </tr>
-                            </table>
-                            
-                        </div>
-                        <div style="width: 100%; height: 250px; background: #ddeeeb; margin-bottom: 50px; border-radius: 15px;">
-                            <table>
-                                <tr>
-                                    <td rowspan="2">
-                                        <img src="<%=contextPath %>/pic/picture.png" class="reservepic">
-                                    </td>
-                                    <td style="text-align: left; vertical-align:bottom; width: 100%;"><b><h3>[숙박 페스타] [2인 조식] 디럭스 더블 (킹베드)</h3></b></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="container">
-                                            입실 15:00
-                                            퇴실 11:00<br>
-                                            148,500원<br>
-                                            객실정보
-                                            기준2인 · 최대2인<br>
-                                            추가정보
-                                            성인 4명 투숙 불가<br>
-                                            <button id="reviewbt">예약하기</button>
-                                        </div>
-                                    </td>
-                                    
-                                </tr>
-                            </table>
-                            
-                        </div>
-                        <div style="width: 100%; height: 250px; background: #ddeeeb; margin-bottom: 50px; border-radius: 15px;">
-                            <table>
-                                <tr>
-                                    <td rowspan="2">
-                                        <img src="<%=contextPath %>/pic/picture.png" class="reservepic">
-                                    </td>
-                                    <td style="text-align: left; vertical-align:bottom; width: 100%;"><b><h3>[숙박 페스타] 디럭스 트윈 (세미싱글 2개)</h3></b></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="container">
-                                            입실 15:00
-                                            퇴실 11:00<br>
-                                            148,500원<br>
-                                            객실정보
-                                            기준2인 · 최대2인<br>
-                                            추가정보
-                                            성인 4명 투숙 불가<br>
-                                            <button id="reviewbt">예약하기</button>
-                                        </div>
-                                    </td>
-                                    
-                                </tr>
-                            </table>
-                            
-                        </div>
+                        <%for (Room ro : rlist){ %>
+<<<<<<< HEAD
+	                            <table  style="background: #ddeeeb; border-radius: 15px;">
+=======
+	                            <table  style="background: #ddeeeb; border-radius: 15px; height: 250px">
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
+	                                <tr>
+	                                    <td rowspan="2">
+	                                        <img src="<%=ro.getPicInfo() %>" class="reservepic">
+	                                    </td>
+	                                    <td class="roomti"><b><h3><%=ro.getrName() %></h3></b></td>
+	                                </tr>
+	                                <tr>
+	                                    <td>
+	                                        <div class="container">
+	                                            체크인 : <%=ro.getCheckin() %><br>
+	                                            체크아웃 : <%=ro.getCheckout() %><br>
+	                                            가격 : <%=ro.getPrice() %>원<br>
+	                                            객실정보<br>
+	                                            최대<%=ro.getrMax() %>인<br>
+	                                            추가정보<br>
+	                                            <%=ro.getrInfo() %>
+	                                            <button id="reviewbt" onclick="requestPay()">예약하기</button>
+	                                        </div>
+	                                    </td>  
+	                                </tr>
+	                            </table>
+	                            <script>
+		                            function generateUUID() { 
+		                                return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+		                                    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+		                                    return v.toString(16);
+		                                });
+		                            }
+		                           
+	                            	function requestPay() {
+	                            		const paymentId = generateUUID();
+	                            		
+	                            		console.log("결제 요청 시작");
+	                            		PortOne.requestPayment({
+	                                	    storeId: "store-2c741ae7-334b-4984-9a8c-62eba220c91b",
+	                                	    paymentId: paymentId,
+	                                	    orderName: "테스트 결제",
+	                                	    totalAmount: 100,
+	                                	    currency: "KRW",
+	                                	    channelKey: "channel-key-1882d49b-8325-4d68-9244-2cf5574ca062",
+	                                	    payMethod: "EASY_PAY",
+	                                	    easyPay: {
+	                                	      easyPayProvider: "KAKAOPAY"
+	                                	    }               	    
+	                                	  }, function(response) {
+	                                		  console.log("결제 응답:", response);  // 결제 응답 확인용 로그
+	                                          alert(JSON.stringify(response));  // 결제 응답을 알림으로 표시
+	
+	                                          if (response.status === "AUTHENTICATED") {
+	                                              // 결제 성공 시 처리
+	                                              console.log("결제 성공:", response);
+	                                              window.location.href = "/payment-success";  // 결제 성공 페이지로 이동
+	                                          } else {
+	                                              // 결제 실패 시 처리
+	                                              console.log("결제 실패:", response);
+	                                              alert("결제 실패: " + (response.errorMessage || "알 수 없는 오류"));
+	                                          }
+	                                          
+	                                          
+	                                	  });
+	                            		location.href="<%=contextPath%>/views/common/paysuc.jsp"
+	                            	  
+	                            	}
+	                            </script>
+	                        </div>
+                        <%} %>
+                    <div style="margin-bottom: 50px;"></div>
+                </td>
+                <td></td>
+                <td></td>
+                <td class="side"></td>
+            </tr>
+<<<<<<< HEAD
+			
+=======
+			<tr class="recommend">
+                <td class="side"></td>
+                <td colspan="3" class="content">
+                    <div style="margin-top: 50px;">
+                        <h2>근처 다른 호텔</h2>
+                        <hr>
+                    </div>
+                    <div class="recommendtr" style="margin-bottom: 100px;">
+                    <% for(Hotel ht : hlist){ %>
+	                        <div class="recommendtr-item">
+	                            <img class="recommendtrimg" src="<%=ht.getPicInfo() %>" onclick="location.href='hotel.info?travel=<%=ht.gethName()%>'">
+	                            <p onclick="location.href='hotel.info?hotel=<%=ht.gethName()%>'" style="cursor: pointer;"><strong><%=ht.gethName() %></strong></p>
+	                            <p onclick="location.href='hotel.info?hotel=<%=ht.gethName()%>'" style="cursor: pointer;"><%=ht.gethAddress() %></p>
+	                        </div>
+	                <%} %>
                     </div>
                 </td>
                 <td></td>
                 <td></td>
                 <td class="side"></td>
             </tr>
-			
+            <tr class="recommend">
+                <td class="side"></td>
+                <td colspan="3" class="content">
+                    <div style="margin-top: 50px;">
+                        <h2>근처 다른 여행지</h2>
+                        <hr>
+                    </div>
+                    <div class="recommendtr" style="margin-bottom: 100px;">
+                    <% for(Travel tra : tlist){ %>
+	                        <div class="recommendtr-item">
+	                            <img class="recommendtrimg" src="<%=tra.getPicInfo() %>" onclick="location.href='travel.info?travel=<%=tra.getTrName()%>'">
+	                            <p onclick="location.href='travel.info?travel=<%=tra.getTrName()%>'" style="cursor: pointer;"><strong><%=tra.getTrName() %></strong></p>
+	                            <p onclick="location.href='travel.info?travel=<%=tra.getTrName()%>'" style="cursor: pointer;"><%=tra.getTrAddress() %></p>
+	                        </div>
+	                <%} %>
+                    </div>
+                </td>
+                <td></td>
+                <td></td>
+                <td class="side"></td>
+            </tr>
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
         </table>
     </div>
      <%@include file="../common/footer.jsp"%>

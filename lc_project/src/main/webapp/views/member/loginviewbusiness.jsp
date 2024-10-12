@@ -1,12 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<<<<<<< HEAD
+=======
+<%
+    String contextPath = request.getContextPath(); // 컨텍스트 경로 얻기
+%>    
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>사업자 로그인</title>
 <script type="text/javascript"></script>
+<<<<<<< HEAD
     <link rel="icon" href="./pic/logo.png"/>
+=======
+    <link rel="icon" href="<%=contextPath %>/pic/logo.png"/>
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
     <link rel="apple-touch-icon" href="pic/logo.png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -152,14 +162,34 @@
 	.to_main{
 		cursor: pointer;
 	}
+<<<<<<< HEAD
+=======
+	
+	.searchid{
+		background-color: transparent;
+		border: none;
+		color: #00bfa5;
+		cursor: pointer;
+	}
+	.links{
+		display: flex;
+		justify-content: center;
+	}
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
      </style>
 </head>
 <body>
 	<div class="header">
         <div class="logo">
+<<<<<<< HEAD
             <a onclick="location.href='index.jsp'" class="to_main">
                 <div class="header_name">방구석여행</div>
                 <img src="./pic/logo.png" alt="" class="header_main_logo">
+=======
+            <a href="<%=contextPath %>/index.jsp" class="to_main">
+                <div class="header_name">방구석여행</div>
+                <img src="<%=contextPath %>/pic/logo.png" alt="" class="header_main_logo">
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
             </a>
         </div>
         <h1>로그인</h1>
@@ -167,7 +197,11 @@
     
     <div class="login-container">
         <div class="logo_form">
+<<<<<<< HEAD
             <img src="./pic/logo.png" alt="logo">
+=======
+            <img src="<%=contextPath %>/pic/logo.png" alt="logo">
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
             <p class="name">방구석여행</p>
         </div>
         <form action="bslogin.bs" method="post">
@@ -176,6 +210,7 @@
             <button type="submit" id="btn">로그인</button>
         </form>
         <div class="links">
+<<<<<<< HEAD
             <a href="views/member/searchIdbusiness.jsp">아이디찾기</a> |
             <a href="views/member/searchpwdbusiness.jsp">비밀번호 찾기</a> |
             <a href="views/member/enrollbusiness.jsp">회원가입</a>
@@ -190,6 +225,20 @@
 		        }
 		    }
 		</script>
+=======
+             <form action="searchidview.bs">
+            <input type="submit" class="searchid" value="아이디 찾기"> 
+            </form> |
+            <form action="seachpwdview.bs">
+				<input type="submit" class="searchid" value="비밀번호 찾기"> 
+			</form> |
+			<form action="insertview.bs">
+				<input type="submit" class="searchid" value="회원가입"> 
+			</form> 
+        </div>
+    </div>
+	
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
 
 </body>
 </html>
