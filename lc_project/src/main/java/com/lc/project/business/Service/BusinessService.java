@@ -10,4 +10,6 @@ public interface BusinessService {
 	public abstract Business searchidBusiness(Business b);
 	
 	public abstract Business searchpwdBusiness(Business b);
+	
+	public boolean updateBusiness(Business b);
 }

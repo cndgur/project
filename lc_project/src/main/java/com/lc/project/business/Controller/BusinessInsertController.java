@@ -29,24 +29,24 @@ public class BusinessInsertController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         
-        Business m = new Business(
+        Business b = new Business(
             request.getParameter("bsName"),
             request.getParameter("bsId"),
-            request.getParameter("bsPwd"), // ë¹„ë°€ë²ˆí˜¸ ì•”í˜¸í™” ì œê±°
+            request.getParameter("bsPwd"), // ºñ¹Ğ¹øÈ£ ¾ÏÈ£È­ Á¦°Å
             request.getParameter("bsEmail"),
             request.getParameter("bsTel"),
             request.getParameter("bsAddress"),
             request.getParameter("bsTitle")
         );
 
-        int result = new BusinessServiceImpl().insertBusiness(m);
+        int result = new BusinessServiceImpl().insertBusiness(b);
         
         if (result > 0) {
             response.sendRedirect(request.getContextPath() + "/login.bs");
-            System.out.println("íšŒì›ê°€ì… ì„±ê³µ");
+            System.out.println("È¸¿ø°¡ÀÔ ¼º°ø");
         } else {
-            request.setAttribute("errorMsg", "íšŒì›ê°€ì… ì‹¤íŒ¨");
-            // ì‹¤íŒ¨ ì‹œì— ëŒ€í•œ ì²˜ë¦¬ê°€ í•„ìš”í•  ìˆ˜ ìˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, ì˜¤ë¥˜ í˜ì´ì§€ë¡œ ë¦¬ë‹¤ì´ë ‰ì…˜í•  ìˆ˜ ìˆìŠµë‹ˆë‹¤.
+            request.setAttribute("errorMsg", "È¸¿ø°¡ÀÔ ½ÇÆĞ");
+            // ½ÇÆĞ ½Ã¿¡ ´ëÇÑ Ã³¸®°¡ ÇÊ¿äÇÒ ¼ö ÀÖ½À´Ï´Ù. ¿¹¸¦ µé¾î, ¿À·ù ÆäÀÌÁö·Î ¸®´ÙÀÌ·º¼ÇÇÒ ¼ö ÀÖ½À´Ï´Ù.
         }
     }
 

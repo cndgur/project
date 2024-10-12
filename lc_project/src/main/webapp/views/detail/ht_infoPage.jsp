@@ -117,11 +117,7 @@
                         <h2>객실 선택</h2>
                         <hr>
                         <%for (Room ro : rlist){ %>
-<<<<<<< HEAD
-	                            <table  style="background: #ddeeeb; border-radius: 15px;">
-=======
 	                            <table  style="background: #ddeeeb; border-radius: 15px; height: 250px">
->>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
 	                                <tr>
 	                                    <td rowspan="2">
 	                                        <img src="<%=ro.getPicInfo() %>" class="reservepic">
@@ -194,9 +190,6 @@
                 <td></td>
                 <td class="side"></td>
             </tr>
-<<<<<<< HEAD
-			
-=======
 			<tr class="recommend">
                 <td class="side"></td>
                 <td colspan="3" class="content">
@@ -239,7 +232,6 @@
                 <td></td>
                 <td class="side"></td>
             </tr>
->>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
         </table>
     </div>
      <%@include file="../common/footer.jsp"%>

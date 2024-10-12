@@ -8,7 +8,6 @@
 <mapper namespace="businessMapper">
   <resultMap type="Business" id="businessResultSet">
   	<!--<result column="테이블 컬럼명" property="객체의 필드명"/>-->
-  	<result column="BS_NO" property="bsNo"/>
   	<result column="BS_NAME" property="bsName"/>
   	<result column="BS_ID" property="bsId"/>
   	<result column="BS_PWD" property="bsPwd"/>
@@ -27,8 +26,7 @@
   		</select>
    -->
   <select id="loginBusiness" parameterType="Business" resultMap="businessResultSet">
-    SELECT BS_NO,
-    	   BS_NAME,
+    SELECT BS_NAME,
 		   BS_ID,
 		   BS_PWD,
 		   BS_EMAIL,
@@ -51,7 +49,6 @@
    INSERT 
    INTO TB_BUSINESS
    (
-      BS_NO, 
       BS_NAME,
       BS_ID,
       BS_PWD,
@@ -62,7 +59,6 @@
    )
    VALUES
    (
-      SEQ_UNO_NEW.NEXTVAL,
       #{bsName},
       #{bsId},
       #{bsPwd},
@@ -84,4 +80,16 @@
 		WHERE BS_NAME = #{bsName}
 		  AND BS_ID = #{bsId}
 </select>
+<update id="updateBusiness" parameterType="Business">
+    UPDATE TB_BUSINESS
+    SET BS_NAME = #{bsName},
+        BS_PWD = #{bsPwd},
+        BS_EMAIL = #{bsEmail},
+        BS_TEL = #{bsTel},
+        BS_ADDRESS = #{bsAddress},
+        BS_TITLE = #{bsTitle},
+        MODIFY_DATE = SYSDATE
+    WHERE BS_ID = #{bsId}
+</update>
+
 </mapper>

@@ -40,28 +40,28 @@ public class travelInfoController extends HttpServlet {
 			int a = Integer.parseInt(charArray[i]+"");
 			switch(a) {
 			case 1:
-				category.add("ê°€ì¡±ì—¬í–‰");
+				category.add("°¡Á·¿©Çà");
 				break;
 			case 2:
-				category.add("ì¹œêµ¬ë“¤ê³¼");
+				category.add("Ä£±¸µé°ú");
 				break;
 			case 3:
-				category.add("1ì¸ì—¬í–‰");
+				category.add("1ÀÎ¿©Çà");
 				break;
 			case 4:
-				category.add("ì»¤í”Œì—¬í–‰");
+				category.add("Ä¿ÇÃ¿©Çà");
 				break;
 			case 5:
-				category.add("ë°˜ë ¤ë™ë¬¼");
+				category.add("¹İ·Áµ¿¹°");
 				break;
 			case 6:
-				category.add("ì¹œëª©ëª¨ì„");
+				category.add("Ä£¸ñ¸ğÀÓ");
 				break;
 			case 7:
-				category.add("ì›Œí¬ìˆ");
+				category.add("¿öÅ©¼ó");
 				break;
 			case 8:
-				category.add("ì•„ì´ë“¤ê³¼");
+				category.add("¾ÆÀÌµé°ú");
 				break;
 			}
 		}

@@ -7,13 +7,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<<<<<<< HEAD
-<title>Insert title here</title>
-<link rel="icon" href="../../pic/logo.png"/>
-=======
 <title>회원가입</title>
 <link rel="icon" href="<%=contextPath %>/pic/logo.png"/>
->>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
 	<script src="https://code.jquery.com/jquery-3.7.1.js" 
     integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
     crossorigin="anonymous"></script>
@@ -70,11 +65,7 @@ body{
     position: absolute;
     top: 600px;
     transform: translate(0, -40%);
-<<<<<<< HEAD
-    height: 1036px;
-=======
     height: 970px;
->>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
 }
 .name, .id, .pwd, .checkpwd, .email, .phone, .address, .birth, .title{
     font-weight: bold;
@@ -166,11 +157,7 @@ small{
         <div class="logo">
             <a onclick="location.href= '<%=contextPath%>'" class="to_main">
                 <div class="header_name">방구석여행</div>
-<<<<<<< HEAD
-                <img src="../../pic/logo.png" class="header_main_logo">
-=======
                 <img src="<%=contextPath %>/pic/logo.png" class="header_main_logo">
->>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
             </a>
         </div>
         <h1>사업자 회원가입</h1>

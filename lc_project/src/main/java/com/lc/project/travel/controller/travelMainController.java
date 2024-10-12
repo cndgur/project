@@ -31,10 +31,6 @@ public class travelMainController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ArrayList<Travel> list = new TravelService().selectMainList();
-<<<<<<< HEAD
-		System.out.println(list);
-=======
->>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
 		response.setContentType("application/json; charset=utf-8");
 		new Gson().toJson(list, response.getWriter());
 	}
@@ -47,8 +43,4 @@ public class travelMainController extends HttpServlet {
 		doGet(request, response);
 	}
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b

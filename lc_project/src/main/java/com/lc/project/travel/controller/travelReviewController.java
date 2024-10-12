@@ -33,15 +33,9 @@ public class travelReviewController extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		String review = request.getParameter("review");
-<<<<<<< HEAD
-		String userName = request.getParameter("userName");
-		String travel = request.getParameter("travel");
-		int result = new TravelService().insertReview(review,userName,travel);
-=======
 		String userId = request.getParameter("userId");
 		String travel = request.getParameter("travel");
 		int result = new TravelService().insertReview(review,userId,travel);
->>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
 		String encodedTravel = URLEncoder.encode(travel, "UTF-8");
 		if(result >0) {
 			response.sendRedirect(request.getContextPath()+"/travel.info?travel="+encodedTravel);
@@ -59,8 +53,4 @@ public class travelReviewController extends HttpServlet {
 		doGet(request, response);
 	}
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b

@@ -1,22 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<<<<<<< HEAD
-=======
 <%
     String contextPath = request.getContextPath(); // 컨텍스트 경로 얻기
 %>
->>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>방구석 여행</title>
 <script type="text/javascript"></script>
-<<<<<<< HEAD
-    <link rel="icon" href="./pic/logo.png"/>
-=======
     <link rel="icon" href="<%=contextPath %>/pic/logo.png"/>
->>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
     <link rel="apple-touch-icon" href="pic/logo.png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,20 +20,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
      <style>
      body {
-<<<<<<< HEAD
-    font-family: Arial, sans-serif;
-    background-color: #ffffff; 
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; 
-    height: 100vh;
-    font-family: "Noto Sans KR", system-ui;
-    margin: 0px;
-    padding: 0px;
-	}
-=======
      
 	    font-family: Arial, sans-serif;
 	    background-color: #ffffff; 
@@ -54,7 +33,6 @@
 	    margin: 0px;
 	    padding: 0px;
 		}
->>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
 	
 	
 	.header {
@@ -178,8 +156,6 @@
 	.to_main{
 		cursor: pointer;
 	}
-<<<<<<< HEAD
-=======
 	
 	.searchid{
 		background-color: transparent;
@@ -191,21 +167,14 @@
 		display: flex;
 		justify-content: center;
 	}
->>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
      </style>
 </head>
 <body>
 	<div class="header">
         <div class="logo">
-<<<<<<< HEAD
-            <a onclick="location.href='index.jsp'" class="to_main">
-                <div class="header_name">방구석여행</div>
-                <img src="./pic/logo.png" alt="" class="header_main_logo">
-=======
             <a href="<%=contextPath %>/index.jsp" class="to_main">
                 <div class="header_name">방구석여행</div>
                 <img src="<%=contextPath %>/pic/logo.png" alt="" class="header_main_logo">
->>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
             </a>
         </div>
         <h1>로그인</h1>
@@ -213,11 +182,7 @@
     
     <div class="login-container">
         <div class="logo_form">
-<<<<<<< HEAD
-            <img src="./pic/logo.png" alt="logo">
-=======
             <img src="<%=contextPath %>/pic/logo.png" alt="logo">
->>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
             <p class="name">방구석여행</p>
         </div>
         <form action="login.mem" method="post">
@@ -226,11 +191,6 @@
             <button type="submit" id="btn">로그인</button>
         </form>
         <div class="links">
-<<<<<<< HEAD
-            <a href="views/member/searchIdmember.jsp">아이디찾기</a> |
-            <a href="views/member/searchpwdmember.jsp">비밀번호 찾기</a> |
-            <a  href="views/member/enrollmember.jsp">회원가입</a>
-=======
             <form action="searchidview.me">
             <input type="submit" class="searchid" value="아이디 찾기"> 
             </form> |
@@ -240,7 +200,6 @@
 			<form action="insertview.me">
 				<input type="submit" class="searchid" value="회원가입"> 
 			</form> 
->>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
         </div>
     </div>
 

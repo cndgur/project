@@ -14,7 +14,7 @@ import com.lc.project.member.model.vo.Member;
 /**
  * Servlet implementation class MemberloginController
  */
-@WebServlet("/memberLogin") // Servlet ë§¤í•‘ ì¶”ê°€
+@WebServlet("/memberLogin") // Servlet ¸ÅÇÎ Ãß°¡
 public class MemberloginController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -38,20 +38,16 @@ public class MemberloginController extends HttpServlet {
             String userName = loginUser.getUserName();
             
             response.setContentType("text/html; charset=UTF-8");
-            response.getWriter().write("<html><head><title>ë¡œê·¸ì¸ ì„±ê³µ</title></head><body>");
-            response.getWriter().write("<script>alert('í™˜ì˜í•©ë‹ˆë‹¤, " + userName + "ë‹˜!');</script>");
+            response.getWriter().write("<html><head><title>·Î±×ÀÎ ¼º°ø</title></head><body>");
+            response.getWriter().write("<script>alert('È¯¿µÇÕ´Ï´Ù, " + userName + "´Ô!');</script>");
             response.getWriter().write("<script>window.location.href = '" + request.getContextPath() + "/index.jsp';</script>");
             response.getWriter().write("</body></html>");
         } else {
-            System.out.println("ë¡œê·¸ì¸ì‹¤íŒ¨");
+            System.out.println("·Î±×ÀÎ½ÇÆĞ");
             response.setContentType("text/html; charset=UTF-8");
-            response.getWriter().write("<html><head><title>ë¡œê·¸ì¸ ì‹¤íŒ¨</title></head><body>");
-            response.getWriter().write("<script>alert('ì•„ì´ë””, ë¹„ë°€ë²ˆí˜¸ë¥¼ í™•ì¸í•´ì£¼ì„¸ìš”');</script>");
-<<<<<<< HEAD
-            response.getWriter().write("<script>window.location.href = '" + request.getContextPath() + "/index.jsp';</script>");
-=======
+            response.getWriter().write("<html><head><title>·Î±×ÀÎ ½ÇÆĞ</title></head><body>");
+            response.getWriter().write("<script>alert('¾ÆÀÌµğ, ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä');</script>");
             response.getWriter().write("<script>window.location.href = '" + request.getContextPath() + "/views/member/loginviewmember.jsp';</script>");
->>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
             response.getWriter().write("</body></html>");
         }
     }

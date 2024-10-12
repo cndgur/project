@@ -44,15 +44,15 @@ public class MembersearchidController extends HttpServlet {
 
 	  
 	            response.setContentType("text/html; charset=UTF-8");
-	            response.getWriter().write("<html><head><title>ì•„ì´ë”” ì°¾ê¸° ê²°ê³¼</title></head><body>");
-	            response.getWriter().write("<script>alert('ì°¾ì€ ì•„ì´ë”” : " + foundId + "');</script>");
+	            response.getWriter().write("<html><head><title>¾ÆÀÌµğ Ã£±â °á°ú</title></head><body>");
+	            response.getWriter().write("<script>alert('Ã£Àº ¾ÆÀÌµğ : " + foundId + "');</script>");
 	            response.getWriter().write("<script>window.location.href = '" + request.getContextPath() + "/index.jsp';</script>");
 	            response.getWriter().write("</body></html>");
 	        } else {
 
 	            response.setContentType("text/html; charset=UTF-8");
-	            response.getWriter().write("<html><head><title>ì•„ì´ë”” ì°¾ê¸° ì‹¤íŒ¨</title></head><body>");
-	            response.getWriter().write("<script>alert('ì•„ì•„ë””ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.');</script>");
+	            response.getWriter().write("<html><head><title>¾ÆÀÌµğ Ã£±â ½ÇÆĞ</title></head><body>");
+	            response.getWriter().write("<script>alert('¾Æ¾Æµğ¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.');</script>");
 	            response.getWriter().write("<script>window.location.href = '" + request.getContextPath() + "/index.jsp';</script>");
 	            response.getWriter().write("</body></html>");
 	        }

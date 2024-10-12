@@ -26,11 +26,7 @@ public class MemberSelectEnrollController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-<<<<<<< HEAD
-		request.getRequestDispatcher("views/member/selectenroll.jsp").forward(request, response);
-=======
 		request.getRequestDispatcher("views/member/selectlogin.jsp").forward(request, response);
->>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
 	}
 
 	/**

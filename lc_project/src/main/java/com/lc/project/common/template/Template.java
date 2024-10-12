@@ -12,19 +12,19 @@ import com.lc.project.common.vo.PageInfo;
 
 public class Template {
 	public static SqlSession getSqlSession() {
-		//mybatis-config.xml ì½ì–´ë“œë¦¬ê¸°
+		//mybatis-config.xml ÀÐ¾îµå¸®±â
 		
 		SqlSession sqlSession = null;
 		
-		//SqlSessionìƒì„±í•˜ê¸° ìœ„í•´ì„œëŠ” -> SqlSessionFactoryê°ì²´ í•„ìš”
-		//SqlSessionFactoryìƒì„±í•˜ê¸°ìœ„í•´ì„œëŠ” -> SqlSessionFactoryFactoryBuilderí•„ìš”
+		//SqlSession»ý¼ºÇÏ±â À§ÇØ¼­´Â -> SqlSessionFactory°´Ã¼ ÇÊ¿ä
+		//SqlSessionFactory»ý¼ºÇÏ±âÀ§ÇØ¼­´Â -> SqlSessionFactoryFactoryBuilderÇÊ¿ä
 		
 		String resource = "/mybatis-config.xml";
 		
 		try {
 			InputStream inputStream = Resources.getResourceAsStream(resource);
 			SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-			sqlSession = sqlSessionFactory.openSession(false); // true(ìžë™ì»¤ë°‹), false(ìˆ˜ë™ì»¤ë°‹)
+			sqlSession = sqlSessionFactory.openSession(false); // true(ÀÚµ¿Ä¿¹Ô), false(¼öµ¿Ä¿¹Ô)
 			
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -34,16 +34,16 @@ public class Template {
 	}
 	/**
 	 * 
-	 * @param listCount : ì´ê²Œì‹œê¸€ ìˆ˜
-	 * @param currentPage : í˜„ìž¬íŽ˜ì´ì§€
-	 * @param pageLimit : í•˜ë‹¨ì— ë³´ì—¬ì§ˆ íŽ˜ì´ì§•ë°”ì˜ ìˆ˜
-	 * @param boardLimit : í•œíŽ˜ì´ì§€ì— ë³´ì—¬ì§ˆ ê²Œì‹œê¸€ ìµœëŒ€ ìˆ˜
+	 * @param listCount : ÃÑ°Ô½Ã±Û ¼ö
+	 * @param currentPage : ÇöÀçÆäÀÌÁö
+	 * @param pageLimit : ÇÏ´Ü¿¡ º¸¿©Áú ÆäÀÌÂ¡¹ÙÀÇ ¼ö
+	 * @param boardLimit : ÇÑÆäÀÌÁö¿¡ º¸¿©Áú °Ô½Ã±Û ÃÖ´ë ¼ö
 	 * @return PageInfo
 	 */
 	public static PageInfo getPageInfo(int listCount, int currentPage, int pageLimit, int boardLimit) {
-		int maxPage = (int)Math.ceil((double)listCount / boardLimit); // ê°€ìž¥ ë§ˆì§€ë§‰ íŽ˜ì´ì§€
-		int startPage = (currentPage -1) / pageLimit * pageLimit + 1; // íŽ˜ì´ì§•ë°”ì˜ ì‹œìž‘
-		int endPage = startPage + pageLimit -1; //íŽ˜ì´ì§•ë°”ì˜ ë§ˆì§€ë§‰
+		int maxPage = (int)Math.ceil((double)listCount / boardLimit); // °¡Àå ¸¶Áö¸· ÆäÀÌÁö
+		int startPage = (currentPage -1) / pageLimit * pageLimit + 1; // ÆäÀÌÂ¡¹ÙÀÇ ½ÃÀÛ
+		int endPage = startPage + pageLimit -1; //ÆäÀÌÂ¡¹ÙÀÇ ¸¶Áö¸·
 		
 		endPage = endPage > maxPage ? maxPage : endPage;
 		PageInfo pi = new PageInfo(listCount,currentPage,pageLimit,boardLimit,maxPage,startPage,endPage);
@@ -51,4 +51,3 @@ public class Template {
 		return pi;
 	}
 }
-

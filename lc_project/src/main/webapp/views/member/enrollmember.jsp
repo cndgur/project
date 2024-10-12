@@ -8,11 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>회원가입</title>
-<<<<<<< HEAD
-	<link rel="icon" href="../../pic/logo.png"/>
-=======
 	<link rel="icon" href="<%=contextPath %>/pic/logo.png"/>
->>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
 	<script src="https://code.jquery.com/jquery-3.7.1.js" 
     integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
     crossorigin="anonymous"></script>
@@ -161,11 +157,7 @@
 	        <div class="logo">
 	            <a onclick="location.href= '<%=contextPath%>'" class="to_main">
 	                <div class="header_name">방구석여행</div>
-<<<<<<< HEAD
-	                <img src="../../pic/logo.png" alt="" class="header_main_logo">
-=======
 	                <img src="<%=contextPath %>/pic/logo.png" alt="" class="header_main_logo">
->>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
 	            </a>
 	        </div>
 	        <h1>회원가입</h1>

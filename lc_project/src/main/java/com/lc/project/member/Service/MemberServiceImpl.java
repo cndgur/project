@@ -55,8 +55,6 @@ public class MemberServiceImpl implements MemberService{
 		return searchpwd;
 	}
 
-<<<<<<< HEAD
-=======
 	@Override
 	public int updateMember(Member m) {
 		SqlSession sqlSession = Template.getSqlSession();
@@ -73,7 +71,6 @@ public class MemberServiceImpl implements MemberService{
 		return result;
 	}
 
->>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
 
 
 }

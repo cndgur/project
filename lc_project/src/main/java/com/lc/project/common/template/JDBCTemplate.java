@@ -10,23 +10,23 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
 
-//ê³µí†µ í…œí”Œë¦¿(ë§¤ë²ˆ ë°˜ë³µì ìœ¼ë¡œ ì‘ì„±ë  ì½”ë“œë¥¼ ë©”ì†Œë“œë¡œ ì •ë¦¬)
+//°øÅë ÅÛÇÃ¸´(¸Å¹ø ¹İº¹ÀûÀ¸·Î ÀÛ¼ºµÉ ÄÚµå¸¦ ¸Ş¼Òµå·Î Á¤¸®)
 public class JDBCTemplate {
 	public static Connection getConnection() {
 		Connection conn = null;
 		Properties prop = new Properties();
 		
-		//ì½ì–´ë“¤ì´ê³ ìí•˜ëŠ” classesí´ë”ë‚´ì˜ driver.propertiesíŒŒì¼ì˜ ë¬¼ë¦¬ì ì¸ ê²½ë¡œ ê°€ì ¸ì˜¤ê¸°
+		//ÀĞ¾îµéÀÌ°íÀÚÇÏ´Â classesÆú´õ³»ÀÇ driver.propertiesÆÄÀÏÀÇ ¹°¸®ÀûÀÎ °æ·Î °¡Á®¿À±â
 		String filePath = JDBCTemplate.class.getResource("/db/driver/driver.properties").getPath();
 		//System.out.println(filePath);
 		try {
 			prop.load(new FileInputStream(filePath));
-			//1) JDBC Driverë“±ë¡
+			//1) JDBC Driverµî·Ï
 			Class.forName(prop.getProperty("driver"));
 			
-			//2) Connectionê°ì²´
+			//2) Connection°´Ã¼
 			conn = DriverManager.getConnection(prop.getProperty("url"),prop.getProperty("username"),prop.getProperty("password"));
-			conn.setAutoCommit(false);//ìˆ˜ë™ì»¤ë°‹ ì„¤ì •
+			conn.setAutoCommit(false);//¼öµ¿Ä¿¹Ô ¼³Á¤
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
@@ -50,7 +50,7 @@ public class JDBCTemplate {
 			e.printStackTrace();
 		}
 	}
-	//2) commitì²˜ë¦¬í•´ì£¼ëŠ” ë©”ì†Œë“œ(Connectionê°ì²´ë¥¼ ì „ë‹¬ ë°›ì•„ì„œ)
+	//2) commitÃ³¸®ÇØÁÖ´Â ¸Ş¼Òµå(Connection°´Ã¼¸¦ Àü´Ş ¹Ş¾Æ¼­)
 	public static void rollback(Connection conn) {
 		try {
 			if(conn!=null && !conn.isClosed()) {
@@ -61,8 +61,8 @@ public class JDBCTemplate {
 		}
 	}
 	
-	//JDBCìš© ê°ì²´ë“¤ì„ ì „ë‹¬ë°›ì•„ì„œ ë°˜ë‚©ì²˜ë¦¬í•´ì£¼ëŠ” ë©”ì†Œë“œ
-	//4) Statementê´€ë ¨ ê°ì²´ë¥¼ ì „ë‹¬ë°›ì•„ì„œ ë°˜ë‚©ì‹œì¼œì£¼ëŠ” ë©”ì†Œë“œ
+	//JDBC¿ë °´Ã¼µéÀ» Àü´Ş¹Ş¾Æ¼­ ¹İ³³Ã³¸®ÇØÁÖ´Â ¸Ş¼Òµå
+	//4) Statement°ü·Ã °´Ã¼¸¦ Àü´Ş¹Ş¾Æ¼­ ¹İ³³½ÃÄÑÁÖ´Â ¸Ş¼Òµå
 	public static void close(Statement stmt) {
 		try {
 			if(stmt !=null && !stmt.isClosed()) {

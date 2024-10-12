@@ -30,13 +30,13 @@ public class MemberLogoutController extends HttpServlet {
 		HttpSession session = request.getSession(false);
         
         if (session != null) {
-            // ì„¸ì…˜ì—ì„œ ë¡œê·¸ì¸ ì •ë³´ ì œê±°
+            // ¼¼¼Ç¿¡¼­ ·Î±×ÀÎ Á¤º¸ Á¦°Å
             session.removeAttribute("loginUser");
-            // ì„¸ì…˜ ë¬´íš¨í™”
+            // ¼¼¼Ç ¹«È¿È­
             session.invalidate();
         }
         
-        // ë¡œê·¸ì¸ í˜ì´ì§€ë¡œ ë¦¬ë‹¤ì´ë ‰íŠ¸
+        // ·Î±×ÀÎ ÆäÀÌÁö·Î ¸®´ÙÀÌ·ºÆ®
         response.sendRedirect(request.getContextPath());
 	}
 

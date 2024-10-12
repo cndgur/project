@@ -38,19 +38,19 @@ public class TagRecommendController extends HttpServlet {
 		
 		request.setAttribute("personnel", personnel);
 		
-		if(personnel.equals("ê°€ì¡±ì—¬í–‰")) {
+		if(personnel.equals("°¡Á·¿©Çà")) {
 			personnel = "1";
-		} else if(personnel.equals("ì¹œêµ¬ë“¤ê³¼")) {
+		} else if(personnel.equals("Ä£±¸µé°ú")) {
 			personnel = "2";
-		} else if(personnel.equals("1ì¸ì—¬í–‰")) {
+		} else if(personnel.equals("1ÀÎ¿©Çà")) {
 			personnel = "3";
-		} else if(personnel.equals("ì»¤í”Œì—¬í–‰")) {
+		} else if(personnel.equals("Ä¿ÇÃ¿©Çà")) {
 			personnel = "4";
-		} else if(personnel.equals("ë°˜ë ¤ë™ë¬¼")) {
+		} else if(personnel.equals("¹İ·Áµ¿¹°")) {
 			personnel = "5";
-		} else if(personnel.equals("ì¹œëª©ëª¨ì„")) {
+		} else if(personnel.equals("Ä£¸ñ¸ğÀÓ")) {
 			personnel = "6";
-		} else if(personnel.equals("ì›Œí¬ìˆ")) {
+		} else if(personnel.equals("¿öÅ©¼ó")) {
 			personnel = "7";
 		} else {
 			personnel = "8";
@@ -64,10 +64,7 @@ public class TagRecommendController extends HttpServlet {
 	    request.setAttribute("theme", theme);
 	    
 	    ArrayList<Travel> trList = mService.selectTravelTag(personnel, location, theme);
-<<<<<<< HEAD
-=======
 	    request.setAttribute("len", trList.size());
->>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
 	    request.setAttribute("trList", trList);
 	    
 	    request.getRequestDispatcher("views/map/tagRecommendPage.jsp").forward(request, response);
