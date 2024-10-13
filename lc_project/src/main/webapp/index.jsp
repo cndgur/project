@@ -19,7 +19,11 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./css/main.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<<<<<<< HEAD
+  <link rel="stylesheet" href="./css/main.css?ver=1" />
+=======
   
+>>>>>>> a5cf78a320d87ce322d0c5ade94482cb3092a06f
 
   <!-- JS -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -111,8 +115,13 @@
             <div class="textarea">
                 <input class="input_1" list="browsers" name="browser" id="browser" placeholder="가고싶은 여행지를 입력해주세요.">
                 <datalist id="browsers">
+<<<<<<< HEAD
+                  <option value="서울">
+                  <option value="인천">
+=======
                   <option value="박물관">
                   <option value="">
+>>>>>>> a5cf78a320d87ce322d0c5ade94482cb3092a06f
                   <option value="경기">
                   <option value="강원도">
                   <option value="충청도">
@@ -127,7 +136,11 @@
         </div>
     </div>
    
+<<<<<<< HEAD
+  <form action="recommend.tr" method="post" onsubmit="return tagSelected();">
+=======
   <form action="recommend.tr" method="post">
+>>>>>>> a5cf78a320d87ce322d0c5ade94482cb3092a06f
     <table id="mainPage_tagSelect_table" align="center">
       <tr>
         <td id="mainPage_tagSelect_table_title" colspan="8">나만의 맞춤 여행!</td>
@@ -139,6 +152,96 @@
         <td colspan="8">관심 있는 여행 스타일을 선택하면 당신에게 딱 맞는 여행지를 추천해드립니다. 지금 떠날 준비 되셨나요?</td>
       </tr>
       <tr>
+<<<<<<< HEAD
+        <td class="mainPage_tag"><button class="unselected_tag_personnel" type="button" onclick="mainPage_tagSelect_personnel(this)" value="가족여행">#가족여행</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag_personnel" type="button" onclick="mainPage_tagSelect_personnel(this)" value="친구들과">#친구들과</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag_personnel" type="button" onclick="mainPage_tagSelect_personnel(this)" value="1인여행">#1인여행</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag_personnel" type="button" onclick="mainPage_tagSelect_personnel(this)" value="커플여행">#커플여행</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag_personnel" type="button" onclick="mainPage_tagSelect_personnel(this)" value="반려동물">#반려동물</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag_personnel" type="button" onclick="mainPage_tagSelect_personnel(this)" value="동호회/친목모임">#동호회/친목모임</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag_personnel" type="button" onclick="mainPage_tagSelect_personnel(this)" value="워크숍">#워크숍</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag_personnel" type="button" onclick="mainPage_tagSelect_personnel(this)" value="아이들과">#아이들과</button></td>
+      </tr>
+      <tr>
+        <td class="mainPage_tag"><button class="unselected_tag_location" type="button" onclick="mainPage_tagSelect_location(this)" value="수도권">#수도권</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag_location" type="button" onclick="mainPage_tagSelect_location(this)" value="강원도">#강원도</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag_location" type="button" onclick="mainPage_tagSelect_location(this)" value="충청도">#충청도</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag_location" type="button" onclick="mainPage_tagSelect_location(this)" value="전라남도">#전라남도</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag_location" type="button" onclick="mainPage_tagSelect_location(this)" value="전라북도">#전라북도</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag_location" type="button" onclick="mainPage_tagSelect_location(this)" value="경상북도">#경상북도</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag_location" type="button" onclick="mainPage_tagSelect_location(this)" value="경상남도">#경상남도</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag_location" type="button" onclick="mainPage_tagSelect_location(this)" value="제주도">#제주도</button></td>
+      </tr>
+      <tr>
+        <td class="mainPage_tag"><button class="unselected_tag_theme" type="button" onclick="mainPage_tagSelect_theme(this)" value="액티비티">#액티비티</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag_theme" type="button" onclick="mainPage_tagSelect_theme(this)" value="맛집">#맛집</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag_theme" type="button" onclick="mainPage_tagSelect_theme(this)" value="힐링">#힐링</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag_theme" type="button" onclick="mainPage_tagSelect_theme(this)" value="축제">#축제</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag_theme" type="button" onclick="mainPage_tagSelect_theme(this)" value="역사">#역사</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag_theme" type="button" onclick="mainPage_tagSelect_theme(this)" value="쇼핑">#쇼핑</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag_theme" type="button" onclick="mainPage_tagSelect_theme(this)" value="자연">#자연</button></td>
+        <td class="mainPage_tag"><button class="unselected_tag_theme" type="button" onclick="mainPage_tagSelect_theme(this)" value="문화">#문화</button></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><button id="mainPage_tagSubmit" type="submit" onclick="tagSelected(); ">검색하기</button></td>
+      </tr>
+		<input type="hidden" id="personnel" name="personnel" value="">
+		<input type="hidden" id="location" name="location" value="">
+		<input type="hidden" id="theme" name="theme" value="">
+		
+
+      <script>
+          //누른 버튼의 클래스를 가져와서 클래스가 unselect이면 select로 변경
+          function mainPage_tagSelect_personnel(button){
+            //인원수 태그 하나만 고르기
+            if(document.getElementsByClassName('selected_tag_personnel').length === 0){
+              button.className = 'selected_tag_personnel';
+            } else if(document.getElementsByClassName('selected_tag_personnel').length === 1){
+              button.className = 'unselected_tag_personnel';
+            }
+          }
+          function mainPage_tagSelect_location(button){
+            //위치 태그 하나만 고르기
+            if(document.getElementsByClassName('selected_tag_location').length === 0){
+              button.className = 'selected_tag_location';
+            } else if(document.getElementsByClassName('selected_tag_location').length === 1){
+              button.className = 'unselected_tag_location';
+            }
+          }
+          function mainPage_tagSelect_theme(button){
+            //테마 태그 하나만 고르기
+            if(document.getElementsByClassName('selected_tag_theme').length === 0){
+              button.className = 'selected_tag_theme';
+            } else if(document.getElementsByClassName('selected_tag_theme').length === 1){
+              button.className = 'unselected_tag_theme';
+            }
+          }
+          //검색하기 버튼을 누르면 선택되어있는 태그(class가 selected_tag)의 value값을 가져오기
+          function tagSelected(){
+            const tagList = [];
+
+            const selectTag1 = document.querySelector(".selected_tag_personnel").value;
+            const selectTag2 = document.querySelector(".selected_tag_location").value;
+            const selectTag3 = document.querySelector(".selected_tag_theme").value;
+            tagList.push(selectTag1);
+            tagList.push(selectTag2);
+            tagList.push(selectTag3);
+			
+            // document.getElementById("personnel").value = document.querySelector(".selected_tag_personnel").value;
+            document.getElementById("selectedTags").value = tagList.join;
+            console.log(tagList);
+            
+            return true;
+          }
+      </script>
+=======
          <td class="mainPage_tag"><button class="unselected_tag_personnel" type="button" onclick="mainPage_tagSelect_personnel(this)" value="가족여행">#가족여행</button></td>
               <td class="mainPage_tag"><button class="unselected_tag_personnel" type="button" onclick="mainPage_tagSelect_personnel(this)" value="친구들과">#친구들과</button></td>
               <td class="mainPage_tag"><button class="unselected_tag_personnel" type="button" onclick="mainPage_tagSelect_personnel(this)" value="1인여행">#1인여행</button></td>
@@ -232,6 +335,123 @@
                  return true;
              }
          </script>
+<<<<<<< HEAD
+>>>>>>> a5cf78a320d87ce322d0c5ade94482cb3092a06f
+	  </table>
+  </form>
+	<br><br><br>
+	
+	<div id="wrap-main-content1">
+		  <div id="main-content1">
+		    <div id="title">
+		      <h1>"떠나볼래? 지역 따라 골라보는 여행 스팟"</h1>
+		      <p>이제는 골라 떠나는 재미! <br> 인기 만점 지역별 여행지에서 특별한 순간을 만들어보세요!</p>
+		    </div>
+<<<<<<< HEAD
+		    <div class="swiper mySwiper2">
+		      <div class="swiper-wrapper">
+		          <div class="swiper-slide">
+		            <img src="./pic/main-seoul.webp" alt="seoul" onclick="location.href='location.tr?location=수도권'">
+		            <p>수도권</p>
+		          </div>        
+		          <div class="swiper-slide">
+		            <img src="./pic/main-gangwon.jpg" alt="gangwon" onclick="location.href='location.tr?location=강원도'">
+		            <p>강원</p>
+		          </div>
+		          <div class="swiper-slide">
+		            <img src="./pic/main-chungcheong.jpg" alt="chungcheong" onclick="location.href='location.tr?location=충청도'">
+		            <p>충청</p>
+		          </div>
+		          <div class="swiper-slide">
+		            <img src="./pic/main-jeollabuk.jpg" alt="jeollabuk" onclick="location.href='location.tr?location=전라북도'">
+		            <p>전북</p>
+		          </div>
+		          <div class="swiper-slide">
+		            <img src="./pic/main-jeollanam.jpg" alt="jeollanam" onclick="location.href='location.tr?location=전라남도'">
+		            <p>전남</p>
+		          </div>
+		          <div class="swiper-slide">
+		            <img src="./pic/main-gyeongsangbuk.jpg" alt="gyeongsangbuk" onclick="location.href='location.tr?location=경상북도'">
+		            <p>경북</p>
+		          </div>
+		          <div class="swiper-slide">
+		            <img src="./pic/main-gyeongsangnam.jpg" alt="gyeongsangnam" onclick="location.href='location.tr?location=경상남도'">
+		            <p>경남</p>
+		          </div>
+		          <div class="swiper-slide">
+		            <img src="./pic/main-jeju.png" alt="jeju" onclick="location.href='location.tr?location=제주도'">
+		            <p>제주</p>
+		          </div>
+		      </div>
+		      <div class="swiper-button-next"></div>
+		      <div class="swiper-button-prev"></div>
+		    </div>
+		  </div>
+	</div>
+  
+  <br>
+=======
+			<div class="swiper mySwiper2">
+				<div class="swiper-wrapper">
+		        	<div class="swiper-slide">
+		          		<img src="<%=contextPath%>/pic/main-seoul.jpg" alt="seoul" onclick="location.href='location.tr?location=수도권'">
+			            <p>수도권</p>
+		        	</div>        
+		          	<div class="swiper-slide">
+		            	<img src="<%=contextPath%>/pic/gangwon.jpg" alt="gangwon" onclick="location.href='location.tr?location=강원도'">
+		            	<p>강원</p>
+		          	</div>
+		          	<div class="swiper-slide">
+		            	<img src="<%=contextPath%>/pic/chungcheong.jpg" alt="chungcheong" onclick="location.href='location.tr?location=충청도'">
+		            	<p>충청</p>
+		          	</div>
+		          	<div class="swiper-slide">
+		            	<img src="<%=contextPath%>/pic/jellabuk.png" alt="jeollabuk" onclick="location.href='location.tr?location=전라북도'">
+		            	<p>전북</p>
+		          	</div>
+		          	<div class="swiper-slide">
+			            <img src="<%=contextPath%>/pic/jellanam.png" alt="jeollanam" onclick="location.href='location.tr?location=전라남도'">
+			            <p>전남</p>
+			        </div>
+		          	<div class="swiper-slide">
+		            	<img src="<%=contextPath%>/pic/gyeongsangbuk.jpg" alt="gyeongsangbuk" onclick="location.href='location.tr?location=경상북도'">
+		            	<p>경북</p>
+		          	</div>
+		          	<div class="swiper-slide">
+		            	<img src="<%=contextPath%>/pic/gyeongsangnam.jpg" alt="gyeongsangnam" onclick="location.href='location.tr?location=경상남도'">
+		            	<p>경남</p>
+		          	</div>
+		          	<div class="swiper-slide">
+		            	<img src="<%=contextPath%>/pic/제주도.jpg" alt="jeju" onclick="location.href='location.tr?location=제주도'">
+						<p>제주</p>
+		      	</div>
+		      	<div class="swiper-button-next"></div>
+		      	<div class="swiper-button-prev"></div>
+		    </div>
+		     </div>
+		     </div>
+		     <br> 	
+  	
+  	<!-- 이충혁 -->
+	<script>
+		<%
+		  String loginSuccess = request.getParameter("loginSuccess"); 
+		  Business loginbs = (Business) session.getAttribute("loginbs");
+		%>
+		
+		window.onload = function() {
+		    var loginSuccess = "<%= (loginSuccess != null ? loginSuccess : "") %>";
+		    
+		    if (loginSuccess === "true") {
+		        var bsName = "<%= (loginbs != null && loginbs.getBsName() != null ? loginbs.getBsName() : "") %>";
+		        alert(bsName.length > 0 ? bsName + "님 환영합니다." : "로그인 정보가 없습니다.");
+		    } else if (loginSuccess === "false") {
+		        alert("아이디와 비밀번호를 확인해주세요.");
+		    }
+		}
+	</script>
+>>>>>>> a5cf78a320d87ce322d0c5ade94482cb3092a06f
+=======
      </table>
   </form>
    <br><br><br>
@@ -308,6 +528,7 @@
           }
       }
    </script>
+>>>>>>> 41ce5b8ec6a1fc14e78e5419fcba05e3e156e4a0
 
 <div id="main-content2">
     <div id="title">
@@ -315,8 +536,86 @@
       <p>요즘 핫한 여행지, 나만 빼고 다 갔다? <br>
         더 늦기 전에 떠나세요! 인기 폭발 중인 여행지에서 잊지 못할 순간을 만들어보세요!</p>
     </div>
+    <!-- 
+    <script>
+    	window.onload = function(){
+    		const opt = document.querySelector("#search-area option[value=${condition}]");
+    		opt.setAttribute("selected", true);
+    	}
+     -->
+    </script>
     <div class="swiper mySwiper2">
       <div class="swiper-wrapper">
+<<<<<<< HEAD
+ 		<!--  
+	    <c:forEach var="tra" items="${list}">
+	    	<div class="swiper-slide">
+	              <img src="./pic/qntks.jfif" onclick="location.href='<%=contextPath%>/travel.info?travel=${tra.trName}'" style="cursor: pointer;">
+	              <button class="btn_like" onclick="">like</button>
+	              <p>${tra.trName}</p>
+	          </div>
+	    </c:forEach>
+	    -->  
+          <div class="swiper-slide">
+              <img src="./pic/qntks.jfif" onclick="travelInfo()">
+              <button class="btn_like" onclick="">like</button>
+              <p>에버랜드</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="./pic/wpwn.jfif" onclick="location.href='travel.info?travel=구 서도역'">
+            <button class="btn_like" onclick="">like</button>
+            <p>송도해상케이블카</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="./pic/rudwn.jfif">
+            <button class="btn_like" onclick="">like</button>
+            <p>남이섬</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="./pic/thrch.jfif">
+            <button class="btn_like" onclick="">like</button>
+            <p>롯데월드</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="./pic/thrch.jfif">
+            <button class="btn_like" onclick="">like</button>
+            <p>알파카목장</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="./pic/tjdnf.jfif">
+            <button class="btn_like" onclick="">like</button>
+            <p>캐리비안베이</p>
+          </div>
+          <div class="swiper-slide">
+              <img src="./pic/qntks.jfif">
+              <button class="btn_like" onclick="">like</button>
+              <p>에버랜드</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="./pic/wpwn.jfif">
+            <button class="btn_like" onclick="">like</button>
+            <p>송도해상케이블카</p>
+          </div>          <div class="swiper-slide">
+            <img src="./pic/qntks.jfif">
+            <button class="btn_like" onclick="">like</button>
+            <p>에버랜드</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="./pic/wpwn.jfif">
+            <button class="btn_like" onclick="">like</button>
+            <p>송도해상케이블카</p>
+          </div>          
+          <div class="swiper-slide">
+            <img src="./pic/qntks.jfif">
+            <button class="btn_like" onclick="">like</button>
+            <p>에버랜드</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="./pic/wpwn.jfif">
+            <button class="btn_like" onclick="">like</button>
+            <p>송도해상케이블카</p>
+          </div>
+=======
       <script>
         window.onload = function() {
            $.ajax({
@@ -346,6 +645,7 @@
              location.href="travel.info?travel="+travel
         };
    </script>
+>>>>>>> 41ce5b8ec6a1fc14e78e5419fcba05e3e156e4a0
       </div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
@@ -353,6 +653,109 @@
   </div>
   
   <script>
+<<<<<<< HEAD
+<<<<<<< HEAD
+		function travelInfo(){
+			location.href="<%=contextPath%>/travel.info?travel=1"
+		}
+    
+    const mySwiper2 = new Swiper(".mySwiper2", {
+        slidesPerView: 'auto', // 한 번에 표시할 슬라이드 수
+        spaceBetween: 20, // 슬라이드 간의 간격
+        breakpoints : {
+            700: {
+            slidesPerView: 4,
+            spaceBetween: 20,
+            },
+            1024: {
+                slidesPerView: 6,
+                spaceBetween: 20,
+            }
+        }, 
+        slideToclickedSlide : true,
+        navigation: {
+            nextEl: ".swiper-button-next", 
+            prevEl: ".swiper-button-prev"
+        },
+        loop: true,
+        freemode : true,
+        watchOverflow : true,
+        centeredSlides : false,
+        initialSlide: 0,
+        slideOffsetAfter: 10,
+        slideOffsetBefore: 10
+    });
+  
+    $('.btn_like').click(function () {
+      $(this).toggleClass("on")
+    });
+		<%
+		  String loginSuccess = request.getParameter("loginSuccess"); 
+		  Business loginbs = (Business) session.getAttribute("loginbs");
+		%>
+		
+		window.onload = function() {
+		    var loginSuccess = "<%= (loginSuccess != null ? loginSuccess : "") %>";
+		    
+		    if (loginSuccess === "true") {
+		        var bsName = "<%= (loginbs != null && loginbs.getBsName() != null ? loginbs.getBsName() : "") %>";
+		        alert(bsName.length > 0 ? bsName + "님 환영합니다." : "로그인 정보가 없습니다.");
+		    } else if (loginSuccess === "false") {
+		        alert("아이디와 비밀번호를 확인해주세요.");
+		    }
+		}
+
+
+		function travelInfo(){
+			location.href="<%=contextPath%>/travel.info?travel=1"
+		}
+=======
+>>>>>>> a5cf78a320d87ce322d0c5ade94482cb3092a06f
+	    const mySwiper2 = new Swiper(".mySwiper2", {
+	        slidesPerView: 'auto', // 한 번에 표시할 슬라이드 수
+	        spaceBetween: 20, // 슬라이드 간의 간격
+	        breakpoints : {
+	            700: {
+	            slidesPerView: 4,
+	            spaceBetween: 20,
+	            },
+	            1024: {
+	                slidesPerView: 6,
+	                spaceBetween: 20,
+	            }
+	        }, 
+	        slideToclickedSlide : true,
+	        navigation: {
+	            nextEl: ".swiper-button-next", 
+	            prevEl: ".swiper-button-prev"
+	        },
+	        loop: true,
+	        freemode : true,
+	        watchOverflow : true,
+	        centeredSlides : false,
+	        initialSlide: 0,
+	        slideOffsetAfter: 10,
+	        slideOffsetBefore: 10
+	    });
+<<<<<<< HEAD
+    
+=======
+
+>>>>>>> a5cf78a320d87ce322d0c5ade94482cb3092a06f
+	    $('.btn_like').click(function () {
+	      $(this).toggleClass("on")
+	    });
+	    //---------로그인 성공 메시지-----------
+<<<<<<< HEAD
+    	
+	    //$('.btn_like').click(function () {
+	    //  $(this).toggleClass("on")
+	    //});
+=======
+>>>>>>> a5cf78a320d87ce322d0c5ade94482cb3092a06f
+	</script>
+		<%@include file="/views/common/footer.jsp"%>
+=======
        const mySwiper2 = new Swiper(".mySwiper2", {
            slidesPerView: 'auto', // 한 번에 표시할 슬라이드 수
            spaceBetween: 20, // 슬라이드 간의 간격
@@ -386,5 +789,6 @@
        //---------로그인 성공 메시지-----------
    </script>
       <%@include file="/views/common/footer.jsp"%>
+>>>>>>> 41ce5b8ec6a1fc14e78e5419fcba05e3e156e4a0
 </body>
 </html>

@@ -5,18 +5,6 @@
 
 <!--  namespace: 해당 mapper파일의 고유한 별칭  -->
 <mapper namespace="rentcarMapper">
-	<resultMap id="TravelResultSet" type="Travel">
-		<result column="AC_NAME" property="trName" />
-		<result column="AC_ADDRESS" property="trAddress" />
-		<result column="TR_INFO" property="trInfo" />
-		<result column="ACT_PERSONNEL" property="trPersonal" />
-		<result column="ACT_LOCATION" property="trLocation" />
-		<result column="ACT_THEME" property="trId" />
-		<result column="TR_MAP_LATITUDE" property="trMapLatitude" />
-		<result column="TR_MAP_LONGITUDE" property="trMapLongitude" />
-		<result column="FIELD" property="count" />
-		<result column="LOCATION" property="picInfo"/>
-	</resultMap>
 	<select id="carList" resultType="RentCar">
 		SELECT CAR_ID AS carId,
 			   CAR_NUM AS carNum,
@@ -25,15 +13,29 @@
 			   CAR_INFO AS carInfo,
 			   CAR_PIC AS carPic
 		  FROM TB_RENTCAR
-		  ORDER BY CAR_NUM
+		 WHERE STATUS = 'Y'
 	</select>
-	<update id="bookingCar">
-		UPDATE TB_CAR_BOOKING
-		   SET CAR_RECIEVE_PLACE = #{location},
-		       CAR_RETURN_PLACE = #{location},
-		       CAR_TIME_START = #{startDate},
-		       CAR_TIME_OVER = #{endDate},
-		       CAR_USER = #{loginUser}
+	<insert id="bookingCar" parameterType="map">
+		INSERT INTO TB_CAR_BOOKING(
+										CAR_NUM,
+										CAR_RECIEVE_PLACE,
+										CAR_RETURN_PLACE,
+										CAR_TIME_START,
+										CAR_TIME_OVER,
+										CAR_USER
+								   )
+							VALUES(
+							       		#{carNum},
+							       		#{location},
+							       		#{location},
+							       		#{startDate},
+							       		#{endDate},
+							       		#{loginUser}
+							       )
+	</insert>
+	<update id="carStatus">
+	   UPDATE TB_RENTCAR
+		  SET STATUS = 'Y'
 		 WHERE CAR_NUM = #{carNum}
 	</update>
 </mapper>

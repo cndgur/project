@@ -3,6 +3,10 @@ package com.lc.project.travel.controller;
 import java.io.IOException;
 import java.util.ArrayList;
 
+<<<<<<< HEAD
+import com.lc.project.member.model.vo.Member;
+=======
+>>>>>>> 41ce5b8ec6a1fc14e78e5419fcba05e3e156e4a0
 import com.lc.project.travel.model.vo.Travel;
 import com.lc.project.travel.model.vo.tReview;
 import com.lc.project.travel.service.TravelService;
@@ -34,6 +38,8 @@ public class travelInfoController extends HttpServlet {
 		String trName = request.getParameter("travel");
 		TravelService tServ = new TravelService();
 		Travel t = tServ.selectTravel(trName);
+<<<<<<< HEAD
+=======
 		char[] charArray = t.getTr_personnel().toCharArray();
 		ArrayList<String> category = new ArrayList();
 		for(int i = 0 ; i <charArray.length; i++) {
@@ -66,6 +72,7 @@ public class travelInfoController extends HttpServlet {
 			}
 		}
 		
+>>>>>>> 41ce5b8ec6a1fc14e78e5419fcba05e3e156e4a0
 		String[] strArr = t.getTrAddress().split(" ");
 		String tAdd = strArr[0]+" "+strArr[1];
 		ArrayList<Travel> tlist = tServ.selectNearbyTravel(tAdd,trName);
@@ -74,8 +81,13 @@ public class travelInfoController extends HttpServlet {
 		}
 		ArrayList<tReview> rlist = tServ.selectTReview(trName);
 		HttpSession session = request.getSession();
+<<<<<<< HEAD
+		session.setAttribute("loginUser", new Member("admin","1234","관리자","010-1111-2222"));
+		request.setAttribute("t", t);
+=======
 		request.setAttribute("t", t);
 		request.setAttribute("category",category);
+>>>>>>> 41ce5b8ec6a1fc14e78e5419fcba05e3e156e4a0
 		request.setAttribute("tlist", tlist);
 		request.setAttribute("rlist", rlist);
 		

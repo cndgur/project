@@ -52,7 +52,6 @@
 <body>
 	<!-- header -->
 	<%@include file="../common/header.jsp" %>
-
     <!-- main -->
     <div id="wrapper">
         <div class="area" style="font-weight: bold;">
@@ -147,18 +146,29 @@
 	            <button class="tagbtn" style="cursor:context-menu;">#${theme}</button>
             </div>
             <div id="tour">
+<<<<<<< HEAD
+                <c:forEach var="t" items="${tr}">
+                    <a href="travel.info?travel=${travel}">
+                        <div id="content">
+                            <img src="<%=contextPath%>/pic/qufakfh.jpg" alt="별마로천문대" id="img">                    
+                            <div id="text">${t.trName}</div>
+=======
                 <c:forEach var="tr" items="${trList }">
 <<<<<<< HEAD
                     <a href="travel.info?travel=${travel}">
                         <div id="content">
                             <img src="${tr.picInfo }" alt="${tr.trName }" id="img">                    
                             <div id="text">${tr.trName }</div>
+<<<<<<< HEAD
 =======
                     <a href="travel.info?travel=${tr.trName}">
                         <div id="content">
                             <img src="${tr.picInfo }" alt="${tr.trName }" id="img">
                             <div id="text">${tr.trName }<br><p style="color: rgba(119, 128, 136, 120); font-size: 13px;">${tr.trAddress }</p></div>
 >>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
+=======
+>>>>>>> a5cf78a320d87ce322d0c5ade94482cb3092a06f
+>>>>>>> 3a2aac4c0ff129cb1df1c941904293d8070a9195
                         </div>
                     </a>
                 </c:forEach>

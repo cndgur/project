@@ -74,6 +74,18 @@ public class Member {
 	}
 
 
+<<<<<<< HEAD
+	public Member(String userId, String userPwd, String userName, String tel) {
+		super();
+		this.userId = userId;
+		this.userPwd = userPwd;
+		this.userName = userName;
+		this.tel = tel;
+	}
+
+
+=======
+>>>>>>> 41ce5b8ec6a1fc14e78e5419fcba05e3e156e4a0
 	public int getUserNo() {
 		return userNo;
 	}

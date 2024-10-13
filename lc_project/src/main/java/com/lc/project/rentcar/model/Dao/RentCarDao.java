@@ -1,7 +1,6 @@
 package com.lc.project.rentcar.model.Dao;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import org.apache.ibatis.session.SqlSession;
 
