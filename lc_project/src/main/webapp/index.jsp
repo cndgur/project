@@ -57,15 +57,12 @@
                 <c:choose>
                 <c:when test="${empty loginUser && empty loginbs}">
                     <!-- 로그인 전 -->
-<<<<<<< HEAD
                     <a href="./views/member/selectlogin.jsp" class="to_login">
                         <div><input type="button" class="header_btn" value="로그인"></div>
                     </a>
-=======
                      <form action="selcetenroll.me" method="post" class="to_login">
                         <div><button type="submit" class="header_btn">로그인</button></div>
                     </form>
->>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
                 </c:when>
                 <c:when test="${!empty loginUser}">
                     <!-- 일반 사용자 로그인 후 -->
