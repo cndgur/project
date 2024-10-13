@@ -56,7 +56,7 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public int updateMember(Member m) {
+	public boolean updateMember(Member m) {
 		SqlSession sqlSession = Template.getSqlSession();
 		int result = mDao.updateMember(sqlSession, m);
 		
@@ -68,7 +68,7 @@ public class MemberServiceImpl implements MemberService{
 		
 		sqlSession.close();
 		
-		return result;
+		return result > 0;
 	}
 
 

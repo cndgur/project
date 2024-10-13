@@ -30,6 +30,7 @@ public class BusinessupdateController extends HttpServlet {
             request.getParameter("bsEmail"),
             request.getParameter("bsTel"),
             request.getParameter("bsAddress"),
+            request.getParameter("bslocation"),
             request.getParameter("bsTitle")
         );
 
@@ -48,7 +49,7 @@ public class BusinessupdateController extends HttpServlet {
             response.sendRedirect(request.getContextPath() + "/views/common/myPage2.jsp?modalMessage=fail");
         }
     }
-
+    
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
     }

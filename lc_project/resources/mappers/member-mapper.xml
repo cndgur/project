@@ -13,7 +13,6 @@
   	<result column="USER_ID" property="userId"/>
   	<result column="USER_PWD" property="userPwd"/>
   	<result column="TEL" property="tel"/>
-  	<result column="EMAIL" property="email"/>
   	<result column="ADDRESS" property="address"/>
   	<result column="BIRTHDAY" property="birthday"/>
   	<result column="GENDER" property="gender"/>
@@ -86,4 +85,14 @@
 		WHERE USER_NAME = #{userName}
 		  AND USER_ID = #{userId}
 </select>
+<update id="updateMember" parameterType="Member">
+    UPDATE TB_MEMBER
+    SET USER_NAME = #{userName},
+        USER_PWD = #{userPwd},
+        TEL = #{tel},
+        ADDRESS = #{address},
+        MODIFY_DATE = SYSDATE
+    WHERE USER_ID = #{userId}
+</update>
+
 </mapper>

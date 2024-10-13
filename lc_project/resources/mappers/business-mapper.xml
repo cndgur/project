@@ -14,7 +14,10 @@
   	<result column="BS_EMAIL" property="bsEmail"/>
   	<result column="BS_TEL" property="bsTel"/>
   	<result column="BS_ADDRESS" property="bsAddress"/>
+  	<result column="LOCATION" property="bslocation"/>
   	<result column="BS_TITLE" property="bsTitle"/>
+  	<result column="HT_MAP_LATITUDE" property="latitude"/>
+  	<result column="HT_MAP_LONGITUDE" property="longitude"/>
   	<result column="ENROLL_DATE" property="enrolldate"/>
   	<result column="MODIFY_DATE" property="modifydate"/>
   	<result column="STATUS" property="status"/>
@@ -32,7 +35,10 @@
 		   BS_EMAIL,
 		   BS_TEL,
 		   BS_ADDRESS,
+		   LOCATION,
 		   BS_TITLE,
+		   HT_MAP_LATITUDE,
+		   HT_MAP_LONGITUDE,
 		   ENROLL_DATE,
 		   MODIFY_DATE,
 		   STATUS
@@ -87,9 +93,9 @@
         BS_EMAIL = #{bsEmail},
         BS_TEL = #{bsTel},
         BS_ADDRESS = #{bsAddress},
+        LOCATION = #{bslocation}, 
         BS_TITLE = #{bsTitle},
         MODIFY_DATE = SYSDATE
     WHERE BS_ID = #{bsId}
 </update>
-
 </mapper>

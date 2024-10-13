@@ -82,7 +82,7 @@
                             <img id="avatar" src="./pic/profile-removebg-preview.png" alt="avatar" width="35px" height="35px">
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="./views/common/myPage2.jsp">사업자마이페이지</a></li>
+                            <li><a class="dropdown-item" href="./views/common/BusinessmyPage.jsp">사업자마이페이지</a></li>
                             <li><a class="dropdown-item" href="logout.bs">로그아웃</a></li>
                         </ul>
                     </div>

@@ -34,8 +34,8 @@
         	<c:when test="${!empty loginUser}">
         		<div class="dropdown">
                     <button type="button" class="btn" data-bs-toggle="dropdown">
-                        <img id="hamBtn" src="./pic/hamburgerBtn.png" alt="hamburgerBtn" width="30px" height="22px">
-                        <img id="avatar" src="./pic/avatar.png" alt="avatar" width="35px" height="35px">
+                        <img id="hamBtn" src="<%=contextPath %>/pic/hamburgerBtn.png" alt="hamburgerBtn" width="30px" height="22px">
+                        <img id="avatar" src="<%=contextPath %>/pic/avatar.png" alt="avatar" width="35px" height="35px">
                     </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="./views/common/myPage.jsp">마이페이지</a></li>
@@ -46,8 +46,8 @@
         	<c:when test="${!empty loginbs}">
         		<div class="dropdown">
 			        <button type="button" class="btn" data-bs-toggle="dropdown">
-			            <img id="hamBtn" src="./pic/hamburgerBtn.png" alt="hamburgerBtn" width="30px" height="22px">
-			            <img id="avatar" src="./pic/profile-removebg-preview.png" alt="avatar" width="35px" height="35px">
+			            <img id="hamBtn" src="<%=contextPath %>/pic/hamburgerBtn.png" alt="hamburgerBtn" width="30px" height="22px">
+			            <img id="avatar" src="<%=contextPath %>/pic/profile-removebg-preview.png" alt="avatar" width="35px" height="35px">
 			        </button>
 			        <ul class="dropdown-menu">
 			            <li><a class="dropdown-item" href="./views/common/myPage2.jsp">사업자마이페이지</a></li>

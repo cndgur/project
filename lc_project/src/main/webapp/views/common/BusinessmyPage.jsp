@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>마이페이지</title>
-    <link rel="stylesheet" href="<%= request.getContextPath() %>/css/myPage.css">
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/css/BusinessmyPage.css">
     <link rel="icon" href="<%= request.getContextPath() %>/pic/logo.png"/>
     <link rel="apple-touch-icon" href="<%= request.getContextPath() %>/pic/logo.png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,6 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybQz2smYl3bKRT6CzYcZT26Q3M0ILy1XczV7flxM7Q5VsFDo" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
 <body>
     <%@include file="../common/header.jsp" %>
@@ -40,8 +41,10 @@
             </div>
         </div>
         <div class="myhotel">
-            <li>나의 호텔</li>
-            ${loginbs.bsTitle}
+        	<ul>
+	            <li>나의 호텔 : ${loginbs.bsTitle}</li>
+            </ul>
+            <img src="${loginbs.bslocation}">
         </div>
     </div>
         
@@ -80,6 +83,10 @@
                             <input type="text" class="form-control" id="bsAddress" name="bsAddress" value="${loginbs.bsAddress}">
                         </div>
                         <div class="mb-3">
+                            <label for="bslocation" class="form-label">호텔사진</label>
+                            <input type="text" class="form-control" id="bslocation" name="bslocation" value="${loginbs.bslocation}">
+                        </div>
+                        <div class="mb-3">
                             <label for="bsTitle" class="form-label">호텔명</label>
                             <input type="text" class="form-control" id="bsTitle" name="bsTitle" value="${loginbs.bsTitle}">
                         </div>
@@ -111,7 +118,7 @@
         if (param.modalMessage == 'success') {
             setTimeout(function() {
                 myModal.hide();
-                window.location.href = '<%= request.getContextPath() %>/views/common/myPage2.jsp'; // 여기서 페이지 리다이렉트
+                window.location.href = '<%= request.getContextPath() %>/views/common/BusinessmyPage.jsp'; // 여기서 페이지 리다이렉트
             }, 2000); // 2초 후에 모달 닫기
         }
     </script>

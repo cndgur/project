@@ -38,7 +38,7 @@ public class BusinessLogoutController extends HttpServlet {
 	        }
 	        
 	        // 로그인 페이지로 리다이렉트
-	        response.sendRedirect(request.getContextPath());
+	        response.sendRedirect(request.getContextPath() + "/logout.bs");
 	    }
 
 	/**

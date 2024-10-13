@@ -33,6 +33,7 @@ public class BusinessLoginController extends HttpServlet {
         Business b = new Business();
         b.setBsId(request.getParameter("bsId"));
         b.setBsPwd(request.getParameter("bsPwd"));
+        b.setBslocation(request.getParameter("bslocation"));
         
         BusinessService businessService = new BusinessServiceImpl(); 
         Business loginbs = businessService.loginBusiness(b);

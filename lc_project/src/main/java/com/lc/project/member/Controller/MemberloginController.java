@@ -14,7 +14,6 @@ import com.lc.project.member.model.vo.Member;
 /**
  * Servlet implementation class MemberloginController
  */
-@WebServlet("/memberLogin") // Servlet 매핑 추가
 public class MemberloginController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 

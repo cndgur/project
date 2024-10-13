@@ -86,6 +86,8 @@ body{
 }
 #myPage_body{
     margin: 50px;
+    position: relative;
+    left: 50px;
 }
 .myPage{
     width: 90%;
@@ -157,4 +159,26 @@ body{
 .myhotel{
     background-color: #EFF0F2;
     width: 500px;
+    height: 363px;
+    position: relative;
+    left: 300px;
+    bottom: 372px;
+    border-radius: 20px;
+}
+
+.myhotel > ul > li{
+	margin: 10px;
+    text-align: left;
+    word-wrap: break-word;
+    padding-top: 23px;
+}
+.myhotel > img{
+	padding-left: 23px;
+	width: 477px;
+	object-fit: cover;
+}
+
+h3{
+	position: relative;
+	bottom: 13px;
 }
