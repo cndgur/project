@@ -1,27 +1,29 @@
-package com.lc.project.travel.controller;
+package com.lc.project.hotel.controller;
 
 import java.io.IOException;
 import java.net.URLEncoder;
 
-import com.lc.project.travel.service.TravelService;
+import com.lc.project.hotel.service.HotelService;
+import com.lc.project.member.model.vo.Member;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class travelReviewController
+ * Servlet implementation class HotelBookingController
  */
-@WebServlet(name = "review.tra", urlPatterns = { "/review.tra" })
-public class travelReviewController extends HttpServlet {
+@WebServlet(name = "hotel.booking", urlPatterns = { "/hotel.booking" })
+public class HotelBookingController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public travelReviewController() {
+    public HotelBookingController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,18 +33,16 @@ public class travelReviewController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		
-		String review = request.getParameter("review");
-		String userId = request.getParameter("userId");
-		String travel = request.getParameter("travel");
-		int result = new TravelService().insertReview(review,userId,travel);
-		String userName = request.getParameter("userName");
-		String encodedTravel = URLEncoder.encode(travel, "UTF-8");
-		if(result >0) {
-			response.sendRedirect(request.getContextPath()+"/travel.info?travel="+encodedTravel);
+		HttpSession session = request.getSession();
+		String hotel = (String)request.getParameter("hotel");
+		Member loginUser = (Member)session.getAttribute("loginUser");
+		String encodedHotel = URLEncoder.encode(hotel, "UTF-8");
+		if(loginUser == null) {
+			session.setAttribute("alertMsg","로그인이 필요한 기능입니다.");
+			response.sendRedirect(request.getContextPath()+"/hotel.info?hotel="+encodedHotel);
 		}else {
-			
-			request.getRequestDispatcher(request.getContextPath()).forward(request, response);
+			int result = new HotelService().insertBooking(loginUser,);
+			response.sendRedirect(request.getContextPath()+"/views/common/paysuc");
 		}
 	}
 

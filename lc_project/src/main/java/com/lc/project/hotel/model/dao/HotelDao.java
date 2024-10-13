@@ -13,6 +13,7 @@ import java.util.Properties;
 
 import com.lc.project.hotel.model.vo.Hotel;
 import com.lc.project.hotel.model.vo.Room;
+import com.lc.project.member.model.vo.Member;
 import com.lc.project.travel.model.dao.TravelDao;
 
 public class HotelDao {
@@ -115,4 +116,24 @@ public class HotelDao {
 		}
 		return list;
 	}
+	public int insertBooking(Connection conn,Member loginUser,String userId,String travel){
+	      int result = 0;
+	      PreparedStatement pstmt = null;
+	      String sql = "INSERT INTO TB_ROOM_BOOKING(BOOKING_NUM, ROOM_NUM, ROOM_USER, CHECKIN,CHECKOUT,STATUS,PAYMENT,PRICE,FIELD10) "
+	            + "VALUES(?,?,?,SYSDATE,7)";
+	      try {
+	         pstmt = conn.prepareStatement(sql);
+	         pstmt.setString(1, userId);
+	         pstmt.setString(2, travel);
+	         pstmt.setString(3, review);
+	         result = pstmt.executeUpdate();
+	         
+	      } catch (SQLException e) {
+	         // TODO Auto-generated catch block
+	         e.printStackTrace();
+	      }finally {
+	         close(pstmt);
+	      }
+	      return result;
+	   }
 }

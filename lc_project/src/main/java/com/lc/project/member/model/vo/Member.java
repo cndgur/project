@@ -54,8 +54,6 @@ public class Member {
 	}
 	
 
-<<<<<<< HEAD
-=======
 	public Member(String userName, String userId, String userPwd, String tel, String email, String address) {
 		super();
 		this.userName = userName;
@@ -67,7 +65,6 @@ public class Member {
 	}
 
 
->>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
 	public Member(String userName) {
 		super();
 		this.userName = userName;

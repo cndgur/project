@@ -35,15 +35,7 @@ public class wishDeleteController extends HttpServlet {
 		Member loginUser = (Member)session.getAttribute("loginUser");
 		String travel = request.getParameter("travel");
 		String encodedTravel = URLEncoder.encode(travel, "UTF-8");
-<<<<<<< HEAD
 		int result = new TravelService().deleteWish(loginUser.getUserId(),travel);	
-=======
-<<<<<<< HEAD
-		int result = new TravelService().deleteWish(loginUser.getUserName(),travel);	
-=======
-		int result = new TravelService().deleteWish(loginUser.getUserId(),travel);	
->>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
->>>>>>> 921d9ed8b117b1b3a18f339debf1c62a98765fac
 		if(result >0) {
 			response.sendRedirect(request.getContextPath()+"/travel.info?travel="+encodedTravel);
 		}else {
@@ -60,8 +52,4 @@ public class wishDeleteController extends HttpServlet {
 		doGet(request, response);
 	}
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b

@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%
-	//Hotel h = request.getAttribute(
+    pageEncoding="UTF-8" import="com.lc.project.travel.model.vo.Travel, java.util.ArrayList, com.lc.project.travel.model.vo.tReview, com.lc.project.member.model.vo.Member, com.lc.project.hotel.model.vo.Hotel"%>
+<%	
+	String tInfo = (String)request.getAttribute("tInfo");
+	ArrayList<Hotel> hlist= (ArrayList<Hotel>)request.getAttribute("hlist");
+	ArrayList<Travel> slist = (ArrayList<Travel>)request.getAttribute("slist");
 %>    
 
 <!DOCTYPE html>
@@ -35,8 +37,16 @@
     <%@include file="../common/header.jsp"%>
     <div id="wrapper">
         <table style="margin-top: 70px;">
+        	<tr>
+        	<td class="side"></td>
+        	<td colspan="3" class="content"></td>
+        	<td></td>
+        	<td></td>
+        	<td class="side"></td>
+        	</tr>
             <tr>
                 <td class="side"></td>
+                <!-- 
                 <td>
                     <div class="sidenav">
                     	<div class="sidenav-header">지역</div>
@@ -108,21 +118,22 @@
                                  }
                              });
                          });
-                     </script>                      
+                     </script>                     
                 </td>
+                 -->
                 <td class="content" >
                     <div style="height: 2000px;">
-                        <h3>'경주' 검색결과 2,301개 </h3>
+                        <h3>'<%=tInfo %>' 검색결과 <%=slist.size() %>개 </h3>
                         <hr>
                         <div class="reviewcon" >
-                        	<table>
+                         <%for (Travel tra : slist){ %>
+                        	<table onclick="location.href?travel=<%=tra.getTrName()%>">
                                 <tr>
-                                    <td style="width: 30%;"><img src="../../pic/ht_main_pic.png" style="width: 300px; height: 200px; margin: 8px; border-radius: 15px;"></td>
+                                    <td style="width: 30%;"><img src="<%=tra.getPicInfo()%>" style="width: 300px; height: 200px; margin: 8px; border-radius: 15px;"></td>
                                     <td style="width: 50%;">
                                         <div style="margin-left: 20px;">
-                                            호텔<br>
-                                        <h4>힐튼경주</h4><br>
-                                        <img src="../../pic/star.png">9.5
+                                        <h4><%=tra.getTrName() %></h4><br>
+                                        <%=tra.getTrAddress() %>
                                         </div>
                                     </td>
                                     <td style="width: 20%; padding-top: 90px;">
@@ -133,98 +144,9 @@
                                     </td>
                                 </tr>
                             </table>
-                            <table>
-                                <tr>
-                                    <td style="width: 30%;"><img src="../../pic/ht_main_pic.png" style="width: 300px; height: 200px; margin: 8px; border-radius: 15px;"></td>
-                                    <td style="width: 50%;">
-                                        <div style="margin-left: 20px;">
-                                            호텔<br>
-                                        <h4>힐튼경주</h4><br>
-                                        <img src="../../pic/star.png">9.5
-                                        </div>
-                                    </td>
-                                    <td style="width: 20%; padding-top: 90px;">
-                                        <div style="margin-left: 50px;">
-                                            <h6>최소 가격</h6>
-                                            <h5>217,000원</h5>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
-                            <table>
-                                <tr>
-                                    <td style="width: 30%;"><img src="../../pic/ht_main_pic.png" style="width: 300px; height: 200px; margin: 8px; border-radius: 15px;"></td>
-                                    <td style="width: 50%;">
-                                        <div style="margin-left: 20px;">
-                                            호텔<br>
-                                        <h4>힐튼경주</h4><br>
-                                        <img src="../../pic/star.png">9.5
-                                        </div>
-                                    </td>
-                                    <td style="width: 20%; padding-top: 90px;">
-                                        <div style="margin-left: 50px;">
-                                            <h6>최소 가격</h6>
-                                            <h5>217,000원</h5>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
-                            <table>
-                                <tr>
-                                    <td style="width: 30%;"><img src="../../pic/ht_main_pic.png" style="width: 300px; height: 200px; margin: 8px; border-radius: 15px;"></td>
-                                    <td style="width: 50%;">
-                                        <div style="margin-left: 20px;">
-                                            호텔<br>
-                                        <h4>힐튼경주</h4><br>
-                                        <img src="../../pic/star.png">9.5
-                                        </div>
-                                    </td>
-                                    <td style="width: 20%; padding-top: 90px;">
-                                        <div style="margin-left: 50px;">
-                                            <h6>최소 가격</h6>
-                                            <h5>217,000원</h5>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
-                            <table>
-                                <tr>
-                                    <td style="width: 30%;"><img src="../../pic/ht_main_pic.png" style="width: 300px; height: 200px; margin: 8px; border-radius: 15px;"></td>
-                                    <td style="width: 50%;">
-                                        <div style="margin-left: 20px;">
-                                            호텔<br>
-                                        <h4>힐튼경주</h4><br>
-                                        <img src="../../pic/star.png">9.5
-                                        </div>
-                                    </td>
-                                    <td style="width: 20%; padding-top: 90px;">
-                                        <div style="margin-left: 50px;">
-                                            <h6>최소 가격</h6>
-                                            <h5>217,000원</h5>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
-                            <table>
-                                <tr>
-                                    <td style="width: 30%;"><img src="../../pic/ht_main_pic.png" style="width: 300px; height: 200px; margin: 8px; border-radius: 15px;"></td>
-                                    <td style="width: 50%;">
-                                        <div style="margin-left: 20px;">
-                                            호텔<br>
-                                        <h4>힐튼경주</h4><br>
-                                        <img src="../../pic/star.png">9.5
-                                        </div>
-                                    </td>
-                                    <td style="width: 20%; padding-top: 90px;">
-                                        <div style="margin-left: 50px;">
-                                            <h6>최소 가격</h6>
-                                            <h5>217,000원</h5>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
+                           <%} %>
+						</div>
+					</div>
                 </td>
                 <td class="side"></td>
             </tr>
