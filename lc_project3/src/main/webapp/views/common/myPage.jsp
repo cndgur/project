@@ -44,24 +44,21 @@
             <div id="profile">
                 <div id="img-area">
 
-                    <img src="../..pic/profile.png">
-
                     <img src="../../pic/profile.png">
 
                 </div>
-                <button>프로필 사진 변경</button>
-                <div id="text-area">
-                    <h3>${loginUser.userName}님</h3>
-                    <ul>
-                        <li>email <br>${loginUser.email}</li>
-                        <li>phone : ${loginUser.tel}</li>
-                    </ul>
-                </div>
-            </div>
-            <div>
-                <div id="booking-area">
-                    예약현황
-                </div>
+                    <div class="profile_info">
+                        <form action="update.me" method="post">
+                            <input type="submit" value="프로필 수정" class="updateprofile">
+                        </form>
+                        <div id="text-area">
+                            <h3 class="userName">${loginUser.userName}님</h3>
+                            <ul>
+                                <li>아이디 : ${loginUser.userId}</li>
+                                <li>전화번호 : ${loginUser.tel}</li>
+                            </ul>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>

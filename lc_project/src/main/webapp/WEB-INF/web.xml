@@ -1,8 +1,15 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 921d9ed8b117b1b3a18f339debf1c62a98765fac
 <<<<<<< HEAD
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" id="WebApp_ID" version="5.0">
 <display-name>lc_project3</display-name>
+=======
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" id="WebApp_ID" version="6.0">
+<display-name>Ic_project</display-name>
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
 <welcome-file-list>
 <welcome-file>index.html</welcome-file>
 <welcome-file>index.jsp</welcome-file>
@@ -222,7 +229,11 @@
 <url-pattern>/hotel.list</url-pattern>
 </servlet-mapping>
 <servlet>
+<<<<<<< HEAD
 <description></description>
+=======
+<description/>
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
 <display-name>list.rc</display-name>
 <servlet-name>list.rc</servlet-name>
 <servlet-class>com.lc.project.rentcar.controller.RentCarController</servlet-class>
@@ -241,6 +252,7 @@
 <servlet-name>hotel.info</servlet-name>
 <url-pattern>/hotel.info</url-pattern>
 </servlet-mapping>
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" id="WebApp_ID" version="5.0">
@@ -765,5 +777,90 @@
   </servlet-mapping>
 >>>>>>> 90581a0d9a4d72a768bfd2e80c652056bfcab795
 >>>>>>> a988212f37af7f2b67dd00244d8cf097d075ceb6
+<<<<<<< HEAD
 >>>>>>> 41ce5b8ec6a1fc14e78e5419fcba05e3e156e4a0
+=======
+=======
+<servlet>
+<description/>
+<display-name>tr.hotel</display-name>
+<servlet-name>tr.hotel</servlet-name>
+<servlet-class>com.lc.project.map.controller.Travelhotelcontroller</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>tr.hotel</servlet-name>
+<url-pattern>/tr.hotel</url-pattern>
+</servlet-mapping>
+ <servlet>
+    <description></description>
+    <display-name>searchidview.me</display-name>
+    <servlet-name>searchidview.me</servlet-name>
+    <servlet-class>com.lc.project.member.Controller.SearchIdViewController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>searchidview.me</servlet-name>
+    <url-pattern>/searchidview.me</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>seachpwdview.me</display-name>
+    <servlet-name>seachpwdview.me</servlet-name>
+    <servlet-class>com.lc.project.member.Controller.SearchpwdViewController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>seachpwdview.me</servlet-name>
+    <url-pattern>/seachpwdview.me</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>insertview.me</display-name>
+    <servlet-name>insertview.me</servlet-name>
+    <servlet-class>com.lc.project.member.Controller.InsertViewController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>insertview.me</servlet-name>
+    <url-pattern>/insertview.me</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>searchidview.bs</display-name>
+    <servlet-name>searchidview.bs</servlet-name>
+    <servlet-class>com.lc.project.business.Controller.SeachIdViewController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>searchidview.bs</servlet-name>
+    <url-pattern>/searchidview.bs</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>seachpwdview.bs</display-name>
+    <servlet-name>seachpwdview.bs</servlet-name>
+    <servlet-class>com.lc.project.business.Controller.SearchpwdViewController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>seachpwdview.bs</servlet-name>
+    <url-pattern>/seachpwdview.bs</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>insertview.bs</display-name>
+    <servlet-name>insertview.bs</servlet-name>
+    <servlet-class>com.lc.project.business.Controller.InsertViewController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>insertview.bs</servlet-name>
+    <url-pattern>/insertview.bs</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>update.me</display-name>
+    <servlet-name>update.me</servlet-name>
+    <servlet-class>com.lc.project.member.Controller.MemberupdateController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>update.me</servlet-name>
+    <url-pattern>/update.me</url-pattern>
+  </servlet-mapping>
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
+>>>>>>> 921d9ed8b117b1b3a18f339debf1c62a98765fac
 </web-app>

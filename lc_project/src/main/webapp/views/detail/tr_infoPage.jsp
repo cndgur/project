@@ -353,10 +353,16 @@
                         			url: "wish.tr",
                         			contentType: "application/json",
                         			data: {
+<<<<<<< HEAD
                         				userName: "<%=loginUser.getUserName()%>"
                         			},
                         			success: function(res){
                         				console.log(res);
+=======
+                        				userId: "<%=loginUser.getUserId()%>"
+                        			},
+                        			success: function(res){
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
                         				let str = "";
                                         for(let tra of res){
                                         	str += ("<div class='sidenav-item' onclick='location.href=\"travel.info?travel="+tra.trName+"\"'>" +
@@ -484,7 +490,12 @@
                         <div class=sidecontent></div>
                         
                         <div class="sidenav-footer">
+<<<<<<< HEAD
                             <button><div style="vertical-align: middle;">여행지 기준<br>호텔 검색</div></button>
+=======
+                        	<button onclick="location.href='hotel.info?hotel=럭셔리 빌라'"><div style="vertical-align: middle;">여행지 기준<br>호텔 검색</div></button>
+                            
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
                         </div>
                         <script>
                             $(document).ready(function() {
@@ -571,7 +582,11 @@
                         <h2>여행지 리뷰</h2>
                         <hr>
                         <form action="review.tra" method="POST">
+<<<<<<< HEAD
                         	<input type="hidden" name="userName" value="<%=loginUser.getUserName()%>">
+=======
+                        	<input type="hidden" name="userId" value="<%=loginUser.getUserId()%>">
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
                         	<input type="hidden" name="travel" value="<%=t.getTrName()%>">
                         	<div style="width: 100%; height: 300px; background: #ddeeeb; margin-bottom: 100px;">
                             <textarea id="review" placeholder="리뷰를 작성해주세요." style="resize: none;" name="review"></textarea><br>
@@ -633,4 +648,8 @@
     </div>
     <%@include file="../common/footer.jsp" %>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b

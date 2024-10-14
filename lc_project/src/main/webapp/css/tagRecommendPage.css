@@ -76,6 +76,16 @@ button{
 
 #text{
     padding: 50px 0;
+<<<<<<< HEAD
+=======
+    padding-left: 150px;
+    font-size: 20px;
+}
+#text2{
+	color: rgba(119, 128, 136, 120);
+    padding-left: 150px;
+    font-size: 13px;
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
 }
 
 #wish{
@@ -137,8 +147,26 @@ display: block;
 width: 100%;
 text-align: center;
 }
+<<<<<<< HEAD
 
 .tagbtn{
     display: grid;
     grid-template-columns: minmax(100px, max-content) 1fr;
+=======
+.chtag{
+	display: block;
+}
+
+.tagbtn{
+    width: 80px;
+    height: 25px;
+    font-size: 9px;
+    border: 0px;
+    background: #7bbcb0;
+    color: white;
+    border-radius: 40px;
+    font-size: medium;
+    margin: 10px auto; /* 버튼을 중앙으로 정렬 */
+    text-align: center;
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
 }

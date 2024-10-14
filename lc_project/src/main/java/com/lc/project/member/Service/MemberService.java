@@ -9,4 +9,8 @@ public interface MemberService {
 	public abstract Member searchidMember(Member m);
 	
 	public abstract Member searchpwdMember(Member m);
+<<<<<<< HEAD
+=======
+	int updateMember(Member m);
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
 }

@@ -32,6 +32,7 @@ public class HotelInfoController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+<<<<<<< HEAD
 		HotelService hServ = new HotelService(); 
 		Hotel h = hServ.selectHotel("신라호텔");
 		System.out.println(h);
@@ -39,15 +40,34 @@ public class HotelInfoController extends HttpServlet {
 		String[] strArr = h.gethAddress().split(" ");
 		String hAdd = strArr[0]+" "+strArr[1];
 		ArrayList<Travel> tlist = new TravelService().selectNearbyTravel(hAdd,"");
+=======
+		String HotelName = request.getParameter("hotel");
+		HotelService hServ = new HotelService(); 
+		Hotel h = hServ.selectHotel(HotelName);
+		ArrayList<Room> rlist = hServ.selectRoomList(h.getBsId());
+		String[] strArr = h.gethAddress().split(" ");
+		String hAdd = strArr[0]+" "+strArr[1];
+		ArrayList<Travel> tlist = new TravelService().selectNearbyTravel(hAdd," ");
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
 		for(Travel tra : tlist) {
 			tra.setTrAddress(hAdd);
 		}
 		ArrayList<Hotel> hlist = hServ.selectHotelList(hAdd,h.gethName());
+<<<<<<< HEAD
+=======
+		for(Hotel ht : hlist) {
+			ht.sethAddress(hAdd);
+		}
+		System.out.println(hlist);
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
 		request.setAttribute("h", h);
 		request.setAttribute("hlist", hlist);
 		request.setAttribute("tlist", tlist);
 		request.setAttribute("rlist", rlist);
+<<<<<<< HEAD
 		System.out.println(rlist);
+=======
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
 		request.getRequestDispatcher("views/detail/ht_infoPage.jsp").forward(request, response);
 	}
 
@@ -59,4 +79,8 @@ public class HotelInfoController extends HttpServlet {
 		doGet(request, response);
 	}
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
