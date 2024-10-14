@@ -89,11 +89,8 @@ public class TravelDao {
 		}
 		return list;
 	}
-<<<<<<< HEAD
 	public ArrayList<Travel> selectWishList(Connection conn,String userName){
-=======
-	public ArrayList<Travel> selectWishList(Connection conn,String userId){
->>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
+
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		ArrayList<Travel> list = new ArrayList<>();
@@ -103,11 +100,7 @@ public class TravelDao {
 				+"WHERE WISH_USER = ?";
 		try {
 			pstmt = conn.prepareStatement(sql);
-<<<<<<< HEAD
 			pstmt.setString(1, userName);
-=======
-			pstmt.setString(1, userId);
->>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
 			rset = pstmt.executeQuery();
 			while(rset.next()) {
 				Travel t = new Travel();
@@ -180,16 +173,7 @@ public class TravelDao {
 		}
 		return list;
 	}
-<<<<<<< HEAD
-	public int insertReview(Connection conn,String review,String userName,String travel){
-		int result = 0;
-		PreparedStatement pstmt = null;
-		String sql = "INSERT INTO TB_REVIEW(REV_NUM, REV_USER, AC_NAME, CONTENT, REVIEW_DATE,SCORE) "
-				+ "VALUES(26,?,?,?,SYSDATE,7)";
-		try {
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, userName);
-=======
+
 	public int insertReview(Connection conn,String review,String userId,String travel){
 		int result = 0;
 		PreparedStatement pstmt = null;
@@ -198,7 +182,6 @@ public class TravelDao {
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, userId);
->>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
 			pstmt.setString(2, travel);
 			pstmt.setString(3, review);
 			result = pstmt.executeUpdate();
@@ -211,11 +194,7 @@ public class TravelDao {
 		}
 		return result;
 	}
-<<<<<<< HEAD
 	public int insertWish(Connection conn,String userName,String travel){
-=======
-	public int insertWish(Connection conn,String userId,String travel){
->>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
 		int result = 0;
 		PreparedStatement pstmt = null;
 		String sql = "INSERT INTO TB_WISHLIST(AC_NAME, WISH_USER) "
@@ -223,11 +202,8 @@ public class TravelDao {
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, travel);
-<<<<<<< HEAD
 			pstmt.setString(2, userName);
-=======
-			pstmt.setString(2, userId);
->>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
+
 			result = pstmt.executeUpdate();
 			
 		} catch (SQLException e) {
@@ -238,6 +214,7 @@ public class TravelDao {
 		}
 		return result;
 	}
+
 	public int countWish(Connection conn,String userName){
 		int result = 0;
 		ResultSet rset = null;
@@ -262,6 +239,7 @@ public class TravelDao {
 		}
 		return result;
 	}
+	
 	public int deleteWish(Connection conn,String userName,String travel){
 		int result = 0;
 		PreparedStatement pstmt = null;

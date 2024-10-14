@@ -1,15 +1,17 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 921d9ed8b117b1b3a18f339debf1c62a98765fac
+=======
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> b1cb82c47b125cb472010f5816b2d301ea21637f
 <<<<<<< HEAD
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" id="WebApp_ID" version="5.0">
 <display-name>lc_project3</display-name>
-=======
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" id="WebApp_ID" version="6.0">
-<display-name>Ic_project</display-name>
->>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
 <welcome-file-list>
 <welcome-file>index.html</welcome-file>
 <welcome-file>index.jsp</welcome-file>
@@ -229,11 +231,7 @@
 <url-pattern>/hotel.list</url-pattern>
 </servlet-mapping>
 <servlet>
-<<<<<<< HEAD
 <description></description>
-=======
-<description/>
->>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
 <display-name>list.rc</display-name>
 <servlet-name>list.rc</servlet-name>
 <servlet-class>com.lc.project.rentcar.controller.RentCarController</servlet-class>
@@ -252,7 +250,6 @@
 <servlet-name>hotel.info</servlet-name>
 <url-pattern>/hotel.info</url-pattern>
 </servlet-mapping>
-<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" id="WebApp_ID" version="5.0">
@@ -497,6 +494,7 @@
 </servlet-mapping>
 =======
 >>>>>>> 41ce5b8ec6a1fc14e78e5419fcba05e3e156e4a0
+>>>>>>> 3a2aac4c0ff129cb1df1c941904293d8070a9195
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" id="WebApp_ID" version="5.0">
   <display-name>lc_project</display-name>
@@ -775,12 +773,16 @@
     <servlet-name>selectlogin.view</servlet-name>
     <url-pattern>/selectlogin.view</url-pattern>
   </servlet-mapping>
+<<<<<<< HEAD
 >>>>>>> 90581a0d9a4d72a768bfd2e80c652056bfcab795
 >>>>>>> a988212f37af7f2b67dd00244d8cf097d075ceb6
 <<<<<<< HEAD
 >>>>>>> 41ce5b8ec6a1fc14e78e5419fcba05e3e156e4a0
 =======
 =======
+=======
+<<<<<<< HEAD
+>>>>>>> b1cb82c47b125cb472010f5816b2d301ea21637f
 <servlet>
 <description/>
 <display-name>tr.hotel</display-name>
@@ -861,6 +863,14 @@
     <servlet-name>update.me</servlet-name>
     <url-pattern>/update.me</url-pattern>
   </servlet-mapping>
+<<<<<<< HEAD
 >>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
 >>>>>>> 921d9ed8b117b1b3a18f339debf1c62a98765fac
+=======
+=======
+>>>>>>> 90581a0d9a4d72a768bfd2e80c652056bfcab795
+>>>>>>> a988212f37af7f2b67dd00244d8cf097d075ceb6
+>>>>>>> 41ce5b8ec6a1fc14e78e5419fcba05e3e156e4a0
+>>>>>>> 3a2aac4c0ff129cb1df1c941904293d8070a9195
+>>>>>>> b1cb82c47b125cb472010f5816b2d301ea21637f
 </web-app>

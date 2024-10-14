@@ -160,15 +160,24 @@
                             <img src="${tr.picInfo }" alt="${tr.trName }" id="img">                    
                             <div id="text">${tr.trName }</div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> a5cf78a320d87ce322d0c5ade94482cb3092a06f
 =======
+=======
+>>>>>>> b1cb82c47b125cb472010f5816b2d301ea21637f
 =======
                     <a href="travel.info?travel=${tr.trName}">
                         <div id="content">
                             <img src="${tr.picInfo }" alt="${tr.trName }" id="img">
                             <div id="text">${tr.trName }<br><p style="color: rgba(119, 128, 136, 120); font-size: 13px;">${tr.trAddress }</p></div>
 >>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
+<<<<<<< HEAD
 >>>>>>> 921d9ed8b117b1b3a18f339debf1c62a98765fac
+=======
+=======
+>>>>>>> a5cf78a320d87ce322d0c5ade94482cb3092a06f
+>>>>>>> 3a2aac4c0ff129cb1df1c941904293d8070a9195
+>>>>>>> b1cb82c47b125cb472010f5816b2d301ea21637f
                         </div>
                     </a>
                 </c:forEach>
