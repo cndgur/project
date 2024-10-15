@@ -28,6 +28,7 @@ public class TagRecommendController extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
+<<<<<<< HEAD
    /**
     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
     */
@@ -86,6 +87,54 @@ public class TagRecommendController extends HttpServlet {
        request.getRequestDispatcher("views/map/tagRecommendPage.jsp").forward(request, response);
        
    }
+=======
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		MapService mService = new MapServiceImpl();
+		
+		String personnel = request.getParameter("personnel");
+		String location = request.getParameter("location");
+		String theme = request.getParameter("theme");
+		
+		request.setAttribute("personnel", personnel);
+		
+		if(personnel.equals("가족여행")) {
+			personnel = "1";
+		} else if(personnel.equals("친구들과")) {
+			personnel = "2";
+		} else if(personnel.equals("1인여행")) {
+			personnel = "3";
+		} else if(personnel.equals("커플여행")) {
+			personnel = "4";
+		} else if(personnel.equals("반려동물")) {
+			personnel = "5";
+		} else if(personnel.equals("친목모임")) {
+			personnel = "6";
+		} else if(personnel.equals("워크숍")) {
+			personnel = "7";
+		} else {
+			personnel = "8";
+		}
+		
+		System.out.println(personnel);
+		System.out.println(location);
+		System.out.println(theme);
+		
+	    request.setAttribute("location", location);
+	    request.setAttribute("theme", theme);
+	    
+	    ArrayList<Travel> trList = mService.selectTravelTag(personnel, location, theme);
+<<<<<<< HEAD
+=======
+	    request.setAttribute("len", trList.size());
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
+	    request.setAttribute("trList", trList);
+	    
+	    request.getRequestDispatcher("views/map/tagRecommendPage.jsp").forward(request, response);
+	}
+>>>>>>> 921d9ed8b117b1b3a18f339debf1c62a98765fac
 
    /**
     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

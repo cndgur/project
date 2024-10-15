@@ -33,9 +33,9 @@ public class travelReviewController extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		String review = request.getParameter("review");
-		String userName = request.getParameter("userName");
+		String userId = request.getParameter("userId");
 		String travel = request.getParameter("travel");
-		int result = new TravelService().insertReview(review,userName,travel);
+		int result = new TravelService().insertReview(review,userId,travel);
 		String encodedTravel = URLEncoder.encode(travel, "UTF-8");
 		if(result >0) {
 			response.sendRedirect(request.getContextPath()+"/travel.info?travel="+encodedTravel);

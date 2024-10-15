@@ -60,8 +60,15 @@ public class MemberServiceImpl implements MemberService{
 		return searchpwd;
 	}
 
+<<<<<<< HEAD
 	@Override
 	public boolean updateMember(Member m) {
+=======
+<<<<<<< HEAD
+=======
+	@Override
+	public int updateMember(Member m) {
+>>>>>>> 921d9ed8b117b1b3a18f339debf1c62a98765fac
 		SqlSession sqlSession = Template.getSqlSession();
 		int result = mDao.updateMember(sqlSession, m);
 		
@@ -73,6 +80,7 @@ public class MemberServiceImpl implements MemberService{
 		
 		sqlSession.close();
 		
+<<<<<<< HEAD
 		return result > 0;
 	}
 
@@ -84,6 +92,12 @@ public class MemberServiceImpl implements MemberService{
 		return room;
 	}
 
+=======
+		return result;
+	}
+
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
+>>>>>>> 921d9ed8b117b1b3a18f339debf1c62a98765fac
 
 
 }

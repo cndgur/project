@@ -126,7 +126,15 @@
                         <h2>객실 선택</h2>
                         <hr>
                         <%for (Room ro : rlist){ %>
+<<<<<<< HEAD
 	                            <table  style="background: #ddeeeb; border-radius: 15px; height: 250px; margin-bottom: 50px;">
+=======
+<<<<<<< HEAD
+	                            <table  style="background: #ddeeeb; border-radius: 15px;">
+=======
+	                            <table  style="background: #ddeeeb; border-radius: 15px; height: 250px">
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
+>>>>>>> 921d9ed8b117b1b3a18f339debf1c62a98765fac
 	                                <tr>
 	                                    <td rowspan="2">
 	                                        <img src="<%=ro.getPicInfo() %>" class="reservepic">
@@ -207,6 +215,12 @@
                 <td></td>
                 <td class="side"></td>
             </tr>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+			
+=======
+>>>>>>> 921d9ed8b117b1b3a18f339debf1c62a98765fac
 			<tr class="recommend">
                 <td class="side"></td>
                 <td colspan="3" class="content">
@@ -217,7 +231,11 @@
                     <div class="recommendtr" style="margin-bottom: 100px;">
                     <% for(Hotel ht : hlist){ %>
 	                        <div class="recommendtr-item">
+<<<<<<< HEAD
 	                            <img class="recommendtrimg" src="<%=ht.getPicInfo() %>" onclick="location.href='hotel.info?hotel=<%=ht.gethName()%>'">
+=======
+	                            <img class="recommendtrimg" src="<%=ht.getPicInfo() %>" onclick="location.href='hotel.info?travel=<%=ht.gethName()%>'">
+>>>>>>> 921d9ed8b117b1b3a18f339debf1c62a98765fac
 	                            <p onclick="location.href='hotel.info?hotel=<%=ht.gethName()%>'" style="cursor: pointer;"><strong><%=ht.gethName() %></strong></p>
 	                            <p onclick="location.href='hotel.info?hotel=<%=ht.gethName()%>'" style="cursor: pointer;"><%=ht.gethAddress() %></p>
 	                        </div>
@@ -249,6 +267,10 @@
                 <td></td>
                 <td class="side"></td>
             </tr>
+<<<<<<< HEAD
+=======
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
+>>>>>>> 921d9ed8b117b1b3a18f339debf1c62a98765fac
         </table>
     </div>
      <%@include file="../common/footer.jsp"%>

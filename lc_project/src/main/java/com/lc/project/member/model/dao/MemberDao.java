@@ -29,10 +29,16 @@ public class MemberDao {
     public Member searchpwdMember(SqlSession sqlSession, Member member) {
     	return sqlSession.selectOne("memberMapper.searchpwdMember", member);
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 921d9ed8b117b1b3a18f339debf1c62a98765fac
     
     public int updateMember(SqlSession sqlSession, Member member) {
     	return sqlSession.update("memberMapper.updateMember", member);
     }
+<<<<<<< HEAD
     
     public Room selectRoom(Connection conn, Member m) {
 		PreparedStatement pstmt = null;
@@ -58,4 +64,7 @@ public class MemberDao {
 		}
 		return r;
 	}
+=======
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
+>>>>>>> 921d9ed8b117b1b3a18f339debf1c62a98765fac
 }

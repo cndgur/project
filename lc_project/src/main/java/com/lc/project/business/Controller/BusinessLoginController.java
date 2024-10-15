@@ -38,6 +38,33 @@ public class BusinessLoginController extends HttpServlet {
         BusinessService businessService = new BusinessServiceImpl(); 
         Business loginbs = businessService.loginBusiness(b);
         
+<<<<<<< HEAD
+        
+=======
+<<<<<<< HEAD
+>>>>>>> 921d9ed8b117b1b3a18f339debf1c62a98765fac
+        if (loginbs != null) {
+        	
+        	 String bsName = loginbs.getBsName();
+        	 
+            request.getSession().setAttribute("loginbs", loginbs);
+            response.setContentType("text/html; charset=UTF-8");
+            response.getWriter().write("<html><head><title>로그인 성공</title></head><body>");
+            response.getWriter().write("<script>alert('환영합니다, " + bsName + "님!');</script>");
+            response.getWriter().write("<script>window.location.href = '" + request.getContextPath() + "/index.jsp';</script>");
+            response.getWriter().write("</body></html>");
+        } else {
+<<<<<<< HEAD
+        	System.out.println("�α��ν���");
+            response.setContentType("text/html; charset=UTF-8");
+            response.getWriter().write("<html><head><title>로그인실패</title></head><body>");
+            response.getWriter().write("<script>alert('아이디, 비밀번호를 확인해주세요');</script>");;
+            response.getWriter().write("<script>window.location.href = '" + request.getContextPath() + "/views/member/loginviewbusiness.jsp';</script>");
+            response.getWriter().write("</body></html>");
+=======
+            System.out.println("로그인실패");
+            response.sendRedirect(request.getContextPath() + "/login.bs?loginSuccess=false");
+=======
         
         if (loginbs != null) {
         	
@@ -50,12 +77,14 @@ public class BusinessLoginController extends HttpServlet {
             response.getWriter().write("<script>window.location.href = '" + request.getContextPath() + "/index.jsp';</script>");
             response.getWriter().write("</body></html>");
         } else {
-        	System.out.println("�α��ν���");
+        	System.out.println("로그인실패");
             response.setContentType("text/html; charset=UTF-8");
-            response.getWriter().write("<html><head><title>로그인실패</title></head><body>");
-            response.getWriter().write("<script>alert('아이디, 비밀번호를 확인해주세요');</script>");;
+            response.getWriter().write("<html><head><title>로그인 실패</title></head><body>");
+            response.getWriter().write("<script>alert('아이디, 비밀번호를 확인해주세요');</script>");
             response.getWriter().write("<script>window.location.href = '" + request.getContextPath() + "/views/member/loginviewbusiness.jsp';</script>");
             response.getWriter().write("</body></html>");
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
+>>>>>>> 921d9ed8b117b1b3a18f339debf1c62a98765fac
         }
     }
 

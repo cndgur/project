@@ -76,6 +76,11 @@ button{
 
 #text{
     padding: 50px 0;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 921d9ed8b117b1b3a18f339debf1c62a98765fac
     padding-left: 150px;
     font-size: 20px;
 }
@@ -83,6 +88,10 @@ button{
 	color: rgba(119, 128, 136, 120);
     padding-left: 150px;
     font-size: 13px;
+<<<<<<< HEAD
+=======
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
+>>>>>>> 921d9ed8b117b1b3a18f339debf1c62a98765fac
 }
 
 #wish{
@@ -144,11 +153,25 @@ display: block;
 width: 100%;
 text-align: center;
 }
+<<<<<<< HEAD
 .chtag{
 	display: block;
 }
 
 .tagbtn{
+=======
+<<<<<<< HEAD
+
+.tagbtn{
+    display: grid;
+    grid-template-columns: minmax(100px, max-content) 1fr;
+=======
+.chtag{
+	display: block;
+}
+
+.tagbtn{
+>>>>>>> 921d9ed8b117b1b3a18f339debf1c62a98765fac
     width: 80px;
     height: 25px;
     font-size: 9px;
@@ -159,4 +182,8 @@ text-align: center;
     font-size: medium;
     margin: 10px auto; /* 버튼을 중앙으로 정렬 */
     text-align: center;
+<<<<<<< HEAD
+=======
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
+>>>>>>> 921d9ed8b117b1b3a18f339debf1c62a98765fac
 }

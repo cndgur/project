@@ -31,6 +31,7 @@
 
     <div id="myPage_body">
         <div class="myPage"></div>
+<<<<<<< HEAD
         <div id="profile">
             <div id="img-area">
                 <img src="<%= request.getContextPath() %>/pic/profile.png">
@@ -39,6 +40,18 @@
                 <form action="<%=contextPath%>/update.me" method="post" id="profileUpdateForm">
                     <input type="button" value="프로필 수정" class="updateprofile" data-bs-toggle="modal" data-bs-target="#myModal">
                 </form>
+=======
+            <div id="profile">
+                <div id="img-area">
+
+                    <img src="../..pic/profile.png">
+
+                    <img src="../../pic/profile.png">
+
+                </div>
+<<<<<<< HEAD
+                <button>프로필 사진 변경</button>
+>>>>>>> 921d9ed8b117b1b3a18f339debf1c62a98765fac
                 <div id="text-area">
                     <h3 class="userName">${loginUser.userName}님</h3>
                     <ul>
@@ -100,6 +113,20 @@
                         </div>
                     </form>
                 </div>
+=======
+                    <div class="profile_info">
+                        <form action="update.me" method="post">
+                            <input type="submit" value="프로필 수정" class="updateprofile">
+                        </form>
+                        <div id="text-area">
+                            <h3 class="userName">${loginUser.userName}님</h3>
+                            <ul>
+                                <li>아이디 : ${loginUser.userId}</li>
+                                <li>전화번호 : ${loginUser.tel}</li>
+                            </ul>
+                        </div>
+                    </div>
+>>>>>>> 75236b560e9c44d45361fcee3111e66cefe1232b
             </div>
         </div>
     </div>

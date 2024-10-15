@@ -1,5 +1,6 @@
 package com.lc.project.map.controller;
 
+<<<<<<< HEAD
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -16,12 +17,24 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+=======
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+>>>>>>> 921d9ed8b117b1b3a18f339debf1c62a98765fac
 
 /**
  * Servlet implementation class Travelhotelcontroller
  */
 public class Travelhotelcontroller extends HttpServlet {
+<<<<<<< HEAD
    private static final long serialVersionUID = 1L;
+=======
+	private static final long serialVersionUID = 1L;
+>>>>>>> 921d9ed8b117b1b3a18f339debf1c62a98765fac
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -31,6 +44,7 @@ public class Travelhotelcontroller extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
+<<<<<<< HEAD
    /**
     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
     */
@@ -90,5 +104,22 @@ public class Travelhotelcontroller extends HttpServlet {
       // TODO Auto-generated method stub
       doGet(request, response);
    }
+=======
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+>>>>>>> 921d9ed8b117b1b3a18f339debf1c62a98765fac
 
 }

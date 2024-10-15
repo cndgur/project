@@ -8,15 +8,15 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Servlet implementation class MemberSelectEnrollController
+ * Servlet implementation class SearchpwdViewController
  */
-public class MemberSelectEnrollController extends HttpServlet {
+public class SearchpwdViewController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MemberSelectEnrollController() {
+    public SearchpwdViewController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,7 +26,7 @@ public class MemberSelectEnrollController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		request.getRequestDispatcher("views/member/selectlogin.jsp").forward(request, response);
+		request.getRequestDispatcher("views/member/searchpwdmember.jsp").forward(request, response);
 	}
 
 	/**

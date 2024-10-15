@@ -1,5 +1,6 @@
 package com.lc.project.map.service;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
 
 import org.apache.ibatis.session.SqlSession;
@@ -24,3 +25,8 @@ public class TravelhotelImpl implements TravelhotelService{
         return wishList;
     }
 }
+=======
+public class TravelhotelImpl implements TravelhotelService{
+
+}
+>>>>>>> 921d9ed8b117b1b3a18f339debf1c62a98765fac
