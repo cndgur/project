@@ -1,11 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+    String contextPath = request.getContextPath(); // 컨텍스트 경로 얻기
+%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>로그인 선택</title>
-<link rel="icon" href="../../pic/logo.png"/>
+<link rel="icon" href="<%=contextPath %>/pic/logo.png"/>
     <link rel="apple-touch-icon" href="pic/logo.png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -120,19 +123,19 @@ body{
         <div class="logo">
             <a href="/lc_project/index.jsp" class="to_main">
                 <div class="header_name">방구석여행</div>
-                <img src="../../pic/logo.png" alt="" class="header_main_logo">
+                <img src="<%=contextPath %>/pic/logo.png" alt="" class="header_main_logo">
             </a>
         </div>
-        <h1>회원가입</h1>
+        <h1>로그인</h1>
     </div>
     <div class="select">
         <div class="body">
-            <a href="/lc_project/login.me">
+            <a href="<%=contextPath %>/login.me">
                 <button type="submit" id="btn1" class="normal_mem">일반회원로그인</button>
             </a>
         </div>
         <div class="body2">
-            <a href="/lc_project/login.bs">
+            <a href="<%=contextPath %>/login.bs">
                 <button type="submit" id="btn2" class="bs_mem">사업자로그인</button>
             </a>
         </div>

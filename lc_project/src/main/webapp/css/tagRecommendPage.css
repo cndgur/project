@@ -76,6 +76,13 @@ button{
 
 #text{
     padding: 50px 0;
+    padding-left: 150px;
+    font-size: 20px;
+}
+#text2{
+	color: rgba(119, 128, 136, 120);
+    padding-left: 150px;
+    font-size: 13px;
 }
 
 #wish{
@@ -137,8 +144,19 @@ display: block;
 width: 100%;
 text-align: center;
 }
+.chtag{
+	display: block;
+}
 
 .tagbtn{
-    display: grid;
-    grid-template-columns: minmax(100px, max-content) 1fr;
+    width: 80px;
+    height: 25px;
+    font-size: 9px;
+    border: 0px;
+    background: #7bbcb0;
+    color: white;
+    border-radius: 40px;
+    font-size: medium;
+    margin: 10px auto; /* 버튼을 중앙으로 정렬 */
+    text-align: center;
 }

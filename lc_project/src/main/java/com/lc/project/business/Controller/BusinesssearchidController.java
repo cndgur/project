@@ -38,20 +38,20 @@ public class BusinesssearchidController extends HttpServlet {
         Business searchid = businessService.searchidBusiness(b);
 
         if (searchid != null) {
-            // ì•„ì´ë””ë¥¼ ì°¾ì€ ê²½ìš°
+            // ¾ÆÀÌµğ¸¦ Ã£Àº °æ¿ì
             String foundId = searchid.getBsId();
 
-            // JSP í˜ì´ì§€ë¡œ ë¦¬ë‹¤ì´ë ‰íŠ¸í•˜ì—¬ alertë¡œ ì•„ì´ë”” í‘œì‹œ
+            // JSP ÆäÀÌÁö·Î ¸®´ÙÀÌ·ºÆ®ÇÏ¿© alert·Î ¾ÆÀÌµğ Ç¥½Ã
             response.setContentType("text/html; charset=UTF-8");
-            response.getWriter().write("<html><head><title>ì•„ì´ë”” ì°¾ê¸° ê²°ê³¼</title></head><body>");
-            response.getWriter().write("<script>alert('ì°¾ì€ ì•„ì´ë”” : " + foundId + "');</script>");
+            response.getWriter().write("<html><head><title>¾ÆÀÌµğ Ã£±â °á°ú</title></head><body>");
+            response.getWriter().write("<script>alert('Ã£Àº ¾ÆÀÌµğ : " + foundId + "');</script>");
             response.getWriter().write("<script>window.location.href = '" + request.getContextPath() + "/index.jsp';</script>");
             response.getWriter().write("</body></html>");
         } else {
-            // ì•„ì´ë””ë¥¼ ì°¾ì§€ ëª»í•œ ê²½ìš°
+            // ¾ÆÀÌµğ¸¦ Ã£Áö ¸øÇÑ °æ¿ì
             response.setContentType("text/html; charset=UTF-8");
-            response.getWriter().write("<html><head><title>ì•„ì´ë”” ì°¾ê¸° ì‹¤íŒ¨</title></head><body>");
-            response.getWriter().write("<script>alert('ì•„ì´ë””ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.');</script>");
+            response.getWriter().write("<html><head><title>¾ÆÀÌµğ Ã£±â ½ÇÆĞ</title></head><body>");
+            response.getWriter().write("<script>alert('¾ÆÀÌµğ¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.');</script>");
             response.getWriter().write("<script>window.location.href = '" + request.getContextPath() + "/index.jsp';</script>");
             response.getWriter().write("</body></html>");
         }

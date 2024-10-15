@@ -5,6 +5,7 @@
 	ArrayList<Travel> tlist = (ArrayList<Travel>)request.getAttribute("tlist");
 	ArrayList<Hotel> hlist = (ArrayList<Hotel>)request.getAttribute("hlist");
 	ArrayList<Room> rlist = (ArrayList<Room>)request.getAttribute("rlist");
+	String alertMsg = (String)session.getAttribute("alertMsg");
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -21,6 +22,8 @@
         src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"
         integrity="sha256-Fb0zP4jE3JHqu+IBB9YktLcSjI1Zc6J2b6gTjB0LpoM="
         crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
@@ -32,6 +35,12 @@
 </head>
 <body id=system-ui>
     <%@include file="../common/header.jsp" %>
+    <% if(alertMsg != null) {%>
+		<script>
+			alert("<%=alertMsg%>");
+		</script>
+		<% session.removeAttribute("alertMsg"); %>
+	<% } %>
     <div id="wrapper">
         <table>
             <tr>
@@ -117,7 +126,7 @@
                         <h2>객실 선택</h2>
                         <hr>
                         <%for (Room ro : rlist){ %>
-	                            <table  style="background: #ddeeeb; border-radius: 15px;">
+	                            <table  style="background: #ddeeeb; border-radius: 15px; height: 250px; margin-bottom: 50px;">
 	                                <tr>
 	                                    <td rowspan="2">
 	                                        <img src="<%=ro.getPicInfo() %>" class="reservepic">
@@ -132,56 +141,64 @@
 	                                            가격 : <%=ro.getPrice() %>원<br>
 	                                            객실정보<br>
 	                                            최대<%=ro.getrMax() %>인<br>
-	                                            추가정보<br>
-	                                            <%=ro.getrInfo() %>
-	                                            <button id="reviewbt" onclick="requestPay()">예약하기</button>
+	                                         	<br>
+	                                            <button style="float:left;" class="reviewbt" type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#info-modal">추가정보확인</button>
+	                                            
+	                                            <button class="reviewbt" type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#update-pwd-modal">예약하기</button>
 	                                        </div>
 	                                    </td>  
 	                                </tr>
 	                            </table>
-	                            <script>
-		                            function generateUUID() { 
-		                                return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-		                                    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-		                                    return v.toString(16);
-		                                });
-		                            }
-		                           
-	                            	function requestPay() {
-	                            		const paymentId = generateUUID();
-	                            		
-	                            		console.log("결제 요청 시작");
-	                            		PortOne.requestPayment({
-	                                	    storeId: "store-2c741ae7-334b-4984-9a8c-62eba220c91b",
-	                                	    paymentId: paymentId,
-	                                	    orderName: "테스트 결제",
-	                                	    totalAmount: 100,
-	                                	    currency: "KRW",
-	                                	    channelKey: "channel-key-1882d49b-8325-4d68-9244-2cf5574ca062",
-	                                	    payMethod: "EASY_PAY",
-	                                	    easyPay: {
-	                                	      easyPayProvider: "KAKAOPAY"
-	                                	    }               	    
-	                                	  }, function(response) {
-	                                		  console.log("결제 응답:", response);  // 결제 응답 확인용 로그
-	                                          alert(JSON.stringify(response));  // 결제 응답을 알림으로 표시
-	
-	                                          if (response.status === "AUTHENTICATED") {
-	                                              // 결제 성공 시 처리
-	                                              console.log("결제 성공:", response);
-	                                              window.location.href = "/payment-success";  // 결제 성공 페이지로 이동
-	                                          } else {
-	                                              // 결제 실패 시 처리
-	                                              console.log("결제 실패:", response);
-	                                              alert("결제 실패: " + (response.errorMessage || "알 수 없는 오류"));
-	                                          }
-	                                          
-	                                          
-	                                	  });
-	                            		location.href="<%=contextPath%>/views/common/paysuc.jsp"
-	                            	  
-	                            	}
-	                            </script>
+										    <!-- 비밀번호 변경 Modal -->
+									        <div class="modal fade" id="update-pwd-modal" tabindex="-1" aria-labelledby="updatePwdModalLabel" aria-hidden="true">
+									        <div class="modal-dialog modal-dialog-centered">
+									        <div class="modal-content">
+									    
+						                    <!-- Modal Header -->
+						                    <div class="modal-header">
+						                        <h4 class="modal-title" id="updatePwdModalLabel">예약 확인</h4>
+						                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+						                    </div>
+						    
+						                    <!-- Modal body -->
+						                    <div class="modal-body" align="center">
+						                        <form action="hotel.booking" method="POST">
+						                        	<input type="hidden" name="rnum" value="<%=ro.getrNum() %>">
+						                        	<input type="hidden" name="hName" value="<%=h.gethName() %>">
+						                        	<div>
+						                        		<h3><%=h.gethName() %></h3><br>
+						                        		<h4><%=ro.getrName() %></h4><br>
+						                        		예약하시겠습니까?
+						                        	</div>
+						                            <br>
+						                            <button id="edit-pwd-btn" type="submit" class="btn btn-sm btn-secondary">
+						                                예약
+						                            </button>
+						                        </form>
+						                    </div>
+						    
+						                </div>
+						            </div>
+						        </div>
+						        <!-- 비밀번호 변경 Modal -->
+									        <div class="modal fade" id="info-modal" tabindex="-1" aria-labelledby="updatePwdModalLabel" aria-hidden="true">
+									        <div class="modal-dialog modal-dialog-centered">
+									        <div class="modal-content">
+									    
+						                    <!-- Modal Header -->
+						                    <div class="modal-header">
+						                        <h4 class="modal-title" id="updatePwdModalLabel">추가 정보</h4>
+						                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+						                    </div>
+						    
+						                    <!-- Modal body -->
+						                    <div class="modal-body" align="center">
+						                        <%=ro.getrInfo() %>
+						                    </div>
+						    
+						                </div>
+						            </div>
+						        </div>
 	                        </div>
                         <%} %>
                     <div style="margin-bottom: 50px;"></div>
@@ -190,7 +207,48 @@
                 <td></td>
                 <td class="side"></td>
             </tr>
-			
+			<tr class="recommend">
+                <td class="side"></td>
+                <td colspan="3" class="content">
+                    <div style="margin-top: 50px;">
+                        <h2>근처 다른 호텔</h2>
+                        <hr>
+                    </div>
+                    <div class="recommendtr" style="margin-bottom: 100px;">
+                    <% for(Hotel ht : hlist){ %>
+	                        <div class="recommendtr-item">
+	                            <img class="recommendtrimg" src="<%=ht.getPicInfo() %>" onclick="location.href='hotel.info?hotel=<%=ht.gethName()%>'">
+	                            <p onclick="location.href='hotel.info?hotel=<%=ht.gethName()%>'" style="cursor: pointer;"><strong><%=ht.gethName() %></strong></p>
+	                            <p onclick="location.href='hotel.info?hotel=<%=ht.gethName()%>'" style="cursor: pointer;"><%=ht.gethAddress() %></p>
+	                        </div>
+	                <%} %>
+                    </div>
+                </td>
+                <td></td>
+                <td></td>
+                <td class="side"></td>
+            </tr>
+            <tr class="recommend">
+                <td class="side"></td>
+                <td colspan="3" class="content">
+                    <div style="margin-top: 50px;">
+                        <h2>근처 다른 여행지</h2>
+                        <hr>
+                    </div>
+                    <div class="recommendtr" style="margin-bottom: 100px;">
+                    <% for(Travel tra : tlist){ %>
+	                        <div class="recommendtr-item">
+	                            <img class="recommendtrimg" src="<%=tra.getPicInfo() %>" onclick="location.href='travel.info?travel=<%=tra.getTrName()%>'">
+	                            <p onclick="location.href='travel.info?travel=<%=tra.getTrName()%>'" style="cursor: pointer;"><strong><%=tra.getTrName() %></strong></p>
+	                            <p onclick="location.href='travel.info?travel=<%=tra.getTrName()%>'" style="cursor: pointer;"><%=tra.getTrAddress() %></p>
+	                        </div>
+	                <%} %>
+                    </div>
+                </td>
+                <td></td>
+                <td></td>
+                <td class="side"></td>
+            </tr>
         </table>
     </div>
      <%@include file="../common/footer.jsp"%>

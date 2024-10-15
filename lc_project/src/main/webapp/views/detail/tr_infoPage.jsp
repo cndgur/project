@@ -17,8 +17,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>방구석여행</title>
-    <link rel="icon" href="/lc/pic/logo.png"/>
-    <link rel="apple-touch-icon" href="/lc/pic/logo.png"/>
+    <link rel="icon" href="<%=request.getContextPath()%>/pic/logo.png"/>
+    <link rel="apple-touch-icon" href="<%=request.getContextPath()%>/pic/logo.png"/>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <!-- jQuery -->
     <script 
@@ -305,10 +305,9 @@
                         			url: "wish.tr",
                         			contentType: "application/json",
                         			data: {
-                        				userName: "<%=loginUser.getUserName()%>"
+                        				userId: "<%=loginUser.getUserId()%>"
                         			},
                         			success: function(res){
-                        				console.log(res);
                         				let str = "";
                                         for(let tra of res){
                                         	str += ("<div class='sidenav-item' onclick='location.href=\"travel.info?travel="+tra.trName+"\"'>" +
@@ -432,7 +431,8 @@
                         <div class=sidecontent></div>
                         
                         <div class="sidenav-footer">
-                            <button><div style="vertical-align: middle;">여행지 기준<br>호텔 검색</div></button>
+                        	<button onclick="location.href='tr.hotel'"><div style="vertical-align: middle;">여행지 기준<br>호텔 검색</div></button>
+                            
                         </div>
                         <script>
                             $(document).ready(function() {
@@ -519,7 +519,7 @@
                         <h2>여행지 리뷰</h2>
                         <hr>
                         <form action="review.tra" method="POST">
-                        	<input type="hidden" name="userName" value="<%=loginUser.getUserName()%>">
+                        	<input type="hidden" name="userId" value="<%=loginUser.getUserId()%>">
                         	<input type="hidden" name="travel" value="<%=t.getTrName()%>">
                         	<div style="width: 100%; height: 300px; background: #ddeeeb; margin-bottom: 100px;">
                             <textarea id="review" placeholder="리뷰를 작성해주세요." style="resize: none;" name="review"></textarea><br>

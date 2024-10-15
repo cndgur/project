@@ -42,15 +42,15 @@ public class BusinesssearchpwdController extends HttpServlet {
             String foundPwd = searchpwd.getBsPwd();
 
             response.setContentType("text/html; charset=UTF-8");
-            response.getWriter().write("<html><head><title>ë¹„ë°€ë²ˆí˜¸ ì°¾ê¸° ê²°ê³¼</title></head><body>");
-            response.getWriter().write("<script>alert('ì°¾ì€ ë¹„ë°€ë²ˆí˜¸ : " + foundPwd + "');</script>");
+            response.getWriter().write("<html><head><title>ºñ¹Ğ¹øÈ£ Ã£±â °á°ú</title></head><body>");
+            response.getWriter().write("<script>alert('Ã£Àº ºñ¹Ğ¹øÈ£ : " + foundPwd + "');</script>");
             response.getWriter().write("<script>window.location.href = '" + request.getContextPath() + "/index.jsp';</script>");
             response.getWriter().write("</body></html>");
         } else {
-            // ì•„ì´ë””ë¥¼ ì°¾ì§€ ëª»í•œ ê²½ìš°
+            // ¾ÆÀÌµğ¸¦ Ã£Áö ¸øÇÑ °æ¿ì
             response.setContentType("text/html; charset=UTF-8");
-            response.getWriter().write("<html><head><title>ë¹„ë°€ë²ˆí˜¸ ì°¾ê¸° ì‹¤íŒ¨</title></head><body>");
-            response.getWriter().write("<script>alert('ë¹„ë°€ë²ˆí˜¸ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.');</script>");
+            response.getWriter().write("<html><head><title>ºñ¹Ğ¹øÈ£ Ã£±â ½ÇÆĞ</title></head><body>");
+            response.getWriter().write("<script>alert('ºñ¹Ğ¹øÈ£¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.');</script>");
             response.getWriter().write("<script>window.location.href = '" + request.getContextPath() + "/index.jsp';</script>");
             response.getWriter().write("</body></html>");
         }

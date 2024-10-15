@@ -30,10 +30,9 @@ public class travelWishController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String userName = request.getParameter("userName");
+		String userId = request.getParameter("userId");
 		
-		ArrayList<Travel> list = new TravelService().selectWishList(userName);
-		System.out.println(list);
+		ArrayList<Travel> list = new TravelService().selectWishList(userId);
 		response.setContentType("application/json; charset=utf-8");
 		new Gson().toJson(list, response.getWriter());
 	}

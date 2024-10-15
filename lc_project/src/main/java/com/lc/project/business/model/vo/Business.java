@@ -4,14 +4,16 @@ import java.sql.Date;
 
 public class Business {
 
-	private int bsNo;
 	private String bsName;
 	private String bsId;
 	private String bsPwd;
 	private String bsEmail;
 	private String bsTel;
 	private String bsAddress;
+	private String bslocation;
 	private String bsTitle;
+	private String latitude;
+	private String longitude;
 	private Date enrolldate;
 	private Date modifydate;
 	private String status;
@@ -20,20 +22,36 @@ public class Business {
 		super();
 	}
 
-	public Business(int bsNo, String bsName, String bsId, String bsPwd, String bsEmail, String bsTel, String bsAddress,
-			String bsTitle, Date enrolldate, Date modifydate, String status) {
+	public Business(String bsName, String bsId, String bsPwd, String bsEmail, String bsTel, String bsAddress,
+			String bslocation, String bsTitle, String latitude, String longitude, Date enrolldate, Date modifydate,
+			String status) {
 		super();
-		this.bsNo = bsNo;
 		this.bsName = bsName;
 		this.bsId = bsId;
 		this.bsPwd = bsPwd;
 		this.bsEmail = bsEmail;
 		this.bsTel = bsTel;
 		this.bsAddress = bsAddress;
+		this.bslocation = bslocation;
 		this.bsTitle = bsTitle;
+		this.latitude = latitude;
+		this.longitude = longitude;
 		this.enrolldate = enrolldate;
 		this.modifydate = modifydate;
 		this.status = status;
+	}
+
+	public Business(String bsName, String bsId, String bsPwd, String bsEmail, String bsTel, String bsAddress,
+			String bslocation, String bsTitle) {
+		super();
+		this.bsName = bsName;
+		this.bsId = bsId;
+		this.bsPwd = bsPwd;
+		this.bsEmail = bsEmail;
+		this.bsTel = bsTel;
+		this.bsAddress = bsAddress;
+		this.bslocation = bslocation;
+		this.bsTitle = bsTitle;
 	}
 
 	public Business(String bsName, String bsId, String bsPwd, String bsEmail, String bsTel, String bsAddress,
@@ -46,14 +64,6 @@ public class Business {
 		this.bsTel = bsTel;
 		this.bsAddress = bsAddress;
 		this.bsTitle = bsTitle;
-	}
-
-	public int getBsNo() {
-		return bsNo;
-	}
-
-	public void setBsNo(int bsNo) {
-		this.bsNo = bsNo;
 	}
 
 	public String getBsName() {
@@ -104,12 +114,36 @@ public class Business {
 		this.bsAddress = bsAddress;
 	}
 
+	public String getBslocation() {
+		return bslocation;
+	}
+
+	public void setBslocation(String bslocation) {
+		this.bslocation = bslocation;
+	}
+
 	public String getBsTitle() {
 		return bsTitle;
 	}
 
 	public void setBsTitle(String bsTitle) {
 		this.bsTitle = bsTitle;
+	}
+
+	public String getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
+
+	public String getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
 	}
 
 	public Date getEnrolldate() {
@@ -138,8 +172,14 @@ public class Business {
 
 	@Override
 	public String toString() {
-		return "Business [bsNo=" + bsNo + ", bsName=" + bsName + ", bsId=" + bsId + ", bsPwd=" + bsPwd + ", bsEmail="
-				+ bsEmail + ", bsTel=" + bsTel + ", bsAddress=" + bsAddress + ", bsTitle=" + bsTitle + ", enrolldate="
-				+ enrolldate + ", modifydate=" + modifydate + ", status=" + status + "]";
+		return "Business [bsName=" + bsName + ", bsId=" + bsId + ", bsPwd=" + bsPwd + ", bsEmail=" + bsEmail
+				+ ", bsTel=" + bsTel + ", bsAddress=" + bsAddress + ", bslocation=" + bslocation + ", bsTitle="
+				+ bsTitle + ", latitude=" + latitude + ", longitude=" + longitude + ", enrolldate=" + enrolldate
+				+ ", modifydate=" + modifydate + ", status=" + status + "]";
 	}
+
+	
+
+
+	
 }

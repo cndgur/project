@@ -55,4 +55,19 @@ public class BusinessServiceImpl implements BusinessService {
 		return searchpwd;
 	}
 
+	@Override
+	public boolean updateBusiness(Business b) {
+		  SqlSession sqlSession = Template.getSqlSession();
+		    int result = bDao.updateBusiness(sqlSession, b);
+
+		    if (result > 0) {
+		        sqlSession.commit();
+		    } else {
+		        sqlSession.rollback();
+		    }
+		    sqlSession.close();
+		    
+		    return result > 0;
+	}
+
 }

@@ -1,12 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+    String contextPath = request.getContextPath(); // 컨텍스트 경로 얻기
+%>    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>사업자 로그인</title>
 <script type="text/javascript"></script>
-    <link rel="icon" href="./pic/logo.png"/>
+    <link rel="icon" href="<%=contextPath %>/pic/logo.png"/>
     <link rel="apple-touch-icon" href="pic/logo.png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -152,14 +155,25 @@
 	.to_main{
 		cursor: pointer;
 	}
+	
+	.searchid{
+		background-color: transparent;
+		border: none;
+		color: #00bfa5;
+		cursor: pointer;
+	}
+	.links{
+		display: flex;
+		justify-content: center;
+	}
      </style>
 </head>
 <body>
 	<div class="header">
         <div class="logo">
-            <a onclick="location.href='index.jsp'" class="to_main">
+            <a href="<%=contextPath %>/index.jsp" class="to_main">
                 <div class="header_name">방구석여행</div>
-                <img src="./pic/logo.png" alt="" class="header_main_logo">
+                <img src="<%=contextPath %>/pic/logo.png" alt="" class="header_main_logo">
             </a>
         </div>
         <h1>로그인</h1>
@@ -167,29 +181,27 @@
     
     <div class="login-container">
         <div class="logo_form">
-            <img src="./pic/logo.png" alt="logo">
+            <img src="<%=contextPath %>/pic/logo.png" alt="logo">
             <p class="name">방구석여행</p>
         </div>
-        <form action="bslogin.bs" method="post">
+        <form action="<%=contextPath %>/bslogin.bs" method="post">
             <input type="text" placeholder="아이디" required id="bsId" name="bsId">
             <input type="password" placeholder="비밀번호" required id="bsPwd" name="bsPwd">
             <button type="submit" id="btn">로그인</button>
         </form>
         <div class="links">
-            <a href="views/member/searchIdbusiness.jsp">아이디찾기</a> |
-            <a href="views/member/searchpwdbusiness.jsp">비밀번호 찾기</a> |
-            <a href="views/member/enrollbusiness.jsp">회원가입</a>
+             <form action="searchidview.bs">
+            <input type="submit" class="searchid" value="아이디 찾기"> 
+            </form> |
+            <form action="seachpwdview.bs">
+				<input type="submit" class="searchid" value="비밀번호 찾기"> 
+			</form> |
+			<form action="insertview.bs">
+				<input type="submit" class="searchid" value="회원가입"> 
+			</form> 
         </div>
     </div>
-		<% String loginSuccess = request.getParameter("loginSuccess"); %>
-		<script>
-		    window.onload = function() {
-		        var loginSuccess = "<%= (loginSuccess != null ? loginSuccess : "") %>";
-		        if (loginSuccess === "false") {
-		            alert("아이디와 비밀번호를 확인해주세요");
-		        }
-		    }
-		</script>
+	
 
 </body>
 </html>

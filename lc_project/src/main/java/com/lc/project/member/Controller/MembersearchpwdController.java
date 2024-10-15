@@ -47,7 +47,7 @@ public class MembersearchpwdController extends HttpServlet {
             response.getWriter().write("<script>window.location.href = '" + request.getContextPath() + "/index.jsp';</script>");
             response.getWriter().write("</body></html>");
         } else {
-            // 아이디를 찾지 못한 경우
+            // ���̵� ã�� ���� ���
             response.setContentType("text/html; charset=UTF-8");
             response.getWriter().write("<html><head><title>비밀번호 찾기 실패</title></head><body>");
             response.getWriter().write("<script>alert('비밀번호를 찾을 수 없습니다.');</script>");

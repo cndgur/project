@@ -32,6 +32,7 @@ public class travelInfoController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String trName = request.getParameter("travel");
+		System.out.println(trName);
 		TravelService tServ = new TravelService();
 		Travel t = tServ.selectTravel(trName);
 		char[] charArray = t.getTr_personnel().toCharArray();

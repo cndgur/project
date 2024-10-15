@@ -13,6 +13,7 @@ import java.util.Properties;
 
 import com.lc.project.hotel.model.vo.Hotel;
 import com.lc.project.hotel.model.vo.Room;
+import com.lc.project.member.model.vo.Member;
 import com.lc.project.travel.model.dao.TravelDao;
 
 public class HotelDao {
@@ -88,7 +89,7 @@ public class HotelDao {
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		ArrayList<Room> list = new ArrayList<>();
-		String sql = "SELECT ROOM_NAME, CHECKIN,CHECKOUT,LOCATION,ROOM_INFO,ROOM_MAX,ROOM_PRICE "
+		String sql = "SELECT ROOM_NUM,ROOM_NAME, CHECKIN,CHECKOUT,LOCATION,ROOM_INFO,ROOM_MAX,ROOM_PRICE "
 					+"FROM TB_ROOM "
 					+"WHERE BS_ID = ?";
 
@@ -98,6 +99,7 @@ public class HotelDao {
 			rset = pstmt.executeQuery();
 			while(rset.next()) {
 				Room r = new Room();
+				r.setrNum(rset.getInt("ROOM_NUM"));
 				r.setrName(rset.getString("ROOM_NAME"));
 				r.setCheckin(rset.getString("CHECKIN"));
 				r.setCheckout(rset.getString("CHECKOUT"));
@@ -114,5 +116,50 @@ public class HotelDao {
 			close(pstmt);
 		}
 		return list;
+	}
+	public int insertBooking(Connection conn,Member loginUser,Room room){
+	      int result = 0;
+	      PreparedStatement pstmt = null;
+	      String sql = "INSERT INTO TB_ROOM_BOOKING(ROOM_NUM, ROOM_USER, CHECKIN,CHECKOUT,PRICE) "
+	            + "VALUES(?,?,?,?,?)";
+	      try {
+	         pstmt = conn.prepareStatement(sql);
+	         pstmt.setInt(1, room.getrNum());
+	         pstmt.setString(2, loginUser.getUserId());
+	         pstmt.setString(3, room.getCheckin());
+	         pstmt.setString(4, room.getCheckout());
+	         pstmt.setInt(5, room.getPrice());
+	         result = pstmt.executeUpdate();
+	      } catch (SQLException e) {
+	         // TODO Auto-generated catch block
+	         e.printStackTrace();
+	      }finally {
+	         close(pstmt);
+	      }
+	      return result;
+	   }
+	public Room selectRoom(Connection conn, int rnum) {
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		Room r = new Room();
+		String sql = "SELECT ROOM_NUM, ROOM_PRICE,CHECKIN, CHECKOUT FROM TB_ROOM WHERE ROOM_NUM = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, rnum);
+			rset = pstmt.executeQuery();
+			if(rset.next()) {
+				r.setrNum(rset.getInt("ROOM_NUM"));
+				r.setPrice(rset.getInt("ROOM_PRICE"));
+				r.setCheckin(rset.getString("CHECKIN"));
+				r.setCheckout(rset.getString("CHECKOUT"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			close(rset);
+			close(pstmt);
+		}
+		return r;
 	}
 }

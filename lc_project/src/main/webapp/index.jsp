@@ -69,7 +69,7 @@
                           <img id="avatar" src="./pic/avatar.png" alt="avatar" width="35px" height="35px">
                       </button>
                       <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="./views/common/myPage.jsp">마이페이지</a></li>
+                          <li><a class="dropdown-item" href="membermyPage.mem">마이페이지</a></li>
                           <li><a class="dropdown-item" href="logout.me">로그아웃</a></li>
                       </ul>
                   </div>
@@ -82,7 +82,7 @@
                             <img id="avatar" src="./pic/profile-removebg-preview.png" alt="avatar" width="35px" height="35px">
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="./views/common/myPage2.jsp">사업자마이페이지</a></li>
+                            <li><a class="dropdown-item" href="./views/common/BusinessmyPage.jsp">사업자마이페이지</a></li>
                             <li><a class="dropdown-item" href="logout.bs">로그아웃</a></li>
                         </ul>
                     </div>
@@ -107,19 +107,16 @@
             </div>
             <div class="textarea">
                 <input class="input_1" list="browsers" name="browser" id="browser" placeholder="가고싶은 여행지를 입력해주세요.">
-                <datalist id="browsers">
-                  <option value="박물관">
-                  <option value="">
-                  <option value="경기">
-                  <option value="강원도">
-                  <option value="충청도">
-                  <option value="제주도">
-                  <option value="전남">
-                  <option value="전북">
-                  <option value="경남">
-                  <option value="경북">
-                </datalist>
-                <a href=""><img src="./pic/검색-removebg-preview.png" alt="" class="research_btn"></a>
+
+                <button onclick="gotr()" style="background-color: transparent; border: none;"><img src="./pic/검색-removebg-preview.png" alt="" class="research_btn"></button>
+               <script>
+               		function gotr(){
+               			var sr = document.getElementById("browser").value;
+               			console.log(sr)
+               			location.href="search.tr?browser="+encodeURIComponent(sr)
+               		}
+               </script>
+               
             </div>
         </div>
     </div>
@@ -233,7 +230,7 @@
   </form>
    <br><br><br>
    
-   <div id="wrap-main-content1">
+ <div id="wrap-main-content1">
         <div id="main-content1">
           <div id="title">
             <h1>"떠나볼래? 지역 따라 골라보는 여행 스팟"</h1>
@@ -273,11 +270,13 @@
                      <img src="<%=contextPath%>/pic/제주도.jpg" alt="jeju" onclick="location.href='location.tr?location=제주도'">
                   <p>제주</p>
                </div>
+               </div>
                <div class="swiper-button-next"></div>
                <div class="swiper-button-prev"></div>
           </div>
            </div>
            </div>
+		
            <br>    
      
      <!-- 이충혁 -->

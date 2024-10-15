@@ -30,13 +30,10 @@ public class MemberLogoutController extends HttpServlet {
 		HttpSession session = request.getSession(false);
         
         if (session != null) {
-            // 세션에서 로그인 정보 제거
             session.removeAttribute("loginUser");
-            // 세션 무효화
             session.invalidate();
         }
         
-        // 로그인 페이지로 리다이렉트
         response.sendRedirect(request.getContextPath());
 	}
 

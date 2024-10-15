@@ -110,6 +110,7 @@ body{
     position: relative;
     left: 10px;
     top: 7px;
+    padding: 0px;
 }
 #avatar{
     display: flex;
@@ -118,6 +119,7 @@ body{
     float: right;
     position: relative;
     left: 26px;
+    padding: 0px
 }
 .btn:focus {
     outline: none;

@@ -21,5 +21,15 @@ public class MapServiceImpl implements MapService{
 		sqlSession.close();
 		return trList;
 	}
+
+	@Override
+	public ArrayList<Travel> selectWishList(String userId) {
+		SqlSession sqlSession = Template.getSqlSession();
+		System.out.println("service : " + userId);
+		ArrayList<Travel> wishList = mDao.selectWishList(sqlSession, userId);
+		
+		sqlSession.close();
+		return wishList;
+	}
 	
 }

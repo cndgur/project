@@ -103,4 +103,11 @@ public class TravelService {
 		sqlSession.close();
 		return list;
 	}
+	public ArrayList<Travel> searchTour(String browser) {
+		SqlSession sqlSession = Template.getSqlSession();
+		System.out.println("service : " + browser);
+		ArrayList<Travel> list = tDao.searchTour(sqlSession, browser);
+		sqlSession.close();
+		return list;
+	}
 }

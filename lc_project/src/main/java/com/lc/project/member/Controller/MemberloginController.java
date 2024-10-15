@@ -14,7 +14,6 @@ import com.lc.project.member.model.vo.Member;
 /**
  * Servlet implementation class MemberloginController
  */
-@WebServlet("/memberLogin") // Servlet 매핑 추가
 public class MemberloginController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -28,7 +27,6 @@ public class MemberloginController extends HttpServlet {
         Member m = new Member();
         m.setUserId(request.getParameter("userId"));
         m.setUserPwd(request.getParameter("userPwd"));
-        
         MemberService memberService = new MemberServiceImpl(); 
         Member loginUser = memberService.loginMember(m);
         
@@ -45,9 +43,9 @@ public class MemberloginController extends HttpServlet {
         } else {
             System.out.println("로그인실패");
             response.setContentType("text/html; charset=UTF-8");
-            response.getWriter().write("<html><head><title>로그인 실패</title></head><body>");
+            response.getWriter().write("<html><head><title>로그인실패</title></head><body>");
             response.getWriter().write("<script>alert('아이디, 비밀번호를 확인해주세요');</script>");
-            response.getWriter().write("<script>window.location.href = '" + request.getContextPath() + "/index.jsp';</script>");
+            response.getWriter().write("<script>window.location.href = '" + request.getContextPath() + "/views/member/loginviewmember.jsp';</script>");
             response.getWriter().write("</body></html>");
         }
     }

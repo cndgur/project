@@ -15,7 +15,12 @@ public class MapDao {
 	    params.put("personnel", personnel);
 	    params.put("location", location);
 	    params.put("theme", theme);
-	    
 		return (ArrayList)sqlSession.selectList("travelMapper.selectTravelTag", params);
+	}
+
+	public ArrayList<Travel> selectWishList(SqlSession sqlSession, String userId) {
+		System.out.println("dao : " + userId);
+
+		return (ArrayList)sqlSession.selectList("travelMapper.selectWishList", userId);
 	}
 }

@@ -16,6 +16,7 @@
   	<typeAlias type="com.lc.project.rentcar.model.vo.RentCar" alias="RentCar" />
   	<typeAlias type="com.lc.project.member.model.vo.Member" alias="Member" />
     <typeAlias type="com.lc.project.business.model.vo.Business" alias="Business"/>
+    <typeAlias type="com.lc.project.hotel.model.vo.Hotel" alias="Hotel"/>
   </typeAliases>
 
   <!-- environments : mybatis에서 연동할 db정보들을 등록하는 영역 -->
@@ -38,6 +39,7 @@
    <mapper resource="/mappers/travel-mapper.xml"/>
    <mapper resource="/mappers/business-mapper.xml"/>
    <mapper resource="/mappers/rentcar-mapper.xml"/>
+   <mapper resource="/mappers/hotel-mapper.xml"/>
    
   </mappers>
 </configuration>

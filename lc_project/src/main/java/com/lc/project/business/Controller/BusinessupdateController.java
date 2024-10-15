@@ -2,6 +2,7 @@ package com.lc.project.business.Controller;
 
 import java.io.IOException;
 
+import com.lc.project.business.Service.BusinessService;
 import com.lc.project.business.Service.BusinessServiceImpl;
 import com.lc.project.business.model.vo.Business;
 
@@ -9,50 +10,46 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
-/**
- * Servlet implementation class BusinessInsertController
- */
-public class BusinessInsertController extends HttpServlet {
+public class BusinessupdateController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public BusinessInsertController() {
+    public BusinessupdateController() {
         super();
     }
 
-    /**
-     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        
-        Business m = new Business(
+
+        // Business °´Ã¼ »ı¼º
+        Business b = new Business(
             request.getParameter("bsName"),
             request.getParameter("bsId"),
-            request.getParameter("bsPwd"), // ë¹„ë°€ë²ˆí˜¸ ì•”í˜¸í™” ì œê±°
+            request.getParameter("bsPwd"),
             request.getParameter("bsEmail"),
             request.getParameter("bsTel"),
             request.getParameter("bsAddress"),
+            request.getParameter("bslocation"),
             request.getParameter("bsTitle")
         );
 
-        int result = new BusinessServiceImpl().insertBusiness(m);
-        
-        if (result > 0) {
-            response.sendRedirect(request.getContextPath() + "/login.bs");
-            System.out.println("íšŒì›ê°€ì… ì„±ê³µ");
+        // BusinessService ÀÎ½ºÅÏ½º »ı¼º
+        BusinessService businessService = new BusinessServiceImpl();
+        boolean updateSuccess = businessService.updateBusiness(b);
+
+        // ¼öÁ¤ ¼º°ø ½Ã ¸¶ÀÌÆäÀÌÁö·Î ¸®´ÙÀÌ·ºÆ®
+        if (updateSuccess) {
+            // ºñÁî´Ï½º Á¤º¸ ¾÷µ¥ÀÌÆ® ÈÄ ¼¼¼Ç¿¡ ÀúÀå
+            HttpSession session = request.getSession();
+            session.setAttribute("loginbs", b); // ¼öÁ¤µÈ ºñÁî´Ï½º °´Ã¼ ÀúÀå
+
+            response.sendRedirect(request.getContextPath() + "/views/common/myPage2.jsp?modalMessage=success");
         } else {
-            request.setAttribute("errorMsg", "íšŒì›ê°€ì… ì‹¤íŒ¨");
-            // ì‹¤íŒ¨ ì‹œì— ëŒ€í•œ ì²˜ë¦¬ê°€ í•„ìš”í•  ìˆ˜ ìˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, ì˜¤ë¥˜ í˜ì´ì§€ë¡œ ë¦¬ë‹¤ì´ë ‰ì…˜í•  ìˆ˜ ìˆìŠµë‹ˆë‹¤.
+            response.sendRedirect(request.getContextPath() + "/views/common/myPage2.jsp?modalMessage=fail");
         }
     }
-
-    /**
-     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-     */
+    
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
     }

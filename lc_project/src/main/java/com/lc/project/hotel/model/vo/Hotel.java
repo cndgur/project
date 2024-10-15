@@ -9,6 +9,26 @@ public class Hotel {
 	private String picInfo;
 	private String ht_map_lat;
 	private String ht_map_long;
+	private String price;
+	public Hotel(String bsId, String bsName, String bsTel, String hName, String hAddress, String picInfo,
+			String ht_map_lat, String ht_map_long, String price) {
+		super();
+		this.bsId = bsId;
+		this.bsName = bsName;
+		this.bsTel = bsTel;
+		this.hName = hName;
+		this.hAddress = hAddress;
+		this.picInfo = picInfo;
+		this.ht_map_lat = ht_map_lat;
+		this.ht_map_long = ht_map_long;
+		this.price = price;
+	}
+	public String getPrice() {
+		return price;
+	}
+	public void setPrice(String price) {
+		this.price = price;
+	}
 	public Hotel(String bsId, String bsName, String bsTel, String hName, String hAddress, String picInfo,
 			String ht_map_lat, String ht_map_long) {
 		super();

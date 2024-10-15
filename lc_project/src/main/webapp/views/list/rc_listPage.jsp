@@ -32,6 +32,9 @@
 	                    			<img src="./pic/hyundailogo.png" alt="">
 	                    		</c:when>
 	                    	</c:choose>
+	                    	<script>
+							  console.log("${car.carNum}");
+							</script>
 	                        <p>${car.carId}</p>
 	                        <h3>${car.carName}</h3>
 	                    </div>
@@ -52,14 +55,20 @@
 	                            <span id="price-sale">총 금액 ${car.carPrice * day}원</span>
 	                        </div>
 	                        <c:choose>
-	                        	<c:when test="${startDate == null}">
-	                        		<button id="b-button" type="button" onclick="location.href='booking.rc?carNum=${car.carNum}'" disabled="disabled">
-	                            	날짜를 선택해주세요
-	                            	</button>
+	                        	<c:when test="${startDate != null}">
+	                            	<form>
+	                            		<input type="hidden" name="startDate" value="${startDate}">
+	                            		<input type="hidden" name="endDate" value="${endDate}">
+	                            		<input type="hidden" name="location" value="${location}">
+	                            		<input type="hidden" name="carNum" value="${car.carNum}">
+	                            		<button id="b-button" type="submit" onclick="alert('아직 예약 불가능합니다.')">
+		                            	예약
+		                            	</button>
+	                            	</form>
 	                        	</c:when>
 	                        	<c:otherwise>
-	                        		<button id="b-button" type="button" onclick="location.href='booking.rc?carNum=${car.carNum}'">
-	                            	예약
+	                            	<button id="b-button"disabled="disabled">
+	                            	날짜를 선택해주세요
 	                            	</button>
 	                        	</c:otherwise>
 	                        </c:choose>
@@ -71,42 +80,42 @@
         <div class="rent-sidebar">
             <div id="side-bar">
                 <h2>선택한 여정</h2>
-                <form action="booking.rc" method="post">
-                    <c:choose>
-                        <c:when test="${startDate == null}">
-                        	<div id="rent-location">
-	                        <h2>지점선택</h2>
-	                        <select name="rent-location" id="rent-select">
-	                            <option value="서울">서울</option>
-	                            <option value="부산">부산</option>
-	                            <option value="대구">대구</option>
-	                            <option value="인천">인천</option>
-	                            <option value="대전">대전</option>
-	                            <option value="울산">울산</option>
-	                            <option value="제주">제주</option>
-	                        </select>
-	                        </div>
-	                        <div id="rent-date">
-	                            <input type="text" id="rentcarDate">
-	                            <input type="hidden" name="startDate" id="startDateInput">
-	                            <input type="hidden" name="endDate" id="endDateInput">
-	                        </div>
-	                        <button id="rent-btn">검색</button>	
-                        </c:when>
-                        <c:otherwise>
-                        	<div id="rent-location">
-	                        <h2>지점선택</h2>
-	                        <select name="rent-location" id="rent-select">
-	                            <option value="">${location}</option>
-	                        </select>
-	                        </div>
-	                        <div id="rent-date">
-	                            ${startDate} ~ ${endDate}
-	                        </div>
-                            <button id="rent-btn"></button>
-                        </c:otherwise>
-                	</c:choose>
-                </form>
+                   <c:choose>
+                       <c:when test="${startDate == null}">
+	                    <form action="selectDate.rc" method="post">
+                       	<div id="rent-location">
+                        <h2>지점선택</h2>
+                        <select name="rent-location" id="rent-select">
+                            <option value="서울">서울</option>
+                            <option value="부산">부산</option>
+                            <option value="대구">대구</option>
+                            <option value="인천">인천</option>
+                            <option value="대전">대전</option>
+                            <option value="울산">울산</option>
+                            <option value="제주">제주</option>
+                        </select>
+                        </div>
+                        <div id="rent-date">
+                            <input type="text" id="rentcarDate">
+                            <input type="hidden" name="startDate" id="startDateInput">
+                            <input type="hidden" name="endDate" id="endDateInput">
+                        </div>
+                        <button id="rent-btn">검색</button>
+               		   </form>	
+                       </c:when>
+                       <c:otherwise>
+                       	<div id="rent-location">
+                        <h2>지점선택</h2>
+                        <select name="rent-location" id="rent-select">
+                            <option value="">${location}</option>
+                        </select>
+                        </div>
+                        <div id="rent-date">
+                            ${startDate} ~ ${endDate}
+                        </div>
+                           <button id="rent-btn"></button>
+                       </c:otherwise>
+               	</c:choose>
             </div>
         </div>
     </div>
@@ -130,12 +139,12 @@
         }, function search(start, end, label) {
             console.log('stard: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
         });
-        $(rentcarDate).on('apply.daterangepicker', function(ev, picker) {
+        $('#rentcarDate').on('apply.daterangepicker', function(ev, picker) {
                 $('#startDateInput').val(picker.startDate.format('YYYY-MM-DD'));
                 $('#endDateInput').val(picker.endDate.format('YYYY-MM-DD'));
                 $(this).val(picker.startDate.format('YYYY-MM-DD') + ' - ' + picker.endDate.format('YYYY-MM-DD'));
         });
-        $(rentcarDate).on('cancel.daterangepicker', function(ev, picker) {
+        $('#rentcarDate').on('cancel.daterangepicker', function(ev, picker) {
             $('#startDateInput').val('');
             $('#endDateInput').val('');
             $(this).val('');

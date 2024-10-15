@@ -22,4 +22,8 @@ public class BusinessDao {
 		return sqlSession.selectOne("businessMapper.searchpwdBusiness", business);
 	}
 	
+	public int updateBusiness(SqlSession sqlSession, Business business) {
+		return sqlSession.update("businessMapper.updateBusiness", business);
+	}
+	
 }

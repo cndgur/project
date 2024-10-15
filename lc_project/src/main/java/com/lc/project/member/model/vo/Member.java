@@ -15,11 +15,43 @@ public class Member {
     private Date enrollDate;
     private Date modifyDate;
     private String status;
+    private int rNum;
+    private String checkin;
+    private String checkout;
 	
     
     public Member() {
 		super();
 	}
+    public Member(String userName) {
+    	super();
+    	this.userName = userName;
+    }
+    
+
+
+	public Member(int userNo, String userName, String userId, String userPwd, String tel, String email, String address,
+			String birthday, String gender, Date enrollDate, Date modifyDate, String status, int rNum, String checkin,
+			String checkout) {
+		super();
+		this.userNo = userNo;
+		this.userName = userName;
+		this.userId = userId;
+		this.userPwd = userPwd;
+		this.tel = tel;
+		this.email = email;
+		this.address = address;
+		this.birthday = birthday;
+		this.gender = gender;
+		this.enrollDate = enrollDate;
+		this.modifyDate = modifyDate;
+		this.status = status;
+		this.rNum = rNum;
+		this.checkin = checkin;
+		this.checkout = checkout;
+	}
+
+
 
 
 	public Member(int userNo, String userName, String userId, String userPwd, String tel, String email, String address,
@@ -54,9 +86,13 @@ public class Member {
 	}
 	
 
-	public Member(String userName) {
+	public Member(String userName, String userId, String userPwd, String tel, String address) {
 		super();
 		this.userName = userName;
+		this.userId = userId;
+		this.userPwd = userPwd;
+		this.tel = tel;
+		this.address = address;
 	}
 
 
@@ -180,13 +216,43 @@ public class Member {
 	}
 
 
+	public int getrNum() {
+		return rNum;
+	}
+
+
+	public void setrNum(int rNum) {
+		this.rNum = rNum;
+	}
+
+
+	public String getCheckin() {
+		return checkin;
+	}
+
+
+	public void setCheckin(String checkin) {
+		this.checkin = checkin;
+	}
+
+
+	public String getCheckout() {
+		return checkout;
+	}
+
+
+	public void setCheckout(String checkout) {
+		this.checkout = checkout;
+	}
+
+
 	@Override
 	public String toString() {
 		return "Member [userNo=" + userNo + ", userName=" + userName + ", userId=" + userId + ", userPwd=" + userPwd
 				+ ", tel=" + tel + ", email=" + email + ", address=" + address + ", birthday=" + birthday + ", gender="
-				+ gender + ", enrollDate=" + enrollDate + ", modifyDate=" + modifyDate + ", status=" + status + "]";
+				+ gender + ", enrollDate=" + enrollDate + ", modifyDate=" + modifyDate + ", status=" + status
+				+ ", rNum=" + rNum + ", checkin=" + checkin + ", checkout=" + checkout + "]";
 	}
-    
-
-
+	
+	
 }

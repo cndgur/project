@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>회원가입</title>
-	<link rel="icon" href="../../pic/logo.png"/>
+	<link rel="icon" href="<%=contextPath %>/pic/logo.png"/>
 	<script src="https://code.jquery.com/jquery-3.7.1.js" 
     integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
     crossorigin="anonymous"></script>
@@ -157,7 +157,7 @@
 	        <div class="logo">
 	            <a onclick="location.href= '<%=contextPath%>'" class="to_main">
 	                <div class="header_name">방구석여행</div>
-	                <img src="../../pic/logo.png" alt="" class="header_main_logo">
+	                <img src="<%=contextPath %>/pic/logo.png" alt="" class="header_main_logo">
 	            </a>
 	        </div>
 	        <h1>회원가입</h1>

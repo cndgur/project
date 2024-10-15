@@ -51,7 +51,8 @@
                 </tr>
                 <tr>
                     <td id="footer_left1" colspan="2" rowspan="3">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        "세상을 보라, 그것이 삶이다. – 조지 버나드 쇼"<br>
+바쁜 일상 속에서도 세상을 만나는 방법은 방구석 여행에 있습니다. 여행은 멀리 있지 않습니다. 방구석에서 세계 각지의 호텔을 예약하고 새로운 삶의 일면을 경험하세요. 당신만의 특별한 순간을 방구석에서 시작하세요! 
                     </td> 
                     <td>Legal Information</td>
                     <td>How To Host?</td>
